@@ -209,8 +209,10 @@ class HomeController extends Controller
                 $enquire = wholesaleDetail::create($request->all());
                 if(!empty($enquire))
                 {
-                    // $params['enquire_details'] = view('email.SendMail', compact('enquire'))->render();
-                    // Mail::send(new \App\Mail\EnquireMailNotification($params));
+                    $params['enquire_details'] = view('email.SendMail', compact('enquire'))->render();
+                    $params[]  = $enquire;
+                    // $params['email'] = $enquire->email;
+                    Mail::send(new \App\Mail\wholesaleDetailMail($params));
                     toastr()->success('Your contact has been submitted successfully!');
                     return redirect()->back();
                 }else{

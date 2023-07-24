@@ -441,12 +441,20 @@
         </div>
         @section('js')
             <script>
+                // $(".nav-menu .menu .menu-item a").click(function(){
+                //     $(".nav-menu .menu .menu-item").removeClass("active");
+                //     $(this).addClass("active");
+                // });
+                
                   $('.pop-submit').click(function(){
                     var text = $(this).text();
-                    alert(text);
                     if(text === "Enter")
                     {
-                        $(".current").hide();
+                          if (!sessionStorage.getItem('shown-modal')){
+                                $(".modal_bouncer").hide();
+                                sessionStorage.setItem('shown-modal', 'true');
+
+                          }
                     }
                 });  
                 $(".btn-black").click(function(){

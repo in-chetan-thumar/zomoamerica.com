@@ -1,3 +1,4 @@
+
 <footer class="footer reveal">
     <div class="container">
         <div class="footer-item">
@@ -12,8 +13,6 @@
                     <a href="{{ route('frontend.contact') }}">contact us</a>
                     <a href="{{ route('frontend.wholesale') }}">WHOLESALE</a>
                     <a href="{{ route('frontend.faqs') }}">FAQS</a>
-                    <a href="{{ route('frontend.quality') }}">Zomo Quality</a>
-                    <a href="{{ route('frontend.authorized.wholesalers') }}">Where To Buy</a>
                 </div>
             </div>
             <div class="footer-newslatter">
@@ -90,7 +89,7 @@
         <p><span>WARNING:</span> This product contains nicotine. Nicotine is an addictive chemical.</p>
     </div>
 </div>
-
+@if(url()->current() == "http://lc.zomoamerica.com")
 <!-- <div class="jquery-modal blocker current">
         <div id="bouncer_modal" class="modal_bouncer">
             <form name="AgeVerForm" id="AgeVerForm">
@@ -110,5 +109,6 @@
             </form>
         </div>
     </div>
-</div>
- -->
+</div> -->
+@endif
+

@@ -32,6 +32,7 @@
                         {!! Form::text('bname', old('bname'), null, [
                             'class' => ' name',
                             'placeholder' => 'Your Buisness Name',
+                            'maxlength' => '50'
                         ]) !!}
                         <span class="text-danger" style="font-size:15px">
                             @error('bname')
@@ -46,6 +47,7 @@
                             {!! Form::text('fname', old('fname'), null, [
                                 'class' => ' name',
                                 'placeholder' => 'Your First Name',
+                                'maxlength' => '20'
                             ]) !!}
                             <span class="text-danger" style="font-size:15px">
                                 @error('fname')
@@ -59,6 +61,7 @@
                             {!! Form::text('lname', old('lname'), null, [
                                 'class' => ' name',
                                 'placeholder' => 'Your Last Name',
+                                'maxlength' => '20'
                             ]) !!}
                             <span class="text-danger" style="font-size:15px">
                                 @error('lname')
@@ -73,6 +76,7 @@
                         {!! Form::text('address', old('address'), null, [
                             'class' => ' name',
                             'placeholder' => 'Your Address',
+                            'maxlength' => '40'
                         ]) !!}
                         <span class="text-danger" style="font-size:15px">
                             @error('address')
@@ -86,6 +90,7 @@
                         {!! Form::text('city', old('city'), null, [
                             'class' => ' name',
                             'placeholder' => 'Your City',
+                            'maxlength' => '10'
                         ]) !!}
                         <span class="text-danger" style="font-size:15px">
                             @error('city')
@@ -95,6 +100,7 @@
                         <br>
                     </div>
                     <div class="input-field">
+                    <label for="state">State:</label>
                         {{ Form::Select('state', $stateArray, '', ['class' => '', 'placeholder' => 'Select']) }}
                         <span class="text-danger" style="font-size:15px">
                             @error('state')
@@ -108,6 +114,7 @@
                         {!! Form::text('zipcode', old('zipcode'), null, [
                             'class' => ' name',
                             'placeholder' => 'Your zipcode',
+                            'maxlength' => '10'
                         ]) !!}
                         <span class="text-danger" style="font-size:15px">
                             @error('zipcode')
@@ -121,6 +128,7 @@
                         {!! Form::text('website', old('website'), null, [
                             'class' => ' name',
                             'placeholder' => 'Your Website',
+                            'maxlength' => '70'
                         ]) !!}
                         <span class="text-danger" style="font-size:15px">
                             @error('website')
@@ -134,6 +142,7 @@
                         {!! Form::text('email', old('email'), null, [
                             'class' => ' name',
                             'placeholder' => 'Your Address',
+                            'maxlength' => '50'
                         ]) !!}
                         <span class="text-danger" style="font-size:15px">
                             @error('email')
@@ -147,6 +156,7 @@
                         {!! Form::text('number', old('number'), null, [
                             'class' => ' name',
                             'placeholder' => 'Your Number',
+                            
                         ]) !!}
                         <span class="text-danger" style="font-size:15px">
                             @error('number')

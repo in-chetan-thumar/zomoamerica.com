@@ -29,9 +29,10 @@ class Wholesale extends FormRequest
             'city' => 'required|max:10',
             'zipcode' => 'required|max:10',
             'email' => 'required|email',
-            'number' => 'required|max:10',
-            'g-recaptcha-response' => 'required|captcha',
+            'number' => 'required|max:10|numeric',
+            // 'g-recaptcha-response' => 'required|captcha',
             'state' => 'required',
+            'website' => 'max:70'
         ];
     }
     public function messages()

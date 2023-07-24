@@ -179,6 +179,7 @@ return [
         \App\Providers\HelperServiceProvider::class,
         \App\Providers\FormServiceProvider::class,
         Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
+
     ],
 
     /*

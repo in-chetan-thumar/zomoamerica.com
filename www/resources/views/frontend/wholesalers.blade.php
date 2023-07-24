@@ -36,22 +36,7 @@
 @section('main')
 
     <body class="product-page">
-        <div class="container">
-            <div class="inner-caption">
-                <h2 class="text-white">Authorized Wholesalers</h2>
-            </div>
-            <img src="https://www.zomoamerica.com/assets/upload/cms/original/1574578406-1695263612banner-wholesale.jpg"
-                alt="" class="imageResponsive">
-        </div>
-        <div class="btcm">
-            <div class="container">
-                <div class="breadcrumbs d-flex align-items-center">
-                    <a href="{{ route('frontend.home') }}">Home</a>
-                    <span> » </span>
-                    <span class="breadcrumb_last" aria-current="page">Authorized Wholesalers</span>
-                </div>
-            </div>
-        </div>
+    
         <div class="container">
             <div class="Wholesalers-wrap">
                 <article style="padding:20px 20px">

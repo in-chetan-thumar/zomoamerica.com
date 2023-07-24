@@ -298,7 +298,6 @@
                             </table>
                         </td>
                     </tr>
-
                     @if (strtoupper(env('APP_ENV')) !== 'PRODUCTION')
                     <table class="content" width="100%" cellpadding="0" cellspacing="0" role="presentation">
                         <tr>

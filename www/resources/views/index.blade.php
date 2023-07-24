@@ -6,7 +6,6 @@
     @endcomponent
 
     <div class="row">
-       
     </div>
 @endsection
 @section('script')

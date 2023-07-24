@@ -50,8 +50,8 @@ class TempleteCreateNotification extends TemplateMailable implements ShouldQueue
 
         //Override to & cc variables for staging and local environment.
         if (strtoupper(env('APP_ENV')) !== 'PRODUCTION') {
-            $to = config('constants.EMAIL')[env('APP_ENV')]['TO'];
-            $cc = config('constants.EMAIL')[env('APP_ENV')]['CC'];
+            $to = config('constants.EMAIL')[strtoupper(env('APP_ENV'))]['TO'];
+            $cc = config('constants.EMAIL')[strtoupper(env('APP_ENV'))]['CC'];
         }
 
         $email = $this->to($to)->cc($cc)->from(config('mail.from.address'));

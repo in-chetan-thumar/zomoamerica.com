@@ -14,7 +14,6 @@ class Permission extends \Spatie\Permission\Models\Permission
 
     public function getCreatedAtFormattedAttribute()
     {
-        dd($this->created_at);
         return Carbon::parse($this->created_at)->format('d-m-Y H:i');
     }
 }

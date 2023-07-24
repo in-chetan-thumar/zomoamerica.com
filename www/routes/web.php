@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Admin\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,7 +24,7 @@ if(config('constants.MOBILE_OTP_LOGIN') || config('constants.EMAIL_OTP_LOGIN')){
 }
 
 Route::group(['middleware' => $middleware], function () {
-    Route::get('/', [App\Http\Controllers\Admin\DashboardController::class, 'root'])->name('root');
+    Route::get('/admin', [App\Http\Controllers\Admin\DashboardController::class, 'root'])->name('root');
 
     Route::get('verify/resend', [\App\Http\Controllers\Auth\TwoFactorController::class, 'resend'])->name('verify.resend');
     Route::resource('verify', \App\Http\Controllers\Auth\TwoFactorController::class)->only(['index', 'store']);
@@ -63,7 +64,7 @@ Route::group(['middleware' => $middleware], function () {
 Route::get('/form-custom-field',function (){
  return view('custom-form-field');
 });
-
+// frontend site route 
 Route::get('/', [HomeController::class,'index'])->name('frontend.home');
 Route::get('/product', [HomeController::class,'product'])->name('frontend.product');
 Route::get('zomo-news', [HomeController::class,'news'])->name('frontend.news');
@@ -77,6 +78,10 @@ Route::get('/aboutus', [HomeController::class,'aboutus'])->name('frontend.aboutu
 Route::get('authorized-wholesalers', [HomeController::class,'wholesalers'])->name('frontend.authorized.wholesalers');
 Route::get('zomo-quality', [HomeController::class,'quality'])->name('frontend.quality');
 // 
+
+// backend site route
+// 
+Route::get('zomo-product', [ProductController::class,'index'])->name('backend.product');
 
 Route::get('/thank-you', [HomeController::class, 'thankYou'])->name('thank.you');
 

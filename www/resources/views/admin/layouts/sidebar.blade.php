@@ -85,6 +85,11 @@
                         </ul>
                     </div>
                 </li>
+                 <li class="nav-item">
+                    <a class="nav-link menu-link" href="{{route('backend.product')}}">
+                        <i class="ri-user-2-fill"></i><span>Product</span>
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- Sidebar -->
