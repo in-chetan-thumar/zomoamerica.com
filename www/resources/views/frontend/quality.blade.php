@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
 @section('title')
-	zomo quality
+	
 @endsection
 
 @section('main')
