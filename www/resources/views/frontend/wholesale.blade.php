@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
 @section('title')
-    Product
+    
 @endsection
 
 
