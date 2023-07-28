@@ -24,6 +24,7 @@ class wholesaleDetail extends Model
         'zipcode',
         'website',
         'email',
-        'wholesale'
+        'wholesale',
+        'telephone'
     ];
 }

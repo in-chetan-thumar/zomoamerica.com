@@ -4,6 +4,10 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\WholesaleController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\FlavorController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -78,12 +82,38 @@ Route::get('/aboutus', [HomeController::class,'aboutus'])->name('frontend.aboutu
 Route::get('authorized-wholesalers', [HomeController::class,'wholesalers'])->name('frontend.authorized.wholesalers');
 Route::get('zomo-quality', [HomeController::class,'quality'])->name('frontend.quality');
 // 
+// 
 
 // backend site route
 // 
 Route::get('zomo-product', [ProductController::class,'index'])->name('backend.product');
-
+Route::get('/create', [ProductController::class,'create'])->name('backend.product.create');
 Route::get('/thank-you', [HomeController::class, 'thankYou'])->name('thank.you');
+Route::get('/zomo-contact', [ContactController::class,'index'])->name('backend.product.contact');
+Route::get('/update-contact-edit/{id}', [ContactController::class,'edit'])->name('backend.product.edit');
+Route::get('/zomo-wholesale', [WholesaleController::class,'index'])->name('backend.product.wholesale');
+Route::get('/update-wholesale-edit/{id}', [WholesaleController::class,'edit'])->name('backend.product.wholesale.edit');
+Route::get('/export-wholesale-data', [WholesaleController::class, 'export'])->name('backend.product.wholesale.export');
+Route::get('/export-contact-data', [ContactController::class, 'export'])->name('backend.product.export');
+Route::get('/zomo-category', [CategoryController::class,'index'])->name('backend.product.flavors.category');
+Route::get('/zomo-category-create', [CategoryController::class,'create'])->name('backend.product.flavors.category.create');
+Route::get('/zomo-category-edit/{id}', [CategoryController::class,'create'])->name('backend.product.flavors.category.edit');
+Route::post('/zomo-category-update', [CategoryController::class,'store'])->name('backend.product.flavors.category.update');
+Route::post('/zomo-category-store', [CategoryController::class,'store'])->name('backend.product.flavors.category.store');
+Route::get('/zomo-category-delete/{id}', [CategoryController::class,'delete'])->name('backend.product.flavors.category.delete');
+
+Route::get('/zomo-flavors', [FlavorController::class,'index'])->name('backend.product.flavors');
+Route::get('/zomo-flavors-create', [FlavorController::class,'create'])->name('backend.product.flavors.create');
+Route::post('/zomo-flavors-update', [FlavorController::class,'store'])->name('backend.product.flavors.update');
+Route::post('/zomo-flavors-store', [FlavorController::class,'store'])->name('backend.product.flavors.store');
+Route::get('/zomo-flavors-edit/{id}', [FlavorController::class,'create'])->name('backend.product.flavors.edit');
+Route::post('/zomo-flavors-upload', [FlavorController::class,'upload'])->name('backend.product.flavors.upload');
+Route::get('/zomo-flavors-delete/{id}', [FlavorController::class,'delete'])->name('backend.product.flavors.delete');
+Route::get('flavors/{id}', [FlavorController::class,'flavorcategory'])->name('frontend.flavors.classicLine');
+Route::get('flavors/product/{data}', [FlavorController::class,'productDetail'])->name('frontend.flavors.product.detail');
+
+
+// 
 
 
 // frontend.postwholesale

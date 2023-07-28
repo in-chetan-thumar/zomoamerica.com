@@ -35,7 +35,6 @@
 
 @section('main')
 
-    <body class="product-page">
     
         <div class="container">
             <div class="Wholesalers-wrap">
@@ -205,6 +204,4 @@
                 </div>
             </div>
         </div>
-
-    </body>
 @endsection

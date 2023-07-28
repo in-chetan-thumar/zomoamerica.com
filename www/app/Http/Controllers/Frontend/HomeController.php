@@ -206,10 +206,12 @@ class HomeController extends Controller
                 $request['buisness_name'] = $request->bname;
                 $request['first_name'] = $request->fname;
                 $request['last_name'] = $request->lname;
+                $request['telephone'] = $request->number;
                 $enquire = wholesaleDetail::create($request->all());
                 if(!empty($enquire))
                 {
                     $params['enquire_details'] = view('email.SendMail', compact('enquire'))->render();
+                    $params['email']  = $enquire->email;
                     $params[]  = $enquire;
                     // $params['email'] = $enquire->email;
                     Mail::send(new \App\Mail\wholesaleDetailMail($params));
@@ -250,6 +252,7 @@ class HomeController extends Controller
             return redirect()->back();   
         }
     }
+
 
     // store wholesale detail
 

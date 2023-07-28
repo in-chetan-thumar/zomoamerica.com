@@ -6,7 +6,6 @@
 
 @section('main')
 
-    <body>
         <div class="btcm">
             <div class="container">
                 <div class="breadcrumbs d-flex align-items-center">
@@ -107,5 +106,4 @@
             <br>
         </div>
 
-    </body>
 @endsection

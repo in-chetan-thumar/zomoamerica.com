@@ -1,7 +1,6 @@
-{{ dd($enquire)}}
+
 <table border="1">
 <tr>
-
     <td>Buisness Name</td>
     <td>{{$enquire->buisness_name}}</td>
 </tr>
@@ -36,5 +35,9 @@
      <tr>
         <td>Email</td>
         <td>{{$enquire->email}}</td>
+    </tr>
+    <tr>
+        <td>Number</td>
+        <td>{{$enquire->telephone}}</td>
     </tr>
 </table>

@@ -1585,14 +1585,10 @@ img {
 
 /* product css start */
 
-.product-slider-main {
-    background-color: #ededed;
-    padding: 100px 15px;
-}
-
 .product-page .product-slider-wrapper {
     display: flex;
     gap: 50px;
+    margin-bottom: 50px;
 }
 
 .product-slider-main .container {
@@ -1629,7 +1625,7 @@ img {
 }
 
 .product-page .product-slider-wrapper .product-left {
-    width: 40%;
+    width: 45%;
 }
 
 .product-page .product-slider-wrapper .product-left .product-slider-sub {
@@ -1640,9 +1636,10 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 190px;
+    height: 100px;
     background-color: #fff;
     padding: 15px;
+    cursor: pointer;
 }
 
 .product-slider
@@ -1656,7 +1653,7 @@ img {
 }
 
 .product-page .product-slider-wrapper .product-right {
-    width: calc(60% - 50px);
+    width: calc(55% - 50px);
 }
 
 .product-page .product-slider-wrapper .product-right h1 {
@@ -1727,13 +1724,24 @@ img {
     font-size: 18px;
     font-weight: 600;
     color: #3a3a3a;
-    display: flex;
-    gap: 50px;
+}
+
+.product-page .product-slider-wrapper .product-right .available p {
+    max-width: 400px;
+    width: 100%;
 }
 
 .product-page .product-slider-wrapper .product-right .available p {
     text-transform: uppercase;
     margin-bottom: 0;
+    background-image: url(../images/sign-four-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    padding: 6px;
+    color: #ffffff;
 }
 
 /* .product-slider .swiper-button-prev::after, .product-slider .swiper-button-next::after {
@@ -1913,9 +1921,6 @@ img {
     height: 40px;
 }
 
-.product-slider-main .product-slider {
-    padding: 0 50px;
-}
 .btcm {
     display: flex;
     background-color: #fff;
@@ -1990,15 +1995,19 @@ img {
     top: 50%;
     transform: translateY(-50%);
 }
+
 .product-slider-main .product-slider .left-arrow {
     left: -20px;
 }
+
 .product-slider-main .product-slider .right-arrow {
     right: -20px;
 }
+
 .news-slider-main .news-slider .left-arrow {
     left: -40px;
 }
+
 .news-slider-main .news-slider .right-arrow {
     right: -40px;
 }
@@ -2006,4 +2015,217 @@ img {
 .tab-images,
 .mobile-images {
     display: none !important;
+}
+
+.selecione-line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+
+.selecione-line select {
+    width: 200px;
+    height: 40px;
+    border: 1px solid #aeaeae;
+    color: #aeaeae;
+    background-color: transparent;
+    font-weight: 400;
+    padding-left: 10px;
+}
+
+.selecione-line select:focus {
+    outline: none;
+}
+
+.product-list {
+    background: #fff;
+    margin-bottom: 30px;
+}
+
+.product-list .product-item {
+    max-width: 1200px;
+    padding: 40px 15px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.product-item .product-box .images {
+    margin-bottom: 15px;
+}
+
+.product-item .product-box .product-title {
+    color: #646464;
+    font-size: 18px;
+    line-height: 19px;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+    font-weight: 500;
+    display: block;
+}
+
+.product-item .product-box .product-title:hover {
+    color: var(--blue-two);
+}
+
+.product-item .product-box .flag-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 105px;
+    width: 100%;
+    padding: 3px 5px;
+    border: 1px solid rgb(104, 104, 104);
+    gap: 5px;
+    margin: 0 auto;
+}
+
+.product-item .product-box .flag-box img {
+    width: 25px;
+    height: 25px;
+}
+
+.product-item .product-box .flag-box p {
+    font-size: 12px;
+    line-height: 12px;
+    color: #7a7a7a;
+    font-weight: 700;
+}
+
+.pagination.product-list-pages {
+    justify-content: center;
+}
+
+.product-listing-bg {
+    background: url(../images/product-bf.webp) no-repeat 100% 100% / cover;
+    padding: 70px 0;
+    margin-bottom: 30px;
+}
+
+.product-listing-bg .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.product-listing-bg .container .classics-images {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-listing-bg .container .classics-images a {
+    display: flex;
+    max-width: 300px;
+    width: 100%;
+}
+
+.product-listing-bg .container .content-p {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-listing-bg .container .content-p p {
+    max-width: 426px;
+    width: 100%;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    color: #00afef;
+}
+
+.one-bg-single,
+.two-bg-single,
+.single-three-bg {
+    max-width: 400px;
+    width: 100%;
+}
+
+.one-bg-single .vc_custom_heading {
+    margin-bottom: 10px;
+}
+
+.vc_custom_heading {
+    background-image: url(../images/sing-one-bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: 400;
+    padding: 8px;
+}
+
+.two-bg-single .vc_custom_heading-two {
+    text-align: left;
+    background-image: url(../images/sign-two-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 0.01rem;
+    line-height: 1.2;
+    padding: 6px;
+    margin-bottom: 15px;
+}
+
+.single-three-bg .vc_custom_heading-three {
+    text-align: left;
+    background-image: url(../images/singl-three-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 0.01rem;
+    line-height: 1.2;
+    padding: 6px;
+    margin-bottom: 15px;
+}
+
+.relacionados {
+    font-size: 26px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #fff;
+    padding: 10px 20px;
+    background: linear-gradient(
+            130deg,
+            rgb(213, 0, 80) 62.7%,
+            rgba(255, 102, 0, 0) 63%
+        )
+        50% 50% / 8em 8em;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: left;
+}
+
+.product-listing-single .product-item {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    row-gap: 30px;
+    margin: 40px 0 0;
+}
+
+.product-listing-single .product-item .product-box .flag-box {
+    max-width: 100%;
+    border: 0;
+}
+
+.main-single-product {
+    background: #fff;
+    padding: 50px 15px;
+    margin-top: 30px;
+}
+
+.product-page {
+    background: #f2f2f2;
 }

@@ -5,7 +5,6 @@
 
 
 @section('main')
-<body class="product-page">
 <div class="btcm">
 	<div class="container">
 			<div class="breadcrumbs d-flex align-items-center">
@@ -108,21 +107,18 @@
             </div>
         </div>
     </div>
-	<!-- product footer -->
-	<div class="footer-contact">
-		<div class="infomation-footer-contact container">
-			<div class="footer-contact-box">
-				<p class="title-in">Corporate</p>
-				<p> 704 North Valley Street Suite R&S Anaheim, CA 92801</p>
-			</div>
-			<div class="footer-contact-box">
-				<p class="title-in">Sales</p>
-				<a href="tel:18669523331">1-866-952-3331</a>
-				<a href="mailto:sales@zomousa.com">sales@zomousa.com</a>
-			</div>
-		</div>
-	</div>
-    @section('js')
-    @endsection
-</body>
+        <div class="footer-contact reveal">
+            <div class="infomation-footer-contact container">
+                <div class="footer-contact-box">
+                    <p class="title-in">{{ config("constants.FOOTER_TITLE")}}</p>
+                    <p>{{ config("constants.FOOTER_ADD")}}</p>
+                </div>
+                <div class="footer-contact-box">
+                    <p class="title-in">{{ config("constants.FOOTER_TITLE1")}}</p>
+                    <a href="tel:18669523331">{{ config("constants.FOOTER_TELEPHONE")}}</a>
+                    <a href="mailto:sales@zomousa.com">{{ config("constants.FOOTER_GMAIL")}}</a>
+                </div>
+            </div>
+        </div>
+
 @endsection

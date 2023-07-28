@@ -79,14 +79,14 @@
             </div>
         </div>
         <div class="copy-right">
-            <p> © 2023 Zomo. All rights reserved. Zomo is a trademark of Flavors of Americas</p>
+            <p>{{ config("constants.COPYRIGHT")}}</p>
         </div>
     </div>
 </footer>
 
 <div class="warning">
     <div class="container">
-        <p><span>WARNING:</span> This product contains nicotine. Nicotine is an addictive chemical.</p>
+        <p><span>WARNING:</span>{{ config('constants.FOOTER_WARNING')}}</p>
     </div>
 </div>
 @if(url()->current() == "http://lc.zomoamerica.com")

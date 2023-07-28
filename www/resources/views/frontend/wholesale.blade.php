@@ -6,7 +6,6 @@
 
 @section('main')
 
-    <body class="product-page">
         <div class="btcm">
             <div class="container">
                 <div class="breadcrumbs d-flex align-items-center">
@@ -182,34 +181,32 @@
                     <strong>Wholesale Info</strong>
                     <p>Contact us directly for more information</p>
                     <ul>
-                        <li><strong>Address:</strong> Zomo America <br>
-                            138 Michigan Ave Paterson,<br>
-                            NJ 07503</li>
-                        <li><strong>Hours:</strong> Mon-Fri 11am to 6pm</li>
-                        <li><strong>Phone:</strong> 1.201.778.0188</li>
-                        <li><strong>Email:</strong> <a href="mailto:info@zomoamerica.com">info@zomoamerica.com</a></li>
+                        <li><strong>Address:</strong>{{ config("constants.ADRESS")}}</li>
+                        <li><strong>Hours:</strong>{{ config("constants.HOURS")}}</li>
+                        <li><strong>Phone:</strong>{{ config("constants.PHONE")}}</li>
+                        <li><strong>Email:</strong> <a href="mailto:info@zomoamerica.com">{{ config("constants.EMAIL1")}}</a></li>
                     </ul>
                     <br><a href="#">Authorized Wholesaler List</a>
                 </div>
             </div>
         </div>
-        <div class="footer-contact">
+               <div class="footer-contact reveal">
             <div class="infomation-footer-contact container">
                 <div class="footer-contact-box">
-                    <p class="title-in">Corporate</p>
-                    <p> 704 North Valley Street Suite R&S Anaheim, CA 92801</p>
+                    <p class="title-in">{{ config("constants.FOOTER_TITLE")}}</p>
+                    <p>{{ config("constants.FOOTER_ADD")}}</p>
                 </div>
                 <div class="footer-contact-box">
-                    <p class="title-in">Sales</p>
-                    <a href="tel:18669523331">1-866-952-3331</a>
-                    <a href="mailto:sales@zomousa.com">sales@zomousa.com</a>
+                    <p class="title-in">{{ config("constants.FOOTER_TITLE1")}}</p>
+                    <a href="tel:18669523331">{{ config("constants.FOOTER_TELEPHONE")}}</a>
+                    <a href="mailto:sales@zomousa.com">{{ config("constants.FOOTER_GMAIL")}}</a>
                 </div>
             </div>
         </div>
+
     @section('js')
         {!! JsValidator::formRequest('App\Http\Requests\Wholesale', '#wholesale-form') !!}
         {!! NoCaptcha::renderJs() !!}
     @endsection
 
-</body>
 @endsection

@@ -2,8 +2,14 @@ var swiper = new Swiper(".thumb-slider", {
     freeMode: true,
     speed: 1000,
     watchSlidesProgress: true,
-    slidesPerView: 2,
+    slidesPerView: 4,
     spaceBetween: 15,
+    breakpoints: {
+        slidesPerView: 2,
+    },
+    '@640': {
+        slidesPerView: 4,
+    }
 });
 
 var swiper2 = new Swiper(".product-slider-sub", {
@@ -15,29 +21,32 @@ var swiper2 = new Swiper(".product-slider-sub", {
     },
 });
 
-$(".history-slider").owlCarousel({
+$('.history-slider').owlCarousel({
     loop: true,
     nav: true,
     dots: false,
-    animateOut: "fadeOut",
+    animateOut: 'fadeOut',
     items: 1,
     autoplay: true,
     autoplayTimeout: 3000,
     autoplayHoverPause: true,
 });
 
-$(window).on("load", function () {
-    $("#bouncer_modal").modal({
+
+$(window).on('load', function () {
+    $('#bouncer_modal').modal({
         fadeDuration: 200,
         escapeClose: false,
         clickClose: false,
-        showClose: false,
+        showClose: false
     });
 });
 
 const navbarMenu = document.getElementById("navbar");
 const burgerMenu = document.getElementById("burger");
 const overlayMenu = document.querySelector(".overlay");
+
+
 
 // Show and Hide Navbar Function
 const toggleMenu = () => {
@@ -50,9 +59,7 @@ const collapseSubMenu = () => {
     navbarMenu
         .querySelector(".menu-dropdown.active .submenu")
         .removeAttribute("style");
-    navbarMenu
-        .querySelector(".menu-dropdown.active")
-        .classList.remove("active");
+    navbarMenu.querySelector(".menu-dropdown.active").classList.remove("active");
 };
 
 // Toggle Mobile Submenu Function
@@ -92,14 +99,13 @@ const resizeWindow = () => {
 
 $(window).scroll(function () {
     if ($(this).scrollTop() > 120) {
-        $(".header").addClass("sticky");
+        $('.header').addClass('sticky')
     } else {
-        $(".header").removeClass("sticky");
-    }
-    if ($(this).scrollTop() > 120) {
-        $(".header").addClass("sticky");
+        $('.header').removeClass('sticky')
+    } if ($(this).scrollTop() > 120) {
+        $('.header').addClass('sticky')
     } else {
-        $(".header").removeClass("sticky");
+        $('.header').removeClass('sticky')
     }
 });
 
@@ -109,25 +115,26 @@ overlayMenu.addEventListener("click", toggleMenu);
 navbarMenu.addEventListener("click", toggleSubMenu);
 window.addEventListener("resize", resizeWindow);
 
-$(".home-banner").owlCarousel({
+
+$('.home-banner').owlCarousel({
     loop: true,
     nav: false,
     dots: true,
-    animateOut: "fadeOut",
+    animateOut: 'fadeOut',
     items: 1,
     autoplay: true,
     autoplayTimeout: 3000,
     autoplayHoverPause: true,
-});
+})
 
-$(".product-slider-in").owlCarousel({
+$('.product-slider-in').owlCarousel({
     loop: true,
     margin: 80,
     nav: true,
     dots: true,
     responsive: {
         0: {
-            items: 1,
+            items: 1
         },
         600: {
             items: 2,
@@ -136,45 +143,44 @@ $(".product-slider-in").owlCarousel({
         1000: {
             items: 3,
             margin: 60,
-        },
-    },
-});
+        }
+    }
+})
 
 $(document).ready(function () {
+
     var stopAutohide;
 
     function showWindow() {
-        $(".blocker").show();
+        $('.blocker').show();
         // stop scroll
-        $("html .home").css("overflow", "hidden");
+        $('html .home').css('overflow', 'hidden');
         stopAutohide = setTimeout(hideWindow, 5000);
+
     }
     //showWindow()
 
     function hideWindow() {
-        $(".blocker").hide();
-        $("html .home").css("overflow", "scroll");
+        $('.blocker').hide();
+        $('html .home').css('overflow', 'scroll');
     }
 
     setTimeout(showWindow, 2000);
 
+
     $(".close").click(function () {
+
         hideWindow();
         celarTimeout(stopAutohide);
-    });
+
+    })
 });
 
 function reveal() {
-    for (
-        var e = document.querySelectorAll(".reveal"), s = 0;
-        s < e.length;
-        s++
-    ) {
+    for (var e = document.querySelectorAll(".reveal"), s = 0; s < e.length; s++) {
         var o,
             r = window.innerHeight;
-        e[s].getBoundingClientRect().top < r - 150
-            ? e[s].classList.add("active")
-            : e[s].classList.remove("active");
+        e[s].getBoundingClientRect().top < r - 150 ? e[s].classList.add("active") : e[s].classList.remove("active");
     }
 }
 

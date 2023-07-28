@@ -15,4 +15,8 @@ class ContactDetail extends Model
         'subject',
         'message',
     ];
+
+    public static function getContactData(){
+        return ContactDetail::get();
+    }
 }

@@ -1,8 +1,14 @@
 <?php
 
 namespace App\Providers;
+// 
 
+use App\Repositories\FlavorRepository;
+use App\Repositories\CategoryRepository;
+use App\Repositories\WholesaleRepository;
 use App\Repositories\CommonRepository;
+use App\Repositories\ContactRepository;
+use App\Repositories\ProductRepository;
 use App\Repositories\EyeReviewDocumentsRepository;
 use App\Repositories\EyeReviewDetailsRepository;
 use App\Repositories\EyeReviewRepository;
@@ -40,5 +46,12 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->singleton('role-repo', RoleRepository::class);
         $this->app->singleton('user-repo', UserRepository::class);
         $this->app->singleton('permission-repo', PermissionRepository::class);
+        $this->app->singleton('product-repo',ProductRepository::class);
+        $this->app->singleton('wholesale-repo',WholesaleRepository::class);
+        $this->app->singleton('contact-repo',ContactRepository::class);
+        $this->app->singleton('category-repo',CategoryRepository::class);
+        $this->app->singleton('flavor-repo',FlavorRepository::class);
+
+        
     }
 }
