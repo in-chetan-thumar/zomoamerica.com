@@ -41,43 +41,28 @@ class ProductController extends Controller
 
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+   public function zomoPaper() {
+    return view("frontend.product.zomoPaper");
+   }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Product $product)
-    {
-        //
-    }
+   public function zomoCharcol()
+   {
+    return view("frontend.product.zomoCharcol");
+   }
+   
+   public function aluminumFoil()
+   {
+        return view("frontend.product.aluminumFoil");
+   }
+   
+   public function shishaHose()
+   {
+        return view("frontend.product.shishaHose");
+   }
+   
+   public function zomohookah()
+   {
+        return view("frontend.product.zomoPaper");
+   }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Product $product)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Product $product)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Product $product)
-    {
-        //
-    }
 }

@@ -1,8 +1,7 @@
 <?php
 
 namespace App\Providers;
-// 
-
+use App\Repositories\FlavorsImage;
 use App\Repositories\FlavorRepository;
 use App\Repositories\CategoryRepository;
 use App\Repositories\WholesaleRepository;
@@ -51,7 +50,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->singleton('contact-repo',ContactRepository::class);
         $this->app->singleton('category-repo',CategoryRepository::class);
         $this->app->singleton('flavor-repo',FlavorRepository::class);
-
+        $this->app->singleton('flavorImage-repo',FlavorsImage::class);
         
     }
 }

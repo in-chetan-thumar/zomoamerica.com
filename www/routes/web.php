@@ -81,6 +81,12 @@ Route::post('store-wholesale',[HomeController::class,'storeWholesale'])->name('f
 Route::get('/aboutus', [HomeController::class,'aboutus'])->name('frontend.aboutus');
 Route::get('authorized-wholesalers', [HomeController::class,'wholesalers'])->name('frontend.authorized.wholesalers');
 Route::get('zomo-quality', [HomeController::class,'quality'])->name('frontend.quality');
+// product 
+Route::get('/zomo-paper', [ProductController::class,'zomoPaper'])->name('frontend.zomopaper');
+Route::post('zomo-charcol',[ProductController::class,'zomoCharcol'])->name('frontend.charcol');
+Route::get('/aluminum-foil', [ProductController::class,'aluminumFoil'])->name('frontend.aluminumFoil');
+Route::get('shisha-hose', [ProductController::class,'shishaHose'])->name('frontend.shishaHose');
+Route::get('zomo-hookah', [ProductController::class,'zomohookah'])->name('frontend.zomo.hookah');
 // 
 // 
 
@@ -111,6 +117,7 @@ Route::post('/zomo-flavors-upload', [FlavorController::class,'upload'])->name('b
 Route::get('/zomo-flavors-delete/{id}', [FlavorController::class,'delete'])->name('backend.product.flavors.delete');
 Route::get('flavors/{id}', [FlavorController::class,'flavorcategory'])->name('frontend.flavors.classicLine');
 Route::get('flavors/product/{data}', [FlavorController::class,'productDetail'])->name('frontend.flavors.product.detail');
+Route::post('/removeImage', [FlavorController::class,'removeImage'])->name('backend.product.flavors.removeImage');
 
 
 // 

@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\flavors;
 use App\Models\FlavorImage;
+use App\Models\Flavor;
 use Carbon\Carbon;
 use File;
 use DB;
@@ -12,6 +13,11 @@ use DB;
 class FlavorController extends Controller
 {
   //
+    public $model;
+    public function __construct()
+    {
+        $this->model = new Flavor();
+    }
     public function index(Request $request){
         $table = resolve('flavor-repo')->renderHtmlTable($this->getParamsForFilter($request));
         return view('admin.flavor.flavor_list',compact('table'));
@@ -27,7 +33,8 @@ class FlavorController extends Controller
             {
                 $id = $request->id;
                 $user = resolve('flavor-repo')->findByID($id);
-                $data['view'] = view('admin.flavor.offcanvas',compact('status','user','category'))->render();
+                $flavor_image = resolve('flavorImage-repo')->findByID($user->id);
+                $data['view'] = view('admin.flavor.offcanvas',compact('status','user','category','flavor_image'))->with('model',$this->model)->render();
             }else{
                 $data['view'] = view('admin.flavor.offcanvas',compact('status','category'))->render();
             }
@@ -43,10 +50,9 @@ class FlavorController extends Controller
     public function store(flavors $request)
     {
         
-        dd($_FILES);
         $data = $params = [];
         DB::beginTransaction();
-        // try {
+        try {
             // Create user
             $params['flavor_title'] = $request->flavor_title;
             $params['flavor_description'] = $request->flavor_description;
@@ -103,7 +109,7 @@ class FlavorController extends Controller
  
                         FlavorImage::create($imag);
                     }
-                }
+            }
 
             if (!empty($updated)) {
                 $data['error'] = false;
@@ -124,12 +130,12 @@ class FlavorController extends Controller
             $data['message'] = 'Flavor not created successfully..!';
             return response()->json($data);
 
-        // } catch (\Exception $e) {
-        //     DB::rollBack();
-        //     $data['error'] = true;
-        //     $data['message'] = $e->getMessage();
-        //     return response()->json($data);
-        // }
+        } catch (\Exception $e) {
+            DB::rollBack();
+            $data['error'] = true;
+            $data['message'] = $e->getMessage();
+            return response()->json($data);
+        }
     }
     public function getParamsForFilter(Request $request)
     {
@@ -193,5 +199,22 @@ class FlavorController extends Controller
         $data  = resolve('flavor-repo')->getDataByslug($slug);
         $getCategory_Data = resolve('category-repo')->getCategory($data);
         return view('frontend.flavors.product',compact('data','getCategory_Data'));
+    }
+
+    public function removeImage(Request $request)
+    {
+        try {
+        
+        $id =  $request->fid;
+        $data = resolve('flavorImage-repo')->removeImage($id);
+        $path = public_path('images/flavors/'.$data->flavor_id.'/'.$data->image_name);
+        unlink($path);
+        $data->delete();
+        $messages['message'] ="Image Has been removed";
+        } catch (\Exception $e) {
+            $messages['message'] = $e->getMessage();
+        }
+        return response()->json($messages);
+
     }
 }

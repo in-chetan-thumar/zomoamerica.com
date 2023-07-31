@@ -9,6 +9,16 @@ $FlavorImage = FlavorImage::getDataWithArray($data->id); //this is used for pass
 @section('title')
     Product Page
 @endsection
+
+@section("css")
+ .product-right product-box .one-bg-single h1{
+    font-size: 35px;
+    text-align: left;
+    font-family: Lato;
+    font-weight: 700;
+    font-style: normal;
+ }
+@endsection
 @section('main')
     <div class="btcm">
         <div class="container">
@@ -72,7 +82,7 @@ $FlavorImage = FlavorImage::getDataWithArray($data->id); //this is used for pass
               <div class="product-right product-box">
                 <div class="one-bg-single">
                   <div class="vc_custom_heading">ZOMO SHISHA TOBACCO</div>
-                  <h1>{{ $data->flavor_title }}</h1>
+                  <h1 class="text-dark" style="font-size: 35px;text-align: left;font-family: Lato;font-weight: 600;font-style: normal;">{{ $data->flavor_title }}</h1>
                 </div>
                 <div class="two-bg-single">
                   <div class="vc_custom_heading-two">
@@ -134,7 +144,7 @@ $FlavorImage = FlavorImage::getDataWithArray($data->id); //this is used for pass
                 <div class="available">
                   <p>Available in:</p>
                   <div class="item">
-                    <span>{{ $data->flavors_available }}</span>
+                    <span class="text-primary">{{ $data->flavors_available }}</span>
                   </div>
                 </div>
               </div>

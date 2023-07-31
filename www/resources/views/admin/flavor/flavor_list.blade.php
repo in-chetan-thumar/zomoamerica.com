@@ -66,42 +66,26 @@
     <script type="text/javascript" src="{{ asset('assets/vendor/jsvalidation/js/jsvalidation.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/user.js') }}"></script>
     <script type="text/javascript">
-//  $(document).ready(function () {
-//     if (window.File && window.FileList && window.FileReader) {
-        function load(e){
-        // $("#files").on("change", function (e) {
-            var files = e.target.files,
-            filesLength = files.length;
-            for (var i = 0; i < filesLength; i++) {
-                var f = files[i];
-                var fileReader = new FileReader();
-                fileReader.onload = function (e) {
-                    var file = e.target;
-                    $(
-                        '<span class="pip">' +
-                            '<img class="imageThumb" height="100" src="' +
-                            e.target.result +
-                            '" title="' +
-                            file.name +
-                            '"/>'+'<span class="remove">X</span>' +
-                             +
-                            "</span>"
-                    ).insertAfter("#files");
-
-                    $(".remove").click(function (e) {
-                        console.log(e);
-                          $(this).parents('span').remove();
-                        // $(this).parent(".pip").remove();
-                        // $("#files").val("");
-                    });
-                };
-                fileReader.readAsDataURL(f);
+    function loadFile(id='')
+    {
+      
+        let fid = id;
+        $.ajax({
+            url:"{{ route('backend.product.flavors.removeImage')}}",
+            type:'POST',
+            data:{
+                "_token": "{{ csrf_token() }}",
+                fid:fid
+            },
+            success:function(data) {
+                toastr.success(data.message);
+                location.reload();
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                toastr.error('Error occurred!');
             }
-        };
-    // } else {
-    //     alert("Your browser doesn't support to File API");
-    // }
-// });
-
+        })
+    }
     </script>
+
 @endsection

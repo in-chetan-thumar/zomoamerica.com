@@ -194,9 +194,17 @@
                     <div class="mb-3">
                         <div class="form-group">
                             {{ Form::label('flavors_image', 'Flavors Image :') }}
-                            <input type="file" id="files" name="flavors_image[]" multiple onchange="load(event)">
-                            <div id="preview"></div>
-
+                            <input type="file" id="files" name="flavors_image[]" multiple>
+                            @if(isset($flavor_image))
+                            <div claass="preview" style="display: grid;grid-template-columns: repeat(3,1fr);">
+                            @foreach($flavor_image as $flavor)
+                                <div>
+                                <img src="{{ $model->getFlavorImageArray($flavor) }}" height="100">
+                                <span class="close" style="cursor:pointer"  onClick="loadFile({{ $flavor->id }})">X</span>
+                                </div>
+                            @endforeach
+                            </div>
+                            @endif
                             @error('flavors_image')
                                 <span style="color:red">
                                     <strong>{{ $message }}</strong>
@@ -237,7 +245,6 @@
 
             @section('script')
                 <script>
-                    console.log("hii");
                     // Save OR UPDATE DATA
                     $('#user-form').on('submit', function(e) {
                         e.preventDefault();
@@ -280,7 +287,7 @@
                             });
                         }
                     })
-                 
+                   
 
                 </script>
             @endsection
