@@ -11,13 +11,16 @@ $FlavorImage = FlavorImage::getDataWithArray($data->id); //this is used for pass
 @endsection
 
 @section("css")
- .product-right product-box .one-bg-single h1{
+    <style>
+ .product-right .product-box .one-bg-single h1{
     font-size: 35px;
     text-align: left;
     font-family: Lato;
     font-weight: 700;
     font-style: normal;
  }
+    </style>
+
 @endsection
 @section('main')
     <div class="btcm">
@@ -68,7 +71,7 @@ $FlavorImage = FlavorImage::getDataWithArray($data->id); //this is used for pass
                         </div>
                     </div>
                     @endforeach
-                      
+
                     </div>
                   </div>
                 </div>
