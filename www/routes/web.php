@@ -63,12 +63,16 @@ Route::group(['middleware' => $middleware], function () {
     Route::get('whatsapp-templates', [App\Http\Controllers\Admin\MessageTemplateController::class,'WhatsAppIndex'])->name('whatsapp.templates');
     Route::post('whatsapp-templates', [App\Http\Controllers\Admin\MessageTemplateController::class,'WhatsAppStore'])->name('whatsapp.templates.store');
 
+    //news controller
+    Route::resource("news-list", \App\Http\Controllers\Admin\NewsController::class);
+
+
 });
 
 Route::get('/form-custom-field',function (){
  return view('custom-form-field');
 });
-// frontend site route 
+// frontend site route
 Route::get('/', [HomeController::class,'index'])->name('frontend.home');
 Route::get('/product', [HomeController::class,'product'])->name('frontend.product');
 Route::get('zomo-news', [HomeController::class,'news'])->name('frontend.news');
@@ -81,17 +85,17 @@ Route::post('store-wholesale',[HomeController::class,'storeWholesale'])->name('f
 Route::get('/aboutus', [HomeController::class,'aboutus'])->name('frontend.aboutus');
 Route::get('authorized-wholesalers', [HomeController::class,'wholesalers'])->name('frontend.authorized.wholesalers');
 Route::get('zomo-quality', [HomeController::class,'quality'])->name('frontend.quality');
-// product 
+// product
 Route::get('/zomo-paper', [ProductController::class,'zomoPaper'])->name('frontend.zomopaper');
 Route::get('zomo-charcol',[ProductController::class,'zomoCharcol'])->name('frontend.charcol');
 Route::get('/aluminum-foil', [ProductController::class,'aluminumFoil'])->name('frontend.aluminumFoil');
 Route::get('shisha-hose', [ProductController::class,'shishaHose'])->name('frontend.shishaHose');
 Route::get('zomo-hookah', [ProductController::class,'zomohookah'])->name('frontend.zomo.hookah');
-// 
-// 
+//
+//
 
 // backend site route
-// 
+//
 Route::get('zomo-product', [ProductController::class,'index'])->name('backend.product');
 Route::get('/create', [ProductController::class,'create'])->name('backend.product.create');
 Route::get('/thank-you', [HomeController::class, 'thankYou'])->name('thank.you');
@@ -120,8 +124,8 @@ Route::get('flavors/product/{data}', [FlavorController::class,'productDetail'])-
 Route::post('/removeImage', [FlavorController::class,'removeImage'])->name('backend.product.flavors.removeImage');
 
 
-// 
+//
 
 
 // frontend.postwholesale
-// 
+//

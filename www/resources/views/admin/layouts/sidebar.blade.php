@@ -81,6 +81,12 @@
                         </ul>
                     </div>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="{{ route('news-list.index') }}">
+                        <i class="ri-newspaper-line"></i><span>News</span>
+                    </a>
+                </li>
+
                 <li class="menu-title"><span>Settings</span></li>
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="{{ route('permission.index') }}">

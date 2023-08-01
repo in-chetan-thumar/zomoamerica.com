@@ -19,10 +19,26 @@
     .product-slider-in.owl-theme .owl-nav button.owl-prev {
         left: -10px;
     }
+    .about-history-main {
+        background-color: #fff;
+        padding-top: 30px;
+        max-width: 1199px !important;
+        margin: 0 auto;
+        float: left;
+        width: 100%;
+    }
 }
 
 @media (max-width:1200px) {
 
+    .about-history-main {
+        background-color: #fff;
+        padding-top: 30px;
+        max-width: 1110px !important;
+        margin: 0 auto;
+        float: left;
+        width: 100%;
+    }
     .header .container {
         gap: 80px;
     }
@@ -40,6 +56,14 @@
 }
 
 @media (max-width:1024px) {
+    .about-history-main {
+        background-color: #fff;
+        padding-top: 30px;
+        max-width: 895px !important;
+        margin: 0 auto;
+        float: left;
+        width: 100%;
+    }
     .header .nav-menu .menu-item {
         width: 100%;
     }
@@ -384,6 +408,22 @@
 }
 
 @media (max-width:768px) {
+    .image_wpb{
+        padding: 0px !important;
+        margin: 40px;
+        max-width: 80%;
+
+    }
+    .home-banner.owl-theme .owl-nav.disabled + .owl-dots {
+        margin-top: 0;
+        position: absolute;
+        bottom: 10px;
+        right: -65px;
+        text-align: center;
+    }
+    .main-content{
+        padding:0 !important;
+    }
     .news-srction-item {
         grid-template-columns: repeat(2, 1fr);
     }

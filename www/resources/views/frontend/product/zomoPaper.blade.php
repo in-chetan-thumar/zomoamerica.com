@@ -19,7 +19,7 @@
         background-color:#ce9b78;
     }
     .vc_custom3{
-        background-color:#003b0d; 
+        background-color:#003b0d;
     }
     <!-- .wpb_content_element{
         padding:20px 30px;
@@ -48,7 +48,7 @@
     line-height:30px;
     }
     .vc_custom4{
-        background-color:#bffc01; 
+        background-color:#bffc01;
     }
     .vc_single_image .vc_single_image1{
         padding:40px 20px;
@@ -103,29 +103,30 @@
                             </div>
 
                             <div class="owl-carousel owl-theme home-banner">
-                                <div class="item">
-                                    <img  src="{{ asset('assets/frontend/images/product/paper1.png')}}" width="70" height="100" alt="zomo-papers-images">
+
+                                <div class="item" >
+                                    <img  src="{{ asset('assets/frontend/images/product/paper1.png')}}" class="image_wpb" alt="mobile-images">
                                 </div>
-                                <div class="item">
-                                    <img  src="{{ asset('assets/frontend/images/product/paper2.png')}}" width="70" height="100" alt="zomo-papers-images">
+                                <div class="item" >
+                                    <img  src="{{ asset('assets/frontend/images/product/paper2.png')}}" class="image_wpb" alt="mobile-images">
                                 </div>
-                                <div class="item">
-                                    <img  src="{{ asset('assets/frontend/images/product/paper3.png')}}" width="70" height="100" alt="zomo-papers-images">
+                                <div class="item" >
+                                    <img  src="{{ asset('assets/frontend/images/product/paper3.png')}}" class="image_wpb" alt="mobile-images">
                                 </div>
-                                <div class="item">
-                                    <img  src="{{ asset('assets/frontend/images/product/paper4.png')}}" width="70" height="100" alt="zomo-papers-images">
+                                <div class="item" >
+                                    <img  src="{{ asset('assets/frontend/images/product/paper4.png')}}" class="image_wpb"  alt="mobile-images">
                                 </div>
-                                <div class="item">
-                                    <img  src="{{ asset('assets/frontend/images/product/paper5.png')}}" width="70" height="100" alt="zomo-papers-images">
+                                <div class="item" >
+                                    <img  src="{{ asset('assets/frontend/images/product/paper5.png')}}" class="image_wpb" alt="mobile-images">
                                 </div>
-                                <div class="item";>
-                                    <img  src="{{ asset('assets/frontend/images/product/paper6.png')}}" width="70" height="100" alt="zomo-papers-images">
+                                <div class="item" >
+                                    <img  src="{{ asset('assets/frontend/images/product/paper6.png')}}" class="image_wpb" alt="mobile-images">
                                 </div>
-                                <div class="item">
-                                    <img  src="{{ asset('assets/frontend/images/product/paper7.png')}}" width="70" height="100" alt="zomo-papers-images">
+                                <div class="item" >
+                                    <img  src="{{ asset('assets/frontend/images/product/paper7.png')}}" class="image_wpb" alt="mobile-images">
                                 </div>
-                                <div class="item">
-                                    <img  src="{{ asset('assets/frontend/images/product/paper8.png')}}" width="70" height="100" alt="zomo-papers-images">
+
+
                                 </div>
                             </div>
 
@@ -144,24 +145,27 @@
                             <div class="wpb_content_element">
                                 <p>Product without bleaching process, free of dyes and other additives. Zomo uses only reforested woods.</p>
                             </div>
-                            
+
                             <div class="owl-carousel owl-theme home-banner">
-                                <div class="item">
-                                    <img  src="{{ asset('assets/frontend/images/product/natural1.png')}}" width="70" height="100" alt="mobile-images">
+
+                                <div class="item" >
+                                    <img  src="{{ asset('assets/frontend/images/product/natural1.png')}}"  class="image_wpb"  alt="mobile-images">
                                 </div>
-                                <div class="item">
-                                    <img  src="{{ asset('assets/frontend/images/product/natural2.png')}}" width="70" height="100" alt="mobile-images">
+                                <div class="item" >
+                                    <img  src="{{ asset('assets/frontend/images/product/natural2.png')}}"  class="image_wpb"  alt="mobile-images">
                                 </div>
-                                <div class="item">
-                                    <img  src="{{ asset('assets/frontend/images/product/natural3.png')}}" width="70" height="100" alt="mobile-images">
+                                <div class="item" >
+                                    <img  src="{{ asset('assets/frontend/images/product/natural3.png')}}"  class="image_wpb"  alt="mobile-images">
                                 </div>
-                                <div class="item">
-                                    <img  src="{{ asset('assets/frontend/images/product/natural4.png')}}" width="70" height="100" alt="mobile-images">
+                                <div class="item" >
+                                    <img  src="{{ asset('assets/frontend/images/product/natural4.png')}}"  class="image_wpb"  alt="mobile-images">
                                 </div>
-                                <div class="item">
-                                    <img  src="{{ asset('assets/frontend/images/product/natural5.png')}}" width="70" height="100" alt="mobile-images">
+                                <div class="item" >
+                                    <img  src="{{ asset('assets/frontend/images/product/natural5.png')}}"  class="image_wpb"  alt="mobile-images">
+
+
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -181,7 +185,7 @@
                                 <p>100% ORGANIC HEMP FIBER PAPER, PSYCHOACTIVE FREE,UNBLEACHED.</p>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
                 <div class="vc_custom4">
