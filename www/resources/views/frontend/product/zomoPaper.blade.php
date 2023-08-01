@@ -19,7 +19,7 @@
         background-color:#ce9b78;
     }
     .vc_custom3{
-        background-color:#003b0d; 
+        background-color:#003b0d;
     }
     <!-- .wpb_content_element{
         padding:20px 30px;
@@ -64,29 +64,29 @@
                             </div>
 
                             <div class="owl-carousel owl-theme home-banner">
-                                <div class="item" style="width:70%;margin-left:100px;margin-top:170px">
-                                    <img  src="{{ asset('assets/frontend/images/product/paper1.png')}}" width="70" height="100" alt="mobile-images">
+                                <div class="item" >
+                                    <img  src="{{ asset('assets/frontend/images/product/paper1.png')}}" class="image_wpb" alt="mobile-images">
                                 </div>
-                                <div class="item"style="width:70%;margin-left:100px;margin-top:170px" >
-                                    <img  src="{{ asset('assets/frontend/images/product/paper2.png')}}" width="70" height="100" alt="mobile-images">
+                                <div class="item" >
+                                    <img  src="{{ asset('assets/frontend/images/product/paper2.png')}}" class="image_wpb" alt="mobile-images">
                                 </div>
-                                <div class="item" style="width:70%;margin-left:100px;margin-top:170px">
-                                    <img  src="{{ asset('assets/frontend/images/product/paper3.png')}}" width="70" height="100" alt="mobile-images">
+                                <div class="item" >
+                                    <img  src="{{ asset('assets/frontend/images/product/paper3.png')}}" class="image_wpb" alt="mobile-images">
                                 </div>
-                                <div class="item" style="width:70%;margin-left:100px;margin-top:170px">
-                                    <img  src="{{ asset('assets/frontend/images/product/paper4.png')}}" width="70" height="100" alt="mobile-images">
+                                <div class="item" >
+                                    <img  src="{{ asset('assets/frontend/images/product/paper4.png')}}" class="image_wpb"  alt="mobile-images">
                                 </div>
-                                <div class="item" style="width:70%;margin-left:100px;margin-top:170px">
-                                    <img  src="{{ asset('assets/frontend/images/product/paper5.png')}}" width="70" height="100" alt="mobile-images">
+                                <div class="item" >
+                                    <img  src="{{ asset('assets/frontend/images/product/paper5.png')}}" class="image_wpb" alt="mobile-images">
                                 </div>
-                                <div class="item" style="width:70%;margin-left:100px;margin-top:170px";>
-                                    <img  src="{{ asset('assets/frontend/images/product/paper6.png')}}" width="70" height="100" alt="mobile-images">
+                                <div class="item" >
+                                    <img  src="{{ asset('assets/frontend/images/product/paper6.png')}}" class="image_wpb" alt="mobile-images">
                                 </div>
-                                <div class="item" style="width:70%;margin-left:100px;margin-top:170px">
-                                    <img  src="{{ asset('assets/frontend/images/product/paper7.png')}}" width="70" height="100" alt="mobile-images">
+                                <div class="item" >
+                                    <img  src="{{ asset('assets/frontend/images/product/paper7.png')}}" class="image_wpb" alt="mobile-images">
                                 </div>
-                                <div class="item" style="width:70%;margin-left:100px;margin-top:170px">
-                                    <img  src="{{ asset('assets/frontend/images/product/paper8.png')}}" width="70" height="100" alt="mobile-images">
+                                <div class="item" >
+                                    <img  src="{{ asset('assets/frontend/images/product/paper8.png')}}" class="image_wpb" alt="mobile-images">
                                 </div>
                             </div>
 
@@ -108,24 +108,24 @@
                                     font-weight: 500;
                                     font-size: 25px;">Product without bleaching process, free of dyes and other additives. Zomo uses only reforested woods.</p>
                             </div>
-                            
+
                             <div class="owl-carousel owl-theme home-banner">
-                                <div class="item" style="width:70%;margin-left:100px;margin-top:170px">
-                                    <img  src="{{ asset('assets/frontend/images/product/natural1.png')}}" width="70" height="100" alt="mobile-images">
+                                <div class="item" >
+                                    <img  src="{{ asset('assets/frontend/images/product/natural1.png')}}"  class="image_wpb"  alt="mobile-images">
                                 </div>
-                                <div class="item"style="width:70%;margin-left:100px;margin-top:170px" >
-                                    <img  src="{{ asset('assets/frontend/images/product/natural2.png')}}" width="70" height="100" alt="mobile-images">
+                                <div class="item" >
+                                    <img  src="{{ asset('assets/frontend/images/product/natural2.png')}}"  class="image_wpb"  alt="mobile-images">
                                 </div>
-                                <div class="item" style="width:70%;margin-left:100px;margin-top:170px">
-                                    <img  src="{{ asset('assets/frontend/images/product/natural3.png')}}" width="70" height="100" alt="mobile-images">
+                                <div class="item" >
+                                    <img  src="{{ asset('assets/frontend/images/product/natural3.png')}}"  class="image_wpb"  alt="mobile-images">
                                 </div>
-                                <div class="item" style="width:70%;margin-left:100px;margin-top:170px">
-                                    <img  src="{{ asset('assets/frontend/images/product/natural4.png')}}" width="70" height="100" alt="mobile-images">
+                                <div class="item" >
+                                    <img  src="{{ asset('assets/frontend/images/product/natural4.png')}}"  class="image_wpb"  alt="mobile-images">
                                 </div>
-                                <div class="item" style="width:70%;margin-left:100px;margin-top:170px">
-                                    <img  src="{{ asset('assets/frontend/images/product/natural5.png')}}" width="70" height="100" alt="mobile-images">
+                                <div class="item" >
+                                    <img  src="{{ asset('assets/frontend/images/product/natural5.png')}}"  class="image_wpb"  alt="mobile-images">
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -139,7 +139,7 @@
                         </div>
                         <div class="col-sm-6" style="margin-top:70px">
                         </div>
-                        
+
                     </div>
                 </div>
             </div>

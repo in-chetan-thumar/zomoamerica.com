@@ -32,4 +32,9 @@ return [
     'FOOTER_TITLE1' => 'Sales',
     'FOOTER_TELEPHONE' => '1-866-952-3331',
     'FOOTER_GMAIL' => 'sales@zomousa.com',
+
+    //NEWS IMAGE
+    'NEWS_DOC_PATH' =>'public'.DIRECTORY_SEPARATOR."news",
+    'NEWS_DOC_URL' =>'storage'.DIRECTORY_SEPARATOR."news",
+
 ];

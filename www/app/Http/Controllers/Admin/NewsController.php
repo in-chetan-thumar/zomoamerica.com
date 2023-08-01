@@ -5,13 +5,16 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ChangePasswordRequest;
 use App\Http\Requests\UserRequest;
+use App\Models\News;
 use App\Models\Role;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
 
 
 class NewsController extends Controller
@@ -23,7 +26,8 @@ class NewsController extends Controller
      */
     public function index(Request $request)
     {
-       //
+        $table = resolve('news-repo')->renderHtmlTable($this->getParamsForFilter($request));
+        return view('admin.news.list', compact('table'));
     }
 
     /**
@@ -33,8 +37,17 @@ class NewsController extends Controller
      */
     public function create()
     {
+        $data = [];
+        try {
 
-       //
+            $data['error'] = false;
+            $data['view'] = view('admin.news.offcanvas')->render();
+            return response()->json($data);
+        } catch (\Exception $e) {
+            $data['error'] = true;
+            $data['message'] = $e->getMessage();
+        }
+        return response()->json($data);
     }
 
     /**
@@ -45,7 +58,38 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-      //
+        $data = $params = [];
+        DB::beginTransaction();
+        try {
+            if ($request->has('image')) {
+
+                $fileDir = config('constants.NEWS_DOC_PATH') . DIRECTORY_SEPARATOR;
+                if (!File::exists($fileDir)) {
+                    Storage::makeDirectory($fileDir, 0777);
+                    $params = [];
+                    $params['title'] = $request->title;
+                    $params['description'] = $request->description;
+//                    $params['link']=$request->link;
+                    $params['image'] = basename($request->file('image')->store($fileDir));
+                    $page = resolve('news-repo')->create($params);
+
+                }
+            }
+            // $params['cover_photo'] = $name;
+            if (!empty($page)) {
+                $data['error'] = false;
+                $data['message'] = 'News Stored successfully.';
+                $data['view'] = resolve('news-repo')->renderHtmlTable($this->getParamsForFilter($request));
+                DB::commit();
+                return response()->json($data);
+            }
+
+        } catch (\Exception $e) {
+            DB::rollBack();
+            $data['error'] = true;
+            $data['message'] = $e->getMessage();
+            return response()->json($data);
+        }
     }
 
     /**
@@ -67,7 +111,18 @@ class NewsController extends Controller
      */
     public function edit($id)
     {
-      //
+        $data = [];
+        try {
+            $newsdata = resolve('news-repo')->findByID($id);
+
+            $data['error'] = false;
+            $data['view'] = view('admin.news.offcanvas', compact('newsdata'))->render();
+            return response()->json($data);
+        } catch (\Exception $e) {
+            $data['error'] = true;
+            $data['message'] = $e->getMessage();
+        }
+        return response()->json($data);
     }
 
     /**
@@ -79,7 +134,40 @@ class NewsController extends Controller
      */
     public function update(Request $request, $id)
     {
-      //
+        $data = $params = [];
+        DB::beginTransaction();
+
+        try {
+
+            $params = [];
+            $params['title'] = $request->title;
+            $params['description'] = $request->description;
+            if ($request->has('image')) {
+
+                $fileDir = config('constants.NEWS_DOC_PATH') . DIRECTORY_SEPARATOR;
+                if (!File::exists($fileDir)) {
+                    Storage::makeDirectory($fileDir, 0777);
+                    $params['image'] = basename($request->file('image')->store($fileDir));
+                }
+            }
+            $news = resolve('news-repo')->update($params, $id);
+
+            if ($news) {
+
+                $data['error'] = false;
+                $data['message'] = 'News update successfully.';
+                $data['view'] = resolve('news-repo')->renderHtmlTable($this->getParamsForFilter($request));
+
+                DB::commit();
+                return response()->json($data);
+            }
+
+        } catch (\Exception $e) {
+            DB::rollBack();
+            $data['error'] = true;
+            $data['message'] = $e->getMessage();
+            return response()->json($data);
+        }
 
     }
 
@@ -91,7 +179,23 @@ class NewsController extends Controller
      */
     public function destroy($id)
     {
-     //
+        try {
+            $news = resolve('news-repo')->findByID($id);
+            if (!empty($news)) {
+                $fileDir = config('constants.NEWS_DOC_PATH') . DIRECTORY_SEPARATOR.$news->image;
+                if(File::exists(storage_path('app'.DIRECTORY_SEPARATOR.$fileDir))){
+                    File::delete(storage_path('app'.DIRECTORY_SEPARATOR.$fileDir));
+                }
+                $news->delete();
+                toastr()->success('News deleted successfully..!');
+                return redirect()->route('news-list.index');
+            } else {
+                toastr()->error('News not Found.!');
+            }
+        } catch (\Exception $e) {
+            toastr()->error($e->getMessage());
+            return redirect()->back();
+        }
     }
 
 
@@ -100,28 +204,15 @@ class NewsController extends Controller
         $previousUrl = parse_url(url()->previous());
         $params = [];
 
-        if (request()->routeIs('usermanagements.index') || !isset($previousUrl['query'])) {
+        if (request()->routeIs('news-list.index') || !isset($previousUrl['query'])) {
             $params['query_str'] = $request->query_str ?? '';
-            $params['role'] = $request->role;
             $params['page'] =  $request->page ?? 0;
-            $params['type'] =  $request->type ?? null;
-            $params['start_date'] =  $request->start_date ?? null;
-            $params['end_date'] =  $request->end_date ?? null;
-            $params['path'] = \Illuminate\Support\Facades\Request::fullUrl();
-
-        }else{
+            $params['path'] =  \Illuminate\Support\Facades\Request::fullUrl();
+        } else {
             parse_str($previousUrl['query'], $params);
             $params['path'] =  url()->previous();
         }
-
-        if (!empty($params['start_date']) && !empty($params['end_date'])) {
-            $params['start_date'] = Carbon::parse($params['start_date'])->format('Y-m-d 00:00:00');
-            $params['end_date'] = Carbon::parse($params['end_date'])->format('Y-m-d 23:59:00');
-        } else {
-            $params['start_date'] = Carbon::now()->subDays(7)->format('Y-m-d 00:00:00');
-            $params['end_date'] = Carbon::now()->format('Y-m-d 23:59:00');
-        }
-
         return $params;
     }
+
 }
