@@ -18,9 +18,12 @@
     .vc_custom2{
         background-color:#ce9b78;
     }
-    .wpb_content_element{
-        padding:20px 30px;
+    .vc_custom3{
+        background-color:#003b0d; 
     }
+    <!-- .wpb_content_element{
+        padding:20px 30px;
+    } -->
     .owl-dots{
         margin-right:180px;
         margin-top:100px;
@@ -100,9 +103,43 @@
                         <div class="col-sm-6" style="margin-top:70px">
                             <h1 style="font-size: 3.5rem;color: #bf0811;text-align: center;font-family:Titillium Web;font-weight:600;font-style:normal">NATURAL</h1>
                             <div class="wpb_content_element">
-                                <p>Product without bleaching process, free of dyes and other additives. Zomo uses only reforested woods.</p>
+                                <p style="text-align: center;
+                                    font-family: 'Titillium Web';
+                                    font-weight: 500;
+                                    font-size: 25px;">Product without bleaching process, free of dyes and other additives. Zomo uses only reforested woods.</p>
+                            </div>
+                            
+                            <div class="owl-carousel owl-theme home-banner">
+                                <div class="item" style="width:70%;margin-left:100px;margin-top:170px">
+                                    <img  src="{{ asset('assets/frontend/images/product/natural1.png')}}" width="70" height="100" alt="mobile-images">
+                                </div>
+                                <div class="item"style="width:70%;margin-left:100px;margin-top:170px" >
+                                    <img  src="{{ asset('assets/frontend/images/product/natural2.png')}}" width="70" height="100" alt="mobile-images">
+                                </div>
+                                <div class="item" style="width:70%;margin-left:100px;margin-top:170px">
+                                    <img  src="{{ asset('assets/frontend/images/product/natural3.png')}}" width="70" height="100" alt="mobile-images">
+                                </div>
+                                <div class="item" style="width:70%;margin-left:100px;margin-top:170px">
+                                    <img  src="{{ asset('assets/frontend/images/product/natural4.png')}}" width="70" height="100" alt="mobile-images">
+                                </div>
+                                <div class="item" style="width:70%;margin-left:100px;margin-top:170px">
+                                    <img  src="{{ asset('assets/frontend/images/product/natural5.png')}}" width="70" height="100" alt="mobile-images">
+                                </div>
+                                
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="vc_custom3">
+                    <div class="row">
+                        <div class="col-sm-6" style="margin-top:70px">
+                        <figure class="vc_figure">
+                                <img src="{{ asset('assets/frontend/images/product/zomo-paper-hemp.png')}}" width="654" height="637">
+                            </figure>
+                        </div>
+                        <div class="col-sm-6" style="margin-top:70px">
+                        </div>
+                        
                     </div>
                 </div>
             </div>

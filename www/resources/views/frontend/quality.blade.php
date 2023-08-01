@@ -5,7 +5,7 @@
 @section('css')
 	.n2-ss-section-main-content
 	{
-		padding: 0.655em;
+		padding: 10px 20px;
 		perspective: 1500px;
 	}
 	
@@ -25,9 +25,8 @@
 
 	 .n2_heading
 	{ 
-		display:block;
 		white-space:nowrap;
-		margin-top:-550px;
+		margin-top:-600px;
 		margin-left:100px;
 		font-family:'Titillium Web';
 		color:#58167d;
@@ -37,37 +36,15 @@
 		text-transform:uppercase;
 		font-weight:800;
 		background: RGBA(255,255,255,0.91);
-		opacity: 1;
-		padding: 0px 0px 0px 0px;
-		box-shadow: none;
-		border-width: 0px;
-		border-style: solid;
-		border-color: #000000;
-		border-color: RGBA(0,0,0,1);
-		border-radius: 0px;		
-	}
-	. n2_font{
-			font-family: 'Titillium Web';
-			color: #58167d;
-			font-size: 312.5%;
-			text-shadow: none;
-			line-height: normal;
-			font-weight: normal;
-			font-style: normal;
-			text-decoration: none;
-			text-align: center;
-			letter-spacing: 5px;
-			word-spacing: 5px;
-			text-transform: uppercase;
-			font-weight: 800;
-			opacity:0;
+		padding: 12px 5px;
+		text-align:center;
 	}
 	.sub-titulo-qualidade{
 			text-align: center;
 			color: #2d2d2d;
 			font-size: 54px;
 			font-weight: 300;
-			padding:50px 50px
+			margin-top:150px;
 	}
 	.vc_custom_heading{
 		margin-top:20px;
@@ -88,12 +65,12 @@
 @section('main')
 			<div style="height: 576px;">    
 				<div class="vc_single_image-wrapper vc_box_border_grey "><img width="1024" height="434" src="https://cdn.zomoofficial.com/wp-content/uploads/2021/04/mobile-banner-qualidade.jpg" class="vc_single_image-img attachment-full" alt="" srcset="https://cdn.zomoofficial.com/wp-content/uploads/2021/04/mobile-banner-qualidade.jpg 1024w, https://cdn.zomoofficial.com/wp-content/uploads/2021/04/mobile-banner-qualidade-300x127.jpg 300w, https://cdn.zomoofficial.com/wp-content/uploads/2021/04/mobile-banner-qualidade-150x64.jpg 150w, https://cdn.zomoofficial.com/wp-content/uploads/2021/04/mobile-banner-qualidade-768x326.jpg 768w, https://cdn.zomoofficial.com/wp-content/uploads/2021/04/mobile-banner-qualidade-848x359.jpg 848w, https://cdn.zomoofficial.com/wp-content/uploads/2021/04/mobile-banner-qualidade-500x212.jpg 500w" sizes="(max-width: 1024px) 100vw, 1024px" /></div>
-				<div class="n2-ss-section-main-content"><div class="n2-ss-layer n2-ow"><h2 class="n2_heading n2_font title-main" style="display:block;white-space:nowrap;";>ZOMO QUALITY</h2></div></div>
+				<div class="n2-ss-section-main-content"><div style="width:50%;margin-left:200px"><h2 class="n2_heading n2_font title-main" style="display:block;white-space:nowrap;">ZOMO QUALITY</h2></div></div>
 			</div>
 			<div style="background-color:#f2f2f2">
 
 				<p class="sub-titulo-qualidade">WE ARE DRIVEN BY <b>INNOVATION</b> AND <b>BOLDNESS</b></p>
-					<div style="background-color:white" class="wpb_wrapper">
+					<div style="background-color:white;margin-top:100px" class="wpb_wrapper">
 						<h2 class="vc_custom_heading vantagens-friendzomo vc_custom_1618408539188">-DIFFERENTIAL-
 						</h2>	
 						<div class="row p-5" style="margin:30px">
