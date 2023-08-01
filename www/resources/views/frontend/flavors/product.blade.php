@@ -46,7 +46,7 @@ $FlavorImage = FlavorImage::getDataWithArray($data->id); //this is used for pass
                 <div class="product-slider-sub-main">
                   <div class="swiper product-slider-sub">
                     <div class="swiper-wrapper">
-                @foreach($FlavorImage as $flavor)
+                   @foreach($FlavorImage as $flavor)
                       <div class="swiper-slide">
                         <div class="image-box">
                           <img
@@ -145,6 +145,7 @@ $FlavorImage = FlavorImage::getDataWithArray($data->id); //this is used for pass
                   </div>
                 </div>
               </div>
+            </div>
             </div>
           </div>
         </div>
