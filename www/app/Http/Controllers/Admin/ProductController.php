@@ -62,7 +62,7 @@ class ProductController extends Controller
    
    public function zomohookah()
    {
-        return view("frontend.product.zomoPaper");
+        return view("frontend.product.zomohookah");
    }
 
 }

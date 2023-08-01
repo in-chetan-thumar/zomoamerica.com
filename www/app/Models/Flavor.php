@@ -65,8 +65,6 @@ class Flavor extends Model
         if (file_exists(config("constants.FLAVOR_URL") .DIRECTORY_SEPARATOR. $val->flavor_id . DIRECTORY_SEPARATOR . $val->image_name)) 
         {
             return asset('images/flavors'.DIRECTORY_SEPARATOR.$val->flavor_id . DIRECTORY_SEPARATOR . $val->image_name);
-        } else {
-            return "Sorry Image is not exist";
         }
     }
 }

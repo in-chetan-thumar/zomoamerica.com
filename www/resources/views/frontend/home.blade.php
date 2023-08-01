@@ -134,7 +134,7 @@
 									width="100" height="100">
 							</div>
 							<p>Hookah Shisha</p>
-							<a href="#" class="visit-store">
+							<a href="https://www.hookah-shisha.com/c/shisha-tobacco/brand/zomo" class="visit-store">
 								<span>
 									<svg width="13" height="20" viewBox="0 0 13 20" fill="none"
 										xmlns="http://www.w3.org/2000/svg">
@@ -161,7 +161,7 @@
 									width="100" height="100">
 							</div>
 							<p>5 Star Hookah</p>
-							<a href="#" class="visit-store">
+							<a href="https://5starhookah.com/collections/zomo-tobacco-shisha" class="visit-store">
 								<span>
 									<svg width="13" height="20" viewBox="0 0 13 20" fill="none"
 										xmlns="http://www.w3.org/2000/svg">
@@ -187,7 +187,7 @@
 									width="100" height="100">
 							</div>
 							<p>The Hookah</p>
-							<a href="#" class="visit-store">
+							<a href="https://www.thehookah.com/" class="visit-store">
 								<span>
 									<svg width="13" height="20" viewBox="0 0 13 20" fill="none"
 										xmlns="http://www.w3.org/2000/svg">
@@ -213,7 +213,7 @@
 									width="100" height="100">
 							</div>
 							<p>Texas Hookah</p>
-							<a href="#" class="visit-store">
+							<a href="https://www.texashookah.com/" class="visit-store">
 								<span>
 									<svg width="13" height="20" viewBox="0 0 13 20" fill="none"
 										xmlns="http://www.w3.org/2000/svg">
@@ -239,7 +239,7 @@
 									width="100" height="100">
 							</div>
 							<p>Hookah John</p>
-							<a href="#" class="visit-store">
+							<a href="https://hookahjohn.com/collections/zomo-shisha-hookah-tobacco-flavors" class="visit-store">
 								<span>
 									<svg width="13" height="20" viewBox="0 0 13 20" fill="none"
 										xmlns="http://www.w3.org/2000/svg">
@@ -265,7 +265,7 @@
 									width="100" height="100">
 							</div>
 							<p>Hookah Junkie</p>
-							<a href="#" class="visit-store">
+							<a href="https://hookahjunkie.com/collections/zomo-tobacco-hookah-tobacco-shisha" class="visit-store">
 								<span>
 									<svg width="13" height="20" viewBox="0 0 13 20" fill="none"
 										xmlns="http://www.w3.org/2000/svg">

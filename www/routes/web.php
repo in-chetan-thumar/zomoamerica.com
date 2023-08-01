@@ -83,7 +83,7 @@ Route::get('authorized-wholesalers', [HomeController::class,'wholesalers'])->nam
 Route::get('zomo-quality', [HomeController::class,'quality'])->name('frontend.quality');
 // product 
 Route::get('/zomo-paper', [ProductController::class,'zomoPaper'])->name('frontend.zomopaper');
-Route::post('zomo-charcol',[ProductController::class,'zomoCharcol'])->name('frontend.charcol');
+Route::get('zomo-charcol',[ProductController::class,'zomoCharcol'])->name('frontend.charcol');
 Route::get('/aluminum-foil', [ProductController::class,'aluminumFoil'])->name('frontend.aluminumFoil');
 Route::get('shisha-hose', [ProductController::class,'shishaHose'])->name('frontend.shishaHose');
 Route::get('zomo-hookah', [ProductController::class,'zomohookah'])->name('frontend.zomo.hookah');
