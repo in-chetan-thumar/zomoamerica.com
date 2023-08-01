@@ -138,13 +138,12 @@ $model = new Flavor();
     @else
     
     <div class="new-container">
-        <br>
     @endif
     @if($category_id === "Max-line")
         <div class="product-list" style="margin-top:100px;">
-    @else
+    @else 
         <div class="product-list">
-    @endif
+    @endif 
             <div class="product-item">
                 @foreach ($data as $val)
                     <div class="product-box">
