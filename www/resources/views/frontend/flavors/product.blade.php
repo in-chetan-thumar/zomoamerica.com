@@ -3,7 +3,6 @@ use App\Models\Flavor;
 use App\Models\FlavorImage;
 $model = new Flavor();
 $FlavorImage = FlavorImage::getDataWithArray($data->id); //this is used for passing data in model
-// $image1 = $model->getFlavorImageArray($FlavorImage); //for getting multiple images for sliding
 ?>
 @extends('frontend.layouts.master')
 @section('title')

@@ -200,7 +200,9 @@
                             @foreach($flavor_image as $flavor)
                                 <div>
                                 <img src="{{ $model->getFlavorImageArray($flavor) }}" height="100">
+                                @if(!empty($model->getFlavorImageArray($flavor)))
                                 <span class="close" style="cursor:pointer"  onClick="loadFile({{ $flavor->id }})">X</span>
+                                @endif
                                 </div>
                             @endforeach
                             </div>
