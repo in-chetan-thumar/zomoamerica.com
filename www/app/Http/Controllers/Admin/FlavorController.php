@@ -7,8 +7,8 @@ use App\Http\Requests\flavors;
 use App\Models\FlavorImage;
 use App\Models\Flavor;
 use Carbon\Carbon;
-use File;
-use DB;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\DB;
 
 class FlavorController extends Controller
 {
@@ -49,7 +49,7 @@ class FlavorController extends Controller
 
     public function store(flavors $request)
     {
-        
+
         $data = $params = [];
         DB::beginTransaction();
         try {
@@ -66,18 +66,18 @@ class FlavorController extends Controller
             $params['slug'] = $request->slug;
 
             $params['is_active'] = !empty($request->is_active) ?  $request->is_active :  'Y';
-            
+
             $id  = isset($request->id) ? $request->id:'';
 
             if(isset($request->id))
             {
                 $user = resolve('flavor-repo')->update($params, $id);
-                
+
                 $images = [];
                 if ($request->file("flavors_image")){
                     foreach($request->file("flavors_image") as $key => $image)
                     {
-                        $imageName = $image->getClientOriginalName().'.'.$image->extension();  
+                        $imageName = $image->getClientOriginalName().'.'.$image->extension();
                         $image->move(public_path('images/flavors/'.$id), $imageName);
                         $images[]['name'] = $imageName;
                     }
@@ -85,8 +85,8 @@ class FlavorController extends Controller
                     foreach ($images as $key => $image) {
                         $imag['image_name'] = $image['name'];
                         $imag['category_id'] =$request->category_id;
-                        $imag['flavor_id'] =$id; 
- 
+                        $imag['flavor_id'] =$id;
+
                         FlavorImage::create($imag);
                     }
 
@@ -97,7 +97,7 @@ class FlavorController extends Controller
                 if ($request->file("flavors_image")){
                     foreach($request->file("flavors_image") as $key => $image)
                     {
-                        $imageName = $image->getClientOriginalName().'.'.$image->extension();  
+                        $imageName = $image->getClientOriginalName().'.'.$image->extension();
                         $image->move(public_path('images/flavors/'.$user->id), $imageName);
                         $images[]['name'] = $imageName;
                     }
@@ -105,8 +105,8 @@ class FlavorController extends Controller
                     foreach ($images as $key => $image) {
                         $imag['image_name'] = $image['name'];
                         $imag['category_id'] =$request->category_id;
-                        $imag['flavor_id'] =$user->id; 
- 
+                        $imag['flavor_id'] =$user->id;
+
                         FlavorImage::create($imag);
                     }
             }
@@ -204,7 +204,7 @@ class FlavorController extends Controller
     public function removeImage(Request $request)
     {
         try {
-        
+
         $id =  $request->fid;
         $data = resolve('flavorImage-repo')->removeImage($id);
         $path = public_path('images/flavors/'.$data->flavor_id.'/'.$data->image_name);

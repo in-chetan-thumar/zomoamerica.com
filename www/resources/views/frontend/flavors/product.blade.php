@@ -55,10 +55,10 @@ $FlavorImage = FlavorImage::getDataWithArray($data->id); //this is used for pass
                         </div>
                       </div>
                     @endforeach
-  
+
                       </div>
                     </div>
-                  </div>
+
                   <div class="swiper thumb-slider">
                     <div class="swiper-wrapper">
                       @foreach($FlavorImage as $flavor)
@@ -135,7 +135,6 @@ $FlavorImage = FlavorImage::getDataWithArray($data->id); //this is used for pass
                       ></div>
                     </div>
                   </div>
-                </div>
 
                 <div class="available">
                   <p>Available in:</p>
