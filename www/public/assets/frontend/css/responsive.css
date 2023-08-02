@@ -444,6 +444,13 @@
 }
 
 @media (max-width:768px) {
+    .relase_image{
+        padding-left: 50px;
+
+    }
+    .row .main-content .main-section .row .release_note {
+        margin-top: 125px;
+    }
     .hookah-video{
         width: 272px;
         height: 145px;
