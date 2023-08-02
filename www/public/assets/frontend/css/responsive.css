@@ -408,6 +408,33 @@
 }
 
 @media (max-width:768px) {
+    .owl-carousel .item{
+        width:100%;
+
+        margin-left:0px;
+        margin-top:0px;
+    }
+    .vc_custom2{
+        padding-bottom: 20px;
+
+        background-image: url(../images/product/new-zomo-zomopaper-background.jpg) !important;
+        background-repeat: no-repeat !important;
+        background-size: 95rem, 0rem;
+
+
+    }
+    .zomopaper-natural{
+        margin-top:10px;
+    }
+    .product-bottom-footer{
+        display: none;
+    }
+    .product-bg-image{
+        background-image: url(../images/product/fundo-alfafa-scaled.png) !important;
+        background-size: 15rem, 0rem;
+        background-position:  top;
+        background-repeat: no-repeat !important;
+    }
     .charcol_heading{
         margin-top: 0em !important;
         margin-right: 0em !important;

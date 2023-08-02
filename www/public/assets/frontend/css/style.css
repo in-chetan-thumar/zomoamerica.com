@@ -2283,7 +2283,33 @@ img {
 }
 
 .vc_custom2{
-    padding-bottom: 50px;
+    padding-bottom: 220px;
 
     background-image: url(../images/product/new-zomo-zomopaper-background.jpg) !important;
+    background-repeat: no-repeat !important;
+    background-size: 95rem, 0rem;
+
+
+}
+.vc_custom4{
+    background-color:#bffc01;
+    background-image: url(../images/product/divisao-alfalfa.jpg) !important;
+    background-size: 95rem, 0rem;
+    background-position:  top;
+    background-repeat: no-repeat !important;
+
+}
+.product-bg-image{
+    background-image: url(../images/product/fundo-alfafa-scaled.png) !important;
+    background-size: 32rem, 0rem;
+    background-position:  top;
+    background-repeat: no-repeat !important;
+}
+.zomopaper-natural{
+    margin-top:225px;
+}
+.owl-carousel .item{
+    width:70%;
+    margin-left:100px;
+    margin-top:100px;
 }
