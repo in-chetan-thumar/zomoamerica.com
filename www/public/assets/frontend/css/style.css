@@ -2306,6 +2306,9 @@ img {
 .zomopaper-natural {
     margin-top: 225px;
 }
+.owl-carousel .owl-dots {
+    margin-right: 200px;
+}
 .owl-carousel .item {
     width: 90%;
     /* margin-left: 100px; */
@@ -2374,4 +2377,10 @@ img {
 .hookah-video-col {
     margin-left: 0 !important;
     margin-right: -8px !important;
+}
+.bg_image {
+    background-image: url(../images/product/bckngd_strong_2020-min.jpg) !important;
+    background-position: top;
+    height: 1500px;
+    background-repeat: no-repeat !important;
 }
