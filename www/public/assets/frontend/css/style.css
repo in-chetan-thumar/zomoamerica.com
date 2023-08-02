@@ -2230,18 +2230,18 @@ img {
     background: #f2f2f2;
 }
 
-.image_wpb{
+.image_wpb {
     padding: 35px;
     max-width: 100%;
     width: auto;
     height: auto;
 }
-.image-available-form{
+.image-available-form {
     padding-top: 15px;
     height: 70%;
     width: 73%;
 }
-.charcol_heading{
+.charcol_heading {
     margin-top: 1.5em !important;
     margin-right: 2em !important;
     margin-left: 2em !important;
@@ -2259,21 +2259,21 @@ img {
     font-weight: 700;
     font-style: normal;
 }
-.charcol{
+.charcol {
     box-sizing: border-box;
     padding-left: 40px;
     padding-right: 40px;
     width: 100%;
 }
-.charcol-item{
+.charcol-item {
     padding-left: 60px;
     padding-right: 60px;
 }
 
 .charcol_desc {
-    padding:0px 100px 0px 65px;
+    padding: 0px 100px 0px 65px;
 }
-.vc_text_image{
+.vc_text_image {
     padding-top: 10px !important;
     padding-bottom: 10px !important;
     background-image: url(../images/fundo_pesos_lpcarvao.png) !important;
@@ -2282,68 +2282,84 @@ img {
     background-size: contain !important;
 }
 
-.vc_custom2{
+.vc_custom2 {
     padding-bottom: 100px;
 
     background-image: url(../images/product/new-zomo-zomopaper-background.jpg) !important;
     background-repeat: no-repeat !important;
     background-size: 80rem, 0rem;
-
-
 }
-.vc_custom4{
-    background-color:#bffc01;
+
+.vc_custom4 {
+    background-color: #bffc01;
     background-image: url(../images/product/divisao-alfalfa.jpg) !important;
     background-size: 95rem, 0rem;
-    background-position:  top;
+    background-position: top;
     background-repeat: no-repeat !important;
-
 }
-.product-bg-image{
+.product-bg-image {
     background-image: url(../images/product/fundo-alfafa-scaled.png) !important;
     background-size: 32rem, 0rem;
-    background-position:  top;
+    background-position: top;
     background-repeat: no-repeat !important;
 }
-.zomopaper-natural{
-    margin-top:225px;
+.zomopaper-natural {
+    margin-top: 225px;
 }
-.owl-carousel .item{
-    width:70%;
-    margin-left:100px;
-    margin-top:100px;
+.owl-carousel .owl-dots {
+    margin-right: 200px;
 }
-.aluminum-foil{
-    padding:40px 100px;
+.owl-carousel .item {
+    width: 90%;
+    /* margin-left: 100px; */
+    /* margin-top: 100px; */
+}
 
+.owl-carousel .item p {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    margin-top: -10px;
+}
+.aluminum-foil {
+    padding: 40px 100px;
 }
 .row .main-content .shisha_desc_image .img {
     width: 40%;
     margin-left: 30%;
     margin-top: -50px;
 }
-.shisha_border_top{
+.shisha_border_top {
     border-top-width: 4px;
     border-color: #ebebeb;
     border-top-style: dashed;
     padding-bottom: 30px;
-
 }
-.row .main-content .shisha_desc_image .video_gallary .row .video_wrapper
-{
+.row .main-content .shisha_desc_image .video_gallary .row .video_wrapper {
     background-image: url(../images/product/fundo-videos.png);
-    background-position:center !important;
-    background-repeat:no-repeat !important;
-    background-size:550px !important;
-    height:auto;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: 550px !important;
+    height: auto;
 }
-.row .main-content .shisha_desc_image .video_gallary .row .video_wrapper iframe{
+.row
+    .main-content
+    .shisha_desc_image
+    .video_gallary
+    .row
+    .video_wrapper
+    iframe {
     padding: 60px 40px;
     margin-left: 93px;
     width: 550px;
     height: 350px;
 }
-.wpb_video_widget  iframe {
+
+.wpb_content_element .vc_2_p {
+    color: #bf0811;
+    font-size: 18px;
+}
+.wpb_video_widget iframe {
     width: 100%;
     height: 100%;
     display: block;
@@ -2354,13 +2370,17 @@ img {
 
     box-sizing: border-box;
 }
-.hookah-video{
+.hookah-video {
     width: 420px;
     height: 225px;
-
 }
-.hookah-video-col{
-
-margin-left: 0 !important;
-margin-right: -8px !important;
+.hookah-video-col {
+    margin-left: 0 !important;
+    margin-right: -8px !important;
+}
+.bg_image {
+    background-image: url(../images/product/bckngd_strong_2020-min.jpg) !important;
+    background-position: top;
+    height: 1500px;
+    background-repeat: no-repeat !important;
 }
