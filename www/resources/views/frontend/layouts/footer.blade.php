@@ -1,4 +1,3 @@
-
 <footer class="footer reveal">
     <div class="container">
         <div class="footer-item">
@@ -19,9 +18,9 @@
                 <h6>EMAIL NEWSLETTERS</h6>
                 <p>Want to hear the latest and greatest?<br> Sign up to stay updated on news, invitations and offers
                     from the world of ZOMO Tobacco.</p>
-{{--                <form>--}}
-{{--                    <input type="text" placeholder="Email">--}}
-{{--                </form>--}}
+                {{--                <form> --}}
+                {{--                    <input type="text" placeholder="Email"> --}}
+                {{--                </form> --}}
             </div>
         </div>
         <div class="follow-us">
@@ -79,22 +78,23 @@
             </div>
         </div>
         <div class="copy-right">
-            <p>{{ config("constants.COPYRIGHT")}}</p>
+            <p>{{ config('constants.COPYRIGHT') }}</p>
         </div>
     </div>
 </footer>
 
 <div class="warning">
     <div class="container">
-        <p><span>WARNING:</span>{{ config('constants.FOOTER_WARNING')}}</p>
+        <p><span>WARNING:</span>{{ config('constants.FOOTER_WARNING') }}</p>
     </div>
 </div>
-@if(url()->current() == "http://lc.zomoamerica.com")
-<div class="jquery-modal blocker current">
+@if (url()->current() == 'http://lc.zomoamerica.com')
+    <div class="jquery-modal blocker current">
         <div id="bouncer_modal" class="modal_bouncer">
             <form name="AgeVerForm" id="AgeVerForm">
                 <div class="model_logo">
-                    <img src="{{ asset('assets/frontend/images/logo.webp') }}" alt="model" width="100" height="100">
+                    <img src="{{ asset('assets/frontend/images/logo.webp') }}" alt="model" width="100"
+                        height="100">
                 </div>
                 <h1 id="bouncer_modal_heading">Welcome to zomoamerica.com</h1>
                 <p id="bouncer_modal_subheading">
@@ -109,6 +109,4 @@
             </form>
         </div>
     </div>
-
 @endif
-
