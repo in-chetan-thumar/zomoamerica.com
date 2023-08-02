@@ -7,3 +7,4 @@
     <link rel="stylesheet" href={{ asset("assets/frontend/css/style.css")}}>
     <link rel="stylesheet" href={{ asset("assets/frontend/css/responsive.css") }}>
 
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>

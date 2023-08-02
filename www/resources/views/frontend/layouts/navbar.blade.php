@@ -105,10 +105,10 @@
                   <a href="{{ route('frontend.shishaHose')}}" class="submenu-link">Shisha hose</a>
                 </li>
                  <li class="submenu-item">
-                  <a href="{{ route('frontend.zomo.hookah')}}" class="submenu-link">Zomo Zona Hookah:</a>
+                  <a href="{{ route('frontend.zomo.hookah')}}" class="submenu-link">Zomo Zona Hookah</a>
                 </li>
               </ul>
-            </li>          
+            </li>
             <li class="menu-item"><a href="{{ route('frontend.news') }}" class="menu-link">News</a></li>
             <li class="menu-item"><a href="{{ route('frontend.contact') }}" class="menu-link">Contacts</a></li>
             <li class="menu-item"><a href="{{ route('frontend.wholesale') }}" class="menu-link">Wholesale</a></li>

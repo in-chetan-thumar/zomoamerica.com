@@ -3,8 +3,8 @@
     Zomo Charcol
 @endsection
 @section('css')
-    .row .main_content{
-    padding:40px 100px;
+     .main_content{
+    padding:40px 150px 0px 150px !important;
     }
     .row .main_content .heading{
     font-size: 22px;
