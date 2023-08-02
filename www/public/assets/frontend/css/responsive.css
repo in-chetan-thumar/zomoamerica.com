@@ -1,4 +1,22 @@
 @media (max-width:1366px) {
+    .vc_custom2{
+        padding-bottom: 135px;
+
+        background-image: url(../images/product/new-zomo-zomopaper-background.jpg) !important;
+        background-repeat: no-repeat !important;
+        background-size: 80rem, 0rem;
+
+
+    }
+    .hookah-video{
+        width: 334px;
+        height: 189px;
+    }
+    .hookah-video-col{
+
+        margin-left: 0 !important;
+        margin-right: -15px !important;
+    }
     .header .menu {
         gap: 50px;
     }
@@ -31,6 +49,15 @@
 
 @media (max-width:1200px) {
 
+    .hookah-video{
+        width: 250px;
+        height: 135px;
+    }
+    .hookah-video-col{
+
+        margin-left: 0 !important;
+        margin-right: -15px !important;
+    }
     .about-history-main {
         background-color: #fff;
         padding-top: 30px;
@@ -56,6 +83,15 @@
 }
 
 @media (max-width:1024px) {
+    .hookah-video{
+        width: 196px;
+        height: 102px;
+    }
+    .hookah-video-col{
+
+        margin-left: 0 !important;
+        margin-right: -15px !important;
+    }
     .about-history-main {
         background-color: #fff;
         padding-top: 30px;
@@ -408,6 +444,15 @@
 }
 
 @media (max-width:768px) {
+    .hookah-video{
+        width: 272px;
+        height: 145px;
+    }
+    .hookah-video-col{
+
+        margin-left: 0 !important;
+        margin-right: -8px !important;
+    }
     .shisha_description{
         padding-right: 20px;
         padding-left: 20px;
@@ -707,7 +752,15 @@
 }
 
 @media (max-width:640px) {
+    .hookah-video{
+        width: 380px;
+        height: 215px;
+    }
+    .hookah-video-col{
 
+        margin-left: 0 !important;
+        margin-right: -8px !important;
+    }
     .dastop-images,
     .tab-images {
         display: none !important;
@@ -736,6 +789,15 @@
 }
 
 @media (max-width:569px) {
+    .hookah-video{
+        width: 424px;
+        height: 205px;
+    }
+    .hookah-video-col{
+
+        margin-left: 0 !important;
+        margin-right: -8px !important;
+    }
     .news-srction-item {
         grid-template-columns: repeat(1, 1fr);
     }

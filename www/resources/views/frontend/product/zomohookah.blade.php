@@ -3,7 +3,7 @@
     Zomo Charcol
 @endsection
 @section('css')
-    .row .main-content {
+    .main-content {
     padding:40px 150px 0px 150px !important;
     }
 
@@ -18,6 +18,8 @@
     }
     .row .main-content .main-section{
     background-color: #000000;
+    margin-bottom: -4px;
+
     }
     .row .main-content .main-section h1{
     font-size: 45px;
@@ -74,6 +76,8 @@
     margin-top:40px;
     background-position: center !important;
     background-repeat: no-repeat !important;
+    margin-right: 0px !important;
+    margin-left: 0px !important;
     }
     .row .main-content .main-section .bg_image .other_model
     {
@@ -94,8 +98,12 @@
     background-image: url('../assets/frontend/images/product/FUNDO-CROSS.png');
     background-position: center !important;
     background-repeat: no-repeat !important;
+    margin-right: 0px !important;
+    margin-left: 0px !important;
     }
     .row .main-content .main-section .bg_image2{
+    margin-right: 0px !important;
+    margin-left: 0px !important;
     background-image: url('../assets/frontend/images/product/FUNDO-TWIST.png');
     background-position: center !important;
     background-repeat: no-repeat !important;
@@ -222,27 +230,29 @@
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>
                     </div>
+                    <div class="row">
+
+                        <div class="col-sm-4 hookah-video-col ">
+                            <iframe class="hookah-video" src="https://www.youtube.com/embed/AhnOdVIOfaQ"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen></iframe>
+                        </div>
+                        <div class="col-sm-4 hookah-video-col">
+                            <iframe class="hookah-video" src="https://www.youtube.com/embed/o9CSRQLGloU"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen></iframe>
+                        </div>
+                        <div class="col-sm-4 hookah-video-col">
+                            <iframe class="hookah-video" src="https://www.youtube.com/embed/o9CSRQLGloU"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen></iframe>
+                        </div>
+                    </div>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <iframe width="848" height="477" src="https://www.youtube.com/embed/AhnOdVIOfaQ"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen></iframe>
-                    </div>
-                    <div class="col">
-                        <iframe width="848" height="477" src="https://www.youtube.com/embed/o9CSRQLGloU"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen></iframe>
-                    </div>
-                    <div class="col">
-                        <iframe width="848" height="477" src="https://www.youtube.com/embed/o9CSRQLGloU"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen></iframe>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>
