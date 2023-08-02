@@ -4,14 +4,20 @@
 @endsection
 @section("css")
     .main-content{
-        padding:20px 100px;
+    padding:40px 150px 0px 150px !important;
     }
     .heading{
         background-color:red;
+    font-size: 26px;
+    color: #ffffff;
+    text-align: left;
+    font-family:Lato;
+    font-weight:700;
+    font-style:normal;
+    margin-bottom: -8px;
+    padding: 5px 0px 5px 20px;
     }
-    .heading-h1{
-        padding:10px;
-    }
+
     .vc_custom1{
         background-color:black;
     }
@@ -79,7 +85,7 @@
         <div class="col-sm-12 ">
             <div class="main-content">
                 <div class="heading">
-                        <h1 style="font-size: 26px;color: #ffffff;text-align: left;font-family:Lato;font-weight:700;font-style:normal" class="heading-h1">ZOMO PAPER</h1>
+                        <h1 style="" class="heading-h1">ZOMO PAPER</h1>
                 </div>
                 <div class="vc_custom1">
                     <div class="row">

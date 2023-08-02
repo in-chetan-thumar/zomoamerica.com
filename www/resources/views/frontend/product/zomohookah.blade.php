@@ -4,7 +4,7 @@
 @endsection
 @section('css')
     .row .main-content {
-    padding: 20px 70px;
+    padding:40px 150px 0px 150px !important;
     }
 
     .row .main-content .heading {

@@ -2313,3 +2313,34 @@ img {
     margin-left:100px;
     margin-top:100px;
 }
+.aluminum-foil{
+    padding:40px 100px;
+
+}
+.row .main-content .shisha_desc_image .img {
+    width: 40%;
+    margin-left: 30%;
+    margin-top: -50px;
+}
+.shisha_border_top{
+    border-top-width: 4px;
+    border-color: #ebebeb;
+    border-top-style: dashed;
+    padding-bottom: 30px;
+
+}
+.row .main-content .shisha_desc_image .video_gallary .row .video_wrapper
+{
+    background-image: url(../images/product/fundo-videos.png);
+    background-position:center !important;
+    background-repeat:no-repeat !important;
+    background-size:550px !important;
+    height:auto;
+}
+.row .main-content .shisha_desc_image .video_gallary .row .video_wrapper iframe{
+    padding: 60px 40px;
+    margin-left: 93px;
+    width: 550px;
+    height: 350px;
+}
+

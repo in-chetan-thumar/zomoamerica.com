@@ -4,7 +4,7 @@
 @endsection
 @section('css')
     .row .main-content {
-    padding: 20px 70px;
+    padding:40px 150px 0px 150px ;
     }
 
     .row .main-content .heading {
@@ -14,13 +14,12 @@
     font-weight: 700;
     font-style: normal;
     background-color: #812991 !important;
+    margin-bottom: -8px;
+    padding: 5px 0px 5px 20px;
+
     }
 
-    .row .main-content .shisha_desc_image .img {
-    width: 40%;
-    margin-left: 30%;
-    margin-top: -50px;
-    }
+
 
     .row .main-content .shisha_desc_image .row .img1 {
     width: 70%;
@@ -109,14 +108,7 @@
     margin-top:-40px;
     margin-bottom:5%;
     }
-    .row .main-content .shisha_desc_image .video_gallary .row .video_wrapper
-    {
-    background-image: url('../assets/frontend/images/product/fundo-videos.png');
-    background-position:center !important;
-    background-repeat:no-repeat !important;
-    background-size:cover !important;
-    height:auto;
-    }
+
     .row .main-content .shisha_desc_image .video_gallary .row .video h2
     {
     margin-top: 50px;
@@ -129,10 +121,7 @@
     font-style: normal
 
     }
-    .row .main-content .shisha_desc_image .video_gallary .row .video_wrapper iframe{
-    padding: 60px 40px;
-    margin-left: 40px;
-    }
+
 @endsection
 <!--  -->
 @section('main')
@@ -159,17 +148,19 @@
                     <img class="img" src="{{ asset('assets/frontend/images/product/myShishaHose.png') }}">
                 </figure>
                 <div class="row">
-                    <div class="shisha_desc">
-                        <p class="">Stay tuned and have a perfect session with <strong style="color:#743d96">Zomo
+                    <div class="shisha_desc" >
+                        <p class="shisha_description">Stay tuned and have a perfect session with <strong style="color:#743d96">Zomo
                                 Shisha
                                 Hose</strong>. Ultra strength, high density thermoplastic polymer in its extremities, to fit
                             the
                             hookah perfectly.</p>
+                        <div class="shisha_border_top" style="margin-top: 20px">
+                        </div>
                     </div>
-                    <div><span><span></span></span><span><span></span></span>
-                        <hr>
-                    </div>
+
                     <div class="col-sm-6 p-5">
+
+
                         <figure>
                             <img class="img1"
                                 src="{{ asset('assets/frontend/images/product/clean_hose-zomo-ingles.png') }}">
@@ -244,10 +235,11 @@
                         <p>The material we use is a <strong style="color:#743d96">thermoplastic polymer,</strong> which
                             guarantees greater strength and product quality.</p>
                     </div>
-                    <div><span><span></span></span><span><span></span></span>
-                        <hr>
-                    </div>
-                    <div class="col-sm-12 pt-5">
+
+
+                    <div class="col-sm-12 pt-5 ">
+                        <div class="shisha_border_top">
+                        </div>
                         <img class="image5" width="1000" height="466" sizes="(max-width: 1000px) 100vw, 1000px"
                             src="{{ asset('assets/frontend/images/product/new-BANNER_MANGUEIRA_ZOMO-en.jpg') }}">
                         {{-- new-BANNER_MANGUEIRA_ZOMO-en --}}
@@ -259,7 +251,7 @@
                     <div class="row">
                         <div class="col-sm-6 video">
                             <div class="video_wrapper">
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/0HcrvKvDAS4"
+                                <iframe src="https://www.youtube.com/embed/0HcrvKvDAS4"
                                     title="YouTube video player" frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                     allowfullscreen></iframe>
@@ -269,7 +261,7 @@
                         </div>
                         <div class="col-sm-6 video">
                             <div class="video_wrapper">
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/MxgPYbVPvUw"
+                                <iframe  src="https://www.youtube.com/embed/MxgPYbVPvUw"
                                     title="YouTube video player" frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                     allowfullscreen></iframe>
