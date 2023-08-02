@@ -408,6 +408,71 @@
 }
 
 @media (max-width:768px) {
+    .owl-carousel .item{
+        width:100%;
+
+        margin-left:0px;
+        margin-top:0px;
+    }
+    .vc_custom2{
+        padding-bottom: 20px;
+
+        background-image: url(../images/product/new-zomo-zomopaper-background.jpg) !important;
+        background-repeat: no-repeat !important;
+        background-size: 95rem, 0rem;
+
+
+    }
+    .zomopaper-natural{
+        margin-top:10px;
+    }
+    .product-bottom-footer{
+        display: none;
+    }
+    .product-bg-image{
+        background-image: url(../images/product/fundo-alfafa-scaled.png) !important;
+        background-size: 15rem, 0rem;
+        background-position:  top;
+        background-repeat: no-repeat !important;
+    }
+    .charcol_heading{
+        margin-top: 0em !important;
+        margin-right: 0em !important;
+        margin-left: 0em !important;
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+        padding-left: 0px !important;
+        background-image: url(../images/product/fundo_conteudo.png) !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        font-size: 24px;
+        color: #ffffff;
+        text-align: left;
+        font-family: Lato;
+        font-weight: 700;
+        font-style: normal;
+    }
+    .charcol-item{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .charcol{
+        box-sizing: border-box;
+        padding-left: 15px;
+        padding-right: 15px;
+        width: 100%;
+    }
+    .charcol_desc {
+        text-align: left;
+        padding:0px 0px 20px 20px !important
+    }
+    .image-available-form{
+        height: 85%;
+        width: 85%;
+    }
+    .row .heading{
+        padding: 5px 19px !important;
+    }
     .image_wpb{
         padding: 0px !important;
         margin: 40px;

@@ -2236,3 +2236,80 @@ img {
     width: auto;
     height: auto;
 }
+.image-available-form{
+    padding-top: 15px;
+    height: 70%;
+    width: 73%;
+}
+.charcol_heading{
+    margin-top: 1.5em !important;
+    margin-right: 2em !important;
+    margin-left: 2em !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    padding-left: 20px !important;
+    background-image: url(../images/product/fundo_conteudo.png) !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    font-size: 24px;
+    color: #ffffff;
+    text-align: left;
+    font-family: Lato;
+    font-weight: 700;
+    font-style: normal;
+}
+.charcol{
+    box-sizing: border-box;
+    padding-left: 40px;
+    padding-right: 40px;
+    width: 100%;
+}
+.charcol-item{
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.charcol_desc {
+    padding:0px 100px 0px 65px;
+}
+.vc_text_image{
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    background-image: url(../images/fundo_pesos_lpcarvao.png) !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+}
+
+.vc_custom2{
+    padding-bottom: 220px;
+
+    background-image: url(../images/product/new-zomo-zomopaper-background.jpg) !important;
+    background-repeat: no-repeat !important;
+    background-size: 95rem, 0rem;
+
+
+}
+.vc_custom4{
+    background-color:#bffc01;
+    background-image: url(../images/product/divisao-alfalfa.jpg) !important;
+    background-size: 95rem, 0rem;
+    background-position:  top;
+    background-repeat: no-repeat !important;
+
+}
+.product-bg-image{
+    background-image: url(../images/product/fundo-alfafa-scaled.png) !important;
+    background-size: 32rem, 0rem;
+    background-position:  top;
+    background-repeat: no-repeat !important;
+}
+.zomopaper-natural{
+    margin-top:225px;
+}
+.owl-carousel .item{
+    width:70%;
+    margin-left:100px;
+    margin-top:100px;
+}
