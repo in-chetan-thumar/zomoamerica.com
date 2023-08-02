@@ -1,4 +1,4 @@
-@media (max-width:1366px) {
+@media (max-width: 1366px) {
     .header .menu {
         gap: 50px;
     }
@@ -29,8 +29,7 @@
     }
 }
 
-@media (max-width:1200px) {
-
+@media (max-width: 1200px) {
     .about-history-main {
         background-color: #fff;
         padding-top: 30px;
@@ -51,11 +50,9 @@
     .header .container .header-logo {
         max-width: 120px;
     }
-
-
 }
 
-@media (max-width:1024px) {
+@media (max-width: 1024px) {
     .about-history-main {
         background-color: #fff;
         padding-top: 30px;
@@ -69,7 +66,7 @@
     }
 
     .menu .menu-item .submenu-link {
-        color: #FFF;
+        color: #fff;
     }
 
     .nav-menu {
@@ -82,7 +79,8 @@
         opacity: 0;
         overflow-y: auto;
         visibility: hidden;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+            0 2px 4px -1px rgba(0, 0, 0, 0.06);
         background-color: var(--blue-color);
         transition: all 0.5s ease;
         flex-direction: column;
@@ -283,7 +281,12 @@
         font-size: 36px;
     }
 
-    .product-page .product-slider-wrapper .product-right .progress-main .item p {
+    .product-page
+        .product-slider-wrapper
+        .product-right
+        .progress-main
+        .item
+        p {
         font-size: 16px;
     }
 
@@ -407,63 +410,64 @@
     }
 }
 
-@media (max-width:768px) {
-    .shisha_description{
+@media (max-width: 768px) {
+    .shisha_description {
         padding-right: 20px;
         padding-left: 20px;
     }
-    .row .main-content .shisha_desc_image .video_gallary .row .video_wrapper
-    {
+    .row .main-content .shisha_desc_image .video_gallary .row .video_wrapper {
         background-image: url(../images/product/fundo-videos.png);
-        background-position:center !important;
-        background-repeat:no-repeat !important;
-        background-size:350px !important;
-        height:auto;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        background-size: 350px !important;
+        height: auto;
     }
-    .row .main-content .shisha_desc_image .video_gallary .row .video_wrapper iframe{
+    .row
+        .main-content
+        .shisha_desc_image
+        .video_gallary
+        .row
+        .video_wrapper
+        iframe {
         padding: 60px 40px;
         margin-left: 22px;
         width: 350px;
         height: 273px;
-
     }
     .row .main-content .shisha_desc_image .img {
         width: 84%;
         margin-left: 8%;
         margin-top: -50px;
     }
-    .aluminum-foil{
-        padding:0 !important;
-
+    .aluminum-foil {
+        padding: 0 !important;
     }
-    .owl-carousel .item{
-        width:100%;
+    .owl-carousel .item {
+        width: 100%;
 
-        margin-left:0px;
-        margin-top:0px;
+        margin-left: 0px;
+        margin-top: 0px;
     }
-    .vc_custom2{
+    .vc_custom2 {
         padding-bottom: 20px;
 
         background-image: url(../images/product/new-zomo-zomopaper-background.jpg) !important;
         background-repeat: no-repeat !important;
         background-size: 95rem, 0rem;
-
-
     }
-    .zomopaper-natural{
-        margin-top:10px;
+    .zomopaper-natural {
+        margin-top: 10px;
     }
-    .product-bottom-footer{
+    .product-bottom-footer {
         display: none;
     }
-    .product-bg-image{
+    .product-bg-image {
         background-image: url(../images/product/fundo-alfafa-scaled.png) !important;
         background-size: 15rem, 0rem;
-        background-position:  top;
+        background-position: top;
         background-repeat: no-repeat !important;
     }
-    .charcol_heading{
+    .charcol_heading {
         margin-top: 0em !important;
         margin-right: 0em !important;
         margin-left: 0em !important;
@@ -480,11 +484,11 @@
         font-weight: 700;
         font-style: normal;
     }
-    .charcol-item{
+    .charcol-item {
         padding-left: 20px;
         padding-right: 20px;
     }
-    .charcol{
+    .charcol {
         box-sizing: border-box;
         padding-left: 15px;
         padding-right: 15px;
@@ -492,20 +496,19 @@
     }
     .charcol_desc {
         text-align: left;
-        padding:0px 0px 20px 20px !important
+        padding: 0px 0px 20px 20px !important;
     }
-    .image-available-form{
+    .image-available-form {
         height: 85%;
         width: 85%;
     }
-    .row .heading{
+    .row .heading {
         padding: 5px 19px !important;
     }
-    .image_wpb{
+    .image_wpb {
         padding: 0px !important;
         margin: 40px;
         max-width: 80%;
-
     }
     .home-banner.owl-theme .owl-nav.disabled + .owl-dots {
         margin-top: 0;
@@ -514,11 +517,11 @@
         right: -65px;
         text-align: center;
     }
-    .main-content{
-        padding:0 !important;
+    .main-content {
+        padding: 0 !important;
     }
-    .main_content{
-        padding:0 !important;
+    .main_content {
+        padding: 0 !important;
     }
     .news-srction-item {
         grid-template-columns: repeat(2, 1fr);
@@ -675,7 +678,11 @@
         padding: 50px 15px;
     }
 
-    .product-slider .product-slider-wrapper .thumb-slider .swiper-slide .image-box {
+    .product-slider
+        .product-slider-wrapper
+        .thumb-slider
+        .swiper-slide
+        .image-box {
         height: 120px;
     }
 
@@ -706,8 +713,7 @@
     /* news page */
 }
 
-@media (max-width:640px) {
-
+@media (max-width: 640px) {
     .dastop-images,
     .tab-images {
         display: none !important;
@@ -726,7 +732,11 @@
         gap: 5px;
     }
 
-    .product-slider .product-slider-wrapper .thumb-slider .swiper-slide .image-box {
+    .product-slider
+        .product-slider-wrapper
+        .thumb-slider
+        .swiper-slide
+        .image-box {
         padding: 5px;
     }
 
@@ -735,7 +745,7 @@
     }
 }
 
-@media (max-width:569px) {
+@media (max-width: 569px) {
     .news-srction-item {
         grid-template-columns: repeat(1, 1fr);
     }
@@ -810,8 +820,7 @@
     }
 }
 
-@media(max-width: 1200px) {
-
+@media (max-width: 1200px) {
     .product-slider-main .product-slider .icon,
     .news-slider-main .news-slider .icon {
         display: flex;
@@ -838,8 +847,7 @@
     }
 }
 
-@media(max-width: 768px) {
-
+@media (max-width: 768px) {
     .product-slider-main .product-slider .icon,
     .news-slider-main .news-slider .icon {
         gap: 30px;
