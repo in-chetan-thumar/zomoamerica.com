@@ -2283,11 +2283,11 @@ img {
 }
 
 .vc_custom2 {
-    padding-bottom: 220px;
+    padding-bottom: 100px;
 
     background-image: url(../images/product/new-zomo-zomopaper-background.jpg) !important;
     background-repeat: no-repeat !important;
-    background-size: 95rem, 0rem;
+    background-size: 80rem, 0rem;
 }
 
 .vc_custom4 {
@@ -2351,7 +2351,27 @@ img {
     width: 550px;
     height: 350px;
 }
+
 .wpb_content_element .vc_2_p {
     color: #bf0811;
     font-size: 18px;
+}
+.wpb_video_widget iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    margin: 0;
+    top: 0;
+    left: 0;
+
+    box-sizing: border-box;
+}
+.hookah-video {
+    width: 420px;
+    height: 225px;
+}
+.hookah-video-col {
+    margin-left: 0 !important;
+    margin-right: -8px !important;
 }
