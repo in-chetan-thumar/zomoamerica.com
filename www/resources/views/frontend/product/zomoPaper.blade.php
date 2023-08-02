@@ -15,9 +15,7 @@
     .vc_custom1{
         background-color:black;
     }
-    .vc_custom2{
-        background-color:#ce9b78;
-    }
+
     .vc_custom3{
         background-color:#003b0d;
     }
@@ -68,12 +66,13 @@
         margin-top:50px;
      }
      .row  p{
+
         margin-top:30px;
         margin-bottom:40px;
      }
 @endsection
 @section('main')
-    <div class="row">
+    <div class="row ">
         <div class="btcm">
             <div class="container">
                 <div class="breadcrumbs d-flex align-items-center">
@@ -83,7 +82,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-12">
+        <div class="col-sm-12 ">
             <div class="main-content">
                 <div class="heading">
                         <h1 style="font-size: 26px;color: #ffffff;text-align: left;font-family:Lato;font-weight:700;font-style:normal" class="heading-h1">ZOMO PAPER</h1>
@@ -132,7 +131,7 @@
 
                         </div>
                     </div>
-                </div>
+
                 <div class="vc_custom2">
                     <div class="row">
                         <div class="col-sm-6" style="margin-top:70px">
