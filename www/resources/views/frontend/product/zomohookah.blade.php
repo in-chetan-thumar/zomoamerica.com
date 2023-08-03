@@ -3,25 +3,26 @@
     Zomo Charcol
 @endsection
 @section('css')
-    .main-content {
-    padding:40px 150px 0px 150px !important;
-    }
+    .main-content{
+    padding-top:40px;
 
-    .row .main-content .heading {
-    padding:5px 10px;
-    font-size: 26px;
+    }
+    .heading {
+    padding:5px 6px;
+    font-size: 22px;
     color: #ffffff;
     font-family: Lato;
     font-weight: 700;
     font-style: normal;
     background-color: #01ff9d !important;
     }
-    .row .main-content .main-section{
+     .main-content .main-section {
     background-color: #000000;
     margin-bottom: -4px;
 
+
     }
-    .row .main-content .main-section h1{
+     .main-content  h1{
     font-size: 45px;
     margin-top:30px;
     background: -webkit-linear-gradient(5deg, #00fffe, #00fffe, #00ff9e, #03ea90);
@@ -32,21 +33,21 @@
     text-align:center;
     }
 
-    .row .main-content .main-section .video iframe{
+     .main-content   iframe{
     margin-top:40x;
     }
-    .row .main-content .main-section .row .release_title{
+     .main-content .row .release_title{
     text-align:center;
     }
-    .row .main-content .main-section .row .release_note
+     .main-content  .row .release_note
     {
     margin-top:200px;
     }
-    .row .main-content .main-section .row .release_note .descricao-aluminio
+     .main-content . .row .release_note .descricao-aluminio
     {
     margin-top:70px;
     }
-    .row .main-content .main-section .row .release_note .descricao-aluminio p
+     .main-content .row .release_note .descricao-aluminio p
     {
     background: -webkit-linear-gradient(0deg, #00fffe, #00fffe, #00ff9e, #03ea90);
     -webkit-background-clip: text;
@@ -54,7 +55,7 @@
     font-size: 17px;
     font-weight: 400;
     }
-    .row .main-content .main-section .row .release_note .descricao-aluminio p .medium
+     .main-content .row .release_note .descricao-aluminio p .medium
     {
     border: 2px #00fffe solid;
     padding: 5px;
@@ -64,14 +65,14 @@
     font-size: 15px;
     font-weight: 400;
     }
-    .row .main-content .main-section .row .release_title p{
+     .main-content  .row .release_title p{
 
     font-size: 70px;
     color: #00fffe;
     font-weight: 900;
     letter-spacing: 17px;
     }
-    .row .main-content .main-section .bg_image{
+    .main-content  .bg_image{
     background-image: url('../assets/frontend/images/product/fundo-fun.png');
     margin-top:40px;
     background-position: center !important;
@@ -79,36 +80,36 @@
     margin-right: 0px !important;
     margin-left: 0px !important;
     }
-    .row .main-content .main-section .bg_image .other_model
+     .main-content  .bg_image .other_model
     {
     display: inline-block;
     margin-left:30%;
     }
-    .row .main-content .main-section .bg_image1 .other_model
+     .main-content  .bg_image1 .other_model
     {
     display: inline-block;
     margin-left:30%;
     }
-    .row .main-content .main-section .bg_image2 .other_model
+    .main-content  .bg_image2 .other_model
     {
     display: inline-block;
     margin-left:30%;
     }
-    .row .main-content .main-section .bg_image1{
+    .main-content  .bg_image1{
     background-image: url('../assets/frontend/images/product/FUNDO-CROSS.png');
     background-position: center !important;
     background-repeat: no-repeat !important;
     margin-right: 0px !important;
     margin-left: 0px !important;
     }
-    .row .main-content .main-section .bg_image2{
+     .main-content  .bg_image2{
     margin-right: 0px !important;
     margin-left: 0px !important;
     background-image: url('../assets/frontend/images/product/FUNDO-TWIST.png');
     background-position: center !important;
     background-repeat: no-repeat !important;
     }
-    .row .main-content .main-section .row .col iframe{
+    .main-content  .row .col iframe{
     width:100%;
     }
 @endsection
@@ -123,20 +124,16 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="main-content">
+    <div class="container main-content ">
+    <div class="row main-section">
             <div class="heading">
                 <h2>ZOMO ZONA HOOKAH</h2>
             </div>
-            <div class="main-section">
-
-                <div class="video">
-                    <div class="row">
-                        <iframe width="848" height="477" src="https://www.youtube.com/embed/YEracpIzNq4?feature=oembed"
+                    <div class="col-lg-12">
+                        <iframe width="100%" height="477" src="https://www.youtube.com/embed/YEracpIzNq4?feature=oembed"
                             frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen=""></iframe>
                     </div>
-                </div>
                 <h1>RELEASES</h1>
                 <div class="row">
                     <div class="col-sm-6 release_note">
@@ -170,7 +167,6 @@
 {{--                        </div>--}}
 {{--                    </div>--}}
 {{--                    <h1>OTHER MODELS</h1>--}}
-                </div>
 {{--                <div class="row bg_image">--}}
 {{--                    <div class="col-sm-6">--}}
 {{--                        <div class="other_model">--}}
@@ -223,37 +219,38 @@
 {{--                        </div>--}}
 {{--                    </div>--}}
 {{--                </div>--}}
-                <div class="video">
-                    <div class="row">
-                        <iframe width="848" height="477" src="https://www.youtube.com/embed/pQkNtMIuKFk"
+                    <div class="col-lg-12 hookah-video-2">
+                        <iframe  src="https://www.youtube.com/embed/pQkNtMIuKFk"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>
                     </div>
-                    <div class="row">
-
-                        <div class="col-sm-4 hookah-video-col ">
+                    <div class="col-lg-12 hookah-video-bottom">
+                        <div class="row  hookah-video-col">
+                        <div class="col-lg-4 " >
                             <iframe class="hookah-video" src="https://www.youtube.com/embed/AhnOdVIOfaQ"
                                     title="YouTube video player" frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                     allowfullscreen></iframe>
                         </div>
-                        <div class="col-sm-4 hookah-video-col">
+                        <div class="col-lg-4 ">
                             <iframe class="hookah-video" src="https://www.youtube.com/embed/o9CSRQLGloU"
                                     title="YouTube video player" frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                     allowfullscreen></iframe>
                         </div>
-                        <div class="col-sm-4 hookah-video-col">
+                        <div class="col-lg-4 ">
                             <iframe class="hookah-video" src="https://www.youtube.com/embed/o9CSRQLGloU"
                                     title="YouTube video player" frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                     allowfullscreen></iframe>
                         </div>
                     </div>
+                    </div>
                 </div>
 
             </div>
         </div>
-    </div>
+
+
 @endsection
