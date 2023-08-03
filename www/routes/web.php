@@ -94,7 +94,8 @@ Route::get('zomo-hookah', [ProductController::class,'zomohookah'])->name('fronte
 //
 
 //
-Route::get('/zomo-news', [\App\Http\Controllers\Frontend\NewsController::class, 'index'])->name('frontend.news');// backend site route
+Route::get('/zomo-news', [\App\Http\Controllers\Frontend\NewsController::class, 'index'])->name('frontend.news');
+// backend site route
 //
 Route::get('/news/{title}',[NewsController::class,'show'])->name("backend.news");
 Route::get('zomo-product', [ProductController::class,'index'])->name('backend.product');

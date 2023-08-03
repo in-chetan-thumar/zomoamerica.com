@@ -19,9 +19,7 @@
     <div class="new-container">
         <div class="news-list">
             <p class="content-title">News</p>
-
-                {!! $table !!}
-
+            {!! $table !!}
         </div>
     </div>
     <div class="history-slider-main reveal">

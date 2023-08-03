@@ -168,11 +168,6 @@ class HomeController extends Controller
     public function product() {
         return view('frontend.product');
     }
-    // news page
-//    public function news() {
-//        $news = resolve('news-repo')->getNewsDetail();
-//        return view('frontend.news',compact('news'));
-//    }
     // contact page
     public function contact() {
         return view('frontend.contact');
