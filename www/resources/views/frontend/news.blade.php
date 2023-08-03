@@ -19,25 +19,8 @@
     <div class="new-container">
         <div class="news-list">
             <p class="content-title">News</p>
-<<<<<<< HEAD
-            <div class="news-list-wrapper">
-                @foreach ($news as $news)
-                    <div class="">
-                        <div class="images-box">
-                            <a href="{{ route('backend.news', $news->title) }}" class="images">
-                                <img src={{ asset('storage/news') . '/' . $news->image }} alt="News 1">
-                            </a>
-                        </div>
-                        <div class="content-news">
-                            <a href="{{ route('backend.news', $news->title) }}">
-                                {{ $news->title }}
-                            </a>
-                        </div>
-                    </div>
-                @endforeach
-=======
+
                 {!! $table !!}
->>>>>>> cd463a246971427e1cf2be022b7d0e2276019055
 
         </div>
     </div>
