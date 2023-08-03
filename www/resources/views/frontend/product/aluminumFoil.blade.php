@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
 @section('title')
-    Zomo Charcol
+    Zomo Aluminum Foil
 @endsection
 @section('css')
     .main_content{
@@ -14,16 +14,8 @@
     font-weight: 700;
     font-style: normal;
     background-color: #fab900 !important;
-    padding:5px 6px;
-    }
-
-    .row .main_content .heading h1{
-    font-size: 26px;
-    color: #ffffff;
-    text-align: left;
-    font-family: Lato;
-    font-weight: 700;
-    font-style: normal;
+    margin-bottom:-8px;
+    padding:5px 0px 5px 20px;
     }
     .row .main_content .image1{
     display: inline-block;
@@ -65,7 +57,7 @@
     <div class="row">
         <div class="main_content">
             <div class="heading">
-                <h1>ALUMINUM FOIL</h1>
+                <h2>ALUMINUM FOIL</h2>
             </div>
             <div class="bg_image">
                 <figure class="image1">

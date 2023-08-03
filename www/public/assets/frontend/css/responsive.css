@@ -543,9 +543,9 @@
         height: 85%;
         width: 85%;
     }
-    .row .heading {
+    /* .row .heading {
         padding: 5px 19px !important;
-    }
+    } */
     .image_wpb {
         padding: 0px !important;
         margin: 40px;
@@ -791,7 +791,7 @@
     }
 
     .relacionados {
-        background: rgb(213, 0, 80);
+        background: #d50050;
     }
 }
 

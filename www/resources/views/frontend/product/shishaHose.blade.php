@@ -121,7 +121,6 @@
     font-style: normal
 
     }
-
 @endsection
 <!--  -->
 @section('main')
@@ -148,13 +147,14 @@
                     <img class="img" src="{{ asset('assets/frontend/images/product/myShishaHose.png') }}">
                 </figure>
                 <div class="row">
-                    <div class="shisha_desc" >
-                        <p class="shisha_description">Stay tuned and have a perfect session with <strong style="color:#743d96">Zomo
+                    <div class="shisha_desc">
+                        <p class="shisha_description">Stay tuned and have a perfect session with <strong
+                                style="color:#743d96">Zomo
                                 Shisha
                                 Hose</strong>. Ultra strength, high density thermoplastic polymer in its extremities, to fit
                             the
-                            hookah perfectly.</p>
-                        <div class="shisha_border_top" style="margin-top: 20px">
+                            hookah perfectlshisha_border_topy.</p>
+                        <div class="" style="margin-top: 20px">
                         </div>
                     </div>
 
@@ -251,8 +251,8 @@
                     <div class="row">
                         <div class="col-sm-6 video">
                             <div class="video_wrapper">
-                                <iframe src="https://www.youtube.com/embed/0HcrvKvDAS4"
-                                    title="YouTube video player" frameborder="0"
+                                <iframe src="https://www.youtube.com/embed/0HcrvKvDAS4" title="YouTube video player"
+                                    frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                     allowfullscreen></iframe>
                             </div>
@@ -261,8 +261,8 @@
                         </div>
                         <div class="col-sm-6 video">
                             <div class="video_wrapper">
-                                <iframe  src="https://www.youtube.com/embed/MxgPYbVPvUw"
-                                    title="YouTube video player" frameborder="0"
+                                <iframe src="https://www.youtube.com/embed/MxgPYbVPvUw" title="YouTube video player"
+                                    frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                     allowfullscreen></iframe>
                             </div>
