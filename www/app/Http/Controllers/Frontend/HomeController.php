@@ -164,24 +164,25 @@ class HomeController extends Controller
         }
         //return redirect()->back();
     }
-    // product page 
+    // product page
     public function product() {
         return view('frontend.product');
-    } 
-    // news page 
-    public function news() {
-        return view('frontend.news');
     }
-    // contact page 
+    // news page
+    public function news() {
+        $news = resolve('news-repo')->getNewsDetail();
+        return view('frontend.news',compact('news'));
+    }
+    // contact page
     public function contact() {
         return view('frontend.contact');
     }
-    // faqs  page 
+    // faqs  page
     public function faqs() {
         return view('frontend.faqs');
     }
-    
-    // series page 
+
+    // series page
     public function series() {
         return view('frontend.videoSeries');
     }
@@ -194,12 +195,12 @@ class HomeController extends Controller
         return view('frontend.quality');
 
     }
-    // wholesale page 
+    // wholesale page
     public function wholesale() {
         $stateArray  = array('Alabama' => 'Alabama','Alaska' => 'Alaska','Arizona' => 'Arizona','Arkansas' => 'Arkansas','California' => 'California','Colorado' => 'Colorado','Connecticut' => 'Connecticut','Delaware' => 'Delaware','District of Columbia' => 'District of Columbia','Florida' => 'Florida','Georgia' =>'Georgia','Hawaii' => 'Hawaii','Idaho' =>'Idaho','Illinois' =>'Illinois','Indiana'=>'Indiana','Iowa'=>'Iowa','Kansas'=>'Kansas','Kentucky' =>'Kentucky','Louisiana'=>'Louisiana','Maine'=>'Maine','Maryland'=>'Maryland','Massachusetts'=>'Massachusetts','Michigan'=>'Michigan','Minnesota'=>'Minnesota','Mississippi'=>'Mississippi','Missouri'=>'Missouri','Montana'=>'Montana','Nebraska'=>'Nebraska','Nevada'=>'Nevada','New Hampshire'=>'New Hampshire','New Jersey' =>'New Jersey','New Mexico'=>'New Mexico','New York'=>'New York','North Carolina'=>'North Carolina','North Dakota'=>'North Dakota','Ohio'=>'Ohio','Oklahoma'=>'Oklahoma','Oregon'=>'Oregon','Pennsylvania'=>'Pennsylvania','Puerto Rico'=>'Puerto Rico','Rhode Island'=>'Rhode Island','South Carolina'=>'South Carolina','South Dakota'=>'South Dakota','Tennessee'=>'Tennessee','Texas'=>'Texas','Utah'=>'Utah','Vermont'=>'Vermont','Virginia'=>'Virginia','Washington'=>'Washington','West Virginia'=>'West Virginia','Wisconsin'=>'Wisconsin','Wyoming'=>'Wyoming');
         return view('frontend.wholesale',compact('stateArray'));
     }
-    // Wholesale store 
+    // Wholesale store
     public function storeWholesale(Wholesale $request)
     {
         try{
@@ -215,12 +216,12 @@ class HomeController extends Controller
                     $params[]  = $enquire;
                     // $params['email'] = $enquire->email;
                     Mail::send(new \App\Mail\wholesaleDetailMail($params));
-                    toastr()->success('Your contact has been submitted successfully!');
+                    toastr()->success('Wholesale Detail has been submitted successfully!');
                     return redirect()->back();
                 }else{
                     toastr()->error('Oops! Something went wrong!');
 
-                }       
+                }
         }catch(\Exception $e){
             toastr()->error($e->getMessage());
             return redirect()->back();
@@ -231,16 +232,21 @@ class HomeController extends Controller
         return view('frontend.aboutus');
     }
 
-    // store contact 
+    // store contact
     public function storeContact(Contact $request)
     {
         try{
 
-                $contact = ContactDetail::create($request->all());
-                if(!empty($contact))
+                $enquire = ContactDetail::create($request->all());
+                if(!empty($enquire))
                 {
-                     
-                    $params = [];
+                    $params['enquire_details'] = view('email.SendMail', compact('enquire'))->render();
+                    $params['email']  = $enquire->email;
+                    $params[]  = $enquire;
+                    // $params['email'] = $enquire->email;
+                    Mail::send(new \App\Mail\ContactDetailNotification($params));
+
+                     $params = [];
                      toastr()->success('Your contact has been submitted successfully!');
                      return redirect()->back();
                 }else{
@@ -249,7 +255,7 @@ class HomeController extends Controller
                 }
         }catch(Exception $e){
             toastr()->error($e->getMessage());
-            return redirect()->back();   
+            return redirect()->back();
         }
     }
 

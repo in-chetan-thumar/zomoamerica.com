@@ -100,6 +100,8 @@ class NewsController extends Controller
      */
     public function show($id)
     {
+        $news = resolve('news-repo')->getNewsByTitle($id);
+        return view('frontend.innerNews',compact('news'));
         //
     }
 
@@ -143,7 +145,6 @@ class NewsController extends Controller
             $params['title'] = $request->title;
             $params['description'] = $request->description;
             if ($request->has('image')) {
-
                 $fileDir = config('constants.NEWS_DOC_PATH') . DIRECTORY_SEPARATOR;
                 if (!File::exists($fileDir)) {
                     Storage::makeDirectory($fileDir, 0777);
@@ -214,5 +215,6 @@ class NewsController extends Controller
         }
         return $params;
     }
+
 
 }

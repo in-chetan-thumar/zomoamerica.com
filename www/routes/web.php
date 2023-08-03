@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\WholesaleController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\FlavorController;
+use App\Http\Controllers\Admin\NewsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -92,10 +93,12 @@ Route::get('/aluminum-foil', [ProductController::class,'aluminumFoil'])->name('f
 Route::get('shisha-hose', [ProductController::class,'shishaHose'])->name('frontend.shishaHose');
 Route::get('zomo-hookah', [ProductController::class,'zomohookah'])->name('frontend.zomo.hookah');
 //
+
 //
 
 // backend site route
 //
+Route::get('/news/{title}',[NewsController::class,'show'])->name("backend.news");
 Route::get('zomo-product', [ProductController::class,'index'])->name('backend.product');
 Route::get('/create', [ProductController::class,'create'])->name('backend.product.create');
 Route::get('/thank-you', [HomeController::class, 'thankYou'])->name('thank.you');
@@ -114,7 +117,7 @@ Route::get('/zomo-category-delete/{id}', [CategoryController::class,'delete'])->
 
 Route::get('/zomo-flavors', [FlavorController::class,'index'])->name('backend.product.flavors');
 Route::get('/zomo-flavors-create', [FlavorController::class,'create'])->name('backend.product.flavors.create');
-Route::post('/zomo-flavors-update', [FlavorController::class,'store'])->name('backend.product.flavors.update');
+Route::post('/zomo-flavors-update', [FlavorController::class,'update'])->name('backend.product.flavors.update');
 Route::post('/zomo-flavors-store', [FlavorController::class,'store'])->name('backend.product.flavors.store');
 Route::get('/zomo-flavors-edit/{id}', [FlavorController::class,'create'])->name('backend.product.flavors.edit');
 Route::post('/zomo-flavors-upload', [FlavorController::class,'upload'])->name('backend.product.flavors.upload');

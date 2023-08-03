@@ -46,6 +46,7 @@ class NewsRepository
             ->paginate(config('constants.PER_PAGE'), ['*'],'page',!empty($params['page'])? $params['page']:'')
             ->setPath($params['path']);
 
+
     }
 
     public function changeStatus($id)
@@ -64,5 +65,11 @@ class NewsRepository
     {
         $tableData = $this->filter($params);
         return view('admin.news.table', compact('tableData'))->render();
+    }
+    public function getNewsDetail(){
+        return $this->model->get();
+    }
+    public function getNewsByTitle($title){
+        return $this->model->where("title",$title)->first();
     }
 }

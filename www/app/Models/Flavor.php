@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\FlavorImage;
 use URL;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
+
 class Flavor extends Model
 {
     use HasFactory;
@@ -46,25 +51,22 @@ class Flavor extends Model
 
 
     public  function getFlavorImageAttribute($data)
-    {    
-        // $a=  $data::find(6)->flavorImage1();
-        // dd($a);
+    {
         $flavor_image = flavorImage::where('flavor_id',$data->id)->first();
-        if (file_exists(config("constants.FLAVOR_URL") .DIRECTORY_SEPARATOR. $data->id . DIRECTORY_SEPARATOR . $flavor_image->image_name)) 
+
+        if (isset($flavor_image) && Storage::exists(config("constants.FLAVOR_URL") .DIRECTORY_SEPARATOR. $data->id . DIRECTORY_SEPARATOR . $flavor_image->image_name))
         {
-            return asset('images/flavors'.DIRECTORY_SEPARATOR.$data->id . DIRECTORY_SEPARATOR . $flavor_image->image_name);
-        } else {
-            return "Sorry Image is not exist";
+            return asset('storage/flavors'.DIRECTORY_SEPARATOR.$data->id . DIRECTORY_SEPARATOR . $flavor_image->image_name);
         }
     }
 
 
     public function getFlavorImageArray($val)
     {
-        // $flavor_image = flavorImage::where('flavor_id',$val->id)->first();
-        if (file_exists(config("constants.FLAVOR_URL") .DIRECTORY_SEPARATOR. $val->flavor_id . DIRECTORY_SEPARATOR . $val->image_name)) 
+        $flavor_image = flavorImage::where('flavor_id',$val->id)->first();
+        if (Storage::exists(config("constants.FLAVOR_URL") .DIRECTORY_SEPARATOR. $val->flavor_id . DIRECTORY_SEPARATOR . $val->image_name))
         {
-            return asset('images/flavors'.DIRECTORY_SEPARATOR.$val->flavor_id . DIRECTORY_SEPARATOR . $val->image_name);
+            return asset('storage/flavors'.DIRECTORY_SEPARATOR.$val->flavor_id . DIRECTORY_SEPARATOR . $val->image_name);
         }
     }
 }

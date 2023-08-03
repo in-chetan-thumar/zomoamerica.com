@@ -23,19 +23,19 @@ class NewsRequest extends FormRequest
      */
     public function rules()
     {
-        $current_route_name = request()->route()->getName();
-        if ($current_route_name == 'news-list.create') {
-            return [
-                'title' => 'required',
-                'description' => 'required',
-                'image' => 'required',
-            ];
-        }
+        // $current_route_name = request()->route()->getName();
+        // if ($current_route_name == 'news-list.create') {
+        //     return [
+        //         'title' => 'required',
+        //         'description' => 'required',
+        //         'image' => 'required',
+        //     ];
+        // }
 
         return [
             'title' => 'required',
             'description' => 'required',
-            'image' => 'nullable',
+            'image' => 'nullable|mimes:jpg,png',
         ];
     }
 

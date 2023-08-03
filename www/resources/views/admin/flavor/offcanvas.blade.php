@@ -1,4 +1,3 @@
-
 <div class="offcanvas offcanvas-end" style="width: 50% !important;" tabindex="-1" id="offcanvasCreate"
     aria-labelledby="offcanvasCreate">
     <div class="offcanvas-header">
@@ -11,7 +10,7 @@
             {!! Form::open([
                 'url' => route('backend.product.flavors.update', $user->id),
                 'method' => 'POST',
-                'id' => 'user-form',
+                'id' => 'flavor-form',
                 'files' => true,
                 'enctype' => 'multipart/form-data',
             ]) !!}
@@ -19,7 +18,7 @@
             {!! Form::open([
                 'url' => route('backend.product.flavors.store'),
                 'method' => 'POST',
-                'id' => 'user-form',
+                'id' => 'flavor-form',
                 'files' => true,
                 'enctype' => 'multipart/form-data',
             ]) !!}
@@ -195,17 +194,18 @@
                         <div class="form-group">
                             {{ Form::label('flavors_image', 'Flavors Image :') }}
                             <input type="file" id="files" name="flavors_image[]" multiple>
-                            @if(isset($flavor_image))
-                            <div claass="preview" style="display: grid;grid-template-columns: repeat(3,1fr);">
-                            @foreach($flavor_image as $flavor)
-                                <div>
-                                <img src="{{ $model->getFlavorImageArray($flavor) }}" height="100">
-                                @if(!empty($model->getFlavorImageArray($flavor)))
-                                <span class="close" style="cursor:pointer"  onClick="loadFile({{ $flavor->id }})">X</span>
-                                @endif
+                            @if (isset($flavor_image))
+                                <div claass="preview" style="display: grid;grid-template-columns: repeat(3,1fr);">
+                                    @foreach ($flavor_image as $flavor)
+                                        <div>
+                                            <img src="{{ $model->getFlavorImageArray($flavor) }}" height="100">
+                                            @if (!empty($model->getFlavorImageArray($flavor)))
+                                                <span class="close" style="cursor:pointer"
+                                                    onClick="loadFile({{ $flavor->id }})">X</span>
+                                            @endif
+                                        </div>
+                                    @endforeach
                                 </div>
-                            @endforeach
-                            </div>
                             @endif
                             @error('flavors_image')
                                 <span style="color:red">
@@ -243,14 +243,14 @@
                     </form>
                 </div>
             </div>
-            {!! JsValidator::formRequest('App\Http\Requests\flavors', '#user-form') !!}
+            {!! JsValidator::formRequest('App\Http\Requests\flavors', '#flavor-form') !!}
 
             @section('script')
                 <script>
                     // Save OR UPDATE DATA
-                    $('#user-form').on('submit', function(e) {
+                    $('#flavor-form').on('submit', function(e) {
                         e.preventDefault();
-                        var formData = new FormData($('#user-form')[0]);
+                        var formData = new FormData($('#flavor-form')[0]);
                         var url = $(this).attr('action');
                         var method = $(this).attr('method');
 
@@ -289,7 +289,5 @@
                             });
                         }
                     })
-                   
-
                 </script>
             @endsection

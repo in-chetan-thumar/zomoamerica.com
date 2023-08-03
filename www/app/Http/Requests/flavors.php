@@ -21,7 +21,6 @@ class flavors extends FormRequest
     public function rules(): array
     {
         return [
-            //
             'flavor_title' => 'required|max:100',
             'flavor_description' => 'required|max:400',
             // 'category_id' => 'required',
@@ -32,7 +31,7 @@ class flavors extends FormRequest
             'cloud_volume' => 'required|max:10',
             'flavors_available' => 'required',
             'slug' => 'required|max:40',
-            // 'flavors_image' => 'required',
+            // 'flavors_image' => 'mimes:jpeg,png,jpg,gif',
         ];
     }
 }

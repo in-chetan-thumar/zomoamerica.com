@@ -1,7 +1,8 @@
 <div class="offcanvas offcanvas-end" style="width: 30% !important;" tabindex="-1" id="offcanvasCreate"
-     aria-labelledby="offcanvasCreate">
+    aria-labelledby="offcanvasCreate">
     <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasCreate">{{ isset($newsdata) ? 'Edit' : 'Create Fresh' }} News Details</h5>
+        <h5 class="offcanvas-title" id="offcanvasCreate">{{ isset($newsdata) ? 'Edit' : 'Create Fresh' }} News Details
+        </h5>
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
@@ -24,7 +25,7 @@
                         {!! Form::label('title', 'Title', ['style' => 'justify-content: right']) !!}<span class="required">*</span>
                         {!! Form::text('title', isset($newsdata) ? $newsdata->title : old('title'), ['class' => 'form-control']) !!}
                         @error('title')
-                        <span style="color:red">
+                            <span style="color:red">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
@@ -39,7 +40,7 @@
                             'class' => 'form-control',
                         ]) !!}
                         @error('description')
-                        <span style="color:red">
+                            <span style="color:red">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
@@ -55,8 +56,14 @@
                         <span class="required">*</span>
                         {{-- <span class="required">@if (!isset($newsdata))*@endif</span> --}}
                         {!! Form::file('image', ['class' => 'form-control', 'id' => 'image']) !!}
+                        <div class="preview">
+                            @if (isset($newsdata) && $newsdata->image != '')
+                                <img style="width:30%;height:20%"
+                                    src="{{ asset('storage/news') . '/' . $newsdata->image }}">
+                            @endif
+                        </div>
                         @error('image')
-                        <span style="color:red">
+                            <span style="color:red">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror

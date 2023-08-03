@@ -13,7 +13,6 @@ return [
     'SUPER_ADMIN' => 'Super Admin',
     // FILE UPLOAD PATH
     'USER_DOC_PATH' => 'public' . DIRECTORY_SEPARATOR . "profile" . DIRECTORY_SEPARATOR,
-    'FLAVOR_URL' => public_path('images'.DIRECTORY_SEPARATOR.'flavors'),
 
     'USER_DOC_URL' => 'storage' . DIRECTORY_SEPARATOR . "profile" . DIRECTORY_SEPARATOR,
     // APP VERSION
@@ -36,5 +35,6 @@ return [
     //NEWS IMAGE
     'NEWS_DOC_PATH' =>'public'.DIRECTORY_SEPARATOR."news",
     'NEWS_DOC_URL' =>'storage'.DIRECTORY_SEPARATOR."news",
+    'FLAVOR_URL' => 'public'.DIRECTORY_SEPARATOR.'flavors',
 
 ];
