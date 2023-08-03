@@ -18,6 +18,7 @@
     background-color: #7a7a7a;
     padding:5px 6px;
     }
+
     .vc_custom{
     background-color: white;
     }
