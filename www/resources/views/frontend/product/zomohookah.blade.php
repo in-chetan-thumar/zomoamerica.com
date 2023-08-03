@@ -154,75 +154,75 @@
                             <img src="{{ asset('assets/frontend/images/product/novos-energy-zona-1.jpg') }}">
                         </div>
                     </div>
-                    <div class="col-sm-6">
-                        <div class="relase_image">
-                            <img src="{{ asset('assets/frontend/images/product/modelo-energy-lp-zona.jpg') }}">
-                        </div>
-                    </div>
-                    <div class="col-sm-6 release_note">
-                        <div class="release_title">
-                            <p>ENERGY</p>
-                        </div>
-                        <div class="descricao-aluminio">
-                            <p class="descr" style="text-align: center;">*STEM ONLY <a
-                                    href="https://www.zomoofficial.com/en/energy/"><span class="medium"> SEE MORE</span></a>
-                            </p>
-                        </div>
-                    </div>
-                    <h1>OTHER MODELS</h1>
+{{--                    <div class="col-sm-6">--}}
+{{--                        <div class="relase_image">--}}
+{{--                            <img src="{{ asset('assets/frontend/images/product/modelo-energy-lp-zona.jpg') }}">--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="col-sm-6 release_note">--}}
+{{--                        <div class="release_title">--}}
+{{--                            <p>ENERGY</p>--}}
+{{--                        </div>--}}
+{{--                        <div class="descricao-aluminio">--}}
+{{--                            <p class="descr" style="text-align: center;">*STEM ONLY <a--}}
+{{--                                    href="https://www.zomoofficial.com/en/energy/"><span class="medium"> SEE MORE</span></a>--}}
+{{--                            </p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <h1>OTHER MODELS</h1>--}}
                 </div>
-                <div class="row bg_image">
-                    <div class="col-sm-6">
-                        <div class="other_model">
-                            <img src="{{ asset('assets/frontend/images/product/novo-arquile-fun2.png') }}">
-                        </div>
-                    </div>
-                    <div class="col-sm-6 release_note">
-                        <div class="release_title">
-                            <p>FUN</p>
-                        </div>
-                        <div class="descricao-aluminio">
-                            <p class="descr" style="text-align: center;">*AVAILABLES SIZES<span class="medium">
-                                    MEDIUM</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row bg_image1">
-                    <div class="col-sm-6 release_note">
-                        <div class="release_title">
-                            <p>CROSS</p>
-                        </div>
-                        <div class="descricao-aluminio">
-                            <p class="descr" style="text-align: center;">AVAILABLES SIZES<span class="medium">
-                                    SMALL</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="other_model">
-                            <img src="{{ asset('assets/frontend/images/product/NOVO-ARQUILE-ZONA-ZOMO-CROSS.png') }}">
-                        </div>
-                    </div>
-                </div>
-                <div class="row bg_image2">
-                    <div class="col-sm-6">
-                        <div class="other_model">
-                            <img src="{{ asset('assets/frontend/images/product/novo-arquile-fun2.png') }}">
-                        </div>
-                    </div>
-                    <div class="col-sm-6 release_note">
-                        <div class="release_title">
-                            <p>TWIST</p>
-                        </div>
-                        <div class="descricao-aluminio">
-                            <p class="descr" style="text-align: center;">*AVAILABLES SIZES <span class="medium">
-                                    SMALL</span><span class="medium">
-                                    MEDIUM</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
+{{--                <div class="row bg_image">--}}
+{{--                    <div class="col-sm-6">--}}
+{{--                        <div class="other_model">--}}
+{{--                            <img src="{{ asset('assets/frontend/images/product/novo-arquile-fun2.png') }}">--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="col-sm-6 release_note">--}}
+{{--                        <div class="release_title">--}}
+{{--                            <p>FUN</p>--}}
+{{--                        </div>--}}
+{{--                        <div class="descricao-aluminio">--}}
+{{--                            <p class="descr" style="text-align: center;">*AVAILABLES SIZES<span class="medium">--}}
+{{--                                    MEDIUM</span>--}}
+{{--                            </p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="row bg_image1">--}}
+{{--                    <div class="col-sm-6 release_note">--}}
+{{--                        <div class="release_title">--}}
+{{--                            <p>CROSS</p>--}}
+{{--                        </div>--}}
+{{--                        <div class="descricao-aluminio">--}}
+{{--                            <p class="descr" style="text-align: center;">AVAILABLES SIZES<span class="medium">--}}
+{{--                                    SMALL</span>--}}
+{{--                            </p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="col-sm-6">--}}
+{{--                        <div class="other_model">--}}
+{{--                            <img src="{{ asset('assets/frontend/images/product/NOVO-ARQUILE-ZONA-ZOMO-CROSS.png') }}">--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="row bg_image2">--}}
+{{--                    <div class="col-sm-6">--}}
+{{--                        <div class="other_model">--}}
+{{--                            <img src="{{ asset('assets/frontend/images/product/novo-arquile-fun2.png') }}">--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="col-sm-6 release_note">--}}
+{{--                        <div class="release_title">--}}
+{{--                            <p>TWIST</p>--}}
+{{--                        </div>--}}
+{{--                        <div class="descricao-aluminio">--}}
+{{--                            <p class="descr" style="text-align: center;">*AVAILABLES SIZES <span class="medium">--}}
+{{--                                    SMALL</span><span class="medium">--}}
+{{--                                    MEDIUM</span>--}}
+{{--                            </p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
                 <div class="video">
                     <div class="row">
                         <iframe width="848" height="477" src="https://www.youtube.com/embed/pQkNtMIuKFk"
