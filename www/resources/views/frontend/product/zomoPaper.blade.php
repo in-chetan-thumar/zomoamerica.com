@@ -4,7 +4,8 @@
 @endsection
 @section('css')
     .main-content{
-    padding:40px 150px 0px 150px !important;
+    padding-top:40px;
+
     }
     .heading{
     background-color:red;
@@ -80,7 +81,6 @@
     }
 @endsection
 @section('main')
-    <div class="row ">
         <div class="btcm">
             <div class="container">
                 <div class="breadcrumbs d-flex align-items-center">
@@ -90,8 +90,10 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-12 ">
-            <div class="main-content">
+        <div class="container main-content">
+
+            <div class="row">
+
                 <div class="heading">
                     <h1 style="" class="heading-h1">ZOMO PAPER</h1>
                 </div>
@@ -236,7 +238,7 @@
                 </div>
                 <div class="vc_custom4">
                     <div class="row">
-                        <div class="col-sm-6 product-bg-image" style="margin-top:160px">
+                        <div class="col-sm-6 product-bg-image" style="margin-top:200px">
                             <figure class="vc_figure">
                                 <img src="{{ asset('assets/frontend/images/product/mock-embalagem-pack-alfafa-min.png') }}"
                                     width="654" height="637">

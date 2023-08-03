@@ -3,11 +3,11 @@
     Zomo Charcol
 @endsection
 @section('css')
-    .row .main-content {
-    padding:40px 150px 0px 150px ;
-    }
+    .main-content{
+    padding-top:40px;
 
-    .row .main-content .heading {
+    }
+    .heading {
     font-size: 26px;
     color: #ffffff;
     font-family: Lato;
@@ -20,30 +20,29 @@
     }
 
 
-
-    .row .main-content .shisha_desc_image .row .img1 {
+     .shisha_desc_image .row .img1 {
     width: 70%;
     margin-left: 50px;
     }
 
-    .row .main-content .shisha_desc_image .row .image5 {
+     .shisha_desc_image .row .image5 {
     width: 70%;
     margin-left: 15%;
     }
 
-    .row .main-content .shisha_desc_image .row .cores-disponiveis {
+   .shisha_desc_image .row .cores-disponiveis {
     display: flex;
     margin-top: 30px;
     }
 
-    .row .main-content .shisha_desc_image .row .cores-disponiveis #quadrado-branco {
+    .shisha_desc_image .row .cores-disponiveis #quadrado-branco {
     border: 1px solid #000;
     width: 28px;
     height: 28px;
     margin-left: 12px;
     }
 
-    .row .main-content .shisha_desc_image .row .cores-disponiveis #quadrado-preto {
+     .shisha_desc_image .row .cores-disponiveis #quadrado-preto {
     border: 1px solid #000;
     background-color: #000;
     width: 28px;
@@ -51,7 +50,7 @@
     margin-left: 10px;
     }
 
-    .row .main-content .shisha_desc_image .row .cores-disponiveis #quadrado-roxo {
+    .shisha_desc_image .row .cores-disponiveis #quadrado-roxo {
     border: 1px solid #000;
     background-color: #812991;
     width: 28px;
@@ -59,7 +58,7 @@
     margin-left: 10px;
     }
 
-    .row .main-content .shisha_desc_image .row .cores-disponiveis #quadrado-dourado {
+    .shisha_desc_image .row .cores-disponiveis #quadrado-dourado {
     background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%,
     transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f
     62.5%, #5d4a1f 100%);
@@ -69,7 +68,7 @@
     margin-left: 10px;
     }
 
-    .row .main-content .shisha_desc_image .row .cores-disponiveis #quadrado-transparente {
+     .shisha_desc_image .row .cores-disponiveis #quadrado-transparente {
     border: 1px solid #000;
     background-color: #e8e8e8;
     width: 28px;
@@ -78,7 +77,7 @@
     }
 
 
-    .row .main-content .shisha_desc_image .row p {
+     .shisha_desc_image .row p {
     text-align: center;
     font-weight: 400;
     color: #743d96;
@@ -90,7 +89,7 @@
     background-color: white;
     }
 
-    .row .main-content .shisha_desc_image .shisha_desc p {
+     .shisha_desc_image .shisha_desc p {
     text-align: center;
     font-weight: 400;
     color: #743d96;
@@ -98,18 +97,18 @@
     line-height: 40px;
     }
 
-    .row .main-content .shisha_desc_image .video_gallary {
+    .shisha_desc_image .video_gallary {
     background-image:
     url('../assets/frontend/images/product/textura-rodape-videos-lo-mangueira-zomo.jpg');
     }
-    .row .main-content .shisha_desc_image .video_gallary .image6 {
+     .shisha_desc_image .video_gallary .image6 {
     width:25%;
     margin-left:35%;
     margin-top:-40px;
     margin-bottom:5%;
     }
 
-    .row .main-content .shisha_desc_image .video_gallary .row .video h2
+     .shisha_desc_image .video_gallary .row .video h2
     {
     margin-top: 50px;
     margin-bottom: 40px;
@@ -134,14 +133,14 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="main-content">
+    <div class="container main-content">
+        <div class="row">
             <div class="heading">
                 <h2>SHISHA HOSE</h2>
             </div>
-            <div class="inner_image1">
+            <div class="inner_image1 shisha-image-top">
                 <img src="{{ asset('assets/frontend/images/product/banner-principal-noticia-nova-mangueira-zomo-official.png') }}"
-                    width="1333" height="750" sizes="(max-width: 1333px) 100vw, 1333px">
+                    >
             </div>
             <div class="shisha_desc_image">
                 <figure>
@@ -235,8 +234,6 @@
                         <p>The material we use is a <strong style="color:#743d96">thermoplastic polymer,</strong> which
                             guarantees greater strength and product quality.</p>
                     </div>
-
-
                     <div class="col-sm-12 pt-5 ">
                         <div class="shisha_border_top">
                         </div>
@@ -245,13 +242,14 @@
                         {{-- new-BANNER_MANGUEIRA_ZOMO-en --}}
                     </div>
                 </div>
-                <div class="video_gallary">
+
+                <div class="video_gallary shisha-video-col">
                     <img class="image6" width="1000" height="466"
                         src="{{ asset('assets/frontend/images/product/videoss-galery-hose-zomo.png') }}">
                     <div class="row">
-                        <div class="col-sm-6 video">
+                        <div class="col-lg-6 video">
                             <div class="video_wrapper">
-                                <iframe src="https://www.youtube.com/embed/0HcrvKvDAS4"
+                                <iframe  src="https://www.youtube.com/embed/0HcrvKvDAS4"
                                     title="YouTube video player" frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                     allowfullscreen></iframe>
@@ -259,7 +257,7 @@
                             <h2>THE LARGEST HOSE IN THE WORLD *100
                                 METERS*</h2>
                         </div>
-                        <div class="col-sm-6 video">
+                        <div class="col-lg-6 video">
                             <div class="video_wrapper">
                                 <iframe  src="https://www.youtube.com/embed/MxgPYbVPvUw"
                                     title="YouTube video player" frameborder="0"

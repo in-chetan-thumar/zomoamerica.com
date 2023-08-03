@@ -35,10 +35,10 @@ img {
     width: 100%;
 }
 
-.container {
-    max-width: 1310px;
-    padding: 0 15px;
-}
+/*.container {*/
+/*    max-width: 1310px;*/
+/*    padding: 0 15px;*/
+/*}*/
 
 .burger {
     position: relative;
@@ -2265,10 +2265,6 @@ img {
     padding-right: 40px;
     width: 100%;
 }
-.charcol-item {
-    padding-left: 60px;
-    padding-right: 60px;
-}
 
 .charcol_desc {
     padding: 0px 100px 0px 65px;
@@ -2283,11 +2279,11 @@ img {
 }
 
 .vc_custom2 {
-    padding-bottom: 100px;
+    padding-bottom: 53px;
 
     background-image: url(../images/product/new-zomo-zomopaper-background.jpg) !important;
     background-repeat: no-repeat !important;
-    background-size: 80rem, 0rem;
+    background-size: 83rem, 0rem;
 }
 
 .vc_custom4 {
@@ -2299,7 +2295,7 @@ img {
 }
 .product-bg-image {
     background-image: url(../images/product/fundo-alfafa-scaled.png) !important;
-    background-size: 32rem, 0rem;
+    background-size: 26rem, 0rem;
     background-position: top;
     background-repeat: no-repeat !important;
 }
@@ -2324,7 +2320,7 @@ img {
 .aluminum-foil {
     padding: 40px 100px;
 }
-.row .main-content .shisha_desc_image .img {
+.shisha_desc_image .img {
     width: 40%;
     margin-left: 30%;
     margin-top: -50px;
@@ -2335,23 +2331,19 @@ img {
     border-top-style: dashed;
     padding-bottom: 30px;
 }
-.row .main-content .shisha_desc_image .video_gallary .row .video_wrapper {
+ .video_wrapper {
     background-image: url(../images/product/fundo-videos.png);
     background-position: center !important;
     background-repeat: no-repeat !important;
     background-size: 550px !important;
     height: auto;
 }
-.row
-    .main-content
-    .shisha_desc_image
-    .video_gallary
-    .row
+
     .video_wrapper
     iframe {
     padding: 60px 40px;
-    margin-left: 93px;
-    width: 550px;
+    margin-left: 75px;
+    width: 520px;
     height: 350px;
 }
 
@@ -2371,21 +2363,22 @@ img {
     box-sizing: border-box;
 }
 .hookah-video {
-    width: 420px;
-    height: 225px;
+    width: 105.5%;
+    height: 222px;
 }
-.hookah-video-col {
-    margin-left: 0 !important;
-    margin-right: -8px !important;
-}
+
 .bg_image {
     background-image: url(../images/product/bckngd_strong_2020-min.jpg) !important;
+    /*background-position: top;*/
+    /*height: 1500px;*/
+    /*background-repeat: no-repeat !important;*/
+    background-size: 90rem, 0rem;
     background-position: top;
-    height: 1500px;
     background-repeat: no-repeat !important;
+    padding-bottom: 919px;
 }
-.row .main_content .bg_image .row .aluminium_desc p{
-    margin-top:250px;
+.aluminium_desc p{
+    margin-top:305px;
     text-align:center;
     font-size: 20px;
     /*padding-left: 40px;*/
@@ -2393,4 +2386,32 @@ img {
     color:#962da1;
     line-height:30px;
     padding:20px 30px;
+}
+
+.hookah-video-2 {
+     margin-left: -12px !important;
+}
+.hookah-video-col {
+    margin-left: -24px !important;
+    margin-right: -25px !important;
+}
+.hookah-video-bottom{
+    margin-bottom: -3px;
+    margin-top: -4px;
+}
+.hookah-video-2 iframe{
+    width: 103.8%;
+    height: 477px;
+}
+.shisha-image-top img{
+ width: 101.9% !important;
+}
+.shisha-image-top img{
+    max-width: 110% !important;
+    height: 750px;
+    margin: 4px 0px 0px -12px !important;
+}
+.shisha-video-col{
+    margin-left: -12px !important;
+    margin-right: -12px !important;
 }

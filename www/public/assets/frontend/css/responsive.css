@@ -1,4 +1,45 @@
 @media (max-width: 1366px) {
+    .video_wrapper {
+        background-image: url(../images/product/fundo-videos.png);
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        background-size: 550px !important;
+        height: auto;
+    }
+
+    .video_wrapper
+    iframe {
+        padding: 60px 40px;
+        margin-left: 30px;
+        width: 520px;
+        height: 350px;
+    }
+
+    .charcol_heading {
+        margin-top: 1.5em !important;
+        margin-right: 0em !important;
+        margin-left: 0.5em !important;
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+        padding-left: 20px !important;
+        background-image: url(../images/product/fundo_conteudo.png) !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        font-size: 24px;
+        color: #ffffff;
+        text-align: left;
+        font-family: Lato;
+        font-weight: 700;
+        font-style: normal;
+    }
+    .charcol {
+        box-sizing: border-box;
+        padding-left: 40px;
+        padding-right: 40px;
+        width: 100%;
+    }
+
     .bg_image {
         background-image: url(../images/product/bckngd_strong_2020-min.jpg) !important;
         background-position: top;
@@ -13,14 +54,17 @@
         background-size: 80rem, 0rem;
     }
     .hookah-video {
-        width: 334px;
-        height: 189px;
+        width: 106.5%;
+        height: 210px;
     }
     .hookah-video-col {
-        margin-left: 0 !important;
-        margin-right: -15px !important;
+        margin-left: -24px !important;
+        margin-right: -25px !important;
     }
-
+    .hookah-video-2 iframe{
+        width: 104.4%;
+        height: 477px;
+    }
     .header .menu {
         gap: 50px;
     }
@@ -52,7 +96,7 @@
 }
 
 @media (max-width: 1200px) {
-    .row .main_content .bg_image .row .aluminium_desc p{
+    .aluminium_desc p{
         margin-top: 190px;
         text-align: right;
         font-size: 19px;
@@ -64,7 +108,7 @@
         padding-left: 23%;
         padding-right: 10%;
     }
-    .row .main_content .image1 img {
+   .main_content .image1 img {
         margin-top: 25px;
         width: 70%;
         margin-left: 80px;
@@ -83,12 +127,12 @@ background-size: 100%;
 
     }
     .hookah-video {
-        width: 250px;
-        height: 135px;
+        width: 105.5%;
+        height: 222px;
     }
     .hookah-video-col {
-        margin-left: 0 !important;
-        margin-right: -15px !important;
+        margin-left: -24px !important;
+        margin-right: -25px !important;
     }
 
     .about-history-main {
@@ -114,7 +158,35 @@ background-size: 100%;
 }
 
 @media (max-width: 1024px) {
-    .row .main_content .bg_image .row .aluminium_desc p{
+    .video_wrapper {
+        background-image: url(../images/product/fundo-videos.png);
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        background-size: 450px !important;
+        height: auto;
+    }
+
+    .video_wrapper
+    iframe {
+        padding: 60px 40px;
+        margin-left: 30px;
+        width: 420px;
+        height: 350px;
+    }
+
+    .hookah-video {
+        width: 108%;
+        height: 173px;
+    }
+    .hookah-video-col {
+        margin-left: -24px !important;
+        margin-right: -25px !important;
+    }
+    .hookah-video-2 iframe{
+        width: 105.2%;
+        height: 477px;
+    }
+    .aluminium_desc p{
         margin-top: 190px;
         text-align: right;
         font-size: 19px;
@@ -126,7 +198,7 @@ background-size: 100%;
         padding-left: 23%;
         padding-right: 10%;
     }
-    .row .main_content .image1 img {
+    .main_content .image1 img {
         margin-top: 25px;
         width: 70%;
         margin-left: 80px;
@@ -144,14 +216,8 @@ background-size: 100%;
         background-repeat: no-repeat !important;
 
     }
-    .hookah-video {
-        width: 196px;
-        height: 102px;
-    }
-    .hookah-video-col {
-        margin-left: 0 !important;
-        margin-right: -15px !important;
-    }
+
+
     .about-history-main {
         background-color: #fff;
         padding-top: 30px;
@@ -510,7 +576,16 @@ background-size: 100%;
 }
 
 @media (max-width:768px) {
-    .row .main_content .bg_image .row .aluminium_desc p{
+    .shisha-image-top img{
+        width: 103% !important;
+    }
+    .shisha-image-top img{
+        max-width: 110% !important;
+        height: auto !important;
+        margin: 4px 0px 0px -12px !important;
+    }
+
+    .aluminium_desc p{
         margin-top:130px;
         text-align:right;
         font-size: 13px;
@@ -535,10 +610,12 @@ background-size: 100%;
     }
     .bg_image {
         background-image: url(../images/product/strong-414.jpg) !important;
+        /*height: 1500px;*/
+        /*background-size: 90rem, 0rem;*/
         background-position: top;
-        height: 1500px;
         background-repeat: no-repeat !important;
-
+        padding-bottom: 0px !important;
+        margin-bottom: -707px !important;
     }
     .relase_image{
         padding-left: 50px;
@@ -547,31 +624,29 @@ background-size: 100%;
     .row .main-content .main-section .row .release_note {
         margin-top: 125px;
     }
-
+    .hookah-video-2 {
+        margin-left: 0px !important;
+    }
     .hookah-video {
-        width: 272px;
-        height: 145px;
+        width: 105.5%;
+        height: 222px;
     }
     .hookah-video-col {
-        margin-left: 0 !important;
-        margin-right: -8px !important;
+        margin-left: -24px !important;
+        margin-right: -25px !important;
     }
     .shisha_description {
         padding-right: 20px;
         padding-left: 20px;
     }
-    .row .main-content .shisha_desc_image .video_gallary .row .video_wrapper {
+    .video_wrapper {
         background-image: url(../images/product/fundo-videos.png);
         background-position: center !important;
         background-repeat: no-repeat !important;
         background-size: 350px !important;
         height: auto;
     }
-    .row
-        .main-content
-        .shisha_desc_image
-        .video_gallary
-        .row
+
         .video_wrapper
         iframe {
         padding: 60px 40px;
@@ -579,7 +654,7 @@ background-size: 100%;
         width: 350px;
         height: 273px;
     }
-    .row .main-content .shisha_desc_image .img {
+     .shisha_desc_image .img {
         width: 84%;
         margin-left: 8%;
         margin-top: -50px;
@@ -860,12 +935,12 @@ background-size: 100%;
 
 @media (max-width: 640px) {
     .hookah-video {
-        width: 380px;
-        height: 215px;
+        width: 105.5%;
+        height: 222px;
     }
     .hookah-video-col {
-        margin-left: 0 !important;
-        margin-right: -8px !important;
+        margin-left: -24px !important;
+        margin-right: -25px !important;
     }
 
     .dastop-images,
@@ -901,12 +976,12 @@ background-size: 100%;
 
 @media (max-width: 569px) {
     .hookah-video {
-        width: 424px;
-        height: 205px;
+        width: 105.5%;
+        height: 222px;
     }
     .hookah-video-col {
-        margin-left: 0 !important;
-        margin-right: -8px !important;
+        margin-left: -24px !important;
+        margin-right: -25px !important;
     }
 
     .news-srction-item {
@@ -1023,3 +1098,4 @@ background-size: 100%;
         display: flex;
     }
 }
+
