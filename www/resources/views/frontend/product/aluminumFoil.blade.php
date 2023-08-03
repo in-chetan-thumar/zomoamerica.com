@@ -15,18 +15,11 @@
     font-weight: 700;
     font-style: normal;
     background-color: #fab900 !important;
-<<<<<<< HEAD
-    padding:5px 6px;
-    }
 
-
-     .main-content .image1{
-=======
     margin-bottom:-8px;
     padding:5px 0px 5px 20px;
     }
-    .row .main_content .image1{
->>>>>>> 4d34c3449b3c62aa02415a679aa42aef1f933f0b
+    .row .main-content .image1{
     display: inline-block;
     vertical-align: top;
     max-width: 100%;
