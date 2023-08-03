@@ -19,6 +19,7 @@
     <div class="new-container">
         <div class="news-list">
             <p class="content-title">News</p>
+<<<<<<< HEAD
             <div class="news-list-wrapper">
                 @foreach ($news as $news)
                     <div class="">
@@ -34,16 +35,10 @@
                         </div>
                     </div>
                 @endforeach
+=======
+                {!! $table !!}
+>>>>>>> cd463a246971427e1cf2be022b7d0e2276019055
 
-            </div>
-            <div class="pagination">
-                <a href="#" class="page-numbers prev">Previous</a>
-                <a href="#" class="page-numbers current">1</a>
-                <a href="#" class="page-numbers">2</a>
-                <a href="#" class="page-numbers">...</a>
-                <a href="#" class="page-numbers">20</a>
-                <a href="#" class="next page-numbers">Next</a>
-            </div>
         </div>
     </div>
     <div class="history-slider-main reveal">

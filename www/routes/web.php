@@ -76,7 +76,6 @@ Route::get('/form-custom-field',function (){
 // frontend site route
 Route::get('/', [HomeController::class,'index'])->name('frontend.home');
 Route::get('/product', [HomeController::class,'product'])->name('frontend.product');
-Route::get('zomo-news', [HomeController::class,'news'])->name('frontend.news');
 Route::get('zomo-faqs', [HomeController::class,'faqs'])->name('frontend.faqs');
 Route::get('/contact', [HomeController::class,'contact'])->name('frontend.contact');
 Route::get('zomo-series', [HomeController::class,'series'])->name('frontend.series');
@@ -95,8 +94,7 @@ Route::get('zomo-hookah', [ProductController::class,'zomohookah'])->name('fronte
 //
 
 //
-
-// backend site route
+Route::get('/zomo-news', [\App\Http\Controllers\Frontend\NewsController::class, 'index'])->name('frontend.news');// backend site route
 //
 Route::get('/news/{title}',[NewsController::class,'show'])->name("backend.news");
 Route::get('zomo-product', [ProductController::class,'index'])->name('backend.product');
