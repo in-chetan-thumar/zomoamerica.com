@@ -35,16 +35,7 @@
     width:70%;
     margin-left:300px;
     }
-    .row .main_content .bg_image .row .aluminium_desc p{
-    margin-top:250px;
-    text-align:center;
-    font-size: 20px;
-    padding-left: 40px;
-    font-weight: 900;
-    color:#962da1;
-    line-height:30px;
-    padding:20px 30px;
-    }
+
     .row .main_content .bg_image .descrip img{
     width: 40%;
     margin-top:50px;
@@ -63,11 +54,11 @@
         </div>
     </div>
     <div class="row">
-        <div class="main_content">
+        <div class="main_content ">
             <div class="heading">
                 <h1>ALUMINUM FOIL</h1>
             </div>
-            <div class="bg_image">
+            <div class="bg_image content-image">
                 <figure class="image1">
                     <img width="800" height="159"
                         src="{{ asset('assets/frontend/images/product/INGLES_BANNER.png') }}">

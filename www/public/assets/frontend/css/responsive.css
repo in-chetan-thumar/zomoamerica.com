@@ -1,6 +1,12 @@
 @media (max-width: 1366px) {
+    .bg_image {
+        background-image: url(../images/product/bckngd_strong_2020-min.jpg) !important;
+        background-position: top;
+        height: 1500px;
+        background-repeat: no-repeat !important;
+    }
     .vc_custom2 {
-        padding-bottom: 135px;
+        padding-bottom: 220px;
 
         background-image: url(../images/product/new-zomo-zomopaper-background.jpg) !important;
         background-repeat: no-repeat !important;
@@ -46,6 +52,36 @@
 }
 
 @media (max-width: 1200px) {
+    .row .main_content .bg_image .row .aluminium_desc p{
+        margin-top: 190px;
+        text-align: right;
+        font-size: 19px;
+        /* padding-left: 40px; */
+        font-weight: 900;
+        color: #962da1;
+        line-height: 28px;
+        /* padding: 20px 30px; */
+        padding-left: 23%;
+        padding-right: 10%;
+    }
+    .row .main_content .image1 img {
+        margin-top: 25px;
+        width: 70%;
+        margin-left: 80px;
+    }
+    .content-image{
+        margin-right: -15px;
+        margin-left: -15px;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .bg_image {
+        background-image: url(../images/product/strong-414.jpg) !important;
+        background-position: top;
+background-size: 100%;
+        background-repeat: no-repeat !important;
+
+    }
     .hookah-video {
         width: 250px;
         height: 135px;
@@ -78,6 +114,36 @@
 }
 
 @media (max-width: 1024px) {
+    .row .main_content .bg_image .row .aluminium_desc p{
+        margin-top: 190px;
+        text-align: right;
+        font-size: 19px;
+        /* padding-left: 40px; */
+        font-weight: 900;
+        color: #962da1;
+        line-height: 28px;
+        /* padding: 20px 30px; */
+        padding-left: 23%;
+        padding-right: 10%;
+    }
+    .row .main_content .image1 img {
+        margin-top: 25px;
+        width: 70%;
+        margin-left: 80px;
+    }
+    .content-image{
+        margin-right: -15px;
+        margin-left: -15px;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .bg_image {
+        background-image: url(../images/product/strong-414.jpg) !important;
+        background-position: top;
+        background-size: 100%;
+        background-repeat: no-repeat !important;
+
+    }
     .hookah-video {
         width: 196px;
         height: 102px;
@@ -444,6 +510,36 @@
 }
 
 @media (max-width:768px) {
+    .row .main_content .bg_image .row .aluminium_desc p{
+        margin-top:130px;
+        text-align:right;
+        font-size: 13px;
+        /*padding-left: 40px;*/
+        font-weight: 900;
+        color:#962da1;
+        line-height:18px;
+        /*padding:20px 30px;*/
+        padding-left: 50%;
+        padding-right: 10%;
+    }
+    .row .main_content .image1 img {
+        margin-top: 25px;
+        width: 70%;
+        margin-left: 80px;
+    }
+    .content-image{
+        margin-right: -15px;
+        margin-left: -15px;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .bg_image {
+        background-image: url(../images/product/strong-414.jpg) !important;
+        background-position: top;
+        height: 1500px;
+        background-repeat: no-repeat !important;
+
+    }
     .relase_image{
         padding-left: 50px;
 
@@ -498,7 +594,7 @@
         margin-top: 0px;
     }
     .vc_custom2 {
-        padding-bottom: 20px;
+        padding-bottom: 111px;
 
         background-image: url(../images/product/new-zomo-zomopaper-background.jpg) !important;
         background-repeat: no-repeat !important;
