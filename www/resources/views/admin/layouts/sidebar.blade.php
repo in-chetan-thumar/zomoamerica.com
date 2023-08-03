@@ -64,11 +64,11 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link collapsed" href="#sidebarPages" data-bs-toggle="collapse" role="button"
-                        aria-expanded="false" aria-controls="sidebarPages">
+                    <a class="nav-link collapsed" href="#sidebarPage" data-bs-toggle="collapse" role="button"
+                        aria-expanded="false" aria-controls="sidebarPage">
                         <i class="ri-pages-line"></i> <span data-key="t-pages">Flavors</span>
                     </a>
-                    <div class="menu-dropdown collapse" id="sidebarPages" style="">
+                    <div class="menu-dropdown collapse" id="sidebarPage" style="">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
                                 <a href="{{ route('backend.product.flavors.category') }}" class="nav-link"

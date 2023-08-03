@@ -89,6 +89,7 @@
     </div>
 </div>
 @if (url()->current() == 'http://lc.zomoamerica.com')
+    <script></script>
     <div class="jquery-modal blocker current">
         <div id="bouncer_modal" class="modal_bouncer">
             <form name="AgeVerForm" id="AgeVerForm">

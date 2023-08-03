@@ -278,7 +278,7 @@
                     <tr>
                         <td class="header">
                             <a href="" style="display: inline-block;">
-                                <img src="{{ asset('assets/frontend/images/'.config('constants.LOGO_FILE_NAME')) }}"
+                                <img src="{{ asset('assets/frontend/images/' . config('constants.LOGO_FILE_NAME')) }}"
                                     alt="{{ config('constants.APP_NAME') }}" title="{{ config('constants.APP_NAME') }}">
                             </a>
                         </td>
@@ -299,24 +299,28 @@
                         </td>
                     </tr>
                     @if (strtoupper(env('APP_ENV')) !== 'PRODUCTION')
-                    <table class="content" width="100%" cellpadding="0" cellspacing="0" role="presentation">
-                        <tr>
-                            <td class="body" width="100%" cellpadding="0" cellspacing="0">
-                                <table align="center" width="80%" cellpadding="0" cellspacing="0"
-                                    role="presentation">
-                                    <tr>
-                                        <td class="content-cell" style="background-color: white;">
-                                            
-                                            <?php echo '
-                                                    Actual Email notification recipients: <br>
-                                                    Email Notification - To: '.$TO.' <br>
-                                                    Email Notification - CC: '.$CC.'<br>'; ?>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                    </table>
+                        <table class="content" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+                            <tr>
+                                <td class="body" width="100%" cellpadding="0" cellspacing="0">
+                                    <table align="center" width="80%" cellpadding="0" cellspacing="0"
+                                        role="presentation">
+                                        <tr>
+                                            <td class="content-cell" style="background-color: white;">
+
+                                                <?php echo '
+                                                                                                    Actual Email notification recipients: <br>
+                                                                                                    Email Notification - To: ' .
+                                                    $TO .
+                                                    ' <br>
+                                                                                                    Email Notification - CC: ' .
+                                                    $CC .
+                                                    '<br>'; ?>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
                     @endif
                 </table>
             </td>

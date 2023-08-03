@@ -1,5 +1,6 @@
 @extends('frontend.layouts.master')
 @section('title')
+    News
 @endsection
 
 @section('main')
@@ -15,30 +16,60 @@
             </div>
         </div>
     </div>
-
-
-
-    <div class="new-container">
-        <div class="news-list">
-            <p class="content-title">News</p>
-            <div class="news-list-wrapper">
-                <div class="news-box ">
-                    <div class="images-box">
-                        <a href="#" class="images">
-                            <img src={{ asset('storage/news') . '/' . $news->image }} alt="News 1">
-                        </a>
+    <div class="news-main">
+        <div class="container">
+            <h1>News</h1>
+            <div class="news-slider-main">
+                <div class="news-slider">
+                    <div class="news-wrapper">
+                        <div class="image">
+                            <img src="{{ asset('storage/news') . '/' . $news->image }}" alt="news-01">
+                        </div>
+                        <div class="detail">
+                            <div class="title">
+                                <h3>{{ $news->title }}</h3>
+                            </div>
+                            <p>{{ $news->description }}</p>
+                            <div class="news-time">
+                                <div class="time">
+                                    <p>Post in: <span>{{ $news->created_at }}</span></p>
+                                </div>
+                                <div class="share">
+                                    <p>Share:</p>
+                                    <a href="https://www.instagram.com/">
+                                        <img src="{{ asset('assets/images/icons/instagram.webp') }}" alt="instagram">
+                                    </a>
+                                    <a href="https://www.facebook.com/">
+                                        <img src="{{ asset('assets/images/icons/facebook.webp') }}" alt="facebook">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="content-news">
-                        <a href="{{ route('backend.news', $news->title) }}">
-                            {{ $news->title }}
-                        </a>
-                        <p>{{ $news->description }}</p>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
+    {{-- <div class="container new-container">
+        <div class="news-list">
+            <p class="content-title">News</p>
+            <div class="inner_news">
+                <div class="images-box">
+                    <a href="#" class="images">
+                        <img src={{ asset('storage/news') . '/' . $news->image }} alt="News 1">
+                    </a>
+                </div>
+
+                <div class="content-news">
+                    <a href="{{ route('backend.news', $news->title) }}">
+                        {{ $news->title }}
+                    </a>
+                    <p>{{ $news->description }}</p>
+                </div>
+            </div>
+        </div>
+    </div> --}}
 
     <div class="footer-contact reveal">
         <div class="infomation-footer-contact container">

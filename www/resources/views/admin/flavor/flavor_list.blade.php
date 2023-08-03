@@ -4,9 +4,9 @@
     Flavor list
 @endsection
 @section('css')
-.remove{
+    .remove{
     cursor:pointer;
-}
+    }
 @endsection
 @section('content')
     @component('components.breadcrumb', ['lists' => ['Dashboard' => route('root')]])
@@ -33,11 +33,11 @@
 
                         <div class="row p-3">
                             {{ Form::label('Start Date') }}
-                            {{ Form::date('start_date', date('Y-m-d')) }}
+                            {{ Form::date('start_date', date('Y-m-d'), ['class' => 'form-control']) }}
                         </div>
                         <div class="row p-3">
                             {{ Form::label('End Date') }}
-                            {{ Form::date('end_date', date('Y-m-d')) }}
+                            {{ Form::date('end_date', date('Y-m-d'), ['class' => 'form-control']) }}
                         </div>
                         <button type="submit" name="type" value="submit"
                             class="btn btn-primary waves-effect waves-light">
@@ -45,8 +45,8 @@
                         </button>
                         &nbsp;
                         <!--<a href="{{ route('backend.product.export') }}" class="btn btn-secondary waves-effect waves-light">
-                                    Export
-                                </a> -->
+                                        Export
+                                    </a> -->
 
                         {!! Form::close() !!}
                     </div>
@@ -66,26 +66,24 @@
     <script type="text/javascript" src="{{ asset('assets/vendor/jsvalidation/js/jsvalidation.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/user.js') }}"></script>
     <script type="text/javascript">
-    function loadFile(id='')
-    {
-      
-        let fid = id;
-        $.ajax({
-            url:"{{ route('backend.product.flavors.removeImage')}}",
-            type:'POST',
-            data:{
-                "_token": "{{ csrf_token() }}",
-                fid:fid
-            },
-            success:function(data) {
-                toastr.success(data.message);
-                location.reload();
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                toastr.error('Error occurred!');
-            }
-        })
-    }
-    </script>
+        function loadFile(id = '') {
 
+            let fid = id;
+            $.ajax({
+                url: "{{ route('backend.product.flavors.removeImage') }}",
+                type: 'POST',
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    fid: fid
+                },
+                success: function(data) {
+                    toastr.success(data.message);
+                    location.reload();
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    toastr.error('Error occurred!');
+                }
+            })
+        }
+    </script>
 @endsection

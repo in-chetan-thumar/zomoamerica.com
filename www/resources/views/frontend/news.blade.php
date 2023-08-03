@@ -1,5 +1,6 @@
 @extends('frontend.layouts.master')
 @section('title')
+    News
 @endsection
 
 @section('main')
@@ -20,9 +21,9 @@
             <p class="content-title">News</p>
             <div class="news-list-wrapper">
                 @foreach ($news as $news)
-                    <div class="news-box ">
+                    <div class="">
                         <div class="images-box">
-                            <a href="singles-new.html" class="images">
+                            <a href="{{ route('backend.news', $news->title) }}" class="images">
                                 <img src={{ asset('storage/news') . '/' . $news->image }} alt="News 1">
                             </a>
                         </div>
