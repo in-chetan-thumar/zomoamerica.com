@@ -108,7 +108,7 @@
         padding-left: 23%;
         padding-right: 10%;
     }
-   .main_content .image1 img {
+   .main-content .image1 img {
         margin-top: 25px;
         width: 70%;
         margin-left: 80px;
@@ -586,7 +586,7 @@ background-size: 100%;
     }
 
     .aluminium_desc p{
-        margin-top:130px;
+        margin-top:85px;
         text-align:right;
         font-size: 13px;
         /*padding-left: 40px;*/
