@@ -146,7 +146,7 @@ class FlavorController extends Controller
             foreach ($images as $key => $image) {
                 $imag['image_name'] = $image['name'];
                 $imag['category_id'] =$request->category_id;
-                $imag['flavor_id'] =$user->id;
+                $imag['flavor_id'] = $id;
 
                 FlavorImage::create($imag);
             }
