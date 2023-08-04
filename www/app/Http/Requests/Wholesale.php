@@ -30,7 +30,7 @@ class Wholesale extends FormRequest
             'zipcode' => 'required|max:10',
             'email' => 'required|email',
             'number' => 'required|max:10',
-            // 'g-recaptcha-response' => 'required|captcha',
+             'g-recaptcha-response' => 'required|captcha',
             'state' => 'required',
             'website' => 'max:70'
         ];

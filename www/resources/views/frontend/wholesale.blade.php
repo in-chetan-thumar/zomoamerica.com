@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
 @section('title')
-    
+
 @endsection
 
 
@@ -155,7 +155,7 @@
                         {!! Form::text('number', old('number'), null, [
                             'class' => ' name',
                             'placeholder' => 'Your Number',
-                            
+
                         ]) !!}
                         <span class="text-danger" style="font-size:15px">
                             @error('number')
@@ -164,6 +164,7 @@
                         </span>
                         <br>
                     </div>
+
                     {!! NoCaptcha::display() !!}
                     <span class="text-danger" style="font-size:15px">
                         @error('g-recaptcha-response')
@@ -204,9 +205,11 @@
             </div>
         </div>
 
-    @section('js')
-        {!! JsValidator::formRequest('App\Http\Requests\Wholesale', '#wholesale-form') !!}
-        {!! NoCaptcha::renderJs() !!}
-    @endsection
 
+
+@endsection
+@section('script')
+    {!! NoCaptcha::renderJs() !!}
+    {!! NoCaptcha::renderJs('fr', true, 'recaptchaCallback') !!}
+    {!! JsValidator::formRequest('App\Http\Requests\Wholesale', '#wholesale-form') !!}
 @endsection

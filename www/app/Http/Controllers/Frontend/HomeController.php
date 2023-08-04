@@ -134,36 +134,7 @@ class HomeController extends Controller
         return view('frontend.thank_you');
     }
 
-    public function storeBottom(EnquireBottom $request)
-    {
-        try {
-            $params=[];
-            $params['name'] = $request->name1;
-            $params['address'] = $request->address1;
-            $params['number'] = $request->number1;
-            $params['message'] = $request->message1;
 
-            $enquire = Enquire::create($params);
-
-            if(!empty($enquire)){
-
-                $params = [];
-
-                $params['enquire_details'] = view('email.SendMail', compact('enquire'))->render();
-                Mail::send(new \App\Mail\EnquireMailNotification($params));
-                toastr()->success('Your enquire has been submitted successfully!');
-                return redirect()->route('thank.you');
-            } else {
-                toastr()->error('Oops! Something went wrong!');
-
-
-            }
-        } catch (\Exception $e) {
-            toastr()->error($e->getMessage());
-            return redirect()->back();
-        }
-        //return redirect()->back();
-    }
     // product page
     public function product() {
         return view('frontend.product');
@@ -253,7 +224,7 @@ class HomeController extends Controller
                     toastr()->error('Oops! Something went wrong!');
 
                 }
-        }catch(Exception $e){
+        }catch(\Exception $e){
             toastr()->error($e->getMessage());
             return redirect()->back();
         }
