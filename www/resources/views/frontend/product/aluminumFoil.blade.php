@@ -3,11 +3,10 @@
     Zomo Aluminum Foil
 @endsection
 @section('css')
-    .main-content{
+    {{-- .main-content{
     padding-top:40px;
-
-    }
-      .heading{
+    } --}}
+    .heading{
     font-size: 22px;
     color: #ffffff;
     text-align: left;
@@ -24,13 +23,13 @@
     vertical-align: top;
     max-width: 100%;
     }
-     .main-content .image1 img{
+    .main-content .image1 img{
     margin-top:100px;
     width:70%;
     margin-left:300px;
     }
 
-   .main-content .bg_image .descrip img{
+    .main-content .bg_image .descrip img{
     width: 40%;
     margin-top:50px;
     margin-left:50%;
@@ -55,12 +54,12 @@
             </div>
             <div class="bg_image content-image">
                 <div class="row">
-                <div class="col-sm-12">
-                <figure class="image1">
-                    <img width="800" height="159"
-                        src="{{ asset('assets/frontend/images/product/INGLES_BANNER.png') }}">
-                </figure>
-                </div>
+                    <div class="col-sm-12">
+                        <figure class="image1">
+                            <img width="800" height="159"
+                                src="{{ asset('assets/frontend/images/product/INGLES_BANNER.png') }}">
+                        </figure>
+                    </div>
                     <div class="col-sm-6">
                     </div>
                     <div class="col-sm-6">
@@ -74,8 +73,8 @@
                 </div>
                 <figure class="descrip">
                     <img src="{{ asset('assets/frontend/images/product/descricao_ingles.png') }}" width="450"
-                         height="122">
+                        height="122">
                 </figure>
+            </div>
         </div>
-    </div>
-@endsection
+    @endsection

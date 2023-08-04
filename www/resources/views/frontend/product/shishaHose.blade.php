@@ -3,10 +3,9 @@
     Zomo Charcol
 @endsection
 @section('css')
-    .main-content{
+    {{-- .main-content{
     padding-top:40px;
-
-    }
+    } --}}
     .heading {
     font-size: 26px;
     color: #ffffff;
@@ -20,17 +19,17 @@
     }
 
 
-     .shisha_desc_image .row .img1 {
+    .shisha_desc_image .row .img1 {
     width: 70%;
     margin-left: 50px;
     }
 
-     .shisha_desc_image .row .image5 {
+    .shisha_desc_image .row .image5 {
     width: 70%;
     margin-left: 15%;
     }
 
-   .shisha_desc_image .row .cores-disponiveis {
+    .shisha_desc_image .row .cores-disponiveis {
     display: flex;
     margin-top: 30px;
     }
@@ -42,7 +41,7 @@
     margin-left: 12px;
     }
 
-     .shisha_desc_image .row .cores-disponiveis #quadrado-preto {
+    .shisha_desc_image .row .cores-disponiveis #quadrado-preto {
     border: 1px solid #000;
     background-color: #000;
     width: 28px;
@@ -68,7 +67,7 @@
     margin-left: 10px;
     }
 
-     .shisha_desc_image .row .cores-disponiveis #quadrado-transparente {
+    .shisha_desc_image .row .cores-disponiveis #quadrado-transparente {
     border: 1px solid #000;
     background-color: #e8e8e8;
     width: 28px;
@@ -77,7 +76,7 @@
     }
 
 
-     .shisha_desc_image .row p {
+    .shisha_desc_image .row p {
     text-align: center;
     font-weight: 400;
     color: #743d96;
@@ -89,7 +88,7 @@
     background-color: white;
     }
 
-     .shisha_desc_image .shisha_desc p {
+    .shisha_desc_image .shisha_desc p {
     text-align: center;
     font-weight: 400;
     color: #743d96;
@@ -101,14 +100,14 @@
     background-image:
     url('../assets/frontend/images/product/textura-rodape-videos-lo-mangueira-zomo.jpg');
     }
-     .shisha_desc_image .video_gallary .image6 {
+    .shisha_desc_image .video_gallary .image6 {
     width:25%;
     margin-left:35%;
     margin-top:-40px;
     margin-bottom:5%;
     }
 
-     .shisha_desc_image .video_gallary .row .video h2
+    .shisha_desc_image .video_gallary .row .video h2
     {
     margin-top: 50px;
     margin-bottom: 40px;
@@ -138,8 +137,8 @@
                 <h2>SHISHA HOSE</h2>
             </div>
             <div class="inner_image1 shisha-image-top">
-                <img src="{{ asset('assets/frontend/images/product/banner-principal-noticia-nova-mangueira-zomo-official.png') }}"
-                    >
+                <img
+                    src="{{ asset('assets/frontend/images/product/banner-principal-noticia-nova-mangueira-zomo-official.png') }}">
             </div>
             <div class="shisha_desc_image">
                 <figure>
@@ -252,7 +251,6 @@
 
                                 <iframe src="https://www.youtube.com/embed/0HcrvKvDAS4" title="YouTube video player"
                                     frameborder="0"
-
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                     allowfullscreen></iframe>
                             </div>
