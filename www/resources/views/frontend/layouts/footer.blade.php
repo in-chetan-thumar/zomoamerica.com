@@ -89,8 +89,7 @@
     </div>
 </div>
 @if (url()->current() == 'http://lc.zomoamerica.com')
-    <script></script>
-    <div class="jquery-modal blocker current">
+    {{-- <div class="jquery-modal blocker current">
         <div id="bouncer_modal" class="modal_bouncer">
             <form name="AgeVerForm" id="AgeVerForm">
                 <div class="model_logo">
@@ -104,10 +103,10 @@
                 </p>
 
                 <div id="bouncer_modal_actions">
-                    <button type="submit" class="pop-submit">Enter</button>
+                    <button type="button" class="pop-submit">Enter</button>
                     <button type="button" class="btn-black close">Exit</button>
                 </div>
             </form>
         </div>
-    </div>
+    </div> --}}
 @endif

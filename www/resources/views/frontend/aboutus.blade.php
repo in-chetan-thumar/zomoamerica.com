@@ -1,11 +1,10 @@
 @extends('frontend.layouts.master')
 @section('title')
-
 @endsection
 
 
 @section('main')
-   <div class="btcm">
+    <div class="btcm">
         <div class="container">
             <div class="breadcrumbs d-flex align-items-center">
                 <a href="/">Home</a>
@@ -16,13 +15,13 @@
     </div>
     <div>
         <div class="container">
-                <p class="content-title">ABOUT US</p>
+            <p class="content-title">ABOUT US</p>
         </div>
     </div>
     <div>
         <div class="container">
             <div class="banner-image">
-                <img src={{ asset('assets/frontend/images/about-us/banner.webp')}} alt="banner-image">
+                <img src={{ asset('assets/frontend/images/about-us/banner.webp') }} alt="banner-image">
             </div>
         </div>
     </div>
@@ -36,14 +35,14 @@
     <div class="d-flex">
         <div class="about-history-main">
             <div class="logo-img">
-                <img src={{ asset('assets/frontend/images/about-us/zomo.webp')}} alt="zomo">
+                <img src={{ asset('assets/frontend/images/about-us/zomo.webp') }} alt="zomo">
             </div>
             <div class="about-history">
                 <div class="center-line"></div>
                 <div class="about-item-main reveal">
                     <div class="about-item">
                         <div class="image" data-bs-toggle="modal" data-bs-target="#history-img01">
-                            <img src={{ asset('assets/frontend/images/about-us/history-01.png')}} alt="history-01">
+                            <img src={{ asset('assets/frontend/images/about-us/history-01.png') }} alt="history-01">
                         </div>
                         <div class="content-details">
                             <h3>EVERYTHING HAS A BEGINNING!</h3>
@@ -66,7 +65,7 @@
                 <div class="about-item-main reveal">
                     <div class="about-item">
                         <div class="image" data-bs-toggle="modal" data-bs-target="#history-img02">
-                            <img src={{ asset('assets/frontend/images/about-us/history-02.webp')}} alt="history-02">
+                            <img src={{ asset('assets/frontend/images/about-us/history-02.webp') }} alt="history-02">
                         </div>
                         <div class="content-details">
                             <h3>2016 WORKING AT FULL POWER</h3>
@@ -90,7 +89,7 @@
                 <div class="about-item-main reveal">
                     <div class="about-item">
                         <div class="image" data-bs-toggle="modal" data-bs-target="#history-img03">
-                            <img src={{ asset('assets/frontend/images/about-us/history-03.webp')}} alt="history-03">
+                            <img src={{ asset('assets/frontend/images/about-us/history-03.webp') }} alt="history-03">
                         </div>
                         <div class="content-details">
                             <h3>2017: STARTING A WORLD REVOLUTION</h3>
@@ -116,7 +115,7 @@
                 <div class="about-item-main reveal">
                     <div class="about-item">
                         <div class="image" data-bs-toggle="modal" data-bs-target="#history-img04">
-                            <img src={{ asset('assets/frontend/images/about-us/history-04.webp')}} alt="history-04">
+                            <img src={{ asset('assets/frontend/images/about-us/history-04.webp') }} alt="history-04">
                         </div>
                         <div class="content-details">
                             <h3>2018 WAS CRAZY</h3>
@@ -143,7 +142,7 @@
                 <div class="about-item-main reveal">
                     <div class="about-item">
                         <div class="image" data-bs-toggle="modal" data-bs-target="#history-img05">
-                            <img src={{ asset('assets/frontend/images/about-us/history-05.webp')}} alt="history-05">
+                            <img src={{ asset('assets/frontend/images/about-us/history-05.webp') }} alt="history-05">
                         </div>
                         <div class="content-details">
                             <h3>2019 A BOLD YEAR</h3>
@@ -170,7 +169,7 @@
                 <div class="about-item-main reveal">
                     <div class="about-item">
                         <div class="image" data-bs-toggle="modal" data-bs-target="#history-img06">
-                            <img src={{ asset('assets/frontend/images/about-us/history-06.webp')}} alt="history-06">
+                            <img src={{ asset('assets/frontend/images/about-us/history-06.webp') }} alt="history-06">
                         </div>
                         <div class="content-details">
                             <h3>2020 WAS A DIFFICULT YEAR, BUT WE GOT TOGETHER TO MAKE IT.</h3>
@@ -198,7 +197,7 @@
                 <div class="about-item-main reveal">
                     <div class="about-item">
                         <div class="image" data-bs-toggle="modal" data-bs-target="#history-img07">
-                            <img src={{ asset('assets/frontend/images/about-us/history-07.webp')}} alt="history-07">
+                            <img src={{ asset('assets/frontend/images/about-us/history-07.webp') }} alt="history-07">
                         </div>
                         <div class="content-details">
                             <h3>2021 WAS AN AMAZING YEAR WITH MANY SURPRISES</h3>
@@ -232,19 +231,19 @@
     <div class="history-slider-main reveal">
         <div class="history-slider owl-carousel owl-theme">
             <div class="item">
-                <img src={{ asset('assets/frontend/images/about-us/history-01.png')}} alt="history-slider">
+                <img src={{ asset('assets/frontend/images/about-us/history-01.png') }} alt="history-slider">
             </div>
             <div class="item">
-                <img src={{ asset('assets/frontend/images/about-us/history-slide-02.png')}} alt="history-slider">
+                <img src={{ asset('assets/frontend/images/about-us/history-slide-02.png') }} alt="history-slider">
             </div>
             <div class="item">
-                <img src={{ asset('assets/frontend/images/about-us/history-03.webp')}} alt="history-slider">
+                <img src={{ asset('assets/frontend/images/about-us/history-03.webp') }} alt="history-slider">
             </div>
             <div class="item">
-                <img src={{ asset('assets/frontend/images/about-us/history-04.webp')}} alt="history-slider">
+                <img src={{ asset('assets/frontend/images/about-us/history-04.webp') }} alt="history-slider">
             </div>
             <div class="item">
-                <img src={{ asset('assets/frontend/images/about-us/history-05.webp')}} alt="history-slider">
+                <img src={{ asset('assets/frontend/images/about-us/history-05.webp') }} alt="history-slider">
             </div>
         </div>
     </div>
@@ -254,12 +253,12 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body">
-                    <img src={{ asset('assets/frontend/images/about-us/history-01.png')}} alt="history">
+                    <img src={{ asset('assets/frontend/images/about-us/history-01.png') }} alt="history">
                 </div>
                 <div class="modal-footer">
                     <p>EVERYTHING HAS A BEGINNING!</p>
                     <button type="button" class="close-icon" data-bs-dismiss="modal" aria-label="Close"><img
-                            src={{ asset('assets/frontend/images/icons/close-icon.webp')}} alt="close"></button>
+                            src={{ asset('assets/frontend/images/icons/close-icon.webp') }} alt="close"></button>
                 </div>
             </div>
         </div>
@@ -269,12 +268,12 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body">
-                    <img src={{ asset('assets/frontend/images/about-us/history-02.webp')}} alt="history">
+                    <img src={{ asset('assets/frontend/images/about-us/history-02.webp') }} alt="history">
                 </div>
                 <div class="modal-footer">
                     <p>2016 WORKING AT FULL POWER</p>
                     <button type="button" class="close-icon" data-bs-dismiss="modal" aria-label="Close"><img
-                            src={{ asset('assets/frontend/images/icons/close-icon.webp')}} alt="close"></button>
+                            src={{ asset('assets/frontend/images/icons/close-icon.webp') }} alt="close"></button>
                 </div>
             </div>
         </div>
@@ -284,12 +283,12 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body">
-                    <img src={{ asset('assets/frontend/images/about-us/history-03.webp')}} alt="history">
+                    <img src={{ asset('assets/frontend/images/about-us/history-03.webp') }} alt="history">
                 </div>
                 <div class="modal-footer">
                     <p>2017: STARTING A WORLD REVOLUTION</p>
                     <button type="button" class="close-icon" data-bs-dismiss="modal" aria-label="Close"><img
-                            src={{ asset('assets/frontend/images/icons/close-icon.webp')}} alt="close"></button>
+                            src={{ asset('assets/frontend/images/icons/close-icon.webp') }} alt="close"></button>
                 </div>
             </div>
         </div>
@@ -299,12 +298,12 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body">
-                    <img src={{ asset('assets/frontend/images/about-us/history-04.webp')}} alt="history">
+                    <img src={{ asset('assets/frontend/images/about-us/history-04.webp') }} alt="history">
                 </div>
                 <div class="modal-footer">
                     <p>2018 WAS CRAZY</p>
                     <button type="button" class="close-icon" data-bs-dismiss="modal" aria-label="Close"><img
-                            src={{ asset('assets/frontend/images/icons/close-icon.webp')}} alt="close"></button>
+                            src={{ asset('assets/frontend/images/icons/close-icon.webp') }} alt="close"></button>
                 </div>
             </div>
         </div>
@@ -314,12 +313,12 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body">
-                    <img src={{ asset('assets/frontend/images/about-us/history-05.webp')}} alt="history">
+                    <img src={{ asset('assets/frontend/images/about-us/history-05.webp') }} alt="history">
                 </div>
                 <div class="modal-footer">
                     <p>2019 A BOLD YEAR</p>
                     <button type="button" class="close-icon" data-bs-dismiss="modal" aria-label="Close"><img
-                            src={{ asset('assets/frontend/images/icons/close-icon.webp')}} alt="close"></button>
+                            src={{ asset('assets/frontend/images/icons/close-icon.webp') }} alt="close"></button>
                 </div>
             </div>
         </div>
@@ -329,12 +328,12 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body">
-                    <img src={{ asset('assets/frontend/images/about-us/history-06.webp')}} alt="history">
+                    <img src={{ asset('assets/frontend/images/about-us/history-06.webp') }} alt="history">
                 </div>
                 <div class="modal-footer">
                     <p>2020 WAS A DIFFICULT YEAR, BUT WE GOT TOGETHER TO MAKE IT.</p>
                     <button type="button" class="close-icon" data-bs-dismiss="modal" aria-label="Close"><img
-                            src={{ asset('assets/frontend/images/icons/close-icon.webp')}} alt="close"></button>
+                            src={{ asset('assets/frontend/images/icons/close-icon.webp') }} alt="close"></button>
                 </div>
             </div>
         </div>
@@ -344,30 +343,27 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body">
-                    <img src={{ asset('assets/frontend/images/about-us/history-07.webp')}} alt="history">
+                    <img src={{ asset('assets/frontend/images/about-us/history-07.webp') }} alt="history">
                 </div>
                 <div class="modal-footer">
                     <p>2021 WAS AN AMAZING YEAR WITH MANY SURPRISES</p>
                     <button type="button" class="close-icon" data-bs-dismiss="modal" aria-label="Close"><img
-                            src={{ asset('assets/frontend/images/icons/close-icon.webp')}} alt="close"></button>
+                            src={{ asset('assets/frontend/images/icons/close-icon.webp') }} alt="close"></button>
                 </div>
             </div>
         </div>
     </div>
-         <div class="footer-contact reveal">
-            <div class="infomation-footer-contact container">
-                <div class="footer-contact-box">
-                    <p class="title-in">{{ config("constants.FOOTER_TITLE")}}</p>
-                    <p>{{ config("constants.FOOTER_ADD")}}</p>
-                </div>
-                <div class="footer-contact-box">
-                    <p class="title-in">{{ config("constants.FOOTER_TITLE1")}}</p>
-                    <a href="tel:18669523331">{{ config("constants.FOOTER_TELEPHONE")}}</a>
-                    <a href="mailto:sales@zomousa.com">{{ config("constants.FOOTER_GMAIL")}}</a>
-                </div>
+    <div class="footer-contact reveal">
+        <div class="infomation-footer-contact container">
+            <div class="footer-contact-box">
+                <p class="title-in">{{ config('constants.FOOTER_TITLE') }}</p>
+                <p>{{ config('constants.FOOTER_ADD') }}</p>
+            </div>
+            <div class="footer-contact-box">
+                <p class="title-in">{{ config('constants.FOOTER_TITLE1') }}</p>
+                <a href="tel:18669523331">{{ config('constants.FOOTER_TELEPHONE') }}</a>
+                <a href="mailto:sales@zomousa.com">{{ config('constants.FOOTER_GMAIL') }}</a>
             </div>
         </div>
-
-
-
+    </div>
 @endsection

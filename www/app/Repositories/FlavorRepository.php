@@ -49,7 +49,7 @@ class FlavorRepository
     // Update recoard
     public function update($params, $id)
     {
-        $user = $this->findByID($id)->update($params);    
+        $user = $this->findByID($id)->update($params);
         return $user;
     }
 
@@ -72,7 +72,7 @@ class FlavorRepository
 
         } elseif ($params['return_type'] == 'object') {
             return $this->model->get();
-            
+
         } else {
             return $this->model
                 ->latest()
@@ -85,18 +85,27 @@ class FlavorRepository
     {
         return array("Y"=>'Active','N'=>'DeActive');
     }
-    
+
     public function getCategory(){
         return Category::pluck('name','id');
     }
 
-    public function getflavor($id){ 
+    public function getflavor($id){
         $getId = Category::where('slug',$id)->first();
         return $this->model->where('category_id',$getId->id)->get();
     }
+
+    public function getDataByCategoryId($id){
+        return $this->model->where('category_id',$id)->first();
+
+    }
     // forgetting data by slug
-    
-    public function getDataByslug($slug){ 
+
+    public function getDataByslug($slug){
         return Flavor::where('slug',$slug)->first();
     }
+    public function getDistinctData(){
+        return $this->model->select('category_id')->distinct()->get();
+    }
+
 }

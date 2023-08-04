@@ -71,6 +71,7 @@ class NewsRepository
         $tableData = $this->filter($params);
         return view('admin.news.table', compact('tableData'))->render();
     }
+
     public function renderHtmlNewsTable($params)
     {
         $tableData = $this->frontend_filter($params);

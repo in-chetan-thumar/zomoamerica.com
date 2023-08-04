@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\DB;
 use Artesaos\SEOTools\Facades\SEOTools;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
+use App\Models\Flavor;
 
 
 class HomeController extends Controller
@@ -27,11 +28,13 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-
-        return view('frontend.home');
-
-
-        // return view('admin.news.news_list', compact('table'));
+        $flavors = resolve('flavor-repo')->getDistinctData();
+        foreach($flavors as $val) {
+            $flavor[] = resolve('flavor-repo')->getDataByCategoryId($val->category_id);
+        }
+        $model = new Flavor();
+        $news = resolve('news-repo')->getNewsDetail();
+        return view('frontend.home',compact('news','flavor','model'));
     }
 
     /**
@@ -198,6 +201,7 @@ class HomeController extends Controller
     // Wholesale store
     public function storeWholesale(Wholesale $request)
     {
+        dd($request->all());
         try{
                 $request['buisness_name'] = $request->bname;
                 $request['first_name'] = $request->fname;

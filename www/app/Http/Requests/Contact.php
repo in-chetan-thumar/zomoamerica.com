@@ -29,4 +29,11 @@ class Contact extends FormRequest
 
         ];
     }
+    public function messages()
+    {
+        return [
+            'g-recaptcha-response' => 'Google captcha is required',
+        ];
+    }
+
 }

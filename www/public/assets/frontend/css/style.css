@@ -1475,7 +1475,7 @@ img {
 }
 
 .history-slider {
-    max-width: 1170px;
+    max-width: 1275px;
     margin: 0 auto;
     width: 100%;
 }
@@ -2331,7 +2331,7 @@ img {
     border-top-style: dashed;
     padding-bottom: 30px;
 }
- .video_wrapper {
+.video_wrapper {
     background-image: url(../images/product/fundo-videos.png);
     background-position: center !important;
     background-repeat: no-repeat !important;
@@ -2339,8 +2339,7 @@ img {
     height: auto;
 }
 
-    .video_wrapper
-    iframe {
+.video_wrapper iframe {
     padding: 60px 40px;
     margin-left: 75px;
     width: 520px;
@@ -2377,41 +2376,41 @@ img {
     background-repeat: no-repeat !important;
     padding-bottom: 842px;
 }
-.aluminium_desc p{
-    margin-top:305px;
-    text-align:center;
+.aluminium_desc p {
+    margin-top: 305px;
+    text-align: center;
     font-size: 20px;
     /*padding-left: 40px;*/
     font-weight: 900;
-    color:#962da1;
-    line-height:30px;
-    padding:20px 30px;
+    color: #962da1;
+    line-height: 30px;
+    padding: 20px 30px;
 }
 
 .hookah-video-2 {
-     margin-left: -12px !important;
+    margin-left: -12px !important;
 }
 .hookah-video-col {
     margin-left: -24px !important;
     margin-right: -25px !important;
 }
-.hookah-video-bottom{
+.hookah-video-bottom {
     margin-bottom: -3px;
     margin-top: -4px;
 }
-.hookah-video-2 iframe{
+.hookah-video-2 iframe {
     width: 103.8%;
     height: 477px;
 }
-.shisha-image-top img{
- width: 101.9% !important;
+.shisha-image-top img {
+    width: 101.9% !important;
 }
-.shisha-image-top img{
+.shisha-image-top img {
     max-width: 110% !important;
     height: 750px;
     margin: 4px 0px 0px -12px !important;
 }
-.shisha-video-col{
+.shisha-video-col {
     margin-left: -12px !important;
     margin-right: -12px !important;
 }

@@ -22,8 +22,6 @@
 
       <style>
           @yield('css')
-
-          ;
       </style>
       @include('frontend.layouts.header-css')
   </head>
