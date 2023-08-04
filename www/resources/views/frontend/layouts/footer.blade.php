@@ -1,3 +1,6 @@
+<?php
+$categorias = resolve('category-repo')->getCategory();
+?>
 <footer class="footer reveal">
     <div class="container">
         <div class="footer-item">
@@ -7,22 +10,33 @@
                         height="100">
                 </a>
                 <div class="nav-footer-link">
-                    <a href="{{ route('frontend.product') }}">PRODUCTS</a>
                     <a href="{{ route('frontend.news') }}">News</a>
                     <a href="{{ route('frontend.contact') }}">contact us</a>
                     <a href="{{ route('frontend.wholesale') }}">WHOLESALE</a>
                     <a href="{{ route('frontend.faqs') }}">FAQS</a>
                 </div>
-            </div>
-            <div class="footer-newslatter">
-                <h6>EMAIL NEWSLETTERS</h6>
-                <p>Want to hear the latest and greatest?<br> Sign up to stay updated on news, invitations and offers
-                    from the world of ZOMO Tobacco.</p>
-                {{--                <form> --}}
-                {{--                    <input type="text" placeholder="Email"> --}}
-                {{--                </form> --}}
+
+                <div class="nav-footer-link">
+                    <h3 style="color:white">FLAVORS</h1>
+                        @foreach ($categorias as $value)
+                            <a href="{{ route('frontend.flavors.classicLine', $value->slug) }}">{{ $value->name }}</a>
+                        @endforeach
+                </div>
+
+
+                <div class="nav-footer-link">
+                    <h3 style="color:white">PRODUCT</h1>
+                        <a href="{{ route('frontend.zomopaper') }}">Zomo Paper</a>
+                        <a href="{{ route('frontend.charcol') }}">Zomo Charcol</a>
+                        <a href="{{ route('frontend.aluminumFoil') }}">Aluminium Foil</a>
+                        <a href="{{ route('frontend.shishaHose') }}">Shisha Hose</a>
+                        <a href="{{ route('frontend.zomo.hookah') }}">Zomo Zona Hookah</a>
+                </div>
+
+
             </div>
         </div>
+
         <div class="follow-us">
             <p>Follow us</p>
             <div class="icon-list">
@@ -89,7 +103,7 @@
     </div>
 </div>
 @if (url()->current() == 'http://lc.zomoamerica.com')
-    {{-- <div class="jquery-modal blocker current">
+    <div class="jquery-modal blocker current">
         <div id="bouncer_modal" class="modal_bouncer">
             <form name="AgeVerForm" id="AgeVerForm">
                 <div class="model_logo">
@@ -108,5 +122,40 @@
                 </div>
             </form>
         </div>
-    </div> --}}
+    </div>
+    <div class="Popup" style="display: none">
+        <div class="pop-inner">
+            <div class="pop-news-letter">
+
+                {!! Form::open([
+                    'method' => 'POST',
+                    'id' => 'newsletterPopupForm',
+                    'class' => 'form-newletter',
+                ]) !!}
+
+                <h2>JOIN OUR<br>
+                    NEWSLETTER</h2>
+                <p>Receive exclusive insight on special<br>
+                    events, new flavors, and products.</p>
+                <div class="pop-letter-field">
+                    <input type="email" id="emailPop" name="email" value="" placeholder="Email Address"
+                        onblur="if(this.placeholder=='')this.placeholder='Email Address';"
+                        onfocus="if(this.placeholder=='Email Address')this.placeholder='';" class="input-03">
+                    <input type="hidden" name="action" value="" id="actionValue">
+                    <div class="btn-wrap clear-fix">
+                        <button type="button" name="action" value="newsletter_subscribe"
+                            onclick="newsletterPopupFormAxaj('newsletter_subscribe');"
+                            class="btn-news btn-blue left">SIGN UP</button>
+                        <button type="button" name="action" value="newsletter_unsubscribe"
+                            onclick="newsletterPopupFormAxaj('newsletter_unsubscribe');" class="btn-news  right">NO
+                            THANKS</button>
+                    </div>
+                    <div class="errorMessage" style="clear:both;color:red"></div>
+                    <small>By signing up you agree you are 21 &amp; older and accept<br>
+                        receiving electronic information by Zomo &amp; it’s partners</small>.
+                </div>
+                {{ Form::close() }}
+            </div>
+        </div>
+    </div>
 @endif

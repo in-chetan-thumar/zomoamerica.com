@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Providers;
+use App\Repositories\NewsLetterRepository;
 use App\Repositories\FlavorsImage;
 use App\Repositories\FlavorRepository;
 use App\Repositories\CategoryRepository;
@@ -53,6 +54,8 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->singleton('flavor-repo',FlavorRepository::class);
         $this->app->singleton('flavorImage-repo',FlavorsImage::class);
         $this->app->singleton('news-repo',NewsRepository::class);
+        $this->app->singleton('newsLetter-repo',NewsLetterRepository::class);
+
 
     }
 }

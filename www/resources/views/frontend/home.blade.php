@@ -371,37 +371,37 @@
     </div>
 
     <!-- <div class="contact-us-section">
-                                                                                       <div class="container">
-                                                                                        <h5 class="title-main reveal">CONTACT US</h5>
-                                                                                        <p class="sub-text reveal">We would like to hear <b>about you </b>just send us a message!</p>
-                                                                                        <div class="content-infomation reveal">
-                                                                                         <div class="contact-form">
-                                                                                          <p>LETS GET IN TOUCH!</p>
-                                                                                          <form class="form-contact-us">
-                                                                                           <input type="text" placeholder="Email">
-                                                                                           <input type="text" placeholder="Subject">
-                                                                                           <textarea name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
-                                                                                           <button type="submit">Send Message</button>
-                                                                                          </form>
-                                                                                         </div>
-                                                                                         <div class="map-infomation">
-                                                                                          <div class="image-location">
-                                                                                           <div class="icon">
-                                                                                            <img src={{ asset('assets/frontend/images/location-icon.webp') }} alt="location"
-                                                                                             width="100" height="100">
-                                                                                           </div>
-                                                                                           <p>Location</p>
-                                                                                          </div>
-                                                                                          <div class="map-box">
-                                                                                           <iframe title="content"
-                                                                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2141.127457838495!2d-54.6431055207775!3d-25.507287348071166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f68571c6f023c1%3A0x21c1ba001e986ac5!2sFlavors%20of%20Americas%20S.A.!5e0!3m2!1spt-BR!2spy!4v1572973947331!5m2!1spt-BR!2spy"
-                                                                                            width="600" height="350" frameborder="0" style="border: 0px; pointer-events: none;"
-                                                                                            allowfullscreen=""></iframe>
-                                                                                          </div>
-                                                                                         </div>
-                                                                                        </div>
-                                                                                       </div>
-                                                                                      </div> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                               <div class="container">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <h5 class="title-main reveal">CONTACT US</h5>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <p class="sub-text reveal">We would like to hear <b>about you </b>just send us a message!</p>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="content-infomation reveal">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                 <div class="contact-form">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                  <p>LETS GET IN TOUCH!</p>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                  <form class="form-contact-us">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                   <input type="text" placeholder="Email">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                   <input type="text" placeholder="Subject">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                   <textarea name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                   <button type="submit">Send Message</button>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                  </form>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                 </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                 <div class="map-infomation">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                  <div class="image-location">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                   <div class="icon">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    <img src={{ asset('assets/frontend/images/location-icon.webp') }} alt="location"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                     width="100" height="100">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                   </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                   <p>Location</p>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                  </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                  <div class="map-box">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                   <iframe title="content"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2141.127457838495!2d-54.6431055207775!3d-25.507287348071166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f68571c6f023c1%3A0x21c1ba001e986ac5!2sFlavors%20of%20Americas%20S.A.!5e0!3m2!1spt-BR!2spy!4v1572973947331!5m2!1spt-BR!2spy"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    width="600" height="350" frameborder="0" style="border: 0px; pointer-events: none;"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    allowfullscreen=""></iframe>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                  </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                 </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                               </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                              </div> -->
 
     <div class="footer-contact reveal">
         <div class="infomation-footer-contact container">
@@ -418,39 +418,81 @@
     </div>
 @section('js')
     <script>
-        // alert(sessionStorage.getItem('blocker'));
-        // $(".pop-submit").click(function() {
-        //     let a = $(this).text();
-        //     if (a == "Enter") {
-        //         sessionStorage.setItem("blocker", 'hidepopUp');
-        //         $('.blocker').hide();
-        //     }
-        // });
-    </script>
-    {{--			<script> --}}
-    {{--				// $(".nav-menu .menu .menu-item a").click(function(){ --}}
-    {{--				//     $(".nav-menu .menu .menu-item").removeClass("active"); --}}
-    {{--				//     $(this).addClass("active"); --}}
-    {{--				// }); --}}
-    {{--				--}}
-    {{--				  $('.pop-submit').click(function(){ --}}
-    {{--					var text = $(this).text(); --}}
-    {{--					if(text === "Enter") --}}
-    {{--					{ --}}
-    {{--						  if (!sessionStorage.getItem('shown-modal')){ --}}
-    {{--								$(".modal_bouncer").hide(); --}}
-    {{--								sessionStorage.setItem('shown-modal', 'true'); --}}
+        $(document).ready(function() {
+            if (localStorage.getItem("blocker") === 'true') {
+                setTimeout($(".blocker").hide(), 5000);
+            }
+            if (localStorage.getItem("blocker") === null) {
+                $(".blocker").show();
+            }
+        });
+        $(".pop-submit").click(function() {
+            let a = $(this).text();
+            if (a == "Enter") {
+                var allcookies = document.cookie;
+                cookiearray = allcookies.split(';');
+                for (var i = 0; i < cookiearray.length; i++) {
+                    name = cookiearray[i].split('=')[0];
+                    value = cookiearray[i].split('=')[1];
+                }
+                alert(value);
+                localStorage.setItem("blocker", true, 10);
+                $(".blocker").hide();
+                $(".Popup").show();
+            }
+        });
 
-    {{--						  } --}}
-    {{--					} --}}
-    {{--				});  --}}
-    {{--				$(".btn-black").click(function(){ --}}
-    {{--					var text = $(this).text(); --}}
-    {{--					if(text === "Exit") --}}
-    {{--					{ --}}
-    {{--						window.location.replace("https://www.fda.gov/regulatory-information"); --}}
-    {{--					} --}}
-    {{--				}) --}}
-    {{--			</script> --}}
+        function newsletterPopupFormAxaj(actionType) {
+            // $(".Popup").hide();
+            var email = jQuery("#emailPop").val();
+            if (email == "" && actionType == "newsletter_subscribe") {
+                jQuery(".errorMessage").html(
+                    "<p>Your email address is required.</p>"
+                );
+                return false;
+            } else {
+                $("#actionValue").val(actionType);
+                var _selector = jQuery(this);
+                $.ajax({
+                    url: "{{ route('frontend.newsLetter') }}",
+                    type: "POST",
+                    data: {
+                        email: email,
+                        actionType: actionType,
+                        "_token": "{{ csrf_token() }}",
+                    },
+                    beforeSend: function() {
+                        jQuery(".pop-inner").prepend(
+                            '<div id="myLoader" class="ajax-loader"></div>'
+                        );
+                        $("#myLoader").css({
+                            height: $("#myLoader").parent().height(),
+                            width: $("#myLoader").parent().width(),
+                        });
+                        $("#myLoader").show();
+                    },
+                    complete: function() {
+                        jQuery("#myLoader").hide();
+                    },
+                    success: function(response) {
+
+                        $(".Popup").hide();
+                        swal(
+                            "Thank You!",
+                            "" + response.success_message + ""
+                        );
+                        window.location.href = "{{ route('frontend.home') }}";
+                    },
+                });
+            }
+        }
+
+        $(".btn-black").click(function() {
+            var text = $(this).text();
+            if (text === "Exit") {
+                window.location.replace("https://www.fda.gov/regulatory-information");
+            }
+        });
+    </script>
 @endsection
 @endsection

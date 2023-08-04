@@ -2414,3 +2414,99 @@ img {
     margin-left: -12px !important;
     margin-right: -12px !important;
 }
+/* pop up code start this pop up is displayed after displaying age popup */
+.Popup {
+    position: absolute;
+    width: 440px;
+    background: #b6307e url(../images/pop-bg.jpg) no-repeat;
+    background-size: 100% 100%;
+    left: 50%;
+    margin-left: -220px;
+    top: 0;
+    margin-top: 50px;
+    z-index: 9999999999;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    padding: 25px;
+}
+.pop-inner {
+    padding: 80px 35px 0;
+    background: #fff;
+    text-align: center;
+}
+.pop-inner h2 {
+    font-family: "gotham_boldregular";
+    font-size: 36px;
+    text-transform: uppercase;
+    line-height: 36px;
+    color: #d6318a;
+    margin-bottom: 10px;
+}
+.pop-inner p {
+    color: #707070;
+    font-size: 18px;
+    line-height: 20px;
+    font-family: "Avenir";
+    margin-bottom: 40px;
+}
+.pop-inner .input-03 {
+    border: 1px solid #959595;
+}
+.input-03 {
+    width: 100%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 43px;
+    background: #fff;
+    border: 1px solid #000;
+    font-size: 16px;
+    color: #000;
+    padding: 0 9px;
+    margin-bottom: 15px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    font-weight: 400;
+    font-family: "Avenir";
+}
+.pop-news-letter .btn-news {
+    border: none;
+    cursor: pointer;
+    border: none;
+    right: 0px;
+    margin-right: 0px;
+    top: 0px;
+    margin-top: 0px;
+    transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    font-size: 16px;
+    font-family: "gotham_boldregular";
+    line-height: 16px;
+    padding: 15px 20px;
+    text-align: center;
+    background: #c2c2c2;
+    color: #fff;
+    text-transform: uppercase;
+}
+.left {
+    float: left !important;
+}
+.pop-news-letter .btn-news.btn-blue {
+    background: #00abe9;
+}
+
+.right {
+    float: right !important;
+}
+.pop-inner small {
+    font-size: 12px;
+    line-height: 12px !important;
+    color: #707070;
+    padding-top: 60px;
+    display: block;
+}
+/* pop up end */

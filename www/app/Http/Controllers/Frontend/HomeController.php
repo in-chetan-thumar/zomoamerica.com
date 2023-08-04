@@ -172,7 +172,6 @@ class HomeController extends Controller
     // Wholesale store
     public function storeWholesale(Wholesale $request)
     {
-        dd($request->all());
         try{
                 $request['buisness_name'] = $request->bname;
                 $request['first_name'] = $request->fname;

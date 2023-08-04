@@ -3,12 +3,14 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\NewsLetterController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\WholesaleController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\FlavorController;
 use App\Http\Controllers\Admin\NewsController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -124,8 +126,7 @@ Route::get('/zomo-flavors-delete/{id}', [FlavorController::class,'delete'])->nam
 Route::get('flavors/{id}', [FlavorController::class,'flavorcategory'])->name('frontend.flavors.classicLine');
 Route::get('flavors/product/{data}', [FlavorController::class,'productDetail'])->name('frontend.flavors.product.detail');
 Route::post('/removeImage', [FlavorController::class,'removeImage'])->name('backend.product.flavors.removeImage');
-
-
+Route::post('/zomo-newsLetter', [NewsLetterController ::class,'create'])->name('frontend.newsLetter');
 //
 
 
