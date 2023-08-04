@@ -40,15 +40,20 @@ class NewsRepository
 
     public function filter($params)
     {
-
         return $this->model
             ->latest()
             ->paginate(config('constants.PER_PAGE'), ['*'],'page',!empty($params['page'])? $params['page']:'')
             ->setPath($params['path']);
 
+    }
+    public function frontend_filter($params)
+    {
+        return $this->model
+            ->latest()
+            ->paginate(config('constants.PER_NEWS_PAGE'), ['*'],'page',!empty($params['page'])? $params['page']:'')
+            ->setPath($params['path']);
 
     }
-
     public function changeStatus($id)
     {
         $permission = $this->findByID($id);
@@ -68,7 +73,7 @@ class NewsRepository
     }
     public function renderHtmlNewsTable($params)
     {
-        $tableData = $this->filter($params);
+        $tableData = $this->frontend_filter($params);
         return view('frontend.component.news_table', compact('tableData'))->render();
     }
     public function getNewsDetail(){

@@ -9,7 +9,10 @@ return [
         'LOCAL' => ['TO'=>['preet.paunikar@quantuminfoway.com'],'CC'=>[]],
         'DEVELOPMENT'=>['TO'=>['preet.paunikar@quantuminfoway.com'],'CC'=>[]],
     ],
+
     'PER_PAGE' => 10,
+    'PER_NEWS_PAGE' => 4,
+
     'SUPER_ADMIN' => 'Super Admin',
     // FILE UPLOAD PATH
     'USER_DOC_PATH' => 'public' . DIRECTORY_SEPARATOR . "profile" . DIRECTORY_SEPARATOR,
