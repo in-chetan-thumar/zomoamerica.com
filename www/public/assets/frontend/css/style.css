@@ -682,7 +682,7 @@ img {
 
 .footer .footer-item .footer-list {
     display: flex;
-    align-items: center;
+    align-items: top;
     justify-content: center;
     gap: 50px;
 }
