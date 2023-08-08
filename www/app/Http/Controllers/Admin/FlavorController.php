@@ -238,8 +238,8 @@ class FlavorController extends Controller
 
         $id =  $request->fid;
         $data = resolve('flavorImage-repo')->removeImage($id);
-        $path = public_path('images/flavors/'.$data->flavor_id.'/'.$data->image_name);
-        unlink($path);
+        $path = File::delete(storage_path(config('constants.FLAVOR_URL').$data->flavor_id.'/'.$data->image_name));
+        // unlink($path);
         $data->delete();
         $messages['message'] ="Image Has been removed";
         } catch (\Exception $e) {

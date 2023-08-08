@@ -103,7 +103,7 @@ $categorias = resolve('category-repo')->getCategory();
     </div>
 </div>
 @if (url()->current() == 'http://lc.zomoamerica.com')
-    {{-- <div class="jquery-modal blocker current">
+    <div class="jquery-modal blocker current">
         <div id="bouncer_modal" class="modal_bouncer">
             <form name="AgeVerForm" id="AgeVerForm">
                 <div class="model_logo">
@@ -157,5 +157,5 @@ $categorias = resolve('category-repo')->getCategory();
                 {{ Form::close() }}
             </div>
         </div>
-    </div> --}}
+    </div>
 @endif

@@ -87,6 +87,12 @@
                     </a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="{{ route('backend.metaDetail') }}">
+                        <i class="ri-newspaper-line"></i><span>Meta Detail</span>
+                    </a>
+                </li>
+
                 <li class="menu-title"><span>Settings</span></li>
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="{{ route('permission.index') }}">
@@ -111,7 +117,8 @@
                     <div class="menu-dropdown collapse" id="sidebarPages" style="">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="{{ route('email.templates') }}" class="nav-link" data-key="t-email">Email</a>
+                                <a href="{{ route('email.templates') }}" class="nav-link"
+                                    data-key="t-email">Email</a>
                             </li>
                             <li class="nav-item">
                                 <a href="{{ route('sms.templates') }}" class="nav-link" data-key="t-sms">SMS</a>

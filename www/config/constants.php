@@ -12,6 +12,7 @@ return [
 
     'PER_PAGE' => 10,
     'PER_NEWS_PAGE' => 4,
+    'PER_FLAVORS_PAGE' => 12,
 
     'SUPER_ADMIN' => 'Super Admin',
     // FILE UPLOAD PATH

@@ -204,7 +204,6 @@ class NewsController extends Controller
     {
         $previousUrl = parse_url(url()->previous());
         $params = [];
-
         if (request()->routeIs('news-list.index') || !isset($previousUrl['query'])) {
             $params['query_str'] = $request->query_str ?? '';
             $params['page'] =  $request->page ?? 0;

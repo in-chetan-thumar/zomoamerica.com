@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\WholesaleController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\FlavorController;
 use App\Http\Controllers\Admin\NewsController;
+use App\Http\Controllers\Admin\MetaTagController;
 
 /*
 |--------------------------------------------------------------------------
@@ -93,10 +94,15 @@ Route::get('zomo-charcol',[ProductController::class,'zomoCharcol'])->name('front
 Route::get('/aluminum-foil', [ProductController::class,'aluminumFoil'])->name('frontend.aluminumFoil');
 Route::get('shisha-hose', [ProductController::class,'shishaHose'])->name('frontend.shishaHose');
 Route::get('zomo-hookah', [ProductController::class,'zomohookah'])->name('frontend.zomo.hookah');
+Route::post('/zomo-newsLetter', [NewsLetterController ::class,'create'])->name('frontend.newsLetter');
+Route::post('/zomo-EmailNewsLetter',[NewsLetterController::class,'store'])->name('frontend.EmailNews.store');//this is used for home page
+
 //
 
 //
 Route::get('/zomo-news', [\App\Http\Controllers\Frontend\NewsController::class, 'index'])->name('frontend.news');
+Route::get('/zomo-flavors/{id}', [\App\Http\Controllers\Frontend\FlavorsController::class, 'index'])->name('frontend.flavors');
+
 // backend site route
 //
 Route::get('/news/{title}',[NewsController::class,'show'])->name("backend.news");
@@ -126,7 +132,18 @@ Route::get('/zomo-flavors-delete/{id}', [FlavorController::class,'delete'])->nam
 Route::get('flavors/{id}', [FlavorController::class,'flavorcategory'])->name('frontend.flavors.classicLine');
 Route::get('flavors/product/{data}', [FlavorController::class,'productDetail'])->name('frontend.flavors.product.detail');
 Route::post('/removeImage', [FlavorController::class,'removeImage'])->name('backend.product.flavors.removeImage');
-Route::post('/zomo-newsLetter', [NewsLetterController ::class,'create'])->name('frontend.newsLetter');
+Route::get('/metaSource', [MetaTagController::class,'index'])->name('backend.metaDetail');
+Route::get('/meta-create', [MetaTagController::class,'create'])->name('backend.metaDetail.create');
+Route::get('/meta-edit/{id}', [MetaTagController::class,'edit'])->name('backend.metaDetail.edit');
+Route::post('/meta-store', [MetaTagController::class,'store'])->name('backend.metaDetail.store');
+
+Route::post('/meta-update', [MetaTagController::class,'update'])->name('backend.metaDetail.update');
+
+Route::get('/meta-delete/{id}', [MetaTagController::class,'destroy'])->name('backend.metaDetail.delete');
+
+
+
+// backend.metaDetail
 //
 
 

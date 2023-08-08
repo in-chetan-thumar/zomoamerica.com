@@ -1,14 +1,14 @@
 @extends('admin.layouts.master')
 
 @section('title')
-    User list
+    Meta list
 @endsection
 @section('css')
 @endsection
 @section('content')
     @component('components.breadcrumb', ['lists' => ['Dashboard' => route('root')]])
         @slot('title')
-            Wholesale list
+            Meta list
         @endslot
     @endcomponent
 
@@ -17,10 +17,12 @@
             <div class="card">
                 <div class="card-body">
                     <div class="float-end">
+                        <a href="{{ route('backend.metaDetail.create') }}" onclick="showSaveModel(event)"
+                            class="btn btn-primary"><i class="mdi mdi-plus"></i>&nbsp;Add User</a>
                     </div>
                     <div class="float-start">
                         {!! Form::open([
-                            'url' => route('backend.product.contact'),
+                            'url' => route('usermanagements.index'),
                             'id' => 'form-search',
                             'class' => 'row row-cols-lg-auto g-3 align-items-center',
                             'method' => 'get',
@@ -33,29 +35,23 @@
                             {{ Form::label('End Date') }}
                             {{ Form::date('end_date', date('Y-m-d'), ['class' => 'form-control']) }}
                         </div>
-                        <button type="submit" name="type" value="submit" class="btn btn-primary waves-effect waves-light"
-                            style="margin-top:40px">
+                        <button type="submit" name="type" value="submit"
+                            class="btn btn-primary waves-effect waves-light" style="margin-top:40px">
                             Submit
                         </button>
-                        &nbsp;
-                        <a href="{{ route('backend.product.wholesale.export') }}"
-                            class="btn btn-secondary waves-effect waves-light" style="margin-top:40px">
-                            Export
-                        </a>
+
                         {!! Form::close() !!}
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="divtable">
+                        {!! $table !!}
                     </div>
                 </div>
             </div>
-            <div class="clearfix"></div>
-            <div class="divtable">
-                {!! $table !!}
-            </div>
         </div>
-    </div>
-    </div>
-    <div class="divOffcanvas">
+        <div class="divOffcanvas">
 
-    </div>
+        </div>
     </div>
 @endsection
 @section('script-bottom')

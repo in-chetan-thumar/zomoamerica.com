@@ -59,6 +59,26 @@ class FlavorRepository
         return view('admin.flavor.table', compact('tableData'))->render();
     }
 
+
+    public function frontend_filter($params,$id)
+    {
+        $getId = Category::where('slug',$id)->first();
+         $this->model->where('category_id',$getId->id)->get();
+        return $this->model
+        ->latest()
+        ->where('category_id',$getId->id)
+        ->paginate(config('constants.PER_FLAVORS_PAGE'), ['*'],'page',!empty($params['page'])? $params['page']:'')
+        ->setPath($params['path']);
+
+    }
+    public function renderHtmlFlavorsTable($params,$id)
+    {
+        $tableData = $this->frontend_filter($params,$id);
+        $category_id=$id;
+        return view('frontend.component.flavor_table', compact('tableData','category_id'))->render();
+    }
+
+
     public function filter($params)
     {
         $params['return_type'] = $params['return_type'] ?? '';

@@ -5,7 +5,6 @@
             <div class="images-box">
                 <a href="{{ route('backend.news', $news->title) }}" class="images">
                     <img src="{{ asset("storage/news/$news->image") }}">
-                    {{--                                <img src={{ asset('storage/news') . '/' . $news->image }} alt="News 1"> --}}
                 </a>
             </div>
             <div class="content-news">

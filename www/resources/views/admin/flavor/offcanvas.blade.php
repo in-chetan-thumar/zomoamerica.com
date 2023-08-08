@@ -101,7 +101,10 @@
                 <div class="mb-3">
                     <div class="form-group">
                         {{ Form::label('sweet', 'Sweet :') }}
-                        {!! Form::text('sweet', isset($user) ? $user->sweet : old('sweet'), ['class' => 'form-control', 'id' => 'name']) !!}
+                        {!! Form::text('sweet', isset($user) ? $user->sweet : old('sweet'), [
+                            'class' => 'form-control',
+                            'id' => 'sweet',
+                        ]) !!}
                         @error('sweet')
                             <span style="color:red">
                                 <strong>{{ $message }}</strong>
@@ -116,7 +119,7 @@
                         {{ Form::label('citric', 'Citric :') }}
                         {!! Form::text('citric', isset($user) ? $user->citric : old('citric'), [
                             'class' => 'form-control',
-                            'id' => 'name',
+                            'id' => 'citric',
                         ]) !!}
                         @error('citric')
                             <span style="color:red">
@@ -132,7 +135,7 @@
                         {{ Form::label('tobaco_intensity', 'Tobaco Intensity :') }}
                         {!! Form::text('tobaco_intensity', isset($user) ? $user->tobaco_intensity : old('tobaco_intensity'), [
                             'class' => 'form-control',
-                            'id' => 'name',
+                            'id' => 'tobaco_intensity',
                         ]) !!}
                         @error('tobaco_intensity')
                             <span style="color:red">
@@ -148,7 +151,7 @@
                         {{ Form::label('menthol', 'Menthol :') }}
                         {!! Form::text('menthol', isset($user) ? $user->menthol : old('menthol'), [
                             'class' => 'form-control',
-                            'id' => 'name',
+                            'id' => 'menthol',
                         ]) !!}
                         @error('menthol')
                             <span style="color:red">
@@ -164,7 +167,7 @@
                         {{ Form::label('cloud_volume', 'Cloud Volume :') }}
                         {!! Form::text('cloud_volume', isset($user) ? $user->cloud_volume : old('cloud_volume'), [
                             'class' => 'form-control',
-                            'id' => 'name',
+                            'id' => 'cloud_volume',
                         ]) !!}
                         @error('cloud_volume')
                             <span style="color:red">
@@ -180,7 +183,7 @@
                         {{ Form::label('flavors_available', 'Flavors Available :') }}
                         {!! Form::text('flavors_available', isset($user) ? $user->flavors_available : old('flavors_available'), [
                             'class' => 'form-control',
-                            'id' => 'name',
+                            'id' => 'flavors_available',
                         ]) !!}
                         @error('flavors_available')
                             <span style="color:red">

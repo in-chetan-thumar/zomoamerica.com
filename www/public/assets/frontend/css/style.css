@@ -388,7 +388,7 @@ img {
 }
 
 .newslatter .newslatter-form form input {
-    width: 100%;
+    width: 80%;
     border: 0;
     background: #fff;
     padding: 10px;
@@ -1204,6 +1204,7 @@ img {
 .news-box .content-news {
     margin-top: 10px;
     display: flex;
+    text-align: center;
     flex-direction: column;
 }
 
@@ -1519,7 +1520,6 @@ img {
     position: absolute;
     left: 0;
     top: 0;
-    background-image: url(../images/icons/left-arrow.svg);
     background-repeat: no-repeat;
     width: 32px;
     height: 32px;
@@ -2223,7 +2223,7 @@ img {
 .main-single-product {
     background: #fff;
     padding: 50px 15px;
-    margin-top: 30px;
+    margin-top: 0px;
 }
 
 .product-page {
