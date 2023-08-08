@@ -14,5 +14,11 @@ class MetaTag extends Model
         'meta_description',
         'meta_keyword',
         'meta_route',
+        'created_at',
+        'created_by',
+        'updated_at',
+        'updated_by',
+        'deleted_at',
+        'deleted_by',
     ];
 }

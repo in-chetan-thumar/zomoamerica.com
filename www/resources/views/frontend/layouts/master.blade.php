@@ -4,7 +4,7 @@
   <head>
       <!-- Meta Pixel Code -->
       <title>@yield('title')</title>
-      <meta charset="UTF-8">
+      {{-- <meta charset="UTF-8">
       <!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
       <meta name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
@@ -12,6 +12,13 @@
       <meta name="description"
           content="A Mumbai-based fashion photographer with a diverse work portfolio and client base across the world.">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+      <meta charset="UTF-8">
+      {!! SEO::generate() !!} --}}
+      <meta charset="UTF-8">
+      {!! SEO::generate() !!}
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
       <link rel="shortcut icon" href="{{ URL::asset('assets/favicon/favicon.ico') }}">
       <link rel="apple-touch-icon" sizes="180x180" href="{{ URL::asset('assets/favicon/apple-touch-icon.png') }}">

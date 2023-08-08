@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
 @section('title')
-    Zomo Papers
+    {{ $content->meta_title }}
 @endsection
 @section('css')
     {{-- .main-content{

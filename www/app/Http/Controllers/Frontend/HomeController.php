@@ -15,7 +15,7 @@ use Artesaos\SEOTools\Facades\SEOTools;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use App\Models\Flavor;
-
+use App\Models\MetaTag;
 
 class HomeController extends Controller
 {
@@ -28,13 +28,17 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
+        $content = MetaTag::select('id', 'meta_title', 'meta_keyword', 'meta_description')->where('meta_route',(Route::currentRouteName())) ->first();
+        SEOTools::setTitle($content->title);
+        SEOTools::setDescription($content->meta_description);
+        SEOMeta::addKeyword($content->meta_keywords);
         $flavors = resolve('flavor-repo')->getDistinctData();
         foreach($flavors as $val) {
             $flavor[] = resolve('flavor-repo')->getDataByCategoryId($val->category_id);
         }
         $model = new Flavor();
         $news = resolve('news-repo')->getNewsDetail();
-        return view('frontend.home',compact('news','flavor','model'));
+        return view('frontend.home',compact('news','flavor','model','content'));
     }
 
     /**
@@ -144,7 +148,11 @@ class HomeController extends Controller
     }
     // contact page
     public function contact() {
-        return view('frontend.contact');
+        $content = MetaTag::select('id', 'meta_title', 'meta_keyword', 'meta_description')->where('meta_route',(Route::currentRouteName())) ->first();
+        SEOTools::setTitle($content->title);
+        SEOTools::setDescription($content->meta_description);
+        SEOMeta::addKeyword($content->meta_keywords);
+        return view('frontend.contact',compact('content'));
     }
     // faqs  page
     public function faqs() {
@@ -153,21 +161,40 @@ class HomeController extends Controller
 
     // series page
     public function series() {
-        return view('frontend.videoSeries');
+        $content = MetaTag::select('id', 'meta_title', 'meta_keyword', 'meta_description')->where('meta_route',(Route::currentRouteName())) ->first();
+        SEOTools::setTitle($content->title);
+        SEOTools::setDescription($content->meta_description);
+        SEOMeta::addKeyword($content->meta_keywords);
+
+        return view('frontend.videoSeries',compact('content'));
     }
 
     public function wholesalers () {
-        return view('frontend.wholesalers');
+         $content = MetaTag::select('id', 'meta_title', 'meta_keyword', 'meta_description')->where('meta_route',(Route::currentRouteName()))->first();
+        SEOTools::setTitle($content->meta_title);
+        SEOTools::setDescription($content->meta_description);
+        SEOMeta::addKeyword($content->meta_keywords);
+        return view('frontend.wholesalers',compact('content'));
     }
 
     public function quality() {
-        return view('frontend.quality');
+        $content = MetaTag::select('id', 'meta_title', 'meta_keyword', 'meta_description')->where('meta_route',(Route::currentRouteName())) ->first();
+        SEOTools::setTitle($content->title);
+        SEOTools::setDescription($content->meta_description);
+        SEOMeta::addKeyword($content->meta_keywords);
+
+        return view('frontend.quality',compact("content"));
 
     }
     // wholesale page
     public function wholesale() {
+        $content = MetaTag::select('id', 'meta_title', 'meta_keyword', 'meta_description')->where('meta_route',(Route::currentRouteName())) ->first();
+        SEOTools::setTitle($content->title);
+        SEOTools::setDescription($content->meta_description);
+        SEOMeta::addKeyword($content->meta_keywords);
+
         $stateArray  = array('Alabama' => 'Alabama','Alaska' => 'Alaska','Arizona' => 'Arizona','Arkansas' => 'Arkansas','California' => 'California','Colorado' => 'Colorado','Connecticut' => 'Connecticut','Delaware' => 'Delaware','District of Columbia' => 'District of Columbia','Florida' => 'Florida','Georgia' =>'Georgia','Hawaii' => 'Hawaii','Idaho' =>'Idaho','Illinois' =>'Illinois','Indiana'=>'Indiana','Iowa'=>'Iowa','Kansas'=>'Kansas','Kentucky' =>'Kentucky','Louisiana'=>'Louisiana','Maine'=>'Maine','Maryland'=>'Maryland','Massachusetts'=>'Massachusetts','Michigan'=>'Michigan','Minnesota'=>'Minnesota','Mississippi'=>'Mississippi','Missouri'=>'Missouri','Montana'=>'Montana','Nebraska'=>'Nebraska','Nevada'=>'Nevada','New Hampshire'=>'New Hampshire','New Jersey' =>'New Jersey','New Mexico'=>'New Mexico','New York'=>'New York','North Carolina'=>'North Carolina','North Dakota'=>'North Dakota','Ohio'=>'Ohio','Oklahoma'=>'Oklahoma','Oregon'=>'Oregon','Pennsylvania'=>'Pennsylvania','Puerto Rico'=>'Puerto Rico','Rhode Island'=>'Rhode Island','South Carolina'=>'South Carolina','South Dakota'=>'South Dakota','Tennessee'=>'Tennessee','Texas'=>'Texas','Utah'=>'Utah','Vermont'=>'Vermont','Virginia'=>'Virginia','Washington'=>'Washington','West Virginia'=>'West Virginia','Wisconsin'=>'Wisconsin','Wyoming'=>'Wyoming');
-        return view('frontend.wholesale',compact('stateArray'));
+        return view('frontend.wholesale',compact('stateArray','content'));
     }
     // Wholesale store
     public function storeWholesale(Wholesale $request)
@@ -198,7 +225,12 @@ class HomeController extends Controller
     }
     public function aboutus()
     {
-        return view('frontend.aboutus');
+        $content = MetaTag::select('id', 'meta_title', 'meta_keyword', 'meta_description')->where('meta_route',(Route::currentRouteName())) ->first();
+        SEOTools::setTitle($content->title);
+        SEOTools::setDescription($content->meta_description);
+        SEOMeta::addKeyword($content->meta_keywords);
+
+        return view('frontend.aboutus',compact('content'));
     }
 
     // store contact

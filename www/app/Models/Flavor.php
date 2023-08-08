@@ -27,6 +27,12 @@ class Flavor extends Model
         'cloud_volume',
         'flavors_available',
         'is_actiive',
+        'created_at',
+        'created_by',
+        'updated_at',
+        'updated_by',
+        'deleted_at',
+        'deleted_by',
     ];
 
     public function category()

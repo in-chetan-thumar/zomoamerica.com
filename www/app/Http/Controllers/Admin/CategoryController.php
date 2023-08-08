@@ -41,7 +41,7 @@ class CategoryController extends Controller
         $data = $params = [];
         DB::beginTransaction();
         try {
-            
+
             // Create user
             $params['name'] = $request->name;
             $params['slug'] = $request->slug;
@@ -84,7 +84,6 @@ class CategoryController extends Controller
     {
         $previousUrl = parse_url(url()->previous());
         $params = [];
-
           if (request()->routeIs('backend.product.contact') || !isset($previousUrl['query'])) {
             $params['query_str'] = $request->query_str ?? '';
             $params['role'] = $request->role;

@@ -8,7 +8,7 @@
 
         @if (isset($user))
             {!! Form::open([
-                'url' => route('backend.product.flavors.update', $user->id),
+                'url' => route('backend.product.flavors.update'),
                 'method' => 'POST',
                 'id' => 'flavor-form',
                 'files' => true,
@@ -81,7 +81,7 @@
             <div class="col-12">
                 <div class="mb-3">
                     <div class="form-group">
-                        {{ Form::label('category_id', 'Category :') }}
+                        {{ Form::label('category_id', 'Category') }}<span class="required">*</span>
                         {!! Form::select(
                             'category_id',
                             $category,
@@ -100,7 +100,7 @@
             <div class="col-12">
                 <div class="mb-3">
                     <div class="form-group">
-                        {{ Form::label('sweet', 'Sweet :') }}
+                        {{ Form::label('sweet', 'Sweet') }}<span class="required">*</span>
                         {!! Form::text('sweet', isset($user) ? $user->sweet : old('sweet'), [
                             'class' => 'form-control',
                             'id' => 'sweet',
@@ -116,7 +116,7 @@
             <div class="col-12">
                 <div class="mb-3">
                     <div class="form-group">
-                        {{ Form::label('citric', 'Citric :') }}
+                        {{ Form::label('citric', 'Citric') }}<span class="required">*</span>
                         {!! Form::text('citric', isset($user) ? $user->citric : old('citric'), [
                             'class' => 'form-control',
                             'id' => 'citric',
@@ -132,7 +132,7 @@
             <div class="col-12">
                 <div class="mb-3">
                     <div class="form-group">
-                        {{ Form::label('tobaco_intensity', 'Tobaco Intensity :') }}
+                        {{ Form::label('tobaco_intensity', 'Tobaco Intensity') }}<span class="required">*</span>
                         {!! Form::text('tobaco_intensity', isset($user) ? $user->tobaco_intensity : old('tobaco_intensity'), [
                             'class' => 'form-control',
                             'id' => 'tobaco_intensity',
@@ -148,7 +148,7 @@
             <div class="col-12">
                 <div class="mb-3">
                     <div class="form-group">
-                        {{ Form::label('menthol', 'Menthol :') }}
+                        {{ Form::label('menthol', 'Menthol') }}<span class="required">*</span>
                         {!! Form::text('menthol', isset($user) ? $user->menthol : old('menthol'), [
                             'class' => 'form-control',
                             'id' => 'menthol',
@@ -164,7 +164,7 @@
             <div class="col-12">
                 <div class="mb-3">
                     <div class="form-group">
-                        {{ Form::label('cloud_volume', 'Cloud Volume :') }}
+                        {{ Form::label('cloud_volume', 'Cloud Volume') }}<span class="required">*</span>
                         {!! Form::text('cloud_volume', isset($user) ? $user->cloud_volume : old('cloud_volume'), [
                             'class' => 'form-control',
                             'id' => 'cloud_volume',
@@ -180,7 +180,7 @@
             <div class="col-12">
                 <div class="mb-3">
                     <div class="form-group">
-                        {{ Form::label('flavors_available', 'Flavors Available :') }}
+                        {{ Form::label('flavors_available', 'Flavors Available') }}<span class="required">*</span>
                         {!! Form::text('flavors_available', isset($user) ? $user->flavors_available : old('flavors_available'), [
                             'class' => 'form-control',
                             'id' => 'flavors_available',
@@ -195,8 +195,13 @@
                 <div class="col-12">
                     <div class="mb-3">
                         <div class="form-group">
-                            {{ Form::label('flavors_image', 'Flavors Image :') }}
+                            {{ Form::label('flavors_image', 'Flavors Image') }}<span class="required">*</span>
                             <input type="file" id="files" name="flavors_image[]" multiple>
+                            @error('flavors_image')
+                                <span style="color:red">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                             @if (isset($flavor_image))
                                 <div claass="preview" style="display: grid;grid-template-columns: repeat(3,1fr);">
                                     @foreach ($flavor_image as $flavor)
@@ -210,11 +215,6 @@
                                     @endforeach
                                 </div>
                             @endif
-                            @error('flavors_image')
-                                <span style="color:red">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
                         </div>
                         @isset($user)
                             <div class="col-12">
@@ -248,49 +248,47 @@
             </div>
             {!! JsValidator::formRequest('App\Http\Requests\flavors', '#flavor-form') !!}
 
-            @section('script')
-                <script>
-                    // Save OR UPDATE DATA
-                    $('#flavor-form').on('submit', function(e) {
-                        e.preventDefault();
-                        var formData = new FormData($('#flavor-form')[0]);
-                        var url = $(this).attr('action');
-                        var method = $(this).attr('method');
+            <script>
+                // Save OR UPDATE DATA
+                $('#flavor-form').on('submit', function(e) {
+                    e.preventDefault();
+                    var formData = new FormData($('#flavor-form')[0]);
+                    var url = $(this).attr('action');
+                    var method = $(this).attr('method');
 
-                        if ($(this).valid()) {
-                            $('#status').show();
-                            $('#preloader').show();
-                            $.ajax({
-                                headers: {
-                                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                                },
-                                url: url,
-                                processData: false,
-                                contentType: false,
-                                type: method,
-                                data: formData,
-                                success: function(data, textStatus, jqXHR) {
-                                    if (!data.error) {
-                                        $('#status').hide();
-                                        $('#preloader').hide();
-                                        $(".divtable").html(data.view);
-                                        toastr.success(data.message);
-                                        let closeCanvas = document.querySelector('[data-bs-dismiss="offcanvas"]');
-                                        closeCanvas.click();
-                                        //location.reload();
-                                    } else {
-                                        $('#status').hide();
-                                        $('#preloader').hide();
-                                        toastr.error(data.message);
-                                    }
-                                },
-                                error: function(jqXHR, textStatus, errorThrown) {
+                    if ($(this).valid()) {
+                        $('#status').show();
+                        $('#preloader').show();
+                        $.ajax({
+                            headers: {
+                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                            },
+                            url: url,
+                            processData: false,
+                            contentType: false,
+                            type: method,
+                            data: formData,
+                            success: function(data, textStatus, jqXHR) {
+                                if (!data.error) {
                                     $('#status').hide();
                                     $('#preloader').hide();
-                                    toastr.error('Error occurred!');
+                                    $(".divtable").html(data.view);
+                                    toastr.success(data.message);
+                                    let closeCanvas = document.querySelector('[data-bs-dismiss="offcanvas"]');
+                                    closeCanvas.click();
+                                    //location.reload();
+                                } else {
+                                    $('#status').hide();
+                                    $('#preloader').hide();
+                                    toastr.error(data.message);
                                 }
-                            });
-                        }
-                    })
-                </script>
-            @endsection
+                            },
+                            error: function(jqXHR, textStatus, errorThrown) {
+                                $('#status').hide();
+                                $('#preloader').hide();
+                                toastr.error('Error occurred!');
+                            }
+                        });
+                    }
+                })
+            </script>

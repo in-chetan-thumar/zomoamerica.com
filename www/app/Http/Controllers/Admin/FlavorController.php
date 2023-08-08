@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
-
 class FlavorController extends Controller
 {
   //
@@ -113,7 +112,6 @@ class FlavorController extends Controller
 
     public function update(flavors $request)
     {
-
         $data = $params = [];
         DB::beginTransaction();
         try {
@@ -160,7 +158,6 @@ class FlavorController extends Controller
             $data['error'] = true;
             $data['message'] = 'Flavor not Updated successfully..!';
             return response()->json($data);
-
         } catch (\Exception $e) {
             DB::rollBack();
             $data['error'] = true;
@@ -172,8 +169,7 @@ class FlavorController extends Controller
     {
         $previousUrl = parse_url(url()->previous());
         $params = [];
-
-          if (request()->routeIs('backend.product.flavors') || !isset($previousUrl['query'])) {
+          if (request()->routeIs('backend.product.contact') || !isset($previousUrl['query'])) {
             $params['query_str'] = $request->query_str ?? '';
             $params['role'] = $request->role;
             $params['page'] =  $request->page ?? 0;
@@ -200,17 +196,21 @@ class FlavorController extends Controller
 
     public function delete(Request $request)
     {
-        try {
+
+         try {
             $id = $request->id;
             $user = resolve('flavor-repo')->findById($id);
             if (!empty($user)) {
-                $folder = public_path('images/flavors/'.$user->category_id);
+                $folder = config('constants.FLAVOR_URL').DIRECTORY_SEPARATOR.$user->id;
+                if(File::exists(storage_path('app'.DIRECTORY_SEPARATOR.$folder))){
+                    Storage::deleteDirectory($folder);
+                }
                 $user->delete();
-                File::deleteDirectory($folder);
-                toastr()->success($user->name . ' deleted successfully..!');
+                FlavorImage::where("flavor_id",$id)->delete();
+                toastr()->success($user->flavor_title . ' deleted successfully..!');
                 return redirect()->route('backend.product.flavors');
             } else {
-                toastr()->error('Category not found.!');
+                toastr()->error('Flavors not Found.!');
             }
         } catch (\Exception $e) {
             toastr()->error($e->getMessage());

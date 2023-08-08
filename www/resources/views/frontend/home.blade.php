@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
 @section('title')
-    Home
+    {{ $content->meta_title }}
 @endsection
 @section('css')
     .input-bottom {

@@ -1,5 +1,6 @@
 @extends('frontend.layouts.master')
 @section('title')
+    {{ $content->meta_title }}
 @endsection
 
 

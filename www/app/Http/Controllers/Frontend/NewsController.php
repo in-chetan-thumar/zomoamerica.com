@@ -10,6 +10,7 @@ use Artesaos\SEOTools\Facades\SEOMeta;
 use Artesaos\SEOTools\Facades\SEOTools;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
+use App\Models\MetaTag;
 
 class NewsController extends Controller
 {
@@ -20,10 +21,13 @@ class NewsController extends Controller
      */
     public function index(Request $request)
     {
+        $content = MetaTag::select('id', 'meta_title', 'meta_keyword', 'meta_description')->where('meta_route',(Route::currentRouteName())) ->first();
+        SEOTools::setTitle($content->title);
+        SEOTools::setDescription($content->meta_description);
+        SEOMeta::addKeyword($content->meta_keywords);
 
         $table = resolve('news-repo')->renderHtmlNewsTable($this->getParamsForFilter($request));
-
-        return view('frontend.news', compact('table'));
+        return view('frontend.news', compact('table','content'));
     }
     /**
      * Show the form for creating a new resource.

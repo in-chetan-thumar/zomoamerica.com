@@ -20,18 +20,39 @@ class flavors extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            'flavor_title' => 'required|max:100',
-            'flavor_description' => 'required|max:400',
-            // 'category_id' => 'required',
-            'sweet' => 'required|max:10',
-            'citric' => 'required|max:10',
-            'tobaco_intensity' => 'required|max:10',
-            'menthol' => 'required|max:10',
-            'cloud_volume' => 'required|max:10',
-            'flavors_available' => 'required',
-            'slug' => 'required|max:40',
-            // 'flavors_image' => 'mimes:jpeg,png,jpg,gif',
-        ];
+        $id=request()->id;
+        if($id != null)
+        {
+        $rules =  [
+                'flavor_title' => 'required|max:100',
+                'flavor_description' => 'required|max:400',
+                'category_id' => 'required',
+                'sweet' => 'required|max:10',
+                'citric' => 'required|max:10',
+                'tobaco_intensity' => 'required|max:10',
+                'menthol' => 'required|max:10',
+                'cloud_volume' => 'required|max:10',
+                'flavors_available' => 'required',
+                'slug' => 'required|max:40',
+                'flavors_image' => 'mimes:jpg,png',
+            ];
+        }else{
+            $rules =  [
+                'flavor_title' => 'required|max:100',
+                'flavor_description' => 'required|max:400',
+                'category_id' => 'required',
+                'sweet' => 'required|max:10',
+                'citric' => 'required|max:10',
+                'tobaco_intensity' => 'required|max:10',
+                'menthol' => 'required|max:10',
+                'cloud_volume' => 'required|max:10',
+                'flavors_available' => 'required',
+                'slug' => 'required|max:40',
+                'flavors_image' => 'required',
+                // mimes:jpeg,png,jpg,gif,svg,webp
+            ];
+        }
+        return $rules;
+
     }
 }

@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
 @section('title')
-    Wholesale
+    {{ $content->meta_title }}
 @endsection
 
 

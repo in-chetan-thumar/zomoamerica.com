@@ -62,7 +62,7 @@
                         {!! Form::label('Meta Keyword', 'Meta Keyword', ['style' => 'justify-content: right']) !!}<span class="required">*</span>
                         {!! Form::text('meta_keyword', isset($user) ? $user->meta_keyword : old('meta_keyword'), [
                             'class' => 'form-control',
-                            'maxlength' => 15,
+                            'maxlength' => 30,
                         ]) !!}
                         @error('meta_keyword')
                             <span style="color:red">
@@ -78,7 +78,7 @@
                         {!! Form::label('Meta Route', 'Meta Route', ['style' => 'justify-content: right']) !!}<span class="required">*</span>
                         {!! Form::text('meta_route', isset($user) ? $user->meta_route : old('meta_route'), [
                             'class' => 'form-control',
-                            'maxlength' => 30,
+                            'maxlength' => 40,
                         ]) !!}
                         @error('meta_route')
                             <span style="color:red">

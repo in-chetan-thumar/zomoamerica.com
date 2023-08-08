@@ -47,8 +47,10 @@
                         <div class="dropdown-menu">
                             <a class="dropdown-item" onclick="showEditModel(event)"
                                 href="{{ route('backend.product.flavors.edit', $row->id) }}">Edit</a>
-                            <a class="dropdown-item" onclick="showEditModel(event)"
+
+                            <a class="dropdown-item"
                                 href="{{ route('backend.product.flavors.delete', $row->id) }}">Delete</a>
+
                         </div>
                     </div>
                 </td>

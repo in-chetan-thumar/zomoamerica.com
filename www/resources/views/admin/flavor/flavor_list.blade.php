@@ -1,12 +1,11 @@
+<style>
+    .remove {
+        cursor: pointer;
+    }
+</style>
 @extends('admin.layouts.master')
-
 @section('title')
     Flavor list
-@endsection
-@section('css')
-    .remove{
-    cursor:pointer;
-    }
 @endsection
 @section('content')
     @component('components.breadcrumb', ['lists' => ['Dashboard' => route('root')]])
@@ -45,8 +44,8 @@
                         </button>
                         &nbsp;
                         <!--<a href="{{ route('backend.product.export') }}" class="btn btn-secondary waves-effect waves-light">
-                                                Export
-                                            </a> -->
+                                                                    Export
+                                                                </a> -->
 
                         {!! Form::close() !!}
                     </div>

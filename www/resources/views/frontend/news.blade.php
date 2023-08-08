@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
 @section('title')
-    News
+    {{ $content->meta_title }}
 @endsection
 
 @section('main')

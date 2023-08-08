@@ -24,8 +24,8 @@ class MetatagRequest extends FormRequest
         return [
             'meta_title' => 'required|max:50',
             'meta_description' => 'required',
-            'meta_keyword' => 'required|max:15',
-            'meta_route' => 'required|max:30',
+            'meta_keyword' => 'required|max:30',
+            'meta_route' => 'required|max:40',
         ];
     }
 }

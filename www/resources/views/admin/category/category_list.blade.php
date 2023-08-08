@@ -1,5 +1,4 @@
 @extends('admin.layouts.master')
-
 @section('title')
     Category list
 @endsection
@@ -41,8 +40,8 @@
                         </button>
                         &nbsp;
                         <!--  <a href="{{ route('backend.product.export') }}" class="btn btn-secondary waves-effect waves-light">
-                                                        Export
-                                                    </a>  -->
+                                                                    Export
+                                                                </a>  -->
 
                         {!! Form::close() !!}
                     </div>

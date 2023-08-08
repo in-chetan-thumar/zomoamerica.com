@@ -10,6 +10,12 @@ class NewsLetter extends Model
     use HasFactory;
     protected $table="newsletter";
     protected $fillable =[
-        'email'
+        'email',
+        'created_at',
+        'created_by',
+        'updated_at',
+        'updated_by',
+        'deleted_at',
+        'deleted_by',
     ];
 }

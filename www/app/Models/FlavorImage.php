@@ -12,13 +12,19 @@ class FlavorImage extends Model
     protected $fillable = [
         'image_name',
         'category_id',
-        'flavor_id'
+        'flavor_id',
+        'created_at',
+        'created_by',
+        'updated_at',
+        'updated_by',
+        'deleted_at',
+        'deleted_by',
     ];
     public function flavor(){
         return $this->hasOne(Flavor::class,'category_id','id');
     }
 
-   
+
     public function getFlavorImage(){
         return $this->belongsTo(Flavor::class);
     }

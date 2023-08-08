@@ -25,6 +25,12 @@ class wholesaleDetail extends Model
         'website',
         'email',
         'wholesale',
-        'telephone'
+        'telephone',
+        'created_at',
+        'created_by',
+        'updated_at',
+        'updated_by',
+        'deleted_at',
+        'deleted_by',
     ];
 }

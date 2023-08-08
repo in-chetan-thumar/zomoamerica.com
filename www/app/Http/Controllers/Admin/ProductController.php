@@ -5,6 +5,12 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Request\Products;
+use Artesaos\SEOTools\Facades\SEOTools;
+use Artesaos\SEOTools\Facades\SEOMeta;
+use Illuminate\Support\Facades\Route;
+use App\Models\MetaTag;
+
+
 class ProductController extends Controller
 {
     public $model;
@@ -42,27 +48,47 @@ class ProductController extends Controller
     }
 
    public function zomoPaper() {
-    return view("frontend.product.zomoPaper");
+    $content = MetaTag::select('id', 'meta_title', 'meta_keyword', 'meta_description')->where('meta_route',(Route::currentRouteName())) ->first();
+    SEOTools::setTitle($content->title);
+    SEOTools::setDescription($content->meta_description);
+    SEOMeta::addKeyword($content->meta_keyword);
+    return view("frontend.product.zomoPaper",compact('content'));
    }
 
    public function zomoCharcol()
    {
-    return view("frontend.product.zomoCharcol");
+    $content = MetaTag::select('id', 'meta_title', 'meta_keyword', 'meta_description')->where('meta_route',(Route::currentRouteName())) ->first();
+    SEOTools::setTitle($content->title);
+    SEOTools::setDescription($content->meta_description);
+    SEOMeta::addKeyword($content->meta_keyword);
+    return view("frontend.product.zomoCharcol",compact("content"));
    }
-   
+
    public function aluminumFoil()
    {
-        return view("frontend.product.aluminumFoil");
+    $content = MetaTag::select('id', 'meta_title', 'meta_keyword', 'meta_description')->where('meta_route',(Route::currentRouteName())) ->first();
+    SEOTools::setTitle($content->title);
+    SEOTools::setDescription($content->meta_description);
+    SEOMeta::addKeyword($content->meta_keyword);
+        return view("frontend.product.aluminumFoil",compact("content"));
    }
-   
+
    public function shishaHose()
    {
-        return view("frontend.product.shishaHose");
+       $content = MetaTag::select('id', 'meta_title', 'meta_keyword', 'meta_description')->where('meta_route',(Route::currentRouteName())) ->first();
+       SEOTools::setTitle($content->title);
+    SEOTools::setDescription($content->meta_description);
+    SEOMeta::addKeyword($content->meta_keyword);
+        return view("frontend.product.shishaHose",compact("content"));
    }
-   
+
    public function zomohookah()
    {
-        return view("frontend.product.zomohookah");
+    $content = MetaTag::select('id', 'meta_title', 'meta_keyword', 'meta_description')->where('meta_route',(Route::currentRouteName())) ->first();
+    SEOTools::setTitle($content->title);
+    SEOTools::setDescription($content->meta_description);
+    SEOMeta::addKeyword($content->meta_keyword);
+        return view("frontend.product.zomohookah",compact("content"));
    }
 
 }
