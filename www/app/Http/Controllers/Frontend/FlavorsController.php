@@ -36,7 +36,7 @@ class FlavorsController extends Controller
         $category_id= $request->id;
         $data = resolve('flavor-repo')->getflavor($category_id);
         $table = resolve('flavor-repo')->renderHtmlFlavorsTable($this->getParamsForFilter($request),$category_id);
-        return view('frontend.flavors.classicline', compact('table','content'));
+        return view('frontend.flavors.classicLine', compact('table','content'));
     }
 
     /**
