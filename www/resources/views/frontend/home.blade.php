@@ -9,8 +9,6 @@
     border-radius: 2px !important;
     font-size: 50px;
     height: 20px;
-    background: #6432c8;
-    color: white;
     }
 @endsection
 @section('main')
@@ -72,7 +70,7 @@
                 <label for="Subscribe">Subscribe to our newletter and get notification about ZOMO updates.</label>
                 <input type="text" name="email" id="Subscribe">
                 <input type="submit" class="input-bottom" value=">"
-                    style="color:#482583;background:white;font-size:50px;">
+                    style="color:#482583;background:#73648d;font-size:50px;">
                 {{ Form::close() }}
                 </form>
             </div>
@@ -458,12 +456,13 @@
                         jQuery("#myLoader").hide();
                     },
                     success: function(response) {
-
                         $(".Popup").hide();
-                        swal(
-                            "Thank You!",
-                            "" + response.success_message + ""
-                        );
+                        if (response.status == "unsubscribe") {} else {
+                            swal(
+                                "Thank You!",
+                                "" + response.success_message + ""
+                            );
+                        }
                         window.location.href = "{{ route('frontend.home') }}";
                     },
                 });

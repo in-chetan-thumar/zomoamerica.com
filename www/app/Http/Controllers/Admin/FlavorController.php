@@ -28,20 +28,19 @@ class FlavorController extends Controller
     public function create(Request $request){
         $data = [];
         try {
-            $data['error'] = false;
-            $status  = resolve('flavor-repo')->getStatus();
-            $category = resolve('flavor-repo')->getCategory();
-            if(isset($request->id))
-            {
-                $id = $request->id;
-                $user = resolve('flavor-repo')->findByID($id);
-                $flavor_image = resolve('flavorImage-repo')->findByID($user->id);
-                $data['view'] = view('admin.flavor.offcanvas',compact('status','user','category','flavor_image'))->with('model',$this->model)->render();
-            }else{
-                $data['view'] = view('admin.flavor.offcanvas',compact('status','category'))->render();
-            }
-            return response()->json($data);
-
+                $data['error'] = false;
+                $status  = resolve('flavor-repo')->getStatus();
+                $category = resolve('flavor-repo')->getCategory();
+                if(isset($request->id))
+                {
+                    $id = $request->id;
+                    $user = resolve('flavor-repo')->findByID($id);
+                    $flavor_image = resolve('flavorImage-repo')->findByID($user->id);
+                    $data['view'] = view('admin.flavor.offcanvas',compact('status','user','category','flavor_image'))->with('model',$this->model)->render();
+                }else{
+                    $data['view'] = view('admin.flavor.offcanvas',compact('status','category'))->render();
+                }
+                return response()->json($data);
         } catch (\Exception $e) {
             $data['error'] = true;
             $data['message'] = $e->getMessage();
@@ -51,7 +50,6 @@ class FlavorController extends Controller
 
     public function store(flavors $request)
     {
-
         $data = $params = [];
         DB::beginTransaction();
         try {
@@ -115,7 +113,7 @@ class FlavorController extends Controller
         $data = $params = [];
         DB::beginTransaction();
         try {
-            // Create user
+
             $params['flavor_title'] = $request->flavor_title;
             $params['flavor_description'] = $request->flavor_description;
             $params['category_id'] = $request->category_id;

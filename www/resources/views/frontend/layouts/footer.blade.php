@@ -19,7 +19,7 @@ $categorias = resolve('category-repo')->getCategory();
                 <div class="nav-footer-link">
                     <h3 style="color:white">FLAVORS</h1>
                         @foreach ($categorias as $value)
-                            <a href="{{ route('frontend.flavors.classicLine', $value->slug) }}">{{ $value->name }}</a>
+                            <a href="{{ route('frontend.flavors', $value->slug) }}">{{ $value->name }}</a>
                         @endforeach
                 </div>
 
@@ -40,7 +40,7 @@ $categorias = resolve('category-repo')->getCategory();
         <div class="follow-us">
             <p>Follow us</p>
             <div class="icon-list">
-                <a href="#" class="icon">
+                <a href="https://m.facebook.com/zomoamerica/" class="icon">
                     <span class="hide-text">icon</span>
                     <svg width="15" height="24" viewBox="0 0 15 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -49,7 +49,7 @@ $categorias = resolve('category-repo')->getCategory();
                             fill="white" />
                     </svg>
                 </a>
-                <a href="#" class="icon">
+                <a href="https://www.instagram.com/zomoamerica/reels/" class="icon">
                     <span class="hide-text">icon</span>
                     <svg width="21" height="24" viewBox="0 0 21 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -65,7 +65,7 @@ $categorias = resolve('category-repo')->getCategory();
                         </defs>
                     </svg>
                 </a>
-                <a href="#" class="icon">
+                <a href="https://www.youtube.com/@ZomoAmerica" class="icon">
                     <span class="hide-text">icon</span>
                     <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">

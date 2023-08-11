@@ -31,7 +31,6 @@ class FlavorsController extends Controller
             SEOTools::setTitle($content->meta_title);
             SEOTools::setDescription($content->meta_description);
             SEOMeta::addKeyword($content->meta_keyword);
-
         }
 
         $category_id= $request->id;

@@ -13,11 +13,13 @@ class NewsLetterController extends Controller
         if($request->actionType === "newsletter_unsubscribe")
         {
             $data['status'] = "unsubscribe";
-            $data['success_message'] = "Welcome to zomo america";
+            // $data['success_message'] = "Welcome to zomo america";
             return response()->json($data);
         }else{
-          $params['email'] = $request->email;
+            $params['email'] = $request->email;
             resolve('newsLetter-repo')->create($params);
+
+            $data['status'] = "subscribe";
             $data['success_message'] = "You have successfully applied to our news letter";
             return response()->json($data);
         }

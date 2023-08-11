@@ -192,103 +192,105 @@
                         @enderror
                     </div>
                 </div>
-                <div class="col-12">
-                    <div class="mb-3">
-                        <div class="form-group">
-                            {{ Form::label('flavors_image', 'Flavors Image') }}<span class="required">*</span>
-                            <input type="file" id="files" name="flavors_image[]" multiple>
-                            @error('flavors_image')
-                                <span style="color:red">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                            @if (isset($flavor_image))
-                                <div claass="preview" style="display: grid;grid-template-columns: repeat(3,1fr);">
-                                    @foreach ($flavor_image as $flavor)
-                                        <div>
-                                            <img src="{{ $model->getFlavorImageArray($flavor) }}" height="100">
-                                            @if (!empty($model->getFlavorImageArray($flavor)))
-                                                <span class="close" style="cursor:pointer"
-                                                    onClick="loadFile({{ $flavor->id }})">X</span>
-                                            @endif
-                                        </div>
-                                    @endforeach
-                                </div>
-                            @endif
-                        </div>
-                        @isset($user)
-                            <div class="col-12">
-                                <div class="mb-3">
-                                    <div class="form-group">
-                                        {!! Form::label('Status', 'Status', ['style' => 'justify-content: right']) !!}<span class="required">*</span>
-                                        {!! Form::select('is_active', $status, isset($user) ? $user->is_active : old('is_active'), [
-                                            'class' => 'form-control',
-                                            'id' => 'role',
-                                            'style' => 'width: 100%',
-                                            'placeholder' => 'Select Status',
-                                        ]) !!}
-                                        @error('is_active')
-                                            <span style="color:red">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-                                </div>
-                            </div>
-                        @endisset
-                    </div>
 
-                    <div class="row">
-                        <div class="col-md-12">
-                            {!! Form::submit('Submit', ['class' => 'btn btn-primary']) !!}
+                <div class="mb-3">
+                    <div class="form-group">
+                        {{ Form::label('flavors_image', 'Flavors Image') }}<span class="required">*</span>
+                        {!! Form::file('flavors_image[]', ['class' => 'form-control', 'id' => 'flavors_image', 'multiple']) !!}
+                        @error('flavors_image')
+                            <span style="color:red">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+
+                        @if (isset($flavor_image))
+                            <div claass="preview" style="display: grid;grid-template-columns: repeat(3,1fr);">
+                                @foreach ($flavor_image as $flavor)
+                                    <div>
+                                        <img src="{{ $model->getFlavorImageArray($flavor) }}" height="100">
+                                        @if (!empty($model->getFlavorImageArray($flavor)))
+                                            <span class="close" style="cursor:pointer"
+                                                onClick="loadFile({{ $flavor->id }})">X</span>
+                                        @endif
+                                    </div>
+                                @endforeach
+                            </div>
+                        @endif
+                    </div>
+                </div>
+                @isset($user)
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <div class="form-group">
+                                {!! Form::label('Status', 'Status', ['style' => 'justify-content: right']) !!}<span class="required">*</span>
+                                {!! Form::select('is_active', $status, isset($user) ? $user->is_active : old('is_active'), [
+                                    'class' => 'form-control',
+                                    'id' => 'role',
+                                    'style' => 'width: 100%',
+                                    'placeholder' => 'Select Status',
+                                ]) !!}
+                                @error('is_active')
+                                    <span style="color:red">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
                         </div>
                     </div>
-                    </form>
+                @endisset
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    {!! Form::submit('Submit', ['class' => 'btn btn-primary']) !!}
                 </div>
             </div>
-            {!! JsValidator::formRequest('App\Http\Requests\flavors', '#flavor-form') !!}
+            </form>
+        </div>
+    </div>
+    {!! JsValidator::formRequest('App\Http\Requests\flavors', '#flavor-form') !!}
 
-            <script>
-                // Save OR UPDATE DATA
-                $('#flavor-form').on('submit', function(e) {
-                    e.preventDefault();
-                    var formData = new FormData($('#flavor-form')[0]);
-                    var url = $(this).attr('action');
-                    var method = $(this).attr('method');
+    <script>
+        // Save OR UPDATE DATA
+        $('#flavor-form').on('submit', function(e) {
+            e.preventDefault();
+            var formData = new FormData($('#flavor-form')[0]);
+            var url = $(this).attr('action');
+            var method = $(this).attr('method');
 
-                    if ($(this).valid()) {
-                        $('#status').show();
-                        $('#preloader').show();
-                        $.ajax({
-                            headers: {
-                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                            },
-                            url: url,
-                            processData: false,
-                            contentType: false,
-                            type: method,
-                            data: formData,
-                            success: function(data, textStatus, jqXHR) {
-                                if (!data.error) {
-                                    $('#status').hide();
-                                    $('#preloader').hide();
-                                    $(".divtable").html(data.view);
-                                    toastr.success(data.message);
-                                    let closeCanvas = document.querySelector('[data-bs-dismiss="offcanvas"]');
-                                    closeCanvas.click();
-                                    //location.reload();
-                                } else {
-                                    $('#status').hide();
-                                    $('#preloader').hide();
-                                    toastr.error(data.message);
-                                }
-                            },
-                            error: function(jqXHR, textStatus, errorThrown) {
-                                $('#status').hide();
-                                $('#preloader').hide();
-                                toastr.error('Error occurred!');
-                            }
-                        });
+            if ($(this).valid()) {
+                $('#status').show();
+                $('#preloader').show();
+                $.ajax({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    url: url,
+                    processData: false,
+                    contentType: false,
+                    type: method,
+                    data: formData,
+                    success: function(data, textStatus, jqXHR) {
+                        if (!data.error) {
+                            $('#status').hide();
+                            $('#preloader').hide();
+                            $(".divtable").html(data.view);
+                            toastr.success(data.message);
+                            let closeCanvas = document.querySelector('[data-bs-dismiss="offcanvas"]');
+                            closeCanvas.click();
+                            //location.reload();
+                        } else {
+                            $('#status').hide();
+                            $('#preloader').hide();
+                            toastr.error(data.message);
+                        }
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        $('#status').hide();
+                        $('#preloader').hide();
+                        toastr.error('Error occurred!');
                     }
-                })
-            </script>
+                });
+            }
+        })
+    </script>

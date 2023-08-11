@@ -35,7 +35,6 @@ return [
     'FOOTER_TITLE1' => 'Sales',
     'FOOTER_TELEPHONE' => '+1 201-778-0188',
     'FOOTER_GMAIL' => 'info@zomoamerica.com',
-
     //NEWS IMAGE
     'NEWS_DOC_PATH' =>'public'.DIRECTORY_SEPARATOR."news",
     'NEWS_DOC_URL' =>'storage'.DIRECTORY_SEPARATOR."news",
