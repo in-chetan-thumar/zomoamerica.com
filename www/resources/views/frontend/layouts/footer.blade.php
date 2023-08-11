@@ -17,7 +17,7 @@ $categorias = resolve('category-repo')->getCategory();
                 </div>
 
                 <div class="nav-footer-link">
-                    <h3 style="color:white">FLAVORS</h1>
+                    <h3 style="color:white">FLAVORS</h3>
                         @foreach ($categorias as $value)
                             <a href="{{ route('frontend.flavors', $value->slug) }}">{{ $value->name }}</a>
                         @endforeach
