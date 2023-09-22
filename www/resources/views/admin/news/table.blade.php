@@ -1,4 +1,4 @@
-<table id="user-data " class="table table-striped table-bordered dt-responsive mt-2"
+{{-- <table id="user-data " class="table table-striped table-bordered dt-responsive mt-2"
     style="border-collapse: collapse; border-spacing: 0; width: 100%;">
     <thead>
         <tr>
@@ -19,6 +19,7 @@
                 <tr>
                     <td>{{ $row->title }}</td>
                     <td>{{ $row->description }}</td>
+                    <td></td>
 
                     <td>
 
@@ -48,4 +49,65 @@
     </tbody>
 </table>
 
-{{ $tableData->links() }}
+{{ $tableData->links() }} --}}
+
+<div class="table-rep-plugin table-wrapper table-responsive">
+    <table id="user-data " class="table table-striped table-bordered dt-responsive mt-2"
+           style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Discription</th>
+            <th>Active</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+            @foreach ($tableData as $key => $row)
+            <tr>
+                <td>{{ $row->title }}</td>
+                <td>{{$row->description }}</td>
+                <td>
+                       @if($row->is_active == 'Y')
+                            <span class="badge bg-success">Active</span>
+                        @else
+                            <span class="badge bg-danger">Inactive</span>
+                        @endif
+                    
+                </td>
+                {{-- <td>{{ $row->created_at_formatted }}</td> --}}
+                <td>
+    
+                    <div class="btn-group" role="group">
+    
+                        <i class="mdi mdi-dots-vertical" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true" ></i>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" onclick="showNewsEditModal(event)"
+                                href="{{ route('news-list.edit', $row->news_id) }}">Edit</a>
+                            
+                                @if($row->is_active == 'Y')
+                                <a class="dropdown-item" href="{{ route('newsmanagements.status',$row->news_id) }}">Inactive</a>
+                                @else
+                                <a class="dropdown-item" href="{{ route('newsmanagements.status',$row->news_id) }}">Active</a>
+                                 @endif
+
+
+                            <a class="dropdown-item"
+                                onclick="if(confirm('Are you sure you want to delete.')) document.getElementById('delete-{{ $row->news_id }}').submit()">
+                                Delete</a>
+                            <form id="delete-{{ $row->news_id }}"
+                                action="{{ route('news-list.destroy', $row->news_id) }}" method="POST">
+                                @method('DELETE')
+                                @csrf
+                            </form>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        @endforeach
+        </tbody>
+    </table>
+    
+    {{$tableData->links()}}
+    </div>
+    

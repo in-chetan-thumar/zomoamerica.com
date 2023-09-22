@@ -48,6 +48,10 @@ class NewsRepository
     }
     public function frontend_filter($params)
     {
+        $this->model = $this->model->when(isset($params['is_active']) AND !empty($params['is_active']) ,function ($query) use ($params){
+            return $query->where('is_active', $params['is_active']);
+        });
+        
         return $this->model
             ->latest()
             ->paginate(config('constants.PER_NEWS_PAGE'), ['*'],'page',!empty($params['page'])? $params['page']:'')
@@ -80,7 +84,7 @@ class NewsRepository
     public function getNewsDetail(){
         return $this->model->get();
     }
-    public function getNewsByTitle($title){
-        return $this->model->where("title",$title)->first();
+    public function getNewsByTitle($slug){
+        return $this->model->where("slug",$slug)->first();
     }
 }

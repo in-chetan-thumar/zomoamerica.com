@@ -10,6 +10,18 @@
     font-size: 50px;
     height: 20px;
     }
+
+    .heading{
+        font-size: 22px;
+        color: #ffffff;
+        text-align: left;
+        font-family: Lato;
+        font-weight: 700;
+        font-style: normal;
+        background-color: #7a7a7a;
+        padding:5px 8px;
+        margin-bottom:25px;
+        }
 @endsection
 @section('main')
     <div class="owl-carousel owl-theme home-banner">
@@ -118,271 +130,206 @@
     <div class="where-to-buy">
         <div class="container">
             <h4 class="title-main reveal">WHERE TO BUY ZOMO</h4>
-            <div class="row d-flex justify-content-center">
-                <div class="col-lg-3 col-md-4 col-6 where-to-buy-item reveal">
-                    <div class="where-to-buy-box">
-                        <div class="images-box">
-                            <img src={{ asset('assets/frontend/images/way-to-buy/wtb-1.webp') }} alt="Hookah Shisha"
-                                width="100" height="100">
+            <div class="row d-block">
+                <div class="col-12 col-lg-12 col-md-12">
+                    <div class="heading ">
+                        <h2>ONLINE DISTRIBUTOR</h2>
+                    </div>
+                     <div class="row d-flex justify-content-center">
+                        
+                        <div class="col-lg-3 col-md-4 col-6 where-to-buy-item reveal">
+                            <div class="where-to-buy-box">
+                                <div class="images-box">
+                                    <img src={{ asset('assets/frontend/images/way-to-buy/5starhookah.jpeg') }} alt="5 Star Hookah"
+                                        width="100" height="100">
+                                </div>
+                                <p>5 Star Hookah</p>
+                                <a href="https://5starhookah.com/collections/zomo-tobacco-shisha" class="visit-store">
+                                    <span>
+                                        <svg width="13" height="20" viewBox="0 0 13 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_31_161)">
+                                                <path
+                                                    d="M12.1328 9.11719C12.6211 9.60547 12.6211 10.3984 12.1328 10.8867L4.63281 18.3867C4.14453 18.875 3.35156 18.875 2.86328 18.3867C2.375 17.8984 2.375 17.1055 2.86328 16.6172L9.48047 10L2.86719 3.38281C2.37891 2.89453 2.37891 2.10156 2.86719 1.61328C3.35547 1.125 4.14844 1.125 4.63672 1.61328L12.1367 9.11328L12.1328 9.11719Z"
+                                                    fill="black" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_31_161">
+                                                    <rect width="12.5" height="20" fill="white" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                    </span>
+                                    Visit Store</a>
+                            </div>
                         </div>
-                        <p>Hookah Shisha</p>
-                        <a href="https://www.hookah-shisha.com/c/shisha-tobacco/brand/zomo" class="visit-store">
-                            <span>
-                                <svg width="13" height="20" viewBox="0 0 13 20" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0_31_161)">
-                                        <path
-                                            d="M12.1328 9.11719C12.6211 9.60547 12.6211 10.3984 12.1328 10.8867L4.63281 18.3867C4.14453 18.875 3.35156 18.875 2.86328 18.3867C2.375 17.8984 2.375 17.1055 2.86328 16.6172L9.48047 10L2.86719 3.38281C2.37891 2.89453 2.37891 2.10156 2.86719 1.61328C3.35547 1.125 4.14844 1.125 4.63672 1.61328L12.1367 9.11328L12.1328 9.11719Z"
-                                            fill="black" />
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_31_161">
-                                            <rect width="12.5" height="20" fill="white" />
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                            </span>
-                            Visit Store
-                        </a>
+
+                        <div class="col-lg-3 col-md-4 col-6 where-to-buy-item reveal">
+                            <div class="where-to-buy-box">
+                                <div class="images-box">
+                                    <img src={{ asset('assets/frontend/images/way-to-buy/smokefun_logo.png') }} alt="5 Star Hookah"
+                                        width="100" height="100">
+                                </div>
+                                <p>Smokefun</p>
+                                <a href="https://smokefun.com/product-category/tobacco/zomo/" class="visit-store">
+                                    <span>
+                                        <svg width="13" height="20" viewBox="0 0 13 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_31_161)">
+                                                <path
+                                                    d="M12.1328 9.11719C12.6211 9.60547 12.6211 10.3984 12.1328 10.8867L4.63281 18.3867C4.14453 18.875 3.35156 18.875 2.86328 18.3867C2.375 17.8984 2.375 17.1055 2.86328 16.6172L9.48047 10L2.86719 3.38281C2.37891 2.89453 2.37891 2.10156 2.86719 1.61328C3.35547 1.125 4.14844 1.125 4.63672 1.61328L12.1367 9.11328L12.1328 9.11719Z"
+                                                    fill="black" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_31_161">
+                                                    <rect width="12.5" height="20" fill="white" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                    </span>
+                                    Visit Store</a>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-3 col-md-4 col-6 where-to-buy-item reveal">
+                            <div class="where-to-buy-box">
+                                <div class="images-box">
+                                    <img src={{ asset('assets/frontend/images/way-to-buy/logo.png') }} alt="Hookah Wholesalers"
+                                        width="100" height="100">
+                                </div>
+                                <p>Hookah Wholesalers</p>
+                                <a href="#" class="visit-store">
+                                    <span>
+                                        <svg width="13" height="20" viewBox="0 0 13 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_31_161)">
+                                                <path
+                                                    d="M12.1328 9.11719C12.6211 9.60547 12.6211 10.3984 12.1328 10.8867L4.63281 18.3867C4.14453 18.875 3.35156 18.875 2.86328 18.3867C2.375 17.8984 2.375 17.1055 2.86328 16.6172L9.48047 10L2.86719 3.38281C2.37891 2.89453 2.37891 2.10156 2.86719 1.61328C3.35547 1.125 4.14844 1.125 4.63672 1.61328L12.1367 9.11328L12.1328 9.11719Z"
+                                                    fill="black" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_31_161">
+                                                    <rect width="12.5" height="20" fill="white" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                    </span>
+                                    Visit Store</a>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-4 col-6 where-to-buy-item reveal">
-                    <div class="where-to-buy-box">
-                        <div class="images-box">
-                            <img src={{ asset('assets/frontend/images/way-to-buy/wtb-2.webp') }} alt="5 Star Hookah"
-                                width="100" height="100">
-                        </div>
-                        <p>5 Star Hookah</p>
-                        <a href="https://5starhookah.com/collections/zomo-tobacco-shisha" class="visit-store">
-                            <span>
-                                <svg width="13" height="20" viewBox="0 0 13 20" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0_31_161)">
-                                        <path
-                                            d="M12.1328 9.11719C12.6211 9.60547 12.6211 10.3984 12.1328 10.8867L4.63281 18.3867C4.14453 18.875 3.35156 18.875 2.86328 18.3867C2.375 17.8984 2.375 17.1055 2.86328 16.6172L9.48047 10L2.86719 3.38281C2.37891 2.89453 2.37891 2.10156 2.86719 1.61328C3.35547 1.125 4.14844 1.125 4.63672 1.61328L12.1367 9.11328L12.1328 9.11719Z"
-                                            fill="black" />
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_31_161">
-                                            <rect width="12.5" height="20" fill="white" />
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                            </span>
-                            Visit Store</a>
+                <div class="col-12 col-lg-12 col-md-12">
+                    <div class="heading ">
+                        <h2>AUTHORIZED STATE DISTRIBUTOR</h2>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6 where-to-buy-item reveal">
-                    <div class="where-to-buy-box">
-                        <div class="images-box">
-                            <img src={{ asset('assets/frontend/images/way-to-buy/wtb-3.webp') }} alt="The Hookah"
-                                width="100" height="100">
+                    <div class="content-infomation">
+                        <div class="contact-form">
+                            {!! Form::open([
+                                'url' => route('frontend.home.authorizeStateDistributor'),
+                                'method' => 'POST',
+                                'id' => 'wholesale-form',
+                                'class' => 'inquery-form',
+                            ]) !!}
+                            
+                            <div class="cole-two">
+                                <div class="input-field">
+                                    <label for="fist">FIRST NAME <span
+                                        class="text-danger">*</span></label>
+                                    {!! Form::text('fname', old('fname'), [
+                                        'class' => ' name',
+                                        'maxlength' => '20',
+                                    ]) !!}
+                                    <span class="text-danger" style="font-size:15px">
+                                        @error('fname')
+                                            {{ $message }}
+                                        @enderror
+                                    </span>
+                                    <br>
+                                </div>
+                                <div class="input-field">
+                                    <label for="Last">LAST NAME <span
+                                        class="text-danger">*</span></label>
+                                    {!! Form::text('lname', old('lname'), [
+                                        'class' => ' name',
+                                        'maxlength' => '20',
+                                    ]) !!}
+                                    <span class="text-danger" style="font-size:15px">
+                                        @error('lname')
+                                            {{ $message }}
+                                        @enderror
+                                    </span>
+                                    <br>
+                                </div>
+                            </div>
+                            
+                            <div class="input-field">
+                                <label for="city">CITY <span
+                                    class="text-danger">*</span></label>
+                                {!! Form::text('city', old('city'), [
+                                    'class' => ' name',
+                                    'maxlength' => '30',
+                                ]) !!}
+                                <span class="text-danger" style="font-size:15px">
+                                    @error('city')
+                                        {{ $message }}
+                                    @enderror
+                                </span>
+                                <br>
+                            </div>
+                            <div class="input-field">
+                                <label for="state">State <span
+                                    class="text-danger">*</span></label>
+                                {{ Form::Select('state', $stateArray, '', ['class' => '', 'placeholder' => 'Select']) }}
+                                <span class="text-danger" style="font-size:15px">
+                                    @error('state')
+                                        {{ $message }}
+                                    @enderror
+                                </span>
+                                <br>
+                            </div>
+                            
+                           
+                            <div class="input-field">
+                                <label for="email">EMAIL ADDRESS <span
+                                    class="text-danger">*</span></label>
+                                {!! Form::text('email', old('email'), [
+                                    'class' => ' name',
+                                    'maxlength' => '100',
+                                ]) !!}
+                                <span class="text-danger" style="font-size:15px">
+                                    @error('email')
+                                        {{ $message }}
+                                    @enderror
+                                </span>
+                                <br>
+                            </div>
+                            <div class="input-field">
+                                <label for="number">TELEPHONE NUMBER <span
+                                    class="text-danger">*</span></label>
+                                {!! Form::text('number', old('number'), [
+                                    'class' => ' name',
+                                    'maxlength' => '10',
+                                ]) !!}
+                                <span class="text-danger" style="font-size:15px">
+                                    @error('number')
+                                        {{ $message }}
+                                    @enderror
+                                </span>
+                                <br>
+                            </div>
+                           
+                            <div class="wrap-btn">
+                                <input type="submit" class="btn-black mb-5" value="SEND">
+                            </div>
+
+                            {{ Form::close() }}
                         </div>
-                        <p>The Hookah</p>
-                        <a href="https://www.thehookah.com/" class="visit-store">
-                            <span>
-                                <svg width="13" height="20" viewBox="0 0 13 20" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0_31_161)">
-                                        <path
-                                            d="M12.1328 9.11719C12.6211 9.60547 12.6211 10.3984 12.1328 10.8867L4.63281 18.3867C4.14453 18.875 3.35156 18.875 2.86328 18.3867C2.375 17.8984 2.375 17.1055 2.86328 16.6172L9.48047 10L2.86719 3.38281C2.37891 2.89453 2.37891 2.10156 2.86719 1.61328C3.35547 1.125 4.14844 1.125 4.63672 1.61328L12.1367 9.11328L12.1328 9.11719Z"
-                                            fill="black" />
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_31_161">
-                                            <rect width="12.5" height="20" fill="white" />
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                            </span>
-                            Visit Store</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6 where-to-buy-item reveal">
-                    <div class="where-to-buy-box">
-                        <div class="images-box">
-                            <img src={{ asset('assets/frontend/images/way-to-buy/wtb-4.webp') }} alt="Texas Hookah"
-                                width="100" height="100">
-                        </div>
-                        <p>Texas Hookah</p>
-                        <a href="https://www.texashookah.com/" class="visit-store">
-                            <span>
-                                <svg width="13" height="20" viewBox="0 0 13 20" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0_31_161)">
-                                        <path
-                                            d="M12.1328 9.11719C12.6211 9.60547 12.6211 10.3984 12.1328 10.8867L4.63281 18.3867C4.14453 18.875 3.35156 18.875 2.86328 18.3867C2.375 17.8984 2.375 17.1055 2.86328 16.6172L9.48047 10L2.86719 3.38281C2.37891 2.89453 2.37891 2.10156 2.86719 1.61328C3.35547 1.125 4.14844 1.125 4.63672 1.61328L12.1367 9.11328L12.1328 9.11719Z"
-                                            fill="black" />
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_31_161">
-                                            <rect width="12.5" height="20" fill="white" />
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                            </span>
-                            Visit Store</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6 where-to-buy-item reveal">
-                    <div class="where-to-buy-box">
-                        <div class="images-box">
-                            <img src={{ asset('assets/frontend/images/way-to-buy/wtb-5.webp') }} alt="Hookah John"
-                                width="100" height="100">
-                        </div>
-                        <p>Hookah John</p>
-                        <a href="https://hookahjohn.com/collections/zomo-shisha-hookah-tobacco-flavors"
-                            class="visit-store">
-                            <span>
-                                <svg width="13" height="20" viewBox="0 0 13 20" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0_31_161)">
-                                        <path
-                                            d="M12.1328 9.11719C12.6211 9.60547 12.6211 10.3984 12.1328 10.8867L4.63281 18.3867C4.14453 18.875 3.35156 18.875 2.86328 18.3867C2.375 17.8984 2.375 17.1055 2.86328 16.6172L9.48047 10L2.86719 3.38281C2.37891 2.89453 2.37891 2.10156 2.86719 1.61328C3.35547 1.125 4.14844 1.125 4.63672 1.61328L12.1367 9.11328L12.1328 9.11719Z"
-                                            fill="black" />
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_31_161">
-                                            <rect width="12.5" height="20" fill="white" />
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                            </span>
-                            Visit Store</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6 where-to-buy-item reveal">
-                    <div class="where-to-buy-box">
-                        <div class="images-box">
-                            <img src={{ asset('assets/frontend/images/way-to-buy/wtb-6.webp') }} alt="Hookah Junkie"
-                                width="100" height="100">
-                        </div>
-                        <p>Hookah Junkie</p>
-                        <a href="https://hookahjunkie.com/collections/zomo-tobacco-hookah-tobacco-shisha"
-                            class="visit-store">
-                            <span>
-                                <svg width="13" height="20" viewBox="0 0 13 20" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0_31_161)">
-                                        <path
-                                            d="M12.1328 9.11719C12.6211 9.60547 12.6211 10.3984 12.1328 10.8867L4.63281 18.3867C4.14453 18.875 3.35156 18.875 2.86328 18.3867C2.375 17.8984 2.375 17.1055 2.86328 16.6172L9.48047 10L2.86719 3.38281C2.37891 2.89453 2.37891 2.10156 2.86719 1.61328C3.35547 1.125 4.14844 1.125 4.63672 1.61328L12.1367 9.11328L12.1328 9.11719Z"
-                                            fill="black" />
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_31_161">
-                                            <rect width="12.5" height="20" fill="white" />
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                            </span>
-                            Visit Store</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6 where-to-buy-item reveal">
-                    <div class="where-to-buy-box">
-                        <div class="images-box">
-                            <img src={{ asset('assets/frontend/images/way-to-buy/wtb-7.webp') }} alt="Ultimate Junkie"
-                                width="100" height="100">
-                        </div>
-                        <p>Ultimate Junkie</p>
-                        <a href="#" class="visit-store">
-                            <span>
-                                <svg width="13" height="20" viewBox="0 0 13 20" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0_31_161)">
-                                        <path
-                                            d="M12.1328 9.11719C12.6211 9.60547 12.6211 10.3984 12.1328 10.8867L4.63281 18.3867C4.14453 18.875 3.35156 18.875 2.86328 18.3867C2.375 17.8984 2.375 17.1055 2.86328 16.6172L9.48047 10L2.86719 3.38281C2.37891 2.89453 2.37891 2.10156 2.86719 1.61328C3.35547 1.125 4.14844 1.125 4.63672 1.61328L12.1367 9.11328L12.1328 9.11719Z"
-                                            fill="black" />
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_31_161">
-                                            <rect width="12.5" height="20" fill="white" />
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                            </span>
-                            Visit Store</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6 where-to-buy-item reveal">
-                    <div class="where-to-buy-box">
-                        <div class="images-box">
-                            <img src={{ asset('assets/frontend/images/way-to-buy/wtb-8.webp') }} alt="Hookah Heroes"
-                                width="100" height="100">
-                        </div>
-                        <p>Hookah Heroes</p>
-                        <a href="#" class="visit-store">
-                            <span>
-                                <svg width="13" height="20" viewBox="0 0 13 20" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0_31_161)">
-                                        <path
-                                            d="M12.1328 9.11719C12.6211 9.60547 12.6211 10.3984 12.1328 10.8867L4.63281 18.3867C4.14453 18.875 3.35156 18.875 2.86328 18.3867C2.375 17.8984 2.375 17.1055 2.86328 16.6172L9.48047 10L2.86719 3.38281C2.37891 2.89453 2.37891 2.10156 2.86719 1.61328C3.35547 1.125 4.14844 1.125 4.63672 1.61328L12.1367 9.11328L12.1328 9.11719Z"
-                                            fill="black" />
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_31_161">
-                                            <rect width="12.5" height="20" fill="white" />
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                            </span>
-                            Visit Store</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6 where-to-buy-item reveal">
-                    <div class="where-to-buy-box">
-                        <div class="images-box">
-                            <img src={{ asset('assets/frontend/images/way-to-buy/wtb-9.webp') }} alt="Hookah Wholesalers"
-                                width="100" height="100">
-                        </div>
-                        <p>Hookah Wholesalers</p>
-                        <a href="#" class="visit-store">
-                            <span>
-                                <svg width="13" height="20" viewBox="0 0 13 20" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0_31_161)">
-                                        <path
-                                            d="M12.1328 9.11719C12.6211 9.60547 12.6211 10.3984 12.1328 10.8867L4.63281 18.3867C4.14453 18.875 3.35156 18.875 2.86328 18.3867C2.375 17.8984 2.375 17.1055 2.86328 16.6172L9.48047 10L2.86719 3.38281C2.37891 2.89453 2.37891 2.10156 2.86719 1.61328C3.35547 1.125 4.14844 1.125 4.63672 1.61328L12.1367 9.11328L12.1328 9.11719Z"
-                                            fill="black" />
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_31_161">
-                                            <rect width="12.5" height="20" fill="white" />
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                            </span>
-                            Visit Store</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6 where-to-buy-item reveal">
-                    <div class="where-to-buy-box">
-                        <div class="images-box">
-                            <img src={{ asset('assets/frontend/images/way-to-buy/wtb-10.webp') }} alt="Hookah Company"
-                                width="100" height="100">
-                        </div>
-                        <p>Hookah Company</p>
-                        <a href="#" class="visit-store">
-                            <span>
-                                <svg width="13" height="20" viewBox="0 0 13 20" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0_31_161)">
-                                        <path
-                                            d="M12.1328 9.11719C12.6211 9.60547 12.6211 10.3984 12.1328 10.8867L4.63281 18.3867C4.14453 18.875 3.35156 18.875 2.86328 18.3867C2.375 17.8984 2.375 17.1055 2.86328 16.6172L9.48047 10L2.86719 3.38281C2.37891 2.89453 2.37891 2.10156 2.86719 1.61328C3.35547 1.125 4.14844 1.125 4.63672 1.61328L12.1367 9.11328L12.1328 9.11719Z"
-                                            fill="black" />
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_31_161">
-                                            <rect width="12.5" height="20" fill="white" />
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                            </span>
-                            Visit Store</a>
-                    </div>
+                    </div>        
                 </div>
             </div>
+            
         </div>
     </div>
 
@@ -400,6 +347,7 @@
         </div>
     </div>
 @section('js')
+{!! JsValidator::formRequest('App\Http\Requests\HomeRequest', '#wholesale-form') !!}
     <script>
         $(document).ready(function() {
 

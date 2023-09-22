@@ -102,6 +102,7 @@ class NewsController extends Controller
         if (request()->routeIs('frontend.news') || !isset($previousUrl['query'])) {
             $params['query_str'] = $request->query_str ?? '';
             $params['page'] =  $request->page ?? 0;
+            $params['is_active'] = 'Y';
             $params['path'] =  \Illuminate\Support\Facades\Request::fullUrl();
         } else {
             parse_str($previousUrl['query'], $params);

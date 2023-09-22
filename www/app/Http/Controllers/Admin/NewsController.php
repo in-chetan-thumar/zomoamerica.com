@@ -69,8 +69,11 @@ class NewsController extends Controller
                     $params = [];
                     $params['title'] = $request->title;
                     $params['description'] = $request->description;
-//                    $params['link']=$request->link;
+                    $slug = $request->slug;
+                    $params['slug'] = str_replace(' ', '-', strtolower($slug));
+                    $params['is_active'] = $request->is_active;
                     $params['image'] = basename($request->file('image')->store($fileDir));
+                    // dd($params);
                     $page = resolve('news-repo')->create($params);
 
                 }
@@ -98,9 +101,10 @@ class NewsController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        $news = resolve('news-repo')->getNewsByTitle($id);
+        // dd($slug);
+        $news = resolve('news-repo')->getNewsByTitle($slug);
         return view('frontend.innerNews',compact('news'));
         //
     }
@@ -144,6 +148,11 @@ class NewsController extends Controller
             $params = [];
             $params['title'] = $request->title;
             $params['description'] = $request->description;
+            $slug = $request->slug;
+            $convert = str_replace(' ', '-', $slug);
+            $params['slug'] = strtolower($convert);
+            // dd($params['slug']);
+            $params['is_active'] = $request->is_active;
             if ($request->has('image')) {
                 $fileDir = config('constants.NEWS_DOC_PATH') . DIRECTORY_SEPARATOR;
                 if (!File::exists($fileDir)) {
@@ -199,6 +208,17 @@ class NewsController extends Controller
         }
     }
 
+ public function changeStatus($id)
+    {
+        try {
+            $news = resolve('news-repo')->changeStatus($id);
+            toastr()->success('Status changed successfully..!');
+            return redirect()->route('news-list.index');
+        } catch (\Exception $e) {
+            toastr()->error($e->getMessage());
+            return redirect()->back();
+        }
+    }
 
     public function getParamsForFilter(Request $request)
     {

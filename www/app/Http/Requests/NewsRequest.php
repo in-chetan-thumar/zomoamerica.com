@@ -33,8 +33,9 @@ class NewsRequest extends FormRequest
         // }
 
         return [
-            'title' => 'required',
-            'description' => 'required',
+            'title' => 'required|max:100',
+            'slug'=> 'required|max:150',
+            // 'description' => 'required',
             'image' => 'nullable|mimes:jpg,png',
         ];
     }

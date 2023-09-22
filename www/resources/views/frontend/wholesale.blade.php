@@ -17,8 +17,7 @@
     <div class="container">
         <div class="wholesale-form-section">
             <div class="wholesale-form-left">
-                <p>Please fill out the wholesale account form below to register your business. Please note that all
-                    fields are mandatory.</p>
+                <p>Please fill out the wholesale account form below to register your business.</p>
                 {!! Form::open([
                     'url' => route('frontend.storeWholesale'),
                     'method' => 'POST',
@@ -26,7 +25,9 @@
                     'class' => 'inquery-form',
                 ]) !!}
                 <div class="input-field">
-                    <label for="name">BUSINESS NAME:</label>
+                    <label for="name">BUSINESS NAME <span
+                        class="text-danger">*</span>
+                    </label>
                     {!! Form::text('bname', old('bname'), [
                         'class' => ' name',
                         'maxlength' => '100',
@@ -40,7 +41,8 @@
                 </div>
                 <div class="cole-two">
                     <div class="input-field">
-                        <label for="fist">FIRST NAME:</label>
+                        <label for="fist">FIRST NAME <span
+                            class="text-danger">*</span></label>
                         {!! Form::text('fname', old('fname'), [
                             'class' => ' name',
                             'maxlength' => '20',
@@ -53,7 +55,8 @@
                         <br>
                     </div>
                     <div class="input-field">
-                        <label for="Last">LAST NAME:</label>
+                        <label for="Last">LAST NAME <span
+                            class="text-danger">*</span></label>
                         {!! Form::text('lname', old('lname'), [
                             'class' => ' name',
                             'maxlength' => '20',
@@ -67,7 +70,8 @@
                     </div>
                 </div>
                 <div class="input-field">
-                    <label for="address">ADDRESS:</label>
+                    <label for="address">ADDRESS <span
+                        class="text-danger">*</span></label>
                     {!! Form::text('address', old('address'), [
                         'class' => ' name',
                         'maxlength' => '100',
@@ -80,7 +84,8 @@
                     <br>
                 </div>
                 <div class="input-field">
-                    <label for="city">CITY:</label>
+                    <label for="city">CITY <span
+                        class="text-danger">*</span></label>
                     {!! Form::text('city', old('city'), [
                         'class' => ' name',
                         'maxlength' => '30',
@@ -93,7 +98,8 @@
                     <br>
                 </div>
                 <div class="input-field">
-                    <label for="state">State:</label>
+                    <label for="state">State <span
+                        class="text-danger">*</span></label>
                     {{ Form::Select('state', $stateArray, '', ['class' => '', 'placeholder' => 'Select']) }}
                     <span class="text-danger" style="font-size:15px">
                         @error('state')
@@ -103,7 +109,8 @@
                     <br>
                 </div>
                 <div class="input-field">
-                    <label for="zip">zip code:</label>
+                    <label for="zip">zip code <span
+                        class="text-danger">*</span></label>
                     {!! Form::text('zipcode', old('zipcode'), [
                         'class' => ' name',
                         'maxlength' => 6,
@@ -116,7 +123,7 @@
                     <br>
                 </div>
                 <div class="input-field">
-                    <label for="website">website:</label>
+                    <label for="website">website</label>
                     {!! Form::text('website', old('website'), [
                         'class' => ' name',
                         'maxlength' => '70',
@@ -129,7 +136,8 @@
                     <br>
                 </div>
                 <div class="input-field">
-                    <label for="email">EMAIL ADDRESS:</label>
+                    <label for="email">EMAIL ADDRESS <span
+                        class="text-danger">*</span></label>
                     {!! Form::text('email', old('email'), [
                         'class' => ' name',
                         'maxlength' => '100',
@@ -142,7 +150,8 @@
                     <br>
                 </div>
                 <div class="input-field">
-                    <label for="number">TELEPHONE NUMBER:</label>
+                    <label for="number">TELEPHONE NUMBER <span
+                        class="text-danger">*</span></label>
                     {!! Form::text('number', old('number'), [
                         'class' => ' name',
                         'maxlength' => '10',

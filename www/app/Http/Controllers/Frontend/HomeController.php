@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Contact;
+use App\Http\Requests\HomeRequest;
 use App\Http\Requests\wholesale;
 use App\Models\ContactDetail;
 use App\Models\wholesaleDetail;
@@ -33,12 +34,13 @@ class HomeController extends Controller
         SEOTools::setDescription($content->meta_description);
         SEOMeta::addKeyword($content->meta_keywords);
         $flavors = resolve('flavor-repo')->getDistinctData();
+        $stateArray  = array('Alabama' => 'Alabama','Alaska' => 'Alaska','Arizona' => 'Arizona','Arkansas' => 'Arkansas','California' => 'California','Colorado' => 'Colorado','Connecticut' => 'Connecticut','Delaware' => 'Delaware','District of Columbia' => 'District of Columbia','Florida' => 'Florida','Georgia' =>'Georgia','Hawaii' => 'Hawaii','Idaho' =>'Idaho','Illinois' =>'Illinois','Indiana'=>'Indiana','Iowa'=>'Iowa','Kansas'=>'Kansas','Kentucky' =>'Kentucky','Louisiana'=>'Louisiana','Maine'=>'Maine','Maryland'=>'Maryland','Massachusetts'=>'Massachusetts','Michigan'=>'Michigan','Minnesota'=>'Minnesota','Mississippi'=>'Mississippi','Missouri'=>'Missouri','Montana'=>'Montana','Nebraska'=>'Nebraska','Nevada'=>'Nevada','New Hampshire'=>'New Hampshire','New Jersey' =>'New Jersey','New Mexico'=>'New Mexico','New York'=>'New York','North Carolina'=>'North Carolina','North Dakota'=>'North Dakota','Ohio'=>'Ohio','Oklahoma'=>'Oklahoma','Oregon'=>'Oregon','Pennsylvania'=>'Pennsylvania','Puerto Rico'=>'Puerto Rico','Rhode Island'=>'Rhode Island','South Carolina'=>'South Carolina','South Dakota'=>'South Dakota','Tennessee'=>'Tennessee','Texas'=>'Texas','Utah'=>'Utah','Vermont'=>'Vermont','Virginia'=>'Virginia','Washington'=>'Washington','West Virginia'=>'West Virginia','Wisconsin'=>'Wisconsin','Wyoming'=>'Wyoming');
         foreach($flavors as $val) {
             $flavor[] = resolve('flavor-repo')->getDataByCategoryId($val->category_id);
         }
         $model = new Flavor();
         $news = resolve('news-repo')->getNewsDetail();
-        return view('frontend.home',compact('news','flavor','model','content'));
+        return view('frontend.home',compact('news','flavor','model','content','stateArray'));
     }
 
     /**
@@ -196,7 +198,32 @@ class HomeController extends Controller
         $stateArray  = array('Alabama' => 'Alabama','Alaska' => 'Alaska','Arizona' => 'Arizona','Arkansas' => 'Arkansas','California' => 'California','Colorado' => 'Colorado','Connecticut' => 'Connecticut','Delaware' => 'Delaware','District of Columbia' => 'District of Columbia','Florida' => 'Florida','Georgia' =>'Georgia','Hawaii' => 'Hawaii','Idaho' =>'Idaho','Illinois' =>'Illinois','Indiana'=>'Indiana','Iowa'=>'Iowa','Kansas'=>'Kansas','Kentucky' =>'Kentucky','Louisiana'=>'Louisiana','Maine'=>'Maine','Maryland'=>'Maryland','Massachusetts'=>'Massachusetts','Michigan'=>'Michigan','Minnesota'=>'Minnesota','Mississippi'=>'Mississippi','Missouri'=>'Missouri','Montana'=>'Montana','Nebraska'=>'Nebraska','Nevada'=>'Nevada','New Hampshire'=>'New Hampshire','New Jersey' =>'New Jersey','New Mexico'=>'New Mexico','New York'=>'New York','North Carolina'=>'North Carolina','North Dakota'=>'North Dakota','Ohio'=>'Ohio','Oklahoma'=>'Oklahoma','Oregon'=>'Oregon','Pennsylvania'=>'Pennsylvania','Puerto Rico'=>'Puerto Rico','Rhode Island'=>'Rhode Island','South Carolina'=>'South Carolina','South Dakota'=>'South Dakota','Tennessee'=>'Tennessee','Texas'=>'Texas','Utah'=>'Utah','Vermont'=>'Vermont','Virginia'=>'Virginia','Washington'=>'Washington','West Virginia'=>'West Virginia','Wisconsin'=>'Wisconsin','Wyoming'=>'Wyoming');
         return view('frontend.wholesale',compact('stateArray','content'));
     }
-    // Wholesale store
+   
+
+    //AUTHORIZED STATE DISTRIBUTOR 
+    public function authorizeStateDistributor(HomeRequest $request){
+        try{
+               // Send Mail 
+               $params['first_name'] = $request->fname;
+               $params['last_name'] = $request->lname;
+               $params['telephone'] = $request->number;
+               $params['email'] = $request->email;
+               $params['state'] = $request->state;
+               $params['city'] = $request->city;
+               
+            //    dd($params);
+
+                   $data['error'] = false;
+                   Mail::send(new \App\Mail\AutorizeDistributorNotification($params));
+                   toastr()->success('Your enquire has been submitted successfully!');
+                   return redirect()->back();
+        }catch(\Exception $e){
+            toastr()->error($e->getMessage());
+            return redirect()->back();
+        }
+    }
+
+     // Wholesale store
     public function storeWholesale(Wholesale $request)
     {
         try{

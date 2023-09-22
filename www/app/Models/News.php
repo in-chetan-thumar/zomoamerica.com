@@ -15,6 +15,8 @@ class News extends Model
     protected $primaryKey = "news_id";
     protected $fillable = [
         'title',
+        'slug',
+        'is_active',
         'description',
         'image',
         'created_at',

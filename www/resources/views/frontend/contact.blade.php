@@ -75,10 +75,13 @@
                         <p>Location</p>
                     </div>
                     <div class="map-box">
-                        <iframe
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d754.0094351565303!2d-74.15665573038892!3d40.89298701199678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2fe9b80bde659%3A0x4e760ab2eadb78e8!2s24-38%20Michigan%20Ave%2C%20Paterson%2C%20NJ%2007503%2C%20USA!5e0!3m2!1sen!2sin!4v1695364626290!5m2!1sen!2sin"
+                         width="600" height="350" frameborder="0" style="border: 0px; pointer-events: none;"
+                         allowfullscreen=""></iframe>
+                        {{-- <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2141.127457838495!2d-54.6431055207775!3d-25.507287348071166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f68571c6f023c1%3A0x21c1ba001e986ac5!2sFlavors%20of%20Americas%20S.A.!5e0!3m2!1spt-BR!2spy!4v1572973947331!5m2!1spt-BR!2spy"
                             width="600" height="350" frameborder="0" style="border: 0px; pointer-events: none;"
-                            allowfullscreen=""></iframe>
+                            allowfullscreen=""></iframe> --}}
                     </div>
                 </div>
             </div>

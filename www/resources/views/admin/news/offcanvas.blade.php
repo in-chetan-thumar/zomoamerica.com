@@ -32,18 +32,28 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-12">
                 <div class="mb-3">
                     <div class="form-group">
-                        {!! Form::label('description', 'Description', ['style' => 'justify-content: right']) !!}<span class="required">*</span>
-                        {!! Form::textarea('description', isset($newsdata) ? $newsdata->description : old('description'), [
-                            'class' => 'form-control',
-                        ]) !!}
-                        @error('description')
+                        {!! Form::label('slug', 'Slug', ['style' => 'justify-content: right']) !!}<span class="required">*</span>
+                        {!! Form::text('slug', isset($newsdata) ? $newsdata->slug : old('slug'), ['class' => 'form-control']) !!}
+                        @error('slug')
                             <span style="color:red">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="mb-3">
+                    <div class="form-group">
+                        {!! Form::label('description', 'Description', ['style' => 'justify-content: right']) !!}
+                        {!! Form::textarea('description', isset($newsdata) ? $newsdata->description : old('description'), [
+                            'class' => 'form-control',
+                        ]) !!}
                     </div>
                 </div>
             </div>
@@ -67,6 +77,26 @@
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="mb-3">
+                    <div class="form-group">
+                        <input class="nhsuk-checkboxes__input"
+                             name="is_active" type="checkbox"
+                             value="Y"
+                             aria-controls="conditional-contact-1"
+                             aria-expanded="false"
+                             @isset($newsdata){{ $newsdata->is_active == 'Y' ? 'checked' : '' }}@endisset
+                             >
+                             <label
+                             class="nhsuk-label nhsuk-checkboxes__label show-input-checkbox"
+                             for="">
+                             Is active
+                             </label>
                     </div>
                 </div>
             </div>

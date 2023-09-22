@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class Contact extends FormRequest
+class HomeRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,18 +22,13 @@ class Contact extends FormRequest
     public function rules(): array
     {
         return [
-            'email' => 'required|email|max:150|min:6',
-            'subject' => 'required|max:50',
-            'message' => 'required|max:150',
-            'g-recaptcha-response' => 'required|captcha'
-
+           
+            'fname' => 'required|max:20',
+            'lname' => 'required|max:20',
+            'city' => 'required|max:30',
+            'email' => 'required|email|max:100',
+            'number' => 'required|max:10',
+            'state' => 'required|max:50',
         ];
     }
-    public function messages()
-    {
-        return [
-            'g-recaptcha-response' => 'Google captcha is required',
-        ];
-    }
-
 }

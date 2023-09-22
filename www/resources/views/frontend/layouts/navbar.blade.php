@@ -105,7 +105,7 @@
                 </ul>
             </li>
             <li class="menu-item"><a href="{{ route('frontend.news') }}" class="menu-link">News</a></li>
-            <li class="menu-item"><a href="{{ route('frontend.contact') }}" class="menu-link">Contacts</a></li>
+            <li class="menu-item"><a href="{{ route('frontend.contact') }}" class="menu-link">Contact Us</a></li>
             <li class="menu-item"><a href="{{ route('frontend.wholesale') }}" class="menu-link">Wholesale</a></li>
 
             </ul>

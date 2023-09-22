@@ -78,10 +78,13 @@ Route::get('/form-custom-field',function (){
 });
 // frontend site route
 Route::get('/', [HomeController::class,'index'])->name('frontend.home');
+Route::post('authorizeStateDistributor', [HomeController::class,'authorizeStateDistributor'])->name('frontend.home.authorizeStateDistributor');
+// Route::get('/',[]);
 Route::get('/product', [HomeController::class,'product'])->name('frontend.product');
 Route::get('zomo-faqs', [HomeController::class,'faqs'])->name('frontend.faqs');
 Route::get('/contact', [HomeController::class,'contact'])->name('frontend.contact');
 Route::get('zomo-series', [HomeController::class,'series'])->name('frontend.series');
+
 Route::post('store-contact-detail', [HomeController::class,'storeContact'])->name('frontend.storeContact');
 Route::get('/wholesale', [HomeController::class,'wholesale'])->name('frontend.wholesale');
 Route::post('store-wholesale',[HomeController::class,'storeWholesale'])->name('frontend.storeWholesale');
@@ -105,7 +108,8 @@ Route::get('/zomo-flavors/{id}', [\App\Http\Controllers\Frontend\FlavorsControll
 
 // backend site route
 //
-Route::get('/news/{title}',[NewsController::class,'show'])->name("backend.news");
+Route::get('/news/{slug}',[NewsController::class,'show'])->name("backend.news");
+Route::get('/newsmanagement/status/{id}', [App\Http\Controllers\Admin\NewsController::class, 'changeStatus'])->name('newsmanagements.status');
 Route::get('zomo-product', [ProductController::class,'index'])->name('backend.product');
 Route::get('/create', [ProductController::class,'create'])->name('backend.product.create');
 Route::get('/thank-you', [HomeController::class, 'thankYou'])->name('thank.you');

@@ -11,7 +11,7 @@
                 <span> » </span>
                 <span class="breadcrumb_last" aria-current="page"><a href="{{ route('frontend.news') }}">News</a></span>
                 <span> » </span>
-                <span class="breadcrumb_last" aria-current="page">{{ $news->title }}</span>
+                <span class="breadcrumb_last" aria-current="page">@isset($news){{ $news->title }}@endisset</span>
 
             </div>
         </div>
@@ -23,16 +23,16 @@
                 <div class="news-slider">
                     <div class="news-wrapper">
                         <div class="image">
-                            <img src="{{ asset('storage/news') . '/' . $news->image }}" alt="news-01">
+                            @isset($news)<img src="{{ asset('storage/news') . '/' . $news->image }}" alt="news-01">@endisset
                         </div>
                         <div class="detail">
                             <div class="title">
-                                <h3>{{ $news->title }}</h3>
+                                <h3>@isset($news){{ $news->title }}@endisset</h3>
                             </div>
-                            <p>{{ $news->description }}</p>
+                            <p>@isset($news){{ $news->description }}@endisset</p>
                             <div class="news-time">
                                 <div class="time">
-                                    <p>Post in: <span>{{ $news->created_at }}</span></p>
+                                    <p>Post in: <span>@isset($news){{ $news->created_at }}@endisset</span></p>
                                 </div>
                                 <div class="share">
                                     <p>Share:</p>
