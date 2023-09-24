@@ -50,6 +50,16 @@
             <div class="col-12">
                 <div class="mb-3">
                     <div class="form-group">
+                        {!! Form::label('link', 'Link', ['style' => 'justify-content: right']) !!}
+                        {!! Form::text('link', isset($newsdata) ? $newsdata->link : old('link'), ['class' => 'form-control']) !!}
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="mb-3">
+                    <div class="form-group">
                         {!! Form::label('description', 'Description', ['style' => 'justify-content: right']) !!}
                         {!! Form::textarea('description', isset($newsdata) ? $newsdata->description : old('description'), [
                             'class' => 'form-control',

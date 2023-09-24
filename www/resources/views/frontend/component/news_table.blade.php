@@ -2,6 +2,20 @@
 
     @foreach ($tableData as $news)
     {{-- {{$news}} --}}
+        @if (isset($news->link))
+        <div class="news-box ">
+            <div class="images-box">
+                <a href="{{$news->link}}" class="images">
+                    <img src="{{ asset("storage/news/$news->image") }}">
+                </a>
+            </div>
+            <div class="content-news">
+                <a href="{{$news->link}}">
+                    {{ $news->title }}
+                </a>
+            </div>
+        </div>
+        @else
         <div class="news-box ">
             <div class="images-box">
                 <a href="{{ route('backend.news', $news->slug) }}" class="images">
@@ -14,6 +28,8 @@
                 </a>
             </div>
         </div>
+        @endif
+        
     @endforeach
 </div>
 {{-- <div class="pagination"> --}}

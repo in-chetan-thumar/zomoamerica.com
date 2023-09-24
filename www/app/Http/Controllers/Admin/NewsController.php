@@ -71,6 +71,7 @@ class NewsController extends Controller
                     $params['description'] = $request->description;
                     $slug = $request->slug;
                     $params['slug'] = str_replace(' ', '-', strtolower($slug));
+                    $params['link'] = $request->link;
                     $params['is_active'] = $request->is_active;
                     $params['image'] = basename($request->file('image')->store($fileDir));
                     // dd($params);
@@ -152,6 +153,7 @@ class NewsController extends Controller
             $convert = str_replace(' ', '-', $slug);
             $params['slug'] = strtolower($convert);
             // dd($params['slug']);
+            $params['link'] = $request->link;
             $params['is_active'] = $request->is_active;
             if ($request->has('image')) {
                 $fileDir = config('constants.NEWS_DOC_PATH') . DIRECTORY_SEPARATOR;
