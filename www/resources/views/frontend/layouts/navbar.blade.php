@@ -91,7 +91,7 @@
                         <a href="{{ route('frontend.zomopaper') }}" class="submenu-link">Zomo Paper</a>
                     </li>
                     <li class="submenu-item">
-                        <a href="{{ route('frontend.charcol') }}" class="submenu-link">Zomo Charcol</a>
+                        <a href="{{ route('frontend.charcol') }}" class="submenu-link">Zomo Charcoal</a>
                     </li>
                     <li class="submenu-item">
                         <a href="{{ route('frontend.aluminumFoil') }}" class="submenu-link">Aluminium Foil</a>
@@ -100,7 +100,7 @@
                         <a href="{{ route('frontend.shishaHose') }}" class="submenu-link">Shisha hose</a>
                     </li>
                     <li class="submenu-item">
-                        <a href="{{ route('frontend.zomo.hookah') }}" class="submenu-link">Zomo Zona Hookah</a>
+                        <a href="{{ route('frontend.zomo.hookah') }}" class="submenu-link">Zomo Zoom Hookah</a>
                     </li>
                 </ul>
             </li>

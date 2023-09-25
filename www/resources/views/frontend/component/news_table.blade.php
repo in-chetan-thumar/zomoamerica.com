@@ -6,7 +6,7 @@
         <div class="news-box ">
             <div class="images-box">
                 <a href="{{$news->link}}" class="images">
-                    <img src="{{ asset("storage/news/$news->image") }}">
+                    <img src="{{ asset('storage/news').'/'.$news->image }}">
                 </a>
             </div>
             <div class="content-news">
@@ -19,7 +19,7 @@
         <div class="news-box ">
             <div class="images-box">
                 <a href="{{ route('backend.news', $news->slug) }}" class="images">
-                    <img src="{{ asset("storage/news/$news->image") }}">
+                    <img src="{{ asset('storage/news').'/'.$news->image }}">
                 </a>
             </div>
             <div class="content-news">

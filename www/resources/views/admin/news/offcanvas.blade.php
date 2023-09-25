@@ -77,9 +77,9 @@
                         {{-- <span class="required">@if (!isset($newsdata))*@endif</span> --}}
                         {!! Form::file('image', ['class' => 'form-control', 'id' => 'image']) !!}
                         <div class="preview">
-                            @if (isset($newsdata) && $newsdata->image != '')
+                            @if (isset($newsdata->image))
                                 <img style="width:30%;height:20%"
-                                    src="{{ asset('storage/news') . '/' . $newsdata->image }}">
+                                    src="{{ asset('storage/news/'.$newsdata->image)}}">
                             @endif
                         </div>
                         @error('image')

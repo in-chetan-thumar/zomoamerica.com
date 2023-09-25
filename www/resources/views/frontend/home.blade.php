@@ -59,10 +59,10 @@
                     <div class="item">
                         <div class="product-box">
                             <a href="{{ route('frontend.flavors.product.detail', $flavor->slug) }}" class="images-box">
-                                <img src={{ $model->getFlavorImageAttribute($flavor) }} alt="Product 1" width="100"
+                                <img src="{{ $model->getFlavorImageAttribute($flavor) }}" alt="Product 1" width="100"
                                     height="100">
                             </a>
-                            <a href="single-product.html" class="product-title">{{ $flavor->slug }}</a>
+                            <a href="{{ route('frontend.flavors.product.detail', $flavor->slug) }}" class="product-title">{{ $flavor->flavor_title }}</a>
                         </div>
                     </div>
                 @endforeach
@@ -94,14 +94,26 @@
             <h3 class="title-main">news</h3>
             <div class="news-srction-item reveal">
                 @foreach ($news as $news)
-                    <div class="news-section-list">
-                        <div class="images-box">
-                            <a href="{{ route('backend.news', $news->title) }}" class="hover-bg"><span
-                                    class="hide-text">hover</span></a>
-                            <img src={{ asset("storage/news/$news->image") }} alt="News" width="100" height="100">
-                        </div>
-                        <p>{{ $news->title }}</p>
+                   @if (isset($news->link))
+                   <div class="news-section-list">
+                    <div class="images-box">
+                        <a href="{{ $news->link }}" class="hover-bg"><span
+                                class="hide-text">hover</span></a>
+                        <img src={{ asset("storage/news/$news->image") }} alt="News" width="100" height="100">
                     </div>
+                    <p>{{ $news->title }}</p>
+                </div>
+                   @else
+                   <div class="news-section-list">
+                    <div class="images-box">
+                        <a href="{{ route('backend.news', $news->slug) }}" class="hover-bg"><span
+                                class="hide-text">hover</span></a>
+                        <img src={{ asset("storage/news/$news->image") }} alt="News" width="100" height="100">
+                    </div>
+                    <p>{{ $news->title }}</p>
+                </div>
+                   @endif
+                   
                 @endforeach
                 {{-- <div class="news-section-list">
                     <div class="images-box">
@@ -132,7 +144,7 @@
             <h4 class="title-main reveal">WHERE TO BUY ZOMO</h4>
             <div class="row d-block">
                 <div class="col-12 col-lg-12 col-md-12">
-                    <div class="heading ">
+                    <div class="heading reveal">
                         <h2>ONLINE DISTRIBUTOR</h2>
                     </div>
                      <div class="row d-flex justify-content-center">
@@ -221,10 +233,10 @@
                     </div>
                 </div>
                 <div class="col-12 col-lg-12 col-md-12">
-                    <div class="heading ">
+                    <div class="heading reveal">
                         <h2>AUTHORIZED STATE DISTRIBUTOR</h2>
                     </div>
-                    <div class="content-infomation">
+                    <div class="content-infomation reveal">
                         <div class="contact-form">
                             {!! Form::open([
                                 'url' => route('frontend.home.authorizeStateDistributor'),
@@ -233,7 +245,7 @@
                                 'class' => 'inquery-form',
                             ]) !!}
                             
-                            <div class="cole-two">
+                            <div class="cole-two reveal">
                                 <div class="input-field">
                                     <label for="fist">FIRST NAME <span
                                         class="text-danger">*</span></label>
@@ -264,7 +276,7 @@
                                 </div>
                             </div>
                             
-                            <div class="input-field">
+                            <div class="input-field reveal">
                                 <label for="city">CITY <span
                                     class="text-danger">*</span></label>
                                 {!! Form::text('city', old('city'), [
@@ -278,7 +290,7 @@
                                 </span>
                                 <br>
                             </div>
-                            <div class="input-field">
+                            <div class="input-field reveal">
                                 <label for="state">State <span
                                     class="text-danger">*</span></label>
                                 {{ Form::Select('state', $stateArray, '', ['class' => '', 'placeholder' => 'Select']) }}
@@ -291,7 +303,7 @@
                             </div>
                             
                            
-                            <div class="input-field">
+                            <div class="input-field reveal">
                                 <label for="email">EMAIL ADDRESS <span
                                     class="text-danger">*</span></label>
                                 {!! Form::text('email', old('email'), [
@@ -305,7 +317,7 @@
                                 </span>
                                 <br>
                             </div>
-                            <div class="input-field">
+                            <div class="input-field reveal">
                                 <label for="number">TELEPHONE NUMBER <span
                                     class="text-danger">*</span></label>
                                 {!! Form::text('number', old('number'), [
@@ -320,7 +332,7 @@
                                 <br>
                             </div>
                            
-                            <div class="wrap-btn">
+                            <div class="wrap-btn reveal">
                                 <input type="submit" class="btn-black mb-5" value="SEND">
                             </div>
 

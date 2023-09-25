@@ -30,6 +30,11 @@
     .charcol_desc p{
     font-size:15px;
     }
+
+    figure img{
+        height: 300px;
+        width: 300px;
+    }
 @endsection
 @section('main')
     <div class="btcm ">
@@ -37,7 +42,7 @@
             <div class="breadcrumbs d-flex align-items-center">
                 <a href="{{ route('frontend.home') }}">Home</a>
                 <span> » </span>
-                <span class="breadcrumb_last" aria-current="page">Zomo Charcol</span>
+                <span class="breadcrumb_last" aria-current="page">Zomo Charcoal</span>
             </div>
         </div>
     </div>
@@ -55,7 +60,7 @@
                 <div class="vc_text_image">
                     <!-- <img src="{{ asset('assets/frontend/images/product/fundo_pesos_lpcarvao.png') }}" width="1100" height="900" sizes="(max-width: 1100px) 100vw, 1100px"> -->
                     <p>
-                        <strong>500g, 1KG, 2KG or 12KG </strong>
+                        <strong>500g or 1KG </strong>
                         <span style="text-align: center; font-size: 20px; color: #fff;"><strong>boxes</strong> </span>
                     </p>
                 </div>
@@ -68,7 +73,7 @@
                     <div class="col-sm-7">
                         <!--  -->
                         <figure>
-                            <img src="{{ asset('assets/frontend/images/product/tipos_carvao_usa.png') }}">
+                            <img src="{{ asset('assets/frontend/images/product/tipos_carvao_usa.png') }}" >
                         </figure>
                     </div>
                 </div>
@@ -88,7 +93,7 @@
                 </div>
                 <div class="row charcol">
                     <!-- fundo_conteudo -->
-                    <div class="col-sm-6  charcol-item ">
+                    {{-- <div class="col-sm-6  charcol-item ">
                         <h2 class="charcol_heading">HEXAGONAL FORMAT</h2>
                         <div class="charcol_desc">
                             <p>The perfect format for your sessions. The hexagonal format guarantees easier handling during
@@ -96,7 +101,7 @@
                                 sessions, preventing accidents with the charcoal. Perfect for enjoying great moments with
                                 friends.</p>
                         </div>
-                    </div>
+                    </div> --}}
 
                     <div class="col-sm-6 charcol-item">
                         <h2 class="charcol_heading">ECO FRIENDLY</h2>

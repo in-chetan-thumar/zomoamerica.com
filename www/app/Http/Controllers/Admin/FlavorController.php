@@ -65,7 +65,9 @@ class FlavorController extends Controller
             $params['menthol'] = $request->menthol;
             $params['cloud_volume'] = $request->cloud_volume;
             $params['flavors_available'] = $request->flavors_available;
-            $params['slug'] = $request->slug;
+            $slug = $request->slug;
+            $convert = str_replace(' ', '-', $slug);
+            $params['slug'] = strtolower($convert);
             $params['is_active'] = !empty($request->is_active) ?  $request->is_active :  'Y';
 
                 $user = resolve('flavor-repo')->create($params);
@@ -123,7 +125,9 @@ class FlavorController extends Controller
             $params['menthol'] = $request->menthol;
             $params['cloud_volume'] = $request->cloud_volume;
             $params['flavors_available'] = $request->flavors_available;
-            $params['slug'] = $request->slug;
+            $slug = $request->slug;
+            $convert = str_replace(' ', '-', $slug);
+            $params['slug'] = strtolower($convert);
             $params['is_active'] = !empty($request->is_active) ?  $request->is_active :  'Y';
             $id=$request->id;
             $user = resolve('flavor-repo')->update($params,$id);

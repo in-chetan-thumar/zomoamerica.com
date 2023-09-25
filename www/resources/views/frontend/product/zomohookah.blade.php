@@ -118,7 +118,7 @@
             <div class="breadcrumbs d-flex align-items-center">
                 <a href="{{ route('frontend.home') }}">Home</a>
                 <span> » </span>
-                <span class="breadcrumb_last" aria-current="page">Zomo Zona Hookah
+                <span class="breadcrumb_last" aria-current="page">Zomo Zoom Hookah
                 </span>
             </div>
         </div>
@@ -126,10 +126,13 @@
     <div class="container main-content ">
         <div class="row main-section">
             <div class="heading">
-                <h2>ZOMO ZONA HOOKAH</h2>
+                <h2>Zomo Zoom Hookah</h2>
             </div>
             <div class="col-lg-12">
-                <iframe width="100%" height="477" src="https://www.youtube.com/embed/YEracpIzNq4?feature=oembed"
+                {{-- <iframe width="100%" height="477" src="https://www.youtube.com/embed/YEracpIzNq4?feature=oembed"
+                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen=""></iframe> --}}
+                    <iframe width="100%" height="477" src="https://www.youtube.com/embed/3Puo4D51H2M?si=0QxQYTE3-xHb3TS5"
                     frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen=""></iframe>
             </div>
@@ -140,7 +143,7 @@
                         <p>ZOOM</p>
                     </div>
                     <div class="descricao-aluminio">
-                        <p class="descr" style="text-align: center;">*STEM ONLY <a
+                        <p class="descr mt-5" style="text-align: center;">*STEM ONLY <a
                                 href="https://www.zomoofficial.com/en/zoom/"><span class="medium"> SEE MORE</span></a>
                         </p>
                     </div>
@@ -218,7 +221,7 @@
                 {{--                        </div> --}}
                 {{--                    </div> --}}
                 {{--                </div> --}}
-                <div class="col-lg-12 hookah-video-2">
+                {{-- <div class="col-lg-12 hookah-video-2">
                     <iframe src="https://www.youtube.com/embed/pQkNtMIuKFk" title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen></iframe>
@@ -244,7 +247,7 @@
                                 allowfullscreen></iframe>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
 
         </div>

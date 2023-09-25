@@ -1,7 +1,9 @@
-<div class="offcanvas offcanvas-end" style="width: 50% !important;" tabindex="-1" id="offcanvasCreate"
+
+    <div class="offcanvas offcanvas-end" style="width: 30% !important;" tabindex="-1" id="offcanvasCreate"
     aria-labelledby="offcanvasCreate">
     <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasCreate">{{ isset($user) ? 'Edit' : 'Create new' }} Flavors</h5>
+        <h5 class="offcanvas-title" id="offcanvasCreate">{{ isset($user) ? 'Edit' : 'Create new' }} Flavor
+        </h5>
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
@@ -9,19 +11,12 @@
         @if (isset($user))
             {!! Form::open([
                 'url' => route('backend.product.flavors.update'),
-                'method' => 'POST',
+                'method' => 'post',
                 'id' => 'flavor-form',
                 'files' => true,
-                'enctype' => 'multipart/form-data',
             ]) !!}
         @else
-            {!! Form::open([
-                'url' => route('backend.product.flavors.store'),
-                'method' => 'POST',
-                'id' => 'flavor-form',
-                'files' => true,
-                'enctype' => 'multipart/form-data',
-            ]) !!}
+            {!! Form::open(['url' => route('backend.product.flavors.store'), 'method' => 'POST', 'id' => 'flavor-form', 'files' => true]) !!}
         @endif
 
         <div class="row">
@@ -245,14 +240,13 @@
                     {!! Form::submit('Submit', ['class' => 'btn btn-primary']) !!}
                 </div>
             </div>
-            </form>
-        </div>
+        {{ Form::close() }}
     </div>
-    {!! JsValidator::formRequest('App\Http\Requests\flavors', '#flavor-form') !!}
-
-    <script>
-        // Save OR UPDATE DATA
-        $('#flavor-form').on('submit', function(e) {
+</div>
+{!! JsValidator::formRequest('App\Http\Requests\flavors', '#flavor-form') !!}
+<script>
+     // Save OR UPDATE DATA
+     $('#flavor-form').on('submit', function(e) {
             e.preventDefault();
             var formData = new FormData($('#flavor-form')[0]);
             var url = $(this).attr('action');
@@ -293,4 +287,5 @@
                 });
             }
         })
-    </script>
+</script>
+

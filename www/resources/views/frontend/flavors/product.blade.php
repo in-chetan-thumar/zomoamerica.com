@@ -42,9 +42,9 @@ $FlavorImage = FlavorImage::getDataWithArray($data->id); //this is used for pass
                 <span> » </span>
                 <span class="breadcrumb_last" aria-current="page">Flavors</span>
                 <span> » </span>
-                <a href="#" class="breadcrumb_last" aria-current="page">{{ $getCategory_Data->slug }}</span>
+                <a href="#" class="breadcrumb_last" aria-current="page">{{ $getCategory_Data->name }}</span></a>
                     <span> » </span>
-                    <span class="breadcrumb_last" aria-current="page">{{ $data->slug }}</span>
+                    <span class="breadcrumb_last" aria-current="page">{{ $data->flavor_title }}</span>
             </div>
         </div>
     </div>

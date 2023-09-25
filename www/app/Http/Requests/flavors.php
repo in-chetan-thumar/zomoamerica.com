@@ -55,4 +55,6 @@ class flavors extends FormRequest
             ];
 
     }
-}
+
+    
+}}

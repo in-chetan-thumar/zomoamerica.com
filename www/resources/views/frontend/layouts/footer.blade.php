@@ -27,10 +27,10 @@ $categorias = resolve('category-repo')->getCategory();
                 <div class="nav-footer-link">
                     <h3 style="color:white">PRODUCT</h1>
                         <a href="{{ route('frontend.zomopaper') }}">Zomo Paper</a>
-                        <a href="{{ route('frontend.charcol') }}">Zomo Charcol</a>
+                        <a href="{{ route('frontend.charcol') }}">Zomo Charcoal</a>
                         <a href="{{ route('frontend.aluminumFoil') }}">Aluminium Foil</a>
                         <a href="{{ route('frontend.shishaHose') }}">Shisha Hose</a>
-                        <a href="{{ route('frontend.zomo.hookah') }}">Zomo Zona Hookah</a>
+                        <a href="{{ route('frontend.zomo.hookah') }}">Zomo Zoom Hookah</a>
                 </div>
 
 

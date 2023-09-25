@@ -101,7 +101,7 @@ $model = new Flavor();
                 <img src="{{ $model->getFlavorImageAttribute($val) }}" class="fimg">
             </a>
             <a class="product-title"
-                href="{{ route('frontend.flavors.product.detail', $val->slug) }}">{{ $val->slug }}</a>
+                href="{{ route('frontend.flavors.product.detail', $val->slug) }}">{{ $val->flavor_title }}</a>
         </div>
     @endforeach
 </div>

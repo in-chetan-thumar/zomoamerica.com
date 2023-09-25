@@ -17,17 +17,17 @@ class FlavorsController extends Controller
     {
         if($request->id == "Classic-line")
         {
-            $content = MetaTag::select('id', 'meta_title', 'meta_keyword', 'meta_description')->where('meta_route',(Route::currentRouteName()))->where('meta_keyword','Zomo Classic') ->first();
+            $content = MetaTag::select('id', 'meta_title', 'meta_keyword', 'meta_description')->where('meta_route',(Route::currentRouteName()))->where('meta_keyword','Zomo Classic')->first();
             SEOTools::setTitle($content->meta_title);
             SEOTools::setDescription($content->meta_description);
             SEOMeta::addKeyword($content->meta_keyword);
         }else if($request->id == "Strong-line"){
-            $content = MetaTag::select('id', 'meta_title', 'meta_keyword', 'meta_description')->where('meta_route',(Route::currentRouteName()))->where('meta_keyword','Zomo StrongLine') ->first();
+            $content = MetaTag::select('id', 'meta_title', 'meta_keyword', 'meta_description')->where('meta_route',(Route::currentRouteName()))->where('meta_keyword','Zomo StrongLine')->first();
             SEOTools::setTitle($content->meta_title);
             SEOTools::setDescription($content->meta_description);
             SEOMeta::addKeyword($content->meta_keyword);
         }else if($request->id == "Max-line"){
-            $content = MetaTag::select('id', 'meta_title', 'meta_keyword', 'meta_description')->where('meta_route',(Route::currentRouteName()))->where('meta_keyword','Zomo MaxLine') ->first();
+            $content = MetaTag::select('id', 'meta_title', 'meta_keyword', 'meta_description')->where('meta_route',(Route::currentRouteName()))->where('meta_keyword','Zomo MaxLine')->first();
             SEOTools::setTitle($content->meta_title);
             SEOTools::setDescription($content->meta_description);
             SEOMeta::addKeyword($content->meta_keyword);
@@ -35,6 +35,7 @@ class FlavorsController extends Controller
 
         $category_id= $request->id;
         $data = resolve('flavor-repo')->getflavor($category_id);
+        // dd($data);
         $table = resolve('flavor-repo')->renderHtmlFlavorsTable($this->getParamsForFilter($request),$category_id);
         return view('frontend.flavors.classicLine', compact('table','content'));
     }

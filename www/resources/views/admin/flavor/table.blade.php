@@ -3,8 +3,6 @@
     <thead>
         <tr>
             <th>Flavor Title</th>
-            <th>Flavor Description</th>
-            <th>Slug</th>
             <th>Category</th>
             <th>Sweet</th>
             <th>Citric</th>
@@ -20,8 +18,6 @@
         @foreach ($tableData as $key => $row)
             <tr>
                 <td>{{ $row->flavor_title }}</td>
-                <td>{{ $row->flavor_description }}</td>
-                <th>{{ $row->slug }}</th>
                 <td>{{ $row->category->name }}</td>
                 <td>{{ $row->sweet }}</td>
                 <td>{{ $row->citric }}</td>
