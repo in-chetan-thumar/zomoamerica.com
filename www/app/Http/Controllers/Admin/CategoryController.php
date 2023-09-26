@@ -98,13 +98,13 @@ class CategoryController extends Controller
             $params['path'] =  url()->previous();
         }
 
-        if (!empty($params['start_date']) && !empty($params['end_date'])) {
-            $params['start_date'] = Carbon::parse($params['start_date'])->format('Y-m-d 00:00:00');
-            $params['end_date'] = Carbon::parse($params['end_date'])->format('Y-m-d 23:59:00');
-        } else {
-            $params['start_date'] = Carbon::now()->subDays(7)->format('Y-m-d 00:00:00');
-            $params['end_date'] = Carbon::now()->format('Y-m-d 23:59:00');
-        }
+        // if (!empty($params['start_date']) && !empty($params['end_date'])) {
+        //     $params['start_date'] = Carbon::parse($params['start_date'])->format('Y-m-d 00:00:00');
+        //     $params['end_date'] = Carbon::parse($params['end_date'])->format('Y-m-d 23:59:00');
+        // } else {
+        //     $params['start_date'] = Carbon::now()->subDays(7)->format('Y-m-d 00:00:00');
+        //     $params['end_date'] = Carbon::now()->format('Y-m-d 23:59:00');
+        // }
 
         return $params;
     }

@@ -26,7 +26,7 @@
                             'class' => 'row row-cols-lg-auto g-3 align-items-center',
                             'method' => 'get',
                         ]) !!}
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             {{ Form::label('Start Date') }}
                             {{ Form::date('start_date', date('Y-m-d'), ['class' => 'form-control']) }}
                         </div>
@@ -37,7 +37,7 @@
                         <button type="submit" name="type" value="submit"
                             class="btn btn-primary waves-effect waves-light" style="margin-top: 40px;">
                             Submit
-                        </button>
+                        </button> --}}
                         &nbsp;
                         <!--  <a href="{{ route('backend.product.export') }}" class="btn btn-secondary waves-effect waves-light">
                                                                     Export

@@ -16,7 +16,7 @@
                 <div class="col-12">
                     <div class="mb-3">
                         <div class="form-group">
-                            {!!  Form::label('name', 'Name',['style' =>'justify-content: right']); !!}<span
+                            {!!  Form::label('name', 'Name',['style' =>'justify-content: right']) !!}<span
                                 class="required">*</span>
                                 
                             <input type="hidden" name="id" value="{{ isset($user->id) ? $user->id :'' }}">
@@ -33,7 +33,7 @@
                  <div class="col-12">
                     <div class="mb-3">
                         <div class="form-group">
-                            {!!  Form::label('slug', 'Slug',['style' =>'justify-content: right']); !!}<span
+                            {!!  Form::label('slug', 'Slug',['style' =>'justify-content: right']) !!}<span
                                 class="required">*</span>
                                 
                             {!! Form::text('slug',isset($user) ? $user->slug:old('slug'),['class' => 'form-control','id' =>'slug'])!!}
@@ -49,7 +49,7 @@
                 <div class="col-12">
                     <div class="mb-3">
                         <div class="form-group">
-                            {!!  Form::label('Status', 'Status',['style' =>'justify-content: right']); !!}<span
+                            {!!  Form::label('Status', 'Status',['style' =>'justify-content: right']) !!}<span
                                 class="required">*</span>
                             {!! Form::select('is_active',$status,(isset($user)) ? $user->is_active:old('is_active'),['class'=>'form-control','id'=>'role','style'=>'width: 100%','placeholder'=>'Select Status']) !!}
                             @error('is_active')
@@ -71,7 +71,7 @@
         </form>
     </div>
 </div>
-{!! JsValidator::formRequest('App\Http\Requests\Category', '#user-form'); !!}
+{!! JsValidator::formRequest('App\Http\Requests\Category', '#user-form') !!}
 <script>
     // Save OR UPDATE DATA
     $('#user-form').on('submit', function (e) {
