@@ -9,7 +9,6 @@ use Illuminate\Queue\SerializesModels;
 use Spatie\MailTemplates\TemplateMailable;
 
 class AutorizeDistributorNotification extends TemplateMailable
-// class TempleteCreateNotification extends TemplateMailable
 {
     use Queueable, SerializesModels;
 

@@ -186,7 +186,7 @@
                     <li><strong>Email:</strong> <a href="mailto:info@zomoamerica.com">{{ config('constants.EMAIL1') }}</a>
                     </li>
                 </ul>
-                <br><a href="{{ route('frontend.authorized.wholesalers') }}">Authorized Wholesaler List</a>
+                <br><a href="{{ route('frontend.home').'#distributor' }}">Authorized Wholesaler List</a>
             </div>
         </div>
     </div>

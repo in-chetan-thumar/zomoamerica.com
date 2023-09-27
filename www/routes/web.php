@@ -78,7 +78,7 @@ Route::get('/form-custom-field',function (){
 });
 // frontend site route
 Route::get('/', [HomeController::class,'index'])->name('frontend.home');
-Route::post('authorizeStateDistributor', [HomeController::class,'authorizeStateDistributor'])->name('frontend.home.authorizeStateDistributor');
+Route::post('/authorizeStateDistributor', [HomeController::class,'authorizeStateDistributor'])->name('frontend.home.authorizeStateDistributor');
 // Route::get('/',[]);
 Route::get('/product', [HomeController::class,'product'])->name('frontend.product');
 Route::get('zomo-faqs', [HomeController::class,'faqs'])->name('frontend.faqs');

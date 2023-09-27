@@ -221,25 +221,26 @@ class HomeController extends Controller
 
     //AUTHORIZED STATE DISTRIBUTOR 
     public function authorizeStateDistributor(HomeRequest $request){
+       
         try{
-               // Send Mail 
+                 // Send Mail 
                $params['first_name'] = $request->fname;
                $params['last_name'] = $request->lname;
                $params['telephone'] = $request->number;
                $params['email'] = $request->email;
                $params['state'] = $request->state;
                $params['city'] = $request->city;
-               
-            //    dd($params);
+                Mail::send(new \App\Mail\AutorizeDistributorNotification($params));
 
-                   $data['error'] = false;
-                   Mail::send(new \App\Mail\AutorizeDistributorNotification($params));
-                   toastr()->success('Your enquire has been submitted successfully!');
-                   return redirect()->back();
-        }catch(\Exception $e){
-            toastr()->error($e->getMessage());
-            return redirect()->back();
-        }
+                 $params = [];
+                 toastr()->success('Your enquery has been submitted successfully!');
+                 return redirect()->back();
+            
+         }catch(\Exception $e){
+        toastr()->error($e->getMessage());
+        return redirect()->back();
+       }
+
     }
 
      // Wholesale store

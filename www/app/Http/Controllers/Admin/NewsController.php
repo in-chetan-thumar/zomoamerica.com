@@ -61,9 +61,9 @@ class NewsController extends Controller
         $data = $params = [];
         DB::beginTransaction();
         try {
-            if ($request->has('image')) {
+           
 
-                $fileDir = config('constants.NEWS_DOC_PATH') . DIRECTORY_SEPARATOR;
+            $fileDir = config('constants.NEWS_DOC_PATH') . DIRECTORY_SEPARATOR;
                 if (!File::exists($fileDir)) {
                     Storage::makeDirectory($fileDir, 0777);
                     $params = [];
@@ -73,12 +73,14 @@ class NewsController extends Controller
                     $params['slug'] = str_replace(' ', '-', strtolower($slug));
                     $params['link'] = $request->link;
                     $params['is_active'] = $request->is_active;
+                    if ($request->has('image')) {
                     $params['image'] = basename($request->file('image')->store($fileDir));
+                    }
                     // dd($params);
                     $page = resolve('news-repo')->create($params);
 
                 }
-            }
+           
             // $params['cover_photo'] = $name;
             if (!empty($page)) {
                 $data['error'] = false;

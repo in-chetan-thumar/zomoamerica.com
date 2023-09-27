@@ -141,7 +141,7 @@
         </div>
     </div>
 
-    <div class="where-to-buy">
+    <div class="where-to-buy" id="distributor">
         <div class="container">
             <h4 class="title-main reveal">WHERE TO BUY ZOMO</h4>
             <div class="row d-block">
@@ -181,7 +181,7 @@
                         <div class="col-lg-3 col-md-4 col-6 where-to-buy-item reveal">
                             <div class="where-to-buy-box">
                                 <div class="images-box">
-                                    <img src={{ asset('assets/frontend/images/way-to-buy/smokefun_logo.png') }} alt="5 Star Hookah"
+                                    <img src={{ asset('assets/frontend/images/way-to-buy/smokefun.png') }} alt="5 Star Hookah"
                                         width="100" height="100">
                                 </div>
                                 <p>Smokefun</p>
@@ -238,7 +238,7 @@
                     <div class="heading reveal">
                         <h2>AUTHORIZED STATE DISTRIBUTOR</h2>
                     </div>
-                    <div class="content-infomation reveal">
+                    <div class="content-infomation reveal" id="wholesale-form">
                         <div class="contact-form">
                             {!! Form::open([
                                 'url' => route('frontend.home.authorizeStateDistributor'),
@@ -277,61 +277,64 @@
                                     <br>
                                 </div>
                             </div>
-                            
-                            <div class="input-field reveal">
-                                <label for="city">CITY <span
-                                    class="text-danger">*</span></label>
-                                {!! Form::text('city', old('city'), [
-                                    'class' => ' name',
-                                    'maxlength' => '30',
-                                ]) !!}
-                                <span class="text-danger" style="font-size:15px">
-                                    @error('city')
-                                        {{ $message }}
-                                    @enderror
-                                </span>
-                                <br>
+
+                            <div class="cole-two reveal">
+                                <div class="input-field">
+                                    <label for="city">CITY <span
+                                        class="text-danger">*</span></label>
+                                    {!! Form::text('city', old('city'), [
+                                        'class' => ' name',
+                                        'maxlength' => '30',
+                                    ]) !!}
+                                    <span class="text-danger" style="font-size:15px">
+                                        @error('city')
+                                            {{ $message }}
+                                        @enderror
+                                    </span>
+                                    <br>
+                                </div>
+                                <div class="input-field">
+                                    <label for="state">State <span
+                                        class="text-danger">*</span></label>
+                                    {{ Form::Select('state', $stateArray, '', ['class' => '', 'placeholder' => 'Select']) }}
+                                    <span class="text-danger" style="font-size:15px">
+                                        @error('state')
+                                            {{ $message }}
+                                        @enderror
+                                    </span>
+                                    <br>
+                                </div>
                             </div>
-                            <div class="input-field reveal">
-                                <label for="state">State <span
-                                    class="text-danger">*</span></label>
-                                {{ Form::Select('state', $stateArray, '', ['class' => '', 'placeholder' => 'Select']) }}
-                                <span class="text-danger" style="font-size:15px">
-                                    @error('state')
-                                        {{ $message }}
-                                    @enderror
-                                </span>
-                                <br>
-                            </div>
-                            
-                           
-                            <div class="input-field reveal">
-                                <label for="email">EMAIL ADDRESS <span
-                                    class="text-danger">*</span></label>
-                                {!! Form::text('email', old('email'), [
-                                    'class' => ' name',
-                                    'maxlength' => '100',
-                                ]) !!}
-                                <span class="text-danger" style="font-size:15px">
-                                    @error('email')
-                                        {{ $message }}
-                                    @enderror
-                                </span>
-                                <br>
-                            </div>
-                            <div class="input-field reveal">
-                                <label for="number">TELEPHONE NUMBER <span
-                                    class="text-danger">*</span></label>
-                                {!! Form::text('number', old('number'), [
-                                    'class' => ' name',
-                                    'maxlength' => '10',
-                                ]) !!}
-                                <span class="text-danger" style="font-size:15px">
-                                    @error('number')
-                                        {{ $message }}
-                                    @enderror
-                                </span>
-                                <br>
+
+                            <div class="cole-two reveal">
+                                <div class="input-field">
+                                    <label for="email">EMAIL ADDRESS <span
+                                        class="text-danger">*</span></label>
+                                    {!! Form::text('email', old('email'), [
+                                        'class' => ' name',
+                                        'maxlength' => '100',
+                                    ]) !!}
+                                    <span class="text-danger" style="font-size:15px">
+                                        @error('email')
+                                            {{ $message }}
+                                        @enderror
+                                    </span>
+                                    <br>
+                                </div>
+                                <div class="input-field">
+                                    <label for="number">TELEPHONE NUMBER <span
+                                        class="text-danger">*</span></label>
+                                    {!! Form::text('number', old('number'), [
+                                        'class' => ' name',
+                                        'maxlength' => '10',
+                                    ]) !!}
+                                    <span class="text-danger" style="font-size:15px">
+                                        @error('number')
+                                            {{ $message }}
+                                        @enderror
+                                    </span>
+                                    <br>
+                                </div>
                             </div>
                            
                             <div class="wrap-btn reveal">

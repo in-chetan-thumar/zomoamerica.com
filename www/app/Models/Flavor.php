@@ -59,8 +59,8 @@ class Flavor extends Model
     public  function getFlavorImageAttribute($data)
     {
         $flavor_image = flavorImage::where('flavor_id',$data->id)->first();
-// && Storage::exists(config("constants.FLAVOR_URL") .DIRECTORY_SEPARATOR. $data->id . DIRECTORY_SEPARATOR . $flavor_image->image_name)
-        if (isset($flavor_image))
+// 
+        if (isset($flavor_image ))
         {
             return asset('storage/flavors'.DIRECTORY_SEPARATOR.$data->id . DIRECTORY_SEPARATOR . $flavor_image->image_name);
         }
