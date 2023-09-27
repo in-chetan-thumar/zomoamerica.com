@@ -58,11 +58,13 @@
                 @foreach ($flavor as $flavor)
                     <div class="item">
                         <div class="product-box">
+                            @isset($flavor->slug)
                             <a href="{{ route('frontend.flavors.product.detail', $flavor->slug) }}" class="images-box">
                                 <img src="{{ $model->getFlavorImageAttribute($flavor) }}" alt="Product 1" width="100"
                                     height="100">
                             </a>
                             <a href="{{ route('frontend.flavors.product.detail', $flavor->slug) }}" class="product-title">{{ $flavor->flavor_title }}</a>
+                            @endisset
                         </div>
                     </div>
                 @endforeach

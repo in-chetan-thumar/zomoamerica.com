@@ -43,9 +43,12 @@
                             Submit
                         </button> --}}
                         &nbsp;
-                        <!--<a href="{{ route('backend.product.export') }}" class="btn btn-secondary waves-effect waves-light">
+                        {{-- <div class="form-group">
+                            <a href="{{ route('backend.product.export') }}" class="btn btn-secondary waves-effect waves-light">
                                                                     Export
-                                                                </a> -->
+                                                                </a>
+                        </div> --}}
+                        
 
                         {!! Form::close() !!}
                     </div>
