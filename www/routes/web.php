@@ -108,7 +108,7 @@ Route::get('/zomo-flavors/{id}', [\App\Http\Controllers\Frontend\FlavorsControll
 
 // backend site route
 //
-Route::get('/news/{slug}',[NewsController::class,'show'])->name("backend.news");
+Route::get('/news/{slug?}',[NewsController::class,'show'])->name("backend.news");
 Route::get('/newsmanagement/status/{id}', [App\Http\Controllers\Admin\NewsController::class, 'changeStatus'])->name('newsmanagements.status');
 Route::get('zomo-product', [ProductController::class,'index'])->name('backend.product');
 Route::get('/create', [ProductController::class,'create'])->name('backend.product.create');

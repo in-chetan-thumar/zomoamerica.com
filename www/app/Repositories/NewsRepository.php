@@ -81,8 +81,9 @@ class NewsRepository
         $tableData = $this->frontend_filter($params);
         return view('frontend.component.news_table', compact('tableData'))->render();
     }
-    public function getNewsDetail(){
-        return $this->model->get();
+    public function getNewsDetail($params){
+        
+        return $this->frontend_filter($params);
     }
     public function getNewsByTitle($slug){
         return $this->model->where("slug",$slug)->first();

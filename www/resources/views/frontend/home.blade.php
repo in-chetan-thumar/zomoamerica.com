@@ -108,7 +108,7 @@
                    @else
                    <div class="news-section-list">
                     <div class="images-box">
-                        <a href="{{ route('backend.news', $news->slug) }}" class="hover-bg"><span
+                        <a href="{{ route('backend.news',$news->slug) }}" class="hover-bg"><span
                                 class="hide-text">hover</span></a>
                         <img src={{ asset("storage/news/$news->image") }} alt="News" width="100" height="100">
                     </div>

@@ -104,10 +104,23 @@ class NewsController extends Controller
      */
     public function show($slug)
     {
-        // dd($slug);
-        $news = resolve('news-repo')->getNewsByTitle($slug);
-        return view('frontend.innerNews',compact('news'));
-        //
+        try{
+            if(empty($slug)){
+                $data['error'] = true;
+                $data['message'] = 'Slug must not be empty!';
+                return response()->json($data);
+            }
+            
+            // dd($slug);
+            $news = resolve('news-repo')->getNewsByTitle($slug);
+            return view('frontend.innerNews',compact('news'));
+            //
+        } catch (\Exception $e) {
+            $data['error'] = true;
+            $data['message'] = $e->getMessage();
+        }
+        return response()->json($data);
+      
     }
 
     /**

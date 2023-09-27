@@ -39,7 +39,8 @@ class HomeController extends Controller
             $flavor[] = resolve('flavor-repo')->getDataByCategoryId($val->category_id);
         }
         $model = new Flavor();
-        $news = resolve('news-repo')->getNewsDetail();
+        $news = resolve('news-repo')->getNewsDetail($this->getParamsForFilter($request));
+        // dd($news);
         return view('frontend.home',compact('news','flavor','model','content','stateArray'));
     }
 
@@ -139,6 +140,24 @@ class HomeController extends Controller
     {
         //
     }
+
+    public function getParamsForFilter(Request $request)
+    {
+        $previousUrl = parse_url(url()->previous());
+        $params = [];
+
+        if (request()->routeIs('frontend.home') || !isset($previousUrl['query'])) {
+            $params['query_str'] = $request->query_str ?? '';
+            $params['page'] =  $request->page ?? 0;
+            $params['is_active'] = 'Y';
+            $params['path'] =  \Illuminate\Support\Facades\Request::fullUrl();
+        } else {
+            parse_str($previousUrl['query'], $params);
+            $params['path'] =  url()->previous();
+        }
+        return $params;
+    }
+
     public function thankYou(){
         return view('frontend.thank_you');
     }
