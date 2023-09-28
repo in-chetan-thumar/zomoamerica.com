@@ -72,7 +72,9 @@
                                                     {{ Form::bsText('','two_factor_code',old('username'),'',['class'=>' only-number-allow','maxlength'=>"6",'placeholder' => "Enter 6 digits otp"],[],true) }}
                                                 </div>
                                             </div>
-
+                                            <div class="input-field">
+                                                <input type="hidden" name="g-recaptcha-response" id="response">
+                                            </div>
                                             <div class="mt-3">
                                                 <button type="submit" class="btn btn-success w-100">Confirm</button>
                                             </div>
@@ -123,4 +125,15 @@
     <script src="{{asset('assets/libs/particles.js/particles.js.min.js')}}"></script>
     <!-- two-step-verification js -->
     <script src="{{asset('assets/js/pages/two-step-verification.init.js')}}"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LdNflwoAAAAAA5C79bAV5nRZqbVT6ntszmWqqV-"></script>
+    <script>
+        grecaptcha.ready(function(){
+            grecaptcha.execute('6LdNflwoAAAAAA5C79bAV5nRZqbVT6ntszmWqqV-',{action:'submit'}).
+            then(function(token){
+                if(token){
+                    document.getElementById('response').value=token;
+                }
+            })
+        });
+    </script>
 @endsection

@@ -93,7 +93,9 @@
                                         {{--                                        <input class="form-check-input" type="checkbox" value="" id="auth-remember-check">--}}
                                         {{--                                        <label class="form-check-label" for="auth-remember-check">Remember me</label>--}}
                                         {{--                                    </div>--}}
-
+                                        <div class="input-field">
+                                            <input type="hidden" name="g-recaptcha-response" id="response">
+                                        </div>
                                         <div class="mt-4">
                                             <button class="btn btn-success w-100" type="submit">Sign In</button>
                                         </div>
@@ -146,4 +148,15 @@
 @endsection
 @section('script')
     <script src="{{ URL::asset('assets/js/pages/password-addon.init.js') }}"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LdNflwoAAAAAA5C79bAV5nRZqbVT6ntszmWqqV-"></script>
+<script>
+    grecaptcha.ready(function(){
+        grecaptcha.execute('6LdNflwoAAAAAA5C79bAV5nRZqbVT6ntszmWqqV-',{action:'submit'}).
+        then(function(token){
+            if(token){
+                document.getElementById('response').value=token;
+            }
+        })
+    });
+</script>
 @endsection

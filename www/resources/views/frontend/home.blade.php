@@ -22,6 +22,11 @@
         padding:5px 8px;
         margin-bottom:25px;
         }
+
+    .where-to-buy-box .images-box{
+        max-width: 100%;
+       
+    }    
 @endsection
 @section('main')
     <div class="owl-carousel owl-theme home-banner">
@@ -155,7 +160,7 @@
                             <div class="where-to-buy-box">
                                 <div class="images-box">
                                     <img src={{ asset('assets/frontend/images/way-to-buy/5starhookah.jpeg') }} alt="5 Star Hookah"
-                                        width="100" height="100">
+                                    height="100" width="100" >
                                 </div>
                                 <p>5 Star Hookah</p>
                                 <a href="https://5starhookah.com/collections/zomo-tobacco-shisha" class="visit-store">
@@ -182,7 +187,7 @@
                             <div class="where-to-buy-box">
                                 <div class="images-box">
                                     <img src={{ asset('assets/frontend/images/way-to-buy/smokefun.png') }} alt="5 Star Hookah"
-                                        width="100" height="100">
+                                        height="100" width="100">
                                 </div>
                                 <p>Smokefun</p>
                                 <a href="https://smokefun.com/product-category/tobacco/zomo/" class="visit-store">
@@ -208,8 +213,8 @@
                         <div class="col-lg-3 col-md-4 col-6 where-to-buy-item reveal">
                             <div class="where-to-buy-box">
                                 <div class="images-box">
-                                    <img src={{ asset('assets/frontend/images/way-to-buy/logo.png') }} alt="Hookah Wholesalers"
-                                        width="100" height="100">
+                                    <img src={{ asset('assets/frontend/images/way-to-buy/logo.webp') }} alt="Hookah Wholesalers"
+                                    height="100" width="100" >
                                 </div>
                                 <p>Hookah Wholesalers</p>
                                 <a href="#" class="visit-store">
@@ -336,6 +341,10 @@
                                     <br>
                                 </div>
                             </div>
+
+                            <div class="input-field">
+                                <input type="hidden" name="g-recaptcha-response" id="response">
+                            </div>
                            
                             <div class="wrap-btn reveal">
                                 <input type="submit" class="btn-black mb-5" value="SEND">
@@ -365,6 +374,17 @@
     </div>
 @section('js')
 {!! JsValidator::formRequest('App\Http\Requests\HomeRequest', '#wholesale-form') !!}
+<script src="https://www.google.com/recaptcha/api.js?render=6LdNflwoAAAAAA5C79bAV5nRZqbVT6ntszmWqqV-"></script>
+<script>
+    grecaptcha.ready(function(){
+        grecaptcha.execute('6LdNflwoAAAAAA5C79bAV5nRZqbVT6ntszmWqqV-',{action:'submit'}).
+        then(function(token){
+            if(token){
+                document.getElementById('response').value=token;
+            }
+        })
+    });
+</script>
     <script>
         $(document).ready(function() {
 

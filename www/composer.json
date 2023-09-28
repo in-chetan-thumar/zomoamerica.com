@@ -12,6 +12,7 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "illuminate/contracts": "^10.13",
         "illuminate/support": "^10.13",
+        "josiasmontag/laravel-recaptchav3": "^1.0",
         "laravel/framework": "^10.0",
         "laravel/passport": "^11.8",
         "laravel/sanctum": "^3.2",

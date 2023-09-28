@@ -23,6 +23,7 @@ class TwoFactorController extends Controller
     {
         $request->validate([
             'two_factor_code' => 'numeric|required|digits:6',
+            'g-recaptcha-response' => 'required'
         ]);
 
         $user = auth()->user();

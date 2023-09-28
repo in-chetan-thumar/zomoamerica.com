@@ -26,8 +26,9 @@ class FlavorController extends Controller
     }
 
     public function create(Request $request){
-        $data = [];
+        
         try {
+            $data = [];
                 $data['error'] = false;
                 $status  = resolve('flavor-repo')->getStatus();
                 $category = resolve('flavor-repo')->getCategory();
@@ -50,9 +51,10 @@ class FlavorController extends Controller
 
     public function store(flavors $request)
     {
-        $data = $params = [];
-        DB::beginTransaction();
+       
         try {
+            $data = $params = [];
+            DB::beginTransaction();
             if($request->has("flavors_image"))
             {
             // Create user
@@ -112,9 +114,10 @@ class FlavorController extends Controller
 
     public function update(flavors $request)
     {
-        $data = $params = [];
-        DB::beginTransaction();
+        
         try {
+            $data = $params = [];
+            DB::beginTransaction();
 
             $params['flavor_title'] = $request->flavor_title;
             $params['flavor_description'] = $request->flavor_description;

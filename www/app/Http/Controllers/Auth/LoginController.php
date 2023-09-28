@@ -52,9 +52,9 @@ class LoginController extends Controller
         if (config('constants.EMAIL_OTP_LOGIN')) {
             $rules = ['username' => 'required|email'];
         } elseif (config('constants.MOBILE_OTP_LOGIN')) {
-            $rules = ['username' => 'required|numeric|digits:10'];
+            $rules = ['username' => 'required|numeric|digits:10','g-recaptcha-response' => 'required'];
         } else {
-            $rules = ['username' => 'required|string', 'password' => 'required|string'];
+            $rules = ['username' => 'required|string', 'password' => 'required|string','g-recaptcha-response' => 'required'];
         }
         $request->validate($rules);
     }

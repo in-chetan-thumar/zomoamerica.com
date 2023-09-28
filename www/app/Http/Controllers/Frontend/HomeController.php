@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Contact;
 use App\Http\Requests\HomeRequest;
-use App\Http\Requests\wholesale;
+use App\Http\Requests\Wholesale;
 use App\Models\ContactDetail;
 use App\Models\wholesaleDetail;
 use Artesaos\SEOTools\Facades\SEOMeta;

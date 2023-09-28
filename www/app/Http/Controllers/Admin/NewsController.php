@@ -37,9 +37,9 @@ class NewsController extends Controller
      */
     public function create()
     {
-        $data = [];
+       
         try {
-
+            $data = [];
             $data['error'] = false;
             $data['view'] = view('admin.news.offcanvas')->render();
             return response()->json($data);
@@ -58,10 +58,10 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $params = [];
-        DB::beginTransaction();
+        
         try {
-           
+            $data = $params = [];
+            DB::beginTransaction();
 
             $fileDir = config('constants.NEWS_DOC_PATH') . DIRECTORY_SEPARATOR;
                 if (!File::exists($fileDir)) {
@@ -133,8 +133,9 @@ class NewsController extends Controller
      */
     public function edit($id)
     {
-        $data = [];
+        
         try {
+            $data = [];
             $newsdata = resolve('news-repo')->findByID($id);
 
             $data['error'] = false;
@@ -156,12 +157,13 @@ class NewsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $params = [];
-        DB::beginTransaction();
+        
 
         try {
 
-            $params = [];
+            $data = $params = [];
+            DB::beginTransaction();
+
             $params['title'] = $request->title;
             $params['description'] = $request->description;
             $slug = $request->slug;
@@ -179,7 +181,7 @@ class NewsController extends Controller
             }
             $news = resolve('news-repo')->update($params, $id);
 
-            if ($news) {
+            if (!empty($news)) {
 
                 $data['error'] = false;
                 $data['message'] = 'News update successfully.';
