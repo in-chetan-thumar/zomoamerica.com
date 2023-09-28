@@ -24,9 +24,15 @@
         }
 
     .where-to-buy-box .images-box{
-        max-width: 100%;
-       
-    }    
+        width: 300px; 
+        height: 300px; 
+        {{-- overflow: hidden;  --}}
+    }   
+    .where-to-buy-box .images-box img{
+        {{-- width: 100%;
+        height: 100%; --}}
+        object-fit: cover; 
+    } 
 @endsection
 @section('main')
     <div class="owl-carousel owl-theme home-banner">
@@ -186,7 +192,7 @@
                         <div class="col-lg-3 col-md-4 col-6 where-to-buy-item reveal">
                             <div class="where-to-buy-box">
                                 <div class="images-box">
-                                    <img src={{ asset('assets/frontend/images/way-to-buy/smokefun.png') }} alt="5 Star Hookah"
+                                    <img src={{ asset('assets/frontend/images/way-to-buy/smokefun.png') }} alt="5 Star Hookah" style="padding-top: 50px"
                                         height="100" width="100">
                                 </div>
                                 <p>Smokefun</p>
@@ -213,11 +219,11 @@
                         <div class="col-lg-3 col-md-4 col-6 where-to-buy-item reveal">
                             <div class="where-to-buy-box">
                                 <div class="images-box">
-                                    <img src={{ asset('assets/frontend/images/way-to-buy/logo.webp') }} alt="Hookah Wholesalers"
+                                    <img src={{ asset('assets/frontend/images/way-to-buy/logo.webp') }} alt="Hookah Wholesalers" style="padding-top: 70px"
                                     height="100" width="100" >
                                 </div>
                                 <p>Hookah Wholesalers</p>
-                                <a href="#" class="visit-store">
+                                <a href="https://www.hookahwholesalers.com/" class="visit-store">
                                     <span>
                                         <svg width="13" height="20" viewBox="0 0 13 20" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
