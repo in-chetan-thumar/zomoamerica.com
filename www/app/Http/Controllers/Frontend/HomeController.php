@@ -223,18 +223,21 @@ class HomeController extends Controller
     public function authorizeStateDistributor(HomeRequest $request){
        
         try{
+            $data = [];
                  // Send Mail 
-               $params['first_name'] = $request->fname;
-               $params['last_name'] = $request->lname;
-               $params['telephone'] = $request->number;
-               $params['email'] = $request->email;
-               $params['state'] = $request->state;
-               $params['city'] = $request->city;
-                Mail::send(new \App\Mail\AutorizeDistributorNotification($params));
+                 $data['first_name'] = $request->fname;
+                 $data['last_name'] = $request->lname;
+                 $data['telephone'] = $request->number;
+                 $data['email'] = $request->email;
+                 $data['state'] = $request->state;
+                 $data['city'] = $request->city;
+                // Send an email using the Mail facade
+                 Mail::send('email.authorized_distributor_mail', ['data' => $data], function ($message) {
+                        $message->to('info@zomoamerica.com')->subject('New Authorize State Distributor Notification');
+                    });
 
-                 $params = [];
-                 toastr()->success('Your enquery has been submitted successfully!');
-                 return redirect()->back();
+                    // Redirect back with a success message
+                    return redirect()->back()->with('success', 'Email sent successfully!');
             
          }catch(\Exception $e){
         toastr()->error($e->getMessage());

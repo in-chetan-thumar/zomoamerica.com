@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Exports\WholesaleData;
+use DB;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Excel;
@@ -44,7 +45,7 @@ class WholesaleController extends Controller
 
         return $params;
     }
-    public function update(Request $request)
+    public function update(Request $request,$id)
     {
         $data = $params = [];
         DB::beginTransaction();
