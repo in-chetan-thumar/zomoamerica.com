@@ -70,7 +70,7 @@ class FlavorController extends Controller
             $slug = $request->slug;
             $convert = str_replace(' ', '-', $slug);
             $params['slug'] = strtolower($convert);
-            $params['is_active'] = !empty($request->is_active) ?  $request->is_active :  'Y';
+            $params['is_active'] = 'Y';
 
                 $user = resolve('flavor-repo')->create($params);
                 $images = [];
@@ -170,11 +170,23 @@ class FlavorController extends Controller
             return response()->json($data);
         }
     }
+
+    public function changeStatus($id)
+    {
+        try {
+            $news = resolve('flavor-repo')->changeStatus($id);
+            toastr()->success('Status changed successfully..!');
+            return redirect()->route('backend.product.flavors');
+        } catch (\Exception $e) {
+            toastr()->error($e->getMessage());
+            return redirect()->back();
+        }
+    }
     public function getParamsForFilter(Request $request)
     {
         $previousUrl = parse_url(url()->previous());
         $params = [];
-          if (request()->routeIs('backend.product.contact') || !isset($previousUrl['query'])) {
+          if (request()->routeIs('backend.product.flavors') || !isset($previousUrl['query'])) {
             $params['query_str'] = $request->query_str ?? '';
             $params['role'] = $request->role;
             $params['page'] =  $request->page ?? 0;

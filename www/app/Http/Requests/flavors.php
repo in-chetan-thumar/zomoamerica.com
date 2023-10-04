@@ -50,7 +50,7 @@ class flavors extends FormRequest
                 'cloud_volume' => 'required|max:100|numeric',
                 'flavors_available' => 'required',
                 'slug' => 'required|max:40',
-                'flavors_image' => 'required|mimes:jpeg,png,jpg,gif,svg,webp',
+                'flavors_image' => 'required',
                 // mimes:jpeg,png,jpg,gif,svg,webp
             ];
 

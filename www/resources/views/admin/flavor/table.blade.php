@@ -15,7 +15,8 @@
         </tr>
     </thead>
     <tbody>
-        @foreach ($tableData as $key => $row)
+        @foreach ($tableData as $row)
+        {{-- {{$row}} --}}
             <tr>
                 <td>{{ $row->flavor_title }}</td>
                 <td>{{ $row->category->name }}</td>
@@ -36,17 +37,20 @@
                 <td>
 
                     <div class="btn-group" role="group">
-                        <button id="btnGroupVerticalDrop1" type="button" class="btn btn-primary dropdown-toggle"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Action
-                        </button>
+                        <i class="mdi mdi-dots-vertical" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true" ></i>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" onclick="showEditModel(event)"
-                                href="{{ route('backend.product.flavors.edit', $row->id) }}">Edit</a>
+                            href="{{ route('backend.product.flavors.edit', $row->id) }}">Edit</a>
+                            
+                                @if($row->is_active == 'Y')
+                                <a class="dropdown-item" href="{{ route('flovermanagements.status',$row->id) }}">Inactive</a>
+                                @else
+                                <a class="dropdown-item" href="{{ route('flovermanagements.status',$row->id) }}">Active</a>
+                                 @endif
 
                             <a class="dropdown-item"
                                 href="{{ route('backend.product.flavors.delete', $row->id) }}">Delete</a>
-
+                            
                         </div>
                     </div>
                 </td>

@@ -16,6 +16,7 @@ class Flavor extends Model
     use HasFactory;
     protected  $table = "flavors";
     protected $fillable = [
+        'id',
         'flavor_title',
         'flavor_description',
         'category_id',

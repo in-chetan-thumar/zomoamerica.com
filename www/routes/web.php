@@ -127,6 +127,7 @@ Route::post('/zomo-category-store', [CategoryController::class,'store'])->name('
 Route::get('/zomo-category-delete/{id}', [CategoryController::class,'delete'])->name('backend.product.flavors.category.delete');
 
 Route::get('/zomo-flavors', [FlavorController::class,'index'])->name('backend.product.flavors');
+Route::get('/flovermanagements/status/{slug}', [App\Http\Controllers\Admin\FlavorController::class, 'changeStatus'])->name('flovermanagements.status');
 Route::get('/zomo-flavors-create', [FlavorController::class,'create'])->name('backend.product.flavors.create');
 Route::post('/zomo-flavors-update', [FlavorController::class,'update'])->name('backend.product.flavors.update');
 Route::post('/zomo-flavors-store', [FlavorController::class,'store'])->name('backend.product.flavors.store');

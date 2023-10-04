@@ -105,6 +105,17 @@ class FlavorRepository
     {
         return array("Y"=>'Active','N'=>'DeActive');
     }
+    public function changeStatus($id)
+    {
+        $permission = $this->findByID($id);
+        if ($permission->is_active == 'Y') {
+            $permission->is_active = 'N';
+        } else {
+            $permission->is_active = 'Y';
+        }
+
+        return $permission->save();
+    }
 
     public function getCategory(){
         return Category::pluck('name','id');

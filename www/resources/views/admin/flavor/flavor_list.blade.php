@@ -20,7 +20,7 @@
                 <div class="card-body">
                     <div class="float-end">
                         <a href="{{ route('backend.product.flavors.create') }}" onclick="showSaveModel(event)"
-                            class="btn btn-primary"><i class="mdi mdi-plus"></i>&nbsp;Add User</a>
+                            class="btn btn-primary"><i class="mdi mdi-plus"></i>&nbsp;Add Flavor</a>
                     </div>
                     <div class="float-start">
                         {!! Form::open([
