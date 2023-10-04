@@ -131,7 +131,7 @@ class FlavorController extends Controller
             $slug = $request->slug;
             $convert = str_replace(' ', '-', $slug);
             $params['slug'] = strtolower($convert);
-            $params['is_active'] = !empty($request->is_active) ?  $request->is_active :  'Y';
+            $params['is_active'] = $request->is_active;
             $id=$request->id;
             $user = resolve('flavor-repo')->update($params,$id);
             $images = [];

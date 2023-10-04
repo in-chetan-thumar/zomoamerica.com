@@ -213,26 +213,26 @@
                         @endif
                     </div>
                 </div>
-                @isset($user)
                     <div class="col-12">
                         <div class="mb-3">
                             <div class="form-group">
-                                {!! Form::label('Status', 'Status', ['style' => 'justify-content: right']) !!}<span class="required">*</span>
-                                {!! Form::select('is_active', $status, isset($user) ? $user->is_active : old('is_active'), [
-                                    'class' => 'form-control',
-                                    'id' => 'role',
-                                    'style' => 'width: 100%',
-                                    'placeholder' => 'Select Status',
-                                ]) !!}
-                                @error('is_active')
-                                    <span style="color:red">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                                <input class="nhsuk-checkboxes__input showHideCheckbox"
+                                    name="is_active" type="checkbox"
+                                    id="showHideCheckbox"
+                                    value="Y"
+                                    {{-- onchange="showHideCheckbox(e)" --}}
+                                    aria-controls="conditional-contact-1"
+                                    aria-expanded="false"
+                                    @isset($user){{ $user->is_active == 'Y' ? 'checked' : '' }}@endisset
+                                    >
+                                    <label
+                                    class="nhsuk-label nhsuk-checkboxes__label show-input-checkbox"
+                                    for="">
+                                    Is active
+                                    </label>
+                              </div>
                         </div>
                     </div>
-                @endisset
             </div>
 
             <div class="row">
