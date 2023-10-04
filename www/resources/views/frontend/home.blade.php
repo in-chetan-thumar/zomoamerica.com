@@ -192,7 +192,7 @@
                         <div class="col-lg-3 col-md-4 col-6 where-to-buy-item reveal">
                             <div class="where-to-buy-box">
                                 <div class="images-box">
-                                    <img src={{ asset('assets/frontend/images/way-to-buy/smokefun.png') }} alt="5 Star Hookah" style="padding-top: 50px"
+                                    <img src={{ asset('assets/frontend/images/way-to-buy/hookahlogo.png') }} alt="5 Star Hookah" style="padding-top: 50px"
                                         height="100" width="100">
                                 </div>
                                 <p>Smokefun</p>
@@ -219,7 +219,7 @@
                         <div class="col-lg-3 col-md-4 col-6 where-to-buy-item reveal">
                             <div class="where-to-buy-box">
                                 <div class="images-box">
-                                    <img src={{ asset('assets/frontend/images/way-to-buy/logo.webp') }} alt="Hookah Wholesalers" style="padding-top: 70px"
+                                    <img src={{ asset('assets/frontend/images/way-to-buy/wholesale.webp') }} alt="Hookah Wholesalers" style="padding-top: 70px"
                                     height="100" width="100" >
                                 </div>
                                 <p>Hookah Wholesalers</p>
