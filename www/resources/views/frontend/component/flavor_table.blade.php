@@ -47,10 +47,9 @@ $model = new Flavor();
             </div>
         @endif
     </div>
-</div>
+        <div class="new-container max-line flavor-image">
 
 @if ($category_id === 'Max-line')
-    <div class="new-container max-line" style="margin-top: 400px;">
         <div class="row">
             <h2 class="title-main">
                 <p>MAXIMUM TASTE,</p>
@@ -93,7 +92,6 @@ $model = new Flavor();
     @else
         <div class="product-list">
 @endif
-
 <div class="product-item">
     @foreach ($tableData as $val)
         <div class="product-box">
