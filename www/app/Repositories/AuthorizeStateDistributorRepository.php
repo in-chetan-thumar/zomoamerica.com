@@ -7,6 +7,7 @@ use App\Models\AuthorizeStateDistributor;
 use App\Models\News;
 use App\Models\Role;
 use http\Env\Request;
+use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Permission;
 
 
@@ -41,6 +42,15 @@ class AuthorizeStateDistributorRepository
 
     public function filter($params)
     {
+        $this->model = $this->model->when(!empty($params['query_str']), function ($q) use ($params) {
+            return $q->where('first_name', 'LIKE', '%' . $params['query_str'] . "%")
+                ->orWhere('last_name', 'LIKE', '%' . $params['query_str'] . "%")
+                ->orWhere('telephone', 'LIKE', '%' . $params['query_str'] . "%")
+                ->orWhere('email', 'LIKE', '%' . $params['query_str'] . "%")
+                ->orWhere('state', 'LIKE', '%' . $params['query_str'] . "%")
+                ->orWhere('city', 'LIKE', '%' . $params['query_str'] . "%");
+        });
+
         return $this->model
             ->latest()
             ->paginate(config('constants.PER_PAGE'), ['*'],'page',!empty($params['page'])? $params['page']:'')

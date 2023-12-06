@@ -94,7 +94,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="{{ route('newsletter.index') }}">
-                        <i class="ri-newspaper-fill"></i> <span>News Letter</span>
+                        <i class="ri-newspaper-fill"></i> <span>News Letter Email List</span>
                     </a>
                 </li>
                 <li class="nav-item">

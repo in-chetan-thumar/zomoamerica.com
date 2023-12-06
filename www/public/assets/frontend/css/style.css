@@ -368,7 +368,7 @@ img {
 }
 
 .newslatter .newslatter-form form label {
-    text-align: center;
+    /*text-align: center;*/
     color: #f8f8f8;
     letter-spacing: 1px;
     font-size: 16px;
@@ -388,7 +388,7 @@ img {
 }
 
 .newslatter .newslatter-form form input {
-    width: 80%;
+    width: 92%;
     border: 0;
     background: #fff;
     padding: 10px;
@@ -2516,4 +2516,7 @@ img {
 /* pop up end */
 .flavor-image{
     margin-top: 25px;
+}
+.arrow-button{
+    margin-left: -98px;
 }

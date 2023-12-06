@@ -103,7 +103,7 @@ class AuthorizeStateDistributorController extends Controller
     {
         $previousUrl = parse_url(url()->previous());
         $params = [];
-        if (request()->routeIs('newsletter.index') || !isset($previousUrl['query'])) {
+        if (request()->routeIs('state-distributor.index') || !isset($previousUrl['query'])) {
             $params['query_str'] = $request->query_str ?? '';
             $params['page'] =  $request->page ?? 0;
             $params['path'] =  \Illuminate\Support\Facades\Request::fullUrl();

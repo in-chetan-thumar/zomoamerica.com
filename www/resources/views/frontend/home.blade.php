@@ -90,12 +90,25 @@
                 {!! Form::open([
                     'url' => route('frontend.EmailNews.store'),
                     'method' => 'POST',
+                      'id' => 'wholesale-form',
+                                'class' => 'wholesale-form',
                 ]) !!}
 
                 <label for="Subscribe">Subscribe to our newletter and get notification about ZOMO updates.</label>
-                <input type="text" name="email" id="Subscribe">
-                <input type="submit" class="input-bottom" value=">"
-                    style="color:#482583;background:#73648d;font-size:50px;">
+
+                <div class="row">
+                    <div class="col-11">
+                        <input type="text" name="email" id="Subscribe">
+
+                    </div>
+                    <div class="col-1 arrow-button">
+                        <input type="submit" class="input-bottom" value=">"
+                               style="color:#482583;background:#73648d;font-size:50px;">
+                    </div>
+                </div>
+{{--                <input type="text" name="email" id="Subscribe">--}}
+{{--                <input type="submit" class="input-bottom" value=">"--}}
+{{--                    style="color:#482583;background:#73648d;font-size:50px;">--}}
                 {{ Form::close() }}
                 </form>
             </div>
@@ -252,13 +265,13 @@
                     <h6 class="reveal">
                              Looking for a Zomo-authorized distributor in your state?
                         </h6>
-                    <div class="content-infomation reveal" id="wholesale-form">
+                    <div class="content-infomation reveal" id="wholesale-form11">
                         <div class="contact-form">
                             {!! Form::open([
                                 'url' => route('frontend.home.authorizeStateDistributor'),
                                 'method' => 'POST',
                                 'id' => 'wholesale-form',
-                                'class' => 'inquery-form',
+                                'class' => 'wholesale-form',
                             ]) !!}
 
                             <div class="cole-two reveal">
@@ -266,7 +279,7 @@
                                     <label for="fist">FIRST NAME <span
                                         class="text-danger">*</span></label>
                                     {!! Form::text('fname', old('fname'), [
-                                        'class' => ' name',
+                                        'class' => 'fname',
                                         'maxlength' => '20',
                                     ]) !!}
                                     <span class="text-danger" style="font-size:15px">
@@ -280,7 +293,7 @@
                                     <label for="Last">LAST NAME <span
                                         class="text-danger">*</span></label>
                                     {!! Form::text('lname', old('lname'), [
-                                        'class' => ' name',
+                                        'class' => 'lname',
                                         'maxlength' => '20',
                                     ]) !!}
                                     <span class="text-danger" style="font-size:15px">
@@ -297,7 +310,7 @@
                                     <label for="city">CITY <span
                                         class="text-danger">*</span></label>
                                     {!! Form::text('city', old('city'), [
-                                        'class' => ' name',
+                                        'class' => 'city',
                                         'maxlength' => '30',
                                     ]) !!}
                                     <span class="text-danger" style="font-size:15px">
@@ -310,7 +323,7 @@
                                 <div class="input-field">
                                     <label for="state">State <span
                                         class="text-danger">*</span></label>
-                                    {{ Form::Select('state', $stateArray, '', ['class' => '', 'placeholder' => 'Select']) }}
+                                    {{ Form::Select('state', $stateArray, '', ['class' => 'state', 'placeholder' => 'Select']) }}
                                     <span class="text-danger" style="font-size:15px">
                                         @error('state')
                                             {{ $message }}
@@ -325,7 +338,7 @@
                                     <label for="email">EMAIL ADDRESS <span
                                         class="text-danger">*</span></label>
                                     {!! Form::text('email', old('email'), [
-                                        'class' => ' name',
+                                        'class' => 'email',
                                         'maxlength' => '100',
                                     ]) !!}
                                     <span class="text-danger" style="font-size:15px">
@@ -339,7 +352,7 @@
                                     <label for="number">TELEPHONE NUMBER <span
                                         class="text-danger">*</span></label>
                                     {!! Form::text('number', old('number'), [
-                                        'class' => ' name',
+                                        'class' => 'number',
                                         'maxlength' => '10',
                                     ]) !!}
                                     <span class="text-danger" style="font-size:15px">

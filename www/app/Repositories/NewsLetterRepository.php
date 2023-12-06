@@ -35,6 +35,9 @@ class NewsLetterRepository
     }
     public function filter($params)
     {
+        $this->model = $this->model->when(!empty($params['query_str']), function ($q) use ($params) {
+            return $q->where('email', 'LIKE', '%' . $params['query_str'] . "%");
+        });
         return $this->model
             ->latest()
             ->paginate(config('constants.PER_PAGE'), ['*'],'page',!empty($params['page'])? $params['page']:'')

@@ -1,4 +1,16 @@
 @media (max-width: 1366px) {
+    .arrow-button{
+        margin-left: -87px;
+    }
+    .newslatter .newslatter-form form input {
+        width: 92%;
+        border: 0;
+        background: #fff;
+        padding: 10px;
+        min-height: 50px;
+        font-size: 16px;
+        line-height: 20px;
+    }
     .video_wrapper {
         background-image: url(../images/product/fundo-videos.png);
         background-position: center !important;
@@ -1079,6 +1091,18 @@
 }
 
 @media (max-width: 768px) {
+    .arrow-button{
+        margin-left: -52px;
+    }
+    .newslatter .newslatter-form form input {
+        width: 92%;
+        border: 0;
+        background: #fff;
+        padding: 10px;
+        min-height: 50px;
+        font-size: 16px;
+        line-height: 20px;
+    }
     .product-slider-main .product-slider .icon,
     .news-slider-main .news-slider .icon {
         gap: 30px;

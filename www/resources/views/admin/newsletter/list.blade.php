@@ -18,7 +18,24 @@
                         <a href="{{ route('newsletter.export') }}" class="btn btn-primary">Export</a>
                     </div>
                     <div class="float-start">
+                        {!! Form::open(['url' =>route('newsletter.index'),'id' =>'form-search','class'=>'row row-cols-lg-auto g-3 align-items-center','id'=>'newsletter-form','method' => 'get']) !!}
+                        <div class="form-group">
+                            {!! Form::text('query_str',request()->query('query_str'),['class'=>'form-control data-filter','placeholder'=>'Search by email']) !!}
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" name="type" value="submit" class="btn btn-primary waves-effect waves-light button-size">
+                                Submit
+                            </button>
+                        </div>
+                        <div class="form-group">
+                            <a href="{{route('newsletter.index')}}" class="btn btn-secondary waves-effect waves-light button-size">
+                                Reset
+                            </a>
+                        </div>
+
+                        {!! Form::close() !!}
                     </div>
+
                     <div class="clearfix"></div>
                     <div class="divtable">
                         {!! $table !!}
