@@ -65,7 +65,7 @@
         height: 477px;
     }
     .header .menu {
-        gap: 50px;
+        gap: 40px;
     }
 
     .product-section .product-title {
@@ -753,7 +753,7 @@
     }
 
     .where-to-buy .where-to-buy-item {
-        padding: 0 10px;
+        padding: 0 10px 0 60px;
         margin-bottom: 20px;
     }
 

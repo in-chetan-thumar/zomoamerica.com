@@ -36,4 +36,7 @@ class NewsLetterController extends Controller
             return redirect()->back()->with('error','Please enter your email id');
         }
     }
+    public function index(){
+
+    }
 }

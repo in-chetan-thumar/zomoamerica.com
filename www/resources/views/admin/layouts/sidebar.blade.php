@@ -92,7 +92,16 @@
                         <i class="ri-newspaper-line"></i><span>Meta Detail</span>
                     </a>
                 </li>
-
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="{{ route('newsletter.index') }}">
+                        <i class="ri-newspaper-fill"></i> <span>News Letter</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="{{ route('state-distributor.index') }}">
+                        <i class="ri-newspaper-fill"></i> <span>Authorize State Distributor Inquiry</span>
+                    </a>
+                </li>
                 <li class="menu-title"><span>Settings</span></li>
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="{{ route('permission.index') }}">

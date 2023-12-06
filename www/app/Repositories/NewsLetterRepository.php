@@ -33,4 +33,17 @@ class NewsLetterRepository
         return $this->model->create($params);
 
     }
+    public function filter($params)
+    {
+        return $this->model
+            ->latest()
+            ->paginate(config('constants.PER_PAGE'), ['*'],'page',!empty($params['page'])? $params['page']:'')
+            ->setPath($params['path']);
+
+    }
+    public function renderHtmlTable($params)
+    {
+        $tableData = $this->filter($params);
+        return view('admin.newsletter.table', compact('tableData'))->render();
+    }
 }

@@ -144,7 +144,7 @@
                     </div>
                     <div class="descricao-aluminio">
                         <p class="descr mt-5" style="text-align: center;">*STEM ONLY <a
-                                href="https://www.zomoofficial.com/en/zoom/"><span class="medium"> SEE MORE</span></a>
+                                href="https://www.zomoofficial.com/en/zoom/" target="_blank"><span class="medium"> SEE MORE</span></a>
                         </p>
                     </div>
                 </div>
@@ -153,21 +153,37 @@
                         <img src="{{ asset('assets/frontend/images/product/novos-energy-zona-1.jpg') }}">
                     </div>
                 </div>
-                {{--                    <div class="col-sm-6"> --}}
-                {{--                        <div class="relase_image"> --}}
-                {{--                            <img src="{{ asset('assets/frontend/images/product/modelo-energy-lp-zona.jpg') }}"> --}}
-                {{--                        </div> --}}
-                {{--                    </div> --}}
-                {{--                    <div class="col-sm-6 release_note"> --}}
-                {{--                        <div class="release_title"> --}}
-                {{--                            <p>ENERGY</p> --}}
-                {{--                        </div> --}}
-                {{--                        <div class="descricao-aluminio"> --}}
-                {{--                            <p class="descr" style="text-align: center;">*STEM ONLY <a --}}
-                {{--                                    href="https://www.zomoofficial.com/en/energy/"><span class="medium"> SEE MORE</span></a> --}}
-                {{--                            </p> --}}
-                {{--                        </div> --}}
-                {{--                    </div> --}}
+                                    <div class="col-sm-6">
+                                        <div class="relase_image">
+                                            <img src="{{ asset('assets/frontend/images/product/ZOOM_base.png') }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 release_note">
+                                        <div class="release_title">
+                                            <p>BASE</p>
+                                        </div>
+                                        <div class="descricao-aluminio">
+                                            <p class="descr mt-5" style="text-align: center;">*BASE ONLY <a
+                                                    href="https://smokefun.com/product-category/hookah/zomo-zoom/" target="_blank"><span class="medium"> SEE MORE</span></a>
+                                            </p>
+                                        </div>
+                                    </div>
+
+{{--                <div class="col-sm-6">--}}
+{{--                    <div class="relase_image">--}}
+{{--                        <img src="{{ asset('assets/frontend/images/product/modelo-energy-lp-zona.jpg') }}">--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-sm-6 release_note">--}}
+{{--                    <div class="release_title">--}}
+{{--                        <p>ENERGY</p>--}}
+{{--                    </div>--}}
+{{--                    <div class="descricao-aluminio">--}}
+{{--                        <p class="descr" style="text-align: center;">*STEM ONLY <a--}}
+{{--                                href="https://www.zomoofficial.com/en/energy/"><span class="medium"> SEE MORE</span></a>--}}
+{{--                        </p>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
                 {{--                    <h1>OTHER MODELS</h1> --}}
                 {{--                <div class="row bg_image"> --}}
                 {{--                    <div class="col-sm-6"> --}}

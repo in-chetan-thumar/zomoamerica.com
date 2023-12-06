@@ -126,7 +126,7 @@
                     <p>{{ $news->title }}</p>
                 </div>
                    @endif
-                   
+
                 @endforeach
                 {{-- <div class="news-section-list">
                     <div class="images-box">
@@ -161,15 +161,15 @@
                         <h2>ONLINE DISTRIBUTOR</h2>
                     </div>
                      <div class="row d-flex justify-content-center">
-                        
-                        <div class="col-lg-3 col-md-4 col-6 where-to-buy-item reveal">
+
+                        <div class="col-lg-4  where-to-buy-item reveal">
                             <div class="where-to-buy-box">
                                 <div class="images-box">
-                                    <img src={{ asset('assets/frontend/images/way-to-buy/5starhookah.jpeg') }} alt="5 Star Hookah"
-                                    height="100" width="100" >
+                                    <img src="{{ asset('assets/frontend/images/way-to-buy/5starhookah.jpeg') }}" alt="5 Star Hookah"
+                                    height="100"  >
                                 </div>
                                 <p>5 Star Hookah</p>
-                                <a href="https://5starhookah.com/collections/zomo-tobacco-shisha" class="visit-store">
+                                <a href="https://5starhookah.com/collections/zomo-tobacco-shisha" class="visit-store"  target="_blank">
                                     <span>
                                         <svg width="13" height="20" viewBox="0 0 13 20" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
@@ -189,14 +189,14 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-3 col-md-4 col-6 where-to-buy-item reveal">
+                        <div class="col-lg-4  where-to-buy-item reveal">
                             <div class="where-to-buy-box">
                                 <div class="images-box">
-                                    <img src={{ asset('assets/frontend/images/way-to-buy/hookahlogo.png') }} alt="5 Star Hookah" style="padding-top: 50px"
-                                        height="100" width="100">
+                                    <img src="{{ asset('assets/frontend/images/way-to-buy/hookahlogo.png') }}" alt="5 Star Hookah" style="padding-top: 23%; margin-left: 9%;"
+                                        height="100" >
                                 </div>
                                 <p>Smokefun</p>
-                                <a href="https://smokefun.com/product-category/tobacco/zomo/" class="visit-store">
+                                <a href="https://smokefun.com/product-category/tobacco/zomo/" class="visit-store"  target="_blank">
                                     <span>
                                         <svg width="13" height="20" viewBox="0 0 13 20" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
@@ -215,15 +215,15 @@
                                     Visit Store</a>
                             </div>
                         </div>
-                        
-                        <div class="col-lg-3 col-md-4 col-6 where-to-buy-item reveal">
+
+                        <div class="col-lg-4  where-to-buy-item reveal">
                             <div class="where-to-buy-box">
                                 <div class="images-box">
-                                    <img src={{ asset('assets/frontend/images/way-to-buy/wholesale.webp') }} alt="Hookah Wholesalers" style="padding-top: 70px"
+                                    <img src="{{ asset('assets/frontend/images/way-to-buy/wholesale.webp') }}" alt="Hookah Wholesalers" style="padding-top: 39%; margin-left: 11%;"
                                     height="100" width="100" >
                                 </div>
                                 <p>Hookah Wholesalers</p>
-                                <a href="https://www.hookahwholesalers.com/" class="visit-store">
+                                <a href="https://www.hookahwholesalers.com/" class="visit-store"  target="_blank">
                                     <span>
                                         <svg width="13" height="20" viewBox="0 0 13 20" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
@@ -242,13 +242,16 @@
                                     Visit Store</a>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
                 <div class="col-12 col-lg-12 col-md-12">
                     <div class="heading reveal">
                         <h2>AUTHORIZED STATE DISTRIBUTOR</h2>
                     </div>
+                    <h6 class="reveal">
+                             Looking for a Zomo-authorized distributor in your state?
+                        </h6>
                     <div class="content-infomation reveal" id="wholesale-form">
                         <div class="contact-form">
                             {!! Form::open([
@@ -257,7 +260,7 @@
                                 'id' => 'wholesale-form',
                                 'class' => 'inquery-form',
                             ]) !!}
-                            
+
                             <div class="cole-two reveal">
                                 <div class="input-field">
                                     <label for="fist">FIRST NAME <span
@@ -351,17 +354,17 @@
                             <div class="input-field">
                                 <input type="hidden" name="g-recaptcha-response" id="response">
                             </div>
-                           
+
                             <div class="wrap-btn reveal">
                                 <input type="submit" class="btn-black mb-5" value="SEND">
                             </div>
 
                             {{ Form::close() }}
                         </div>
-                    </div>        
+                    </div>
                 </div>
             </div>
-            
+
         </div>
     </div>
 

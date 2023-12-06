@@ -195,7 +195,8 @@ class HomeController extends Controller
         SEOTools::setTitle($content->meta_title);
         SEOTools::setDescription($content->meta_description);
         SEOMeta::addKeyword($content->meta_keywords);
-        return view('frontend.wholesalers',compact('content'));
+        $stateArray  = array('Alabama' => 'Alabama','Alaska' => 'Alaska','Arizona' => 'Arizona','Arkansas' => 'Arkansas','California' => 'California','Colorado' => 'Colorado','Connecticut' => 'Connecticut','Delaware' => 'Delaware','District of Columbia' => 'District of Columbia','Florida' => 'Florida','Georgia' =>'Georgia','Hawaii' => 'Hawaii','Idaho' =>'Idaho','Illinois' =>'Illinois','Indiana'=>'Indiana','Iowa'=>'Iowa','Kansas'=>'Kansas','Kentucky' =>'Kentucky','Louisiana'=>'Louisiana','Maine'=>'Maine','Maryland'=>'Maryland','Massachusetts'=>'Massachusetts','Michigan'=>'Michigan','Minnesota'=>'Minnesota','Mississippi'=>'Mississippi','Missouri'=>'Missouri','Montana'=>'Montana','Nebraska'=>'Nebraska','Nevada'=>'Nevada','New Hampshire'=>'New Hampshire','New Jersey' =>'New Jersey','New Mexico'=>'New Mexico','New York'=>'New York','North Carolina'=>'North Carolina','North Dakota'=>'North Dakota','Ohio'=>'Ohio','Oklahoma'=>'Oklahoma','Oregon'=>'Oregon','Pennsylvania'=>'Pennsylvania','Puerto Rico'=>'Puerto Rico','Rhode Island'=>'Rhode Island','South Carolina'=>'South Carolina','South Dakota'=>'South Dakota','Tennessee'=>'Tennessee','Texas'=>'Texas','Utah'=>'Utah','Vermont'=>'Vermont','Virginia'=>'Virginia','Washington'=>'Washington','West Virginia'=>'West Virginia','Wisconsin'=>'Wisconsin','Wyoming'=>'Wyoming');
+        return view('frontend.wholesalers',compact('content','stateArray'));
     }
 
     public function quality() {
@@ -217,28 +218,31 @@ class HomeController extends Controller
         $stateArray  = array('Alabama' => 'Alabama','Alaska' => 'Alaska','Arizona' => 'Arizona','Arkansas' => 'Arkansas','California' => 'California','Colorado' => 'Colorado','Connecticut' => 'Connecticut','Delaware' => 'Delaware','District of Columbia' => 'District of Columbia','Florida' => 'Florida','Georgia' =>'Georgia','Hawaii' => 'Hawaii','Idaho' =>'Idaho','Illinois' =>'Illinois','Indiana'=>'Indiana','Iowa'=>'Iowa','Kansas'=>'Kansas','Kentucky' =>'Kentucky','Louisiana'=>'Louisiana','Maine'=>'Maine','Maryland'=>'Maryland','Massachusetts'=>'Massachusetts','Michigan'=>'Michigan','Minnesota'=>'Minnesota','Mississippi'=>'Mississippi','Missouri'=>'Missouri','Montana'=>'Montana','Nebraska'=>'Nebraska','Nevada'=>'Nevada','New Hampshire'=>'New Hampshire','New Jersey' =>'New Jersey','New Mexico'=>'New Mexico','New York'=>'New York','North Carolina'=>'North Carolina','North Dakota'=>'North Dakota','Ohio'=>'Ohio','Oklahoma'=>'Oklahoma','Oregon'=>'Oregon','Pennsylvania'=>'Pennsylvania','Puerto Rico'=>'Puerto Rico','Rhode Island'=>'Rhode Island','South Carolina'=>'South Carolina','South Dakota'=>'South Dakota','Tennessee'=>'Tennessee','Texas'=>'Texas','Utah'=>'Utah','Vermont'=>'Vermont','Virginia'=>'Virginia','Washington'=>'Washington','West Virginia'=>'West Virginia','Wisconsin'=>'Wisconsin','Wyoming'=>'Wyoming');
         return view('frontend.wholesale',compact('stateArray','content'));
     }
-   
 
-    //AUTHORIZED STATE DISTRIBUTOR 
+
+    //AUTHORIZED STATE DISTRIBUTOR
     public function authorizeStateDistributor(HomeRequest $request){
-       
+
         try{
             $data = [];
-                 // Send Mail 
+                 // Send Mail
                  $data['first_name'] = $request->fname;
                  $data['last_name'] = $request->lname;
                  $data['telephone'] = $request->number;
                  $data['email'] = $request->email;
                  $data['state'] = $request->state;
                  $data['city'] = $request->city;
-                // Send an email using the Mail facade
-                 Mail::send('email.authorized_distributor_mail', ['data' => $data], function ($message) {
-                        $message->to('info@zomoamerica.com')->subject('New Authorize State Distributor Notification');
+            $state_distributor = resolve('state-distributor-repo')->create($data);
+                if($state_distributor){
+                    // Send an email using the Mail facade
+                    Mail::send('email.authorized_distributor_mail', ['data' => $data], function ($message) {
+                        $message->to('kajal.baldha@tiez.nl')->subject('New Authorize State Distributor Notification');
                     });
 
                     // Redirect back with a success message
                     return redirect()->back()->with('success', 'Email sent successfully!');
-            
+                }
+
          }catch(\Exception $e){
         toastr()->error($e->getMessage());
         return redirect()->back();

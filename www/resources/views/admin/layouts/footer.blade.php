@@ -7,7 +7,7 @@
                 </script> © {{ env('APP_NAME') }}.
             </div>
             <div class="col-sm-6">
-                h
+
             </div>
         </div>
     </div>

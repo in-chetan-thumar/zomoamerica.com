@@ -8,12 +8,18 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class NewsLetter extends Model
+class AuthorizeStateDistributor extends Model
 {
     use HasFactory,CustomTimestamps,SoftDeletes;
-    protected $table="newsletter";
-    protected $fillable =[
+    protected $table = "authorize_state_distributor";
+    protected $primaryKey = "id";
+    protected $fillable = [
+        'first_name',
+        'last_name',
+        'telephone',
         'email',
+        'state',
+        'city',
         'created_at',
         'created_by',
         'updated_at',
@@ -21,9 +27,9 @@ class NewsLetter extends Model
         'deleted_at',
         'deleted_by',
     ];
+
     public function getCreatedAtFormattedAttribute()
     {
         return Carbon::parse($this->created_at)->format('d-m-Y');
     }
-
 }

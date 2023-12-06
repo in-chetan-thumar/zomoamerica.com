@@ -30,9 +30,9 @@
             <div class="item">
                 <img src={{ asset('assets/frontend/images/about-us/history-slide-02.png') }} alt="history-slider">
             </div>
-            <div class="item">
-                <img src={{ asset('assets/frontend/images/about-us/history-slide-03.png') }} alt="history-slider">
-            </div>
+{{--            <div class="item">--}}
+{{--                <img src={{ asset('assets/frontend/images/about-us/history-slide-03.png') }} alt="history-slider">--}}
+{{--            </div>--}}
             <div class="item">
                 <img src={{ asset('assets/frontend/images/about-us/history-slide-04.png') }} alt="history-slider">
             </div>

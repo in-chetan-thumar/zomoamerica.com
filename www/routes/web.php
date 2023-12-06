@@ -146,8 +146,12 @@ Route::post('/meta-update', [MetaTagController::class,'update'])->name('backend.
 
 Route::get('/meta-delete/{id}', [MetaTagController::class,'destroy'])->name('backend.metaDetail.delete');
 
+Route::resource('/newsletter',\App\Http\Controllers\Admin\NewsletterController::class);
+Route::get('/export-newsletter', [\App\Http\Controllers\Admin\NewsletterController::class, 'export'])->name('newsletter.export');
 
 
+Route::resource('/state-distributor',\App\Http\Controllers\Admin\AuthorizeStateDistributorController::class);
+Route::get('/export-state-distributor', [\App\Http\Controllers\Admin\AuthorizeStateDistributorController::class, 'export'])->name('state.distributor.export');
 // backend.metaDetail
 //
 

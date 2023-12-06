@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Providers;
+use App\Repositories\AuthorizeStateDistributorRepository;
 use App\Repositories\MetatagRepository;
 use App\Repositories\NewsLetterRepository;
 use App\Repositories\FlavorsImage;
@@ -57,6 +58,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->singleton('news-repo',NewsRepository::class);
         $this->app->singleton('newsLetter-repo',NewsLetterRepository::class);
         $this->app->singleton('meta-repo',MetatagRepository::class);
+        $this->app->singleton('state-distributor-repo',AuthorizeStateDistributorRepository::class);
         //
 
     }
