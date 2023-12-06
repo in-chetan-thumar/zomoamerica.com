@@ -24,15 +24,15 @@
         }
 
     .where-to-buy-box .images-box{
-        width: 300px; 
-        height: 300px; 
+        width: 300px;
+        height: 300px;
         {{-- overflow: hidden;  --}}
-    }   
+    }
     .where-to-buy-box .images-box img{
         {{-- width: 100%;
         height: 100%; --}}
-        object-fit: cover; 
-    } 
+        object-fit: cover;
+    }
 @endsection
 @section('main')
     <div class="owl-carousel owl-theme home-banner">
@@ -90,8 +90,8 @@
                 {!! Form::open([
                     'url' => route('frontend.EmailNews.store'),
                     'method' => 'POST',
-                      'id' => 'wholesale-form',
-                                'class' => 'wholesale-form',
+                      'id' => 'EmailNewsLetter-form',
+                      'class' => 'EmailNewsLetter-form',
                 ]) !!}
 
                 <label for="Subscribe">Subscribe to our newletter and get notification about ZOMO updates.</label>
@@ -396,6 +396,7 @@
     </div>
 @section('js')
 {!! JsValidator::formRequest('App\Http\Requests\HomeRequest', '#wholesale-form') !!}
+{!! JsValidator::formRequest('App\Http\Requests\EmailNewsLetter', '#EmailNewsLetter-form') !!}
 <script src="https://www.google.com/recaptcha/api.js?render=6LdNflwoAAAAAA5C79bAV5nRZqbVT6ntszmWqqV-"></script>
 <script>
     grecaptcha.ready(function(){
