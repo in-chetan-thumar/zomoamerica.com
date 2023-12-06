@@ -236,7 +236,7 @@ class HomeController extends Controller
                 if($state_distributor){
                     // Send an email using the Mail facade
                     Mail::send('email.authorized_distributor_mail', ['data' => $data], function ($message) {
-                        $message->to('kajal.baldha@tiez.nl')->subject('New Authorize State Distributor Notification');
+                        $message->to('info@zomoamerica.com')->subject('New Authorize State Distributor Notification');
                     });
 
                     // Redirect back with a success message
