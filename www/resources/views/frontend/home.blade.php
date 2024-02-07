@@ -24,7 +24,7 @@
         }
 
     .where-to-buy-box .images-box{
-        width: 300px;
+{{--        width: 300px;--}}
         height: 300px;
         {{-- overflow: hidden;  --}}
     }
@@ -37,27 +37,48 @@
 @section('main')
     <div class="owl-carousel owl-theme home-banner">
         <div class="item">
-            <img class="dastop-images" src={{ asset('assets/frontend/images/Banner-main-1.webp') }} width="100"
+            <img class="dastop-images" src={{ asset('assets/frontend/images/banner-images/web/Banner-main-1.webp') }} width="100"
                 height="100" alt="dastop-images">
-            <img class="tab-images" src={{ asset('assets/frontend/images/banner-images/Banner-main-10241.webp') }}
+            <img class="tab-images" src={{ asset('assets/frontend/images/banner-images/tab/Banner-main-10241.webp') }}
                 width="100" height="100" alt="tab-images">
-            <img class="mobile-images" src={{ asset('assets/frontend/images/banner-images/Banner-main-6401.webp') }}
+            <img class="mobile-images" src={{ asset('assets/frontend/images/banner-images/mobile/Banner-main-6401.webp') }}
+                width="100" height="100" alt="mobile-images">
+
+        </div>
+        <div class="item">
+            <img class="dastop-images" src={{ asset('assets/frontend/images/banner-images/web/Banner-main-2.webp') }} width="100"
+                height="100" alt="dastop-images">
+            <img class="tab-images" src={{ asset('assets/frontend/images/banner-images/tab/Banner-main-10242.webp') }}
+                width="100" height="100" alt="tab-images">
+            <img class="mobile-images" src={{ asset('assets/frontend/images/banner-images/mobile/Banner-main-6402.webp') }}
+                width="100" height="100" alt="mobile-images">
+
+        </div>
+        <div class="item">
+            <img class="dastop-images" src={{ asset('assets/frontend/images/banner-images/web/Banner-main-3.webp') }} width="100"
+                height="100" alt="dastop-images">
+            <img class="tab-images" src={{ asset('assets/frontend/images/banner-images/tab/Banner-main-10243.webp') }}
+                width="100" height="100" alt="tab-images">
+            <img class="mobile-images" src={{ asset('assets/frontend/images/banner-images/mobile/Banner-main-6403.webp') }}
                 width="100" height="100" alt="mobile-images">
         </div>
         <div class="item">
-            <img class="dastop-images" src={{ asset('assets/frontend/images/Banner-main-2.webp') }} width="100"
-                height="100" alt="dastop-images">
-            <img class="tab-images" src={{ asset('assets/frontend/images/banner-images/Banner-main-10242.webp') }}
-                width="100" height="100" alt="tab-images">
-            <img class="mobile-images" src={{ asset('assets/frontend/images/banner-images/Banner-main-6402.webp') }}
+            <img class="dastop-images"  src={{ asset('assets/frontend/images/banner-images/web/WATERLEMONBANNER.webp') }}
                 width="100" height="100" alt="mobile-images">
+            <img class="tab-images"  src={{ asset('assets/frontend/images/banner-images/tab/WATERLEMONBANNER.webp') }}
+                width="100" height="100" alt="mobile-images">
+
+            <img class="mobile-images"  src={{ asset('assets/frontend/images/banner-images/mobile/WATERLEMONBANNER.webp') }}
+                width="100" height="100" alt="mobile-images">
+
         </div>
         <div class="item">
-            <img class="dastop-images" src={{ asset('assets/frontend/images/Banner-main-3.webp') }} width="100"
-                height="100" alt="dastop-images">
-            <img class="tab-images" src={{ asset('assets/frontend/images/banner-images/Banner-main-10243.webp') }}
-                width="100" height="100" alt="tab-images">
-            <img class="mobile-images" src={{ asset('assets/frontend/images/banner-images/Banner-main-6403.webp') }}
+
+            <img class="dastop-images"   src={{ asset('assets/frontend/images/banner-images/web/miami-nights-home-banner.webp') }}
+                width="100" height="100" alt="mobile-images">
+            <img class="tab-images"   src={{ asset('assets/frontend/images/banner-images/tab/miami-nights-home-banner.webp') }}
+                width="100" height="100" alt="mobile-images">
+            <img class="mobile-images"   src={{ asset('assets/frontend/images/banner-images/mobile/miami-nights-home-banner.webp') }}
                 width="100" height="100" alt="mobile-images">
         </div>
     </div>
@@ -115,55 +136,55 @@
         </div>
     </div>
 
-    <div class="news-sections">
-        <div class="container">
-            <h3 class="title-main">news</h3>
-            <div class="news-srction-item reveal">
-                @foreach ($news as $news)
-                   @if (isset($news->link))
-                   <div class="news-section-list">
-                    <div class="images-box">
-                        <a href="{{ $news->link }}" class="hover-bg"><span
-                                class="hide-text">hover</span></a>
-                        <img src={{ asset("storage/news/$news->image") }} alt="News" width="100" height="100">
-                    </div>
-                    <p>{{ $news->title }}</p>
-                </div>
-                   @else
-                   <div class="news-section-list">
-                    <div class="images-box">
-                        <a href="{{ route('backend.news',$news->slug) }}" class="hover-bg"><span
-                                class="hide-text">hover</span></a>
-                        <img src={{ asset("storage/news/$news->image") }} alt="News" width="100" height="100">
-                    </div>
-                    <p>{{ $news->title }}</p>
-                </div>
-                   @endif
+{{--    <div class="news-sections">--}}
+{{--        <div class="container">--}}
+{{--            <h3 class="title-main">news</h3>--}}
+{{--            <div class="news-srction-item reveal">--}}
+{{--                @foreach ($news as $news)--}}
+{{--                   @if (isset($news->link))--}}
+{{--                   <div class="news-section-list">--}}
+{{--                    <div class="images-box">--}}
+{{--                        <a href="{{ $news->link }}" class="hover-bg"><span--}}
+{{--                                class="hide-text">hover</span></a>--}}
+{{--                        <img src={{ asset("storage/news/$news->image") }} alt="News" width="100" height="100">--}}
+{{--                    </div>--}}
+{{--                    <p>{{ $news->title }}</p>--}}
+{{--                </div>--}}
+{{--                   @else--}}
+{{--                   <div class="news-section-list">--}}
+{{--                    <div class="images-box">--}}
+{{--                        <a href="{{ route('backend.news',$news->slug) }}" class="hover-bg"><span--}}
+{{--                                class="hide-text">hover</span></a>--}}
+{{--                        <img src={{ asset("storage/news/$news->image") }} alt="News" width="100" height="100">--}}
+{{--                    </div>--}}
+{{--                    <p>{{ $news->title }}</p>--}}
+{{--                </div>--}}
+{{--                   @endif--}}
 
-                @endforeach
-                {{-- <div class="news-section-list">
-                    <div class="images-box">
-                        <a href="single-news.html" class="hover-bg"><span class="hide-text">hover</span></a>
+{{--                @endforeach--}}
+{{--                --}}{{-- <div class="news-section-list">--}}
+{{--                    <div class="images-box">--}}
+{{--                        <a href="single-news.html" class="hover-bg"><span class="hide-text">hover</span></a>--}}
 
-                        <img src={{ asset('assets/frontend/images/news-02.webp') }} alt="News 2" width="100"
-                            height="100">
-                    </div>
-                    <p>FLAVOR OF AMERICA JUST LAUNCHED A REVOLUTIONARY APP</p>
-                </div>
-                <div class="news-section-list">
-                    <div class="images-box">
-                        <a href="singles-new.html" class="hover-bg"><span class="hide-text">hover</span></a>
-                        <img src={{ asset('assets/frontend/images/news-03.webp') }} alt="News 3" width="100"
-                            height="100">
-                    </div>
-                    <p>SHISHA’S FLAVOR ON YOUR POD!</p>
-                </div> --}}
-            </div>
-            <div class="sew-more-button reveal">
-                <a href="{{ route('frontend.news') }} ">SEE MORE <span>></span></a>
-            </div>
-        </div>
-    </div>
+{{--                        <img src={{ asset('assets/frontend/images/news-02.webp') }} alt="News 2" width="100"--}}
+{{--                            height="100">--}}
+{{--                    </div>--}}
+{{--                    <p>FLAVOR OF AMERICA JUST LAUNCHED A REVOLUTIONARY APP</p>--}}
+{{--                </div>--}}
+{{--                <div class="news-section-list">--}}
+{{--                    <div class="images-box">--}}
+{{--                        <a href="singles-new.html" class="hover-bg"><span class="hide-text">hover</span></a>--}}
+{{--                        <img src={{ asset('assets/frontend/images/news-03.webp') }} alt="News 3" width="100"--}}
+{{--                            height="100">--}}
+{{--                    </div>--}}
+{{--                    <p>SHISHA’S FLAVOR ON YOUR POD!</p>--}}
+{{--                </div> --}}
+{{--            </div>--}}
+{{--            <div class="sew-more-button reveal">--}}
+{{--                <a href="{{ route('frontend.news') }} ">SEE MORE <span>></span></a>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
 
     <div class="where-to-buy" id="distributor">
         <div class="container">
@@ -175,7 +196,7 @@
                     </div>
                      <div class="row d-flex justify-content-center">
 
-                        <div class="col-lg-4  where-to-buy-item reveal">
+                        <div class="col-lg-3  where-to-buy-item reveal">
                             <div class="where-to-buy-box">
                                 <div class="images-box">
                                     <img src="{{ asset('assets/frontend/images/way-to-buy/5starhookah.jpeg') }}" alt="5 Star Hookah"
@@ -202,7 +223,7 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-4  where-to-buy-item reveal">
+                        <div class="col-lg-3  where-to-buy-item reveal">
                             <div class="where-to-buy-box">
                                 <div class="images-box">
                                     <img src="{{ asset('assets/frontend/images/way-to-buy/hookahlogo.png') }}" alt="5 Star Hookah" style="padding-top: 23%; margin-left: 9%;"
@@ -229,7 +250,7 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-4  where-to-buy-item reveal">
+                        <div class="col-lg-3  where-to-buy-item reveal">
                             <div class="where-to-buy-box">
                                 <div class="images-box">
                                     <img src="{{ asset('assets/frontend/images/way-to-buy/wholesale.webp') }}" alt="Hookah Wholesalers" style="padding-top: 39%; margin-left: 11%;"
@@ -255,6 +276,32 @@
                                     Visit Store</a>
                             </div>
                         </div>
+                         <div class="col-lg-3  where-to-buy-item reveal">
+                             <div class="where-to-buy-box">
+                                 <div class="images-box">
+                                     <img src="{{ asset('assets/frontend/images/way-to-buy/hookal_junki.jpg') }}" alt="Hookah Wholesalers" style="padding-top: 39%; margin-left: 11%;"
+                                          height="100" width="100" >
+                                 </div>
+                                 <p>Hookah Junkie</p>
+                                 <a href="https://hookahjunkie.com/" class="visit-store"  target="_blank">
+                                    <span>
+                                        <svg width="13" height="20" viewBox="0 0 13 20" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_31_161)">
+                                                <path
+                                                    d="M12.1328 9.11719C12.6211 9.60547 12.6211 10.3984 12.1328 10.8867L4.63281 18.3867C4.14453 18.875 3.35156 18.875 2.86328 18.3867C2.375 17.8984 2.375 17.1055 2.86328 16.6172L9.48047 10L2.86719 3.38281C2.37891 2.89453 2.37891 2.10156 2.86719 1.61328C3.35547 1.125 4.14844 1.125 4.63672 1.61328L12.1367 9.11328L12.1328 9.11719Z"
+                                                    fill="black" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_31_161">
+                                                    <rect width="12.5" height="20" fill="white" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                    </span>
+                                     Visit Store</a>
+                             </div>
+                         </div>
 
                     </div>
                 </div>

@@ -29,7 +29,7 @@
                             <div class="title">
                                 <h3>@isset($news){{ $news->title }}@endisset</h3>
                             </div>
-                            <p>@isset($news){{ $news->description }}@endisset</p>
+                            <p>@isset($news){!! $news->description !!}  @endisset</p>
                             <div class="news-time">
                                 <div class="time">
                                     <p>Post in: <span>@isset($news){{ $news->created_at }}@endisset</span></p>
