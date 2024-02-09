@@ -83,8 +83,19 @@
                                  height="100" width="100" >
                         </a>
                     </figure>
-                    <h3 >HOOKAH JUNKIE</h3>
+                    <h3 >Hookah Wholesalers</h3>
                     <a href="https://www.hookahwholesalers.com/" target="_blank">Visit
+                        Store</a>
+                </div>
+                <div class="col text-center">
+                    <figure>
+                        <a href="https://hookahjunkie.com/" target="_blank">
+                            <img src="{{ asset('assets/frontend/images/way-to-buy/hookal_junki.jpg') }}" alt="Hookah Wholesalers" style="padding-top: 39%; margin-left: 11%; margin-bottom: 40%;"
+                                 height="100" width="100" >
+                        </a>
+                    </figure>
+                    <h3 >Hookah Junkie</h3>
+                    <a href="https://hookahjunkie.com/" target="_blank">Visit
                         Store</a>
                 </div>
             </div>
@@ -125,8 +136,8 @@
                             {!! Form::open([
                                 'url' => route('frontend.home.authorizeStateDistributor'),
                                 'method' => 'POST',
-                                'id' => 'wholesale-form1',
-                                'class' => 'inquery-form1',
+                                'id' => 'inquery-form',
+                                'class' => 'inquery-form',
                             ]) !!}
 
                             <div class="cole-two reveal">
@@ -317,7 +328,7 @@
     </div>
 @endsection
 @section('js')
-    {!! JsValidator::formRequest('App\Http\Requests\HomeRequest', '#wholesale-form') !!}
+    {!! JsValidator::formRequest('App\Http\Requests\HomeRequest', '#inquery-form') !!}
     <script src="https://www.google.com/recaptcha/api.js?render=6LdNflwoAAAAAA5C79bAV5nRZqbVT6ntszmWqqV-"></script>
     <script>
         grecaptcha.ready(function(){

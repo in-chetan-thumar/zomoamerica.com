@@ -9,14 +9,17 @@ use App\Http\Requests\Wholesale;
 use App\Models\ContactDetail;
 use App\Models\wholesaleDetail;
 use Artesaos\SEOTools\Facades\SEOMeta;
+use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 use Artesaos\SEOTools\Facades\SEOTools;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use App\Models\Flavor;
 use App\Models\MetaTag;
+use Illuminate\Support\Facades\Validator;
 
 class HomeController extends Controller
 {
@@ -221,9 +224,22 @@ class HomeController extends Controller
 
 
     //AUTHORIZED STATE DISTRIBUTOR
-    public function authorizeStateDistributor(HomeRequest $request){
+    public function authorizeStateDistributor(Request $request){
 
         try{
+            $this->validate($request, [
+                'g-recaptcha-response' => ['required',   function (string $attribute, mixed $value, Closure $fail) {
+                    $g_response = Http::asForm()->post("https://www.google.com/recaptcha/api/siteverify",[
+                        'secret'=> env('NOCAPTCHA_SECRET'),
+                        'response'=> $value,
+                        'remoteip'=>\request()->ip(),
+                    ]);
+                    if (!$g_response->json('success')) {
+                        $fail("The {$attribute} is invalid.");
+                    }
+                },],
+            ]);
+
             $data = [];
                  // Send Mail
                  $data['first_name'] = $request->fname;
@@ -251,9 +267,24 @@ class HomeController extends Controller
     }
 
      // Wholesale store
-    public function storeWholesale(Wholesale $request)
+    public function storeWholesale(Request $request)
     {
+
         try{
+            $this->validate($request, [
+                'g-recaptcha-response' => ['required',   function (string $attribute, mixed $value, Closure $fail) {
+                    $g_response = Http::asForm()->post("https://www.google.com/recaptcha/api/siteverify",[
+                        'secret'=> env('NOCAPTCHA_SECRET'),
+                        'response'=> $value,
+                        'remoteip'=>\request()->ip(),
+                    ]);
+
+                    if (!$g_response->json('success')) {
+                        $fail("The {$attribute} is invalid.");
+                    }
+                },],
+            ]);
+
                 $request['buisness_name'] = $request->bname;
                 $request['first_name'] = $request->fname;
                 $request['last_name'] = $request->lname;

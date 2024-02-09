@@ -21,7 +21,7 @@
                 {!! Form::open([
                     'url' => route('frontend.storeWholesale'),
                     'method' => 'POST',
-                    'id' => 'wholesale-form',
+                    'id' => 'inquery-form',
                     'class' => 'inquery-form',
                 ]) !!}
                 <div class="input-field">
@@ -150,7 +150,7 @@
                     <br>
                 </div>
                 <div class="input-field">
-                    <label for="number">TELEPHONE NUMBER <span
+                    <label for="number">TELEPHONE NUMBER<span
                         class="text-danger">*</span></label>
                     {!! Form::text('number', old('number'), [
                         'class' => ' name',
@@ -163,16 +163,11 @@
                     </span>
                     <br>
                 </div>
-                <div class="input-field">
-                    {!! NoCaptcha::display() !!}
-                    @error('g-recaptcha-response')
-                        <span class="text-danger" style="font-size:15px">
-                            {{ $message }}
-                        </span>
-                    @enderror
-                </div>
+
                 <div class="wrap-btn">
-                    <input type="submit" class="btn-black" value="SEND">
+                    <input type="submit" class="btn-black g-recaptcha "
+                           data-sitekey="{{ env('NOCAPTCHA_SITEKEY')}}"
+                           data-callback='onSubmit' value="SEND">
                 </div>
                 {{ Form::close() }}
             </div>
@@ -206,6 +201,11 @@
 @endsection
 
 @section('js')
-    {!! JsValidator::formRequest('App\Http\Requests\Wholesale', '#wholesale-form') !!}
-    {!! NoCaptcha::renderJs() !!}
+    {!! JsValidator::formRequest('App\Http\Requests\Wholesale', '#inquery-form') !!}
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script>
+        function onSubmit(token) {
+            $("#inquery-form").submit();
+        }
+    </script>
 @endsection

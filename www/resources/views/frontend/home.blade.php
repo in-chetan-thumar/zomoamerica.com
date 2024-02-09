@@ -279,7 +279,7 @@
                          <div class="col-lg-3  where-to-buy-item reveal">
                              <div class="where-to-buy-box">
                                  <div class="images-box">
-                                     <img src="{{ asset('assets/frontend/images/way-to-buy/hookal_junki.jpg') }}" alt="Hookah Wholesalers" style="padding-top: 39%; margin-left: 11%;"
+                                     <img src="{{ asset('assets/frontend/images/way-to-buy/hookal_junki.jpg') }}" alt="Hookah Junkie" style="padding-top: 39%; margin-left: 11%;"
                                           height="100" width="100" >
                                  </div>
                                  <p>Hookah Junkie</p>
