@@ -64,7 +64,7 @@ class FlavorRepository
     {
         $getId = Category::where('slug',$id)->first();
          $this->model->where('category_id',$getId->id)->get();
-        return $this->model
+        return $this->model->where('is_active','Y')
         ->latest()
         ->where('category_id',$getId->id)
         ->paginate(config('constants.PER_FLAVORS_PAGE'), ['*'],'page',!empty($params['page'])? $params['page']:'')

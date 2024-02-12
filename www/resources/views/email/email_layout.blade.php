@@ -37,7 +37,7 @@
 
         body {
             -webkit-text-size-adjust: none;
-            background-color: #005eb8;
+            background-color: #482583;
             color: #718096;
             height: 100%;
             line-height: 1.4;
@@ -55,7 +55,7 @@
         }
 
         a {
-            color: #3869d4;
+            color: #482583 !important;
         }
 
         a img {
@@ -104,7 +104,7 @@
             -premailer-cellpadding: 0;
             -premailer-cellspacing: 0;
             -premailer-width: 100%;
-            background-color: #005eb8;
+            background-color: #482583;
             margin: 0;
             padding: 0;
             width: 100%;
@@ -145,7 +145,7 @@
             -premailer-cellpadding: 0;
             -premailer-cellspacing: 0;
             -premailer-width: 100%;
-            background-color: #005eb8;
+            background-color: #482583;
             margin: 0;
             padding: 0;
             width: 100%;
@@ -198,7 +198,7 @@
             padding-bottom: 24px;
             padding-top: 24px;
             background-color: #d8dde0;
-            border-top: 4px solid #005eb8;
+            border-top: 4px solid #482583;
         }
 
         .nhsuk-footer:after {

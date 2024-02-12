@@ -319,9 +319,22 @@ class HomeController extends Controller
     }
 
     // store contact
-    public function storeContact(Contact $request)
+    public function storeContact(Request $request)
     {
         try{
+            $this->validate($request, [
+                'g-recaptcha-response' => ['required',   function (string $attribute, mixed $value, Closure $fail) {
+                    $g_response = Http::asForm()->post("https://www.google.com/recaptcha/api/siteverify",[
+                        'secret'=> env('NOCAPTCHA_SECRET'),
+                        'response'=> $value,
+                        'remoteip'=>\request()->ip(),
+                    ]);
+
+                    if (!$g_response->json('success')) {
+                        $fail("The {$attribute} is invalid.");
+                    }
+                },],
+            ]);
 
                 $enquire = ContactDetail::create($request->all());
                 if(!empty($enquire))

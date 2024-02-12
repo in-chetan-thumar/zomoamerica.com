@@ -31,7 +31,14 @@ class FlavorsController extends Controller
             SEOTools::setTitle($content->meta_title);
             SEOTools::setDescription($content->meta_description);
             SEOMeta::addKeyword($content->meta_keyword);
-        }
+        }else if($request->id == "World-Line"){
+
+            $content = MetaTag::select('id', 'meta_title', 'meta_keyword', 'meta_description')->where('meta_route',(Route::currentRouteName()))->where('meta_keyword','Zomo MaxLine')->first();
+
+            SEOTools::setTitle($content->meta_title);
+            SEOTools::setDescription($content->meta_description);
+            SEOMeta::addKeyword($content->meta_keyword);
+            }
 
         $category_id= $request->id;
         $data = resolve('flavor-repo')->getflavor($category_id);

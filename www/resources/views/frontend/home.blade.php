@@ -85,7 +85,7 @@
 
     <div class="product-section reveal">
         <div class="container">
-            <h2 class="title-main">PRODUCTS</h2>
+            <h2 class="title-main">FEATURE PRODUCTS</h2>
             <div class="owl-carousel owl-theme product-slider-in">
                 @foreach ($flavor as $flavor)
                     <div class="item">
@@ -115,7 +115,7 @@
                       'class' => 'EmailNewsLetter-form',
                 ]) !!}
 
-                <label for="Subscribe">Subscribe to our newletter and get notification about ZOMO updates.</label>
+                <label for="Subscribe">Subscribe to our newsletter and get notification about ZOMO updates.</label>
 
                 <div class="row">
                     <div class="col-11">

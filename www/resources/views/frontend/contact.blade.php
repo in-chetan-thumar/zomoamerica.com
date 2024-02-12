@@ -56,15 +56,9 @@
                         {{ Form::bsTextArea('', 'message', '', '', ['placeholder' => 'Message', 'maxlength' => '150', 'class' => '', 'rows' => 10, 'cols' => '30'], [], false) }}
 
                     </div>
-                    <div class="input-field">
-                        {!! NoCaptcha::display() !!}
-                        @error('g-recaptcha-response')
-                            <span class="text-danger" style="font-size:15px">
-                                {{ $message }}
-                            </span>
-                        @enderror
-                    </div>
-                    <button type="submit">Send Message</button>
+
+                    <button type="submit" class="btn-black g-recaptcha "
+                            data-sitekey="{{ env('NOCAPTCHA_SITEKEY')}}" data-callback='onSubmit'>Send Message</button>
                     {{ Form::close() }}
                 </div>
                 <div class="map-infomation">
@@ -102,7 +96,15 @@
     </div>
 
 @section('js')
-    {!! NoCaptcha::renderJs() !!}
+{{--    {!! NoCaptcha::renderJs() !!}--}}
+{!! JsValidator::formRequest('App\Http\Requests\Contact', '#Enquery-top-form') !!}
+
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script>
+        function onSubmit(token) {
+            $("#Enquery-top-form").submit();
+        }
+    </script>
 @endsection
 
 @endsection

@@ -26,6 +26,10 @@ $model = new Flavor();
                     <img width="523"class="image" height="336"
                         src="{{ asset('assets/frontend/images/flavors/zomo_max.png') }}"sizes="(max-width: 523px) 100vw, 523px">
                 </div>
+            @elseif($category_id === 'Worldline')
+                <a href="" style="color:white">
+                    <h3>World Line</h3>
+                </a>
             @endif
         </div>
         <div class="col-sm-4" style="letter-spacing: 2px;">

@@ -4,7 +4,7 @@ $model = new Flavor();
 ?>
 @extends('frontend.layouts.master')
 @section('title')
-    {{ $content->meta_title }}
+    {{ $content->meta_title ??''}}
 @endsection
 
 @section('css')
