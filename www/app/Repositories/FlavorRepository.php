@@ -136,7 +136,7 @@ class FlavorRepository
         return Flavor::where('slug',$slug)->first();
     }
     public function getDistinctData(){
-        return $this->model->select('category_id')->where('is_feature','Y')->get();
+        return $this->model->where('is_feature','Y')->get();
     }
 
 }
