@@ -87,7 +87,7 @@
         <div class="container">
             <h2 class="title-main">FEATURE PRODUCTS</h2>
             <div class="owl-carousel owl-theme product-slider-in">
-                @foreach ($flavor as $flavor)
+                @foreach ($flavors as $flavor)
                     <div class="item">
                         <div class="product-box">
                             @isset($flavor->slug)
