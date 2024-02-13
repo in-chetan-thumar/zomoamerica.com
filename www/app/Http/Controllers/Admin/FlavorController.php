@@ -71,6 +71,7 @@ class FlavorController extends Controller
             $convert = str_replace(' ', '-', $slug);
             $params['slug'] = strtolower($convert);
             $params['is_active'] = $request->is_active;
+            $params['is_feature'] = $request->is_feature;
 
                 $user = resolve('flavor-repo')->create($params);
                 $images = [];
@@ -131,6 +132,7 @@ class FlavorController extends Controller
             $convert = str_replace(' ', '-', $slug);
             $params['slug'] = strtolower($convert);
             $params['is_active'] = $request->is_active;
+            $params['is_feature'] = $request->is_feature;
             $id=$request->id;
             $user = resolve('flavor-repo')->update($params,$id);
             $images = [];

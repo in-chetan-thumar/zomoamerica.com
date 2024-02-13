@@ -28,6 +28,7 @@ class Flavor extends Model
         'cloud_volume',
         'flavors_available',
         'is_active',
+        'is_feature',
         'created_at',
         'created_by',
         'updated_at',

@@ -233,6 +233,26 @@
                               </div>
                         </div>
                     </div>
+                <div class="col-12">
+                    <div class="mb-3">
+                        <div class="form-group">
+                            <input class="nhsuk-checkboxes__input showHideCheckbox"
+                                   name="is_feature" type="checkbox"
+                                   id="showHideCheckbox"
+                                   value="Y"
+                                   {{-- onchange="showHideCheckbox(e)" --}}
+                                   aria-controls="conditional-contact-1"
+                                   aria-expanded="false"
+                            @isset($user){{ $user->is_feature == 'Y' ? 'checked' : '' }}@endisset
+                            >
+                            <label
+                                class="nhsuk-label nhsuk-checkboxes__label show-input-checkbox"
+                                for="">
+                                Is Feature
+                            </label>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="row">
