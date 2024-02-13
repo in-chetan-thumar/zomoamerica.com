@@ -99,7 +99,7 @@ class FlavorsController extends Controller
         $previousUrl = parse_url(url()->previous());
         $params = [];
 
-        if (request()->routeIs('frontend.news') || !isset($previousUrl['query'])) {
+        if (request()->routeIs('frontend.flavors') || !isset($previousUrl['query'])) {
             $params['query_str'] = $request->query_str ?? '';
             $params['page'] =  $request->page ?? 0;
             $params['path'] =  \Illuminate\Support\Facades\Request::fullUrl();
