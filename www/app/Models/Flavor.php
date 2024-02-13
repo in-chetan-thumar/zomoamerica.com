@@ -27,7 +27,7 @@ class Flavor extends Model
         'menthol',
         'cloud_volume',
         'flavors_available',
-        'is_actiive',
+        'is_active',
         'created_at',
         'created_by',
         'updated_at',
@@ -60,7 +60,7 @@ class Flavor extends Model
     public  function getFlavorImageAttribute($data)
     {
         $flavor_image = flavorImage::where('flavor_id',$data->id)->first();
-// 
+//
         if (isset($flavor_image ))
         {
             return asset('storage/flavors'.DIRECTORY_SEPARATOR.$data->id . DIRECTORY_SEPARATOR . $flavor_image->image_name);

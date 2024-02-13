@@ -26,7 +26,7 @@ class FlavorController extends Controller
     }
 
     public function create(Request $request){
-        
+
         try {
             $data = [];
                 $data['error'] = false;
@@ -51,7 +51,7 @@ class FlavorController extends Controller
 
     public function store(flavors $request)
     {
-       
+
         try {
             $data = $params = [];
             DB::beginTransaction();
@@ -70,7 +70,7 @@ class FlavorController extends Controller
             $slug = $request->slug;
             $convert = str_replace(' ', '-', $slug);
             $params['slug'] = strtolower($convert);
-            $params['is_active'] = 'Y';
+            $params['is_active'] = $request->is_active;
 
                 $user = resolve('flavor-repo')->create($params);
                 $images = [];
@@ -114,7 +114,6 @@ class FlavorController extends Controller
 
     public function update(flavors $request)
     {
-        
         try {
             $data = $params = [];
             DB::beginTransaction();

@@ -9,7 +9,9 @@ $model = new Flavor();
         <img src="{{ asset('assets/frontend/images/flavors/zomo_strong_banner.png') }}">
     @elseif($category_id === 'Max-line')
         <img src="{{ asset('assets/frontend/images/flavors/zomo_maxLine_banner.png') }}">
-    @endif
+        @elseif($category_id === 'World-Line')
+            <img src="{{ asset('assets/frontend/images/flavors/zomo_maxLine_banner.png') }}">
+        @endif
     <div class="row" style="margin-top:-150px;text-align:center;">
         <div class="col-sm-6 titulo-descr-categorias-classic-line">
             @if ($category_id === 'Classic-line')
@@ -107,6 +109,7 @@ $model = new Flavor();
         </div>
     @endforeach
 </div>
+
 <div class="pagination product-list-pages">
     {{ $tableData->links('frontend.component.pagination') }}
 </div>

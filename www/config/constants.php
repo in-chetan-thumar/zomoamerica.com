@@ -28,7 +28,7 @@ return [
     'HOURS' => 'Mon-Fri 11am to 6pm',
     'PHONE' => '+1 201-778-0188',
     'EMAIL1' => 'info@zomoamerica.com',
-    'COPYRIGHT' => '© 2023 Zomo. All rights reserved. Zomo is a trademark of Flavors of Americas',
+    'COPYRIGHT' => '© '.now()->year.' Zomo. All rights reserved. Zomo is a trademark of Flavors of Americas',
     'FOOTER_WARNING' => 'This product contains nicotine. Nicotine is an addictive chemical.',
     'FOOTER_TITLE' => 'Corporate',
     'FOOTER_ADD' => '138 Michigan Avenue, Paterson NJ 07503',
