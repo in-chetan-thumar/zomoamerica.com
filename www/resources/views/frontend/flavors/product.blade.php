@@ -137,7 +137,7 @@ $FlavorImage = FlavorImage::getDataWithArray($data->id); //this is used for pass
 {{--                                </div>--}}
                                 {{-- TOBACCO INTENSITY --}}
                                 <div class="item">
-                                    <p>TOBACCO <br><br>NTENSITY</p>
+                                    <p>TOBACCO <br><br>INTENSITY</p>
                                     <div class="progress">
                                         <div class="progress-bar" role="progressbar"
                                             style="width:{{ $data->tobaco_intensity }}%" aria-valuenow="25"
