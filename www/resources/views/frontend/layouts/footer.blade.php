@@ -118,7 +118,7 @@ $categorias = resolve('category-repo')->getCategory();
         <p><span>WARNING:</span>{{ config('constants.FOOTER_WARNING') }}</p>
     </div>
 </div>
-@if (url()->current() == 'http://lc.zomoamerica.com')
+{{--@if (url()->current() == 'http://lc.zomoamerica.com')--}}
     <div class="jquery-modal blocker current">
         <div id="bouncer_modal" class="modal_bouncer">
             <form name="AgeVerForm" id="AgeVerForm">
@@ -174,4 +174,4 @@ $categorias = resolve('category-repo')->getCategory();
             </div>
         </div>
     </div>
-@endif
+{{--@endif--}}
