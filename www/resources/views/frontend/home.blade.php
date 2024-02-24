@@ -427,7 +427,64 @@
 
         </div>
     </div>
+    @if(strpos(request()->cookie('blocker'), 'blocker') != -1)
 
+    <div class="jquery-modal blocker current">
+        <div id="bouncer_modal" class="modal_bouncer">
+            <form name="AgeVerForm" id="AgeVerForm">
+                <div class="model_logo">
+                    <img src="{{ asset('assets/frontend/images/logo.webp') }}" alt="model" width="100"
+                         height="100">
+                </div>
+                <h1 id="bouncer_modal_heading">Welcome to zomoamerica.com</h1>
+                <p id="bouncer_modal_subheading">
+                    By clicking <strong>Enter</strong> you verify that you are 18 years of age or older, 21 Years of age
+                    or older in California and Hawaii.
+                </p>
+
+                <div id="bouncer_modal_actions">
+                    <button type="button" class="pop-submit">Enter</button>
+                    <button type="button" class="btn-black close">Exit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="Popup" style="display: none">
+        <div class="pop-inner">
+            <div class="pop-news-letter">
+
+                {!! Form::open([
+                    'method' => 'POST',
+                    'id' => 'newsletterPopupForm',
+                    'class' => 'form-newletter',
+                ]) !!}
+
+                <h2>JOIN OUR<br>
+                    NEWSLETTER</h2>
+                <p>Receive exclusive insight on special<br>
+                    events, new flavors, and products.</p>
+                <div class="pop-letter-field">
+                    <input type="email" id="emailPop" name="email" value="" placeholder="Email Address"
+                           onblur="if(this.placeholder=='')this.placeholder='Email Address';"
+                           onfocus="if(this.placeholder=='Email Address')this.placeholder='';" class="input-03">
+                    <input type="hidden" name="action" value="" id="actionValue">
+                    <div class="btn-wrap clear-fix">
+                        <button type="button" name="action" value="newsletter_subscribe"
+                                onclick="newsletterPopupFormAxaj('newsletter_subscribe');"
+                                class="btn-news btn-blue left">SIGN UP</button>
+                        <button type="button" name="action" value="newsletter_unsubscribe"
+                                onclick="newsletterPopupFormAxaj('newsletter_unsubscribe');" class="btn-news  right">NO
+                            THANKS</button>
+                    </div>
+                    <div class="errorMessage" style="clear:both;color:red"></div>
+                    <small>By signing up you agree you are 21 &amp; older and accept<br>
+                        receiving electronic information by Zomo &amp; it’s partners</small>.
+                </div>
+                {{ Form::close() }}
+            </div>
+        </div>
+    </div>
+    @endif
     <div class="footer-contact reveal">
         <div class="infomation-footer-contact container">
             <div class="footer-contact-box">
@@ -456,73 +513,76 @@
     });
 </script>
     <script>
-        $(document).ready(function() {
+        {{--$(document).ready(function() {--}}
 
-            if (document.cookie.indexOf("blocker") != -1) {
-                $(".blocker").hide();
-            }
-            if (document.cookie.indexOf("blocker") == -1) {
-                $(".blocker").show();
-            }
-        });
-        $(".pop-submit").click(function() {
-            let a = $(this).text();
-            if (a == "Enter") {
-                // var allcookies = document.cookie;
-                var d = new Date();
-                d.setTime(d.getTime() + (24 * 60 * 60 * 1000));
-                var expires = "expires=" + d.toGMTString();
-                document.cookie = "name=blocker;expire='" + expires + "'";
-                $(".blocker").hide();
-                $(".Popup").show();
-            }
-        });
+        {{--    if (document.cookie.indexOf("blocker") != -1) {--}}
+        {{--        $(".blocker").hide();--}}
+        {{--    }else{--}}
+        {{--        $(".blocker").show();--}}
 
-        function newsletterPopupFormAxaj(actionType) {
-            // $(".Popup").hide();
-            var email = jQuery("#emailPop").val();
-            if (email == "" && actionType == "newsletter_subscribe") {
-                jQuery(".errorMessage").html(
-                    "<p>Your email address is required.</p>"
-                );
-                return false;
-            } else {
-                $("#actionValue").val(actionType);
-                var _selector = jQuery(this);
-                $.ajax({
-                    url: "{{ route('frontend.newsLetter') }}",
-                    type: "POST",
-                    data: {
-                        email: email,
-                        actionType: actionType,
-                        "_token": "{{ csrf_token() }}",
-                    },
-                    beforeSend: function() {
-                        jQuery(".pop-inner").prepend(
-                            '<div id="myLoader" class="ajax-loader"></div>'
-                        );
-                        $("#myLoader").css({
-                            height: $("#myLoader").parent().height(),
-                            width: $("#myLoader").parent().width(),
-                        });
-                        $("#myLoader").show();
-                    },
-                    complete: function() {
-                        jQuery("#myLoader").hide();
-                    },
-                    success: function(response) {
-                        $(".Popup").hide();
-                        if (response.status == "unsubscribe") {} else {
-                            swal(
-                                "Thank You!",
-                                "" + response.success_message + ""
-                            );
-                        }
-                        window.location.href = "{{ route('frontend.home') }}";
-                    },
-                });
-            }
-        }
+        {{--    }--}}
+        {{--    // if (document.cookie.indexOf("blocker") == -1) {--}}
+        {{--    //     $(".blocker").show();--}}
+        {{--    // }--}}
+        {{--});--}}
+        {{--$(".pop-submit").click(function() {--}}
+        {{--    let a = $(this).text();--}}
+        {{--    if (a == "Enter") {--}}
+        {{--        // var allcookies = document.cookie;--}}
+        {{--        var d = new Date();--}}
+        {{--        d.setTime(d.getTime() + (24 * 60 * 60 * 1000));--}}
+        {{--        var expires = "expires=" + d.toGMTString();--}}
+        {{--        document.cookie = "name=blocker;expire='" + expires + "'";--}}
+        {{--        $(".blocker").hide();--}}
+        {{--        $(".Popup").show();--}}
+        {{--    }--}}
+        {{--});--}}
+
+        {{--function newsletterPopupFormAxaj(actionType) {--}}
+        {{--    // $(".Popup").hide();--}}
+        {{--    var email = jQuery("#emailPop").val();--}}
+        {{--    if (email == "" && actionType == "newsletter_subscribe") {--}}
+        {{--        jQuery(".errorMessage").html(--}}
+        {{--            "<p>Your email address is required.</p>"--}}
+        {{--        );--}}
+        {{--        return false;--}}
+        {{--    } else {--}}
+        {{--        $("#actionValue").val(actionType);--}}
+        {{--        var _selector = jQuery(this);--}}
+        {{--        $.ajax({--}}
+        {{--            url: "{{ route('frontend.newsLetter') }}",--}}
+        {{--            type: "POST",--}}
+        {{--            data: {--}}
+        {{--                email: email,--}}
+        {{--                actionType: actionType,--}}
+        {{--                "_token": "{{ csrf_token() }}",--}}
+        {{--            },--}}
+        {{--            beforeSend: function() {--}}
+        {{--                jQuery(".pop-inner").prepend(--}}
+        {{--                    '<div id="myLoader" class="ajax-loader"></div>'--}}
+        {{--                );--}}
+        {{--                $("#myLoader").css({--}}
+        {{--                    height: $("#myLoader").parent().height(),--}}
+        {{--                    width: $("#myLoader").parent().width(),--}}
+        {{--                });--}}
+        {{--                $("#myLoader").show();--}}
+        {{--            },--}}
+        {{--            complete: function() {--}}
+        {{--                jQuery("#myLoader").hide();--}}
+        {{--            },--}}
+        {{--            success: function(response) {--}}
+        {{--                $(".Popup").hide();--}}
+        {{--                if (response.status == "unsubscribe") {} else {--}}
+        {{--                    swal(--}}
+        {{--                        "Thank You!",--}}
+        {{--                        "" + response.success_message + ""--}}
+        {{--                    );--}}
+        {{--                }--}}
+        {{--                window.location.href = "{{ route('frontend.home') }}";--}}
+        {{--            },--}}
+        {{--        });--}}
+        {{--    }--}}
+        {{--}--}}
 
         $(".btn-black").click(function() {
             var text = $(this).text();
