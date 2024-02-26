@@ -6,8 +6,9 @@
         <nav class="nav-menu" id="navbar">
             <ul class="menu">
                 <li class="menu-item">
-                    <span class="menu-link">Home</span>
-
+                    <a href="{{ route('frontend.home') }}">
+                        <span class="menu-link">Home</span>
+                    </a>
                 </li>
                 <li class="menu-item menu-dropdown">
                     <span class="menu-link" data-toggle="submenu">Zomo
