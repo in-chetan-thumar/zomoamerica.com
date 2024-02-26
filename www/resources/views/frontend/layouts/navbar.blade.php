@@ -5,6 +5,10 @@
         </a>
         <nav class="nav-menu" id="navbar">
             <ul class="menu">
+                <li class="menu-item">
+                    <span class="menu-link">Home</span>
+
+                </li>
                 <li class="menu-item menu-dropdown">
                     <span class="menu-link" data-toggle="submenu">Zomo
                         <i class="bx bx-chevron-down">
@@ -32,13 +36,15 @@
                                 Quality</a></li>
                         <li class="submenu-item">
                         <li class="menu-item"><a href="{{ route('frontend.series') }}" class="submenu-link">Zomo
-                                Series</a></li>
+                                Series</a>
+                        </li>
                 </li>
                 <li class="submenu-item"><a href="{{ route('frontend.authorized.wholesalers') }}"
-                        class="submenu-link">Where To Buy</a></li>
+                        class="submenu-link">Where To Buy</a>
+                </li>
             </ul>
             </li>
-{{--            <li class="menu-item"></li>--}}
+            {{--            <li class="menu-item"></li> --}}
             <li class="menu-item menu-dropdown">
                 <span class="menu-link" data-toggle="submenu">Flavors
                     <i class="bx bx-chevron-down">

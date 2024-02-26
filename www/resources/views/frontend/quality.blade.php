@@ -61,9 +61,20 @@
     font-weight: 400;
     font-style: normal;
     }
+    .zomo-qualiti{
+    height: 576px;
+    }
+    .wpb_wrapper{
+    background-color:white;
+    margin-top:100px;
+    }
+    .vc_custom_1618408539188 {
+    padding-top: 0em !important;
+    padding-bottom: 0px !important;
+    }
 @endsection
 @section('main')
-    <div style="height: 576px;">
+    <div style="" class="zomo-qualiti">
         <div class="vc_single_image-wrapper vc_box_border_grey "><img width="1024" height="434"
                 src="https://cdn.zomoofficial.com/wp-content/uploads/2021/04/mobile-banner-qualidade.jpg"
                 class="vc_single_image-img attachment-full" alt=""
@@ -78,7 +89,7 @@
     <div style="background-color:#f2f2f2">
 
         <p class="sub-titulo-qualidade">WE ARE DRIVEN BY <b>INNOVATION</b> AND <b>BOLDNESS</b></p>
-        <div style="background-color:white;margin-top:100px" class="wpb_wrapper">
+        <div style="" class="wpb_wrapper">
             <h2 class="vc_custom_heading vantagens-friendzomo vc_custom_1618408539188">-DIFFERENTIAL-
             </h2>
             <div class="row p-5" style="margin:30px">

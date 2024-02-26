@@ -1,5 +1,5 @@
 @media (max-width: 1366px) {
-    .arrow-button{
+    .arrow-button {
         margin-left: -87px;
     }
     .newslatter .newslatter-form form input {
@@ -583,6 +583,9 @@
 }
 
 @media (max-width: 768px) {
+    .header.sticky {
+        width: 100%;
+    }
     .shisha-image-top img {
         width: 103% !important;
     }
@@ -658,6 +661,29 @@
         margin-left: 22px;
         width: 350px;
         height: 273px;
+    }
+
+    .linha-das-categorias-classic-line > img {
+        margin-top: -49px !important;
+        height: 150px !important;
+    }
+
+    .image {
+        width: 30%;
+        margin-left: 0%;
+        margin-top: 0%;
+    }
+
+    .zomo_max-quality {
+        margin-left: 0px;
+    }
+    .main-content .row .release_note {
+        margin-top: 200px;
+        margin-bottom: 100px;
+    }
+    .responsive-banner-content {
+        margin-top: -150px !important;
+        text-align: center;
     }
     .shisha_desc_image .img {
         width: 84%;
@@ -742,6 +768,16 @@
         right: -65px;
         text-align: center;
     }
+    .zomo-qualiti {
+        height: auto;
+    }
+    .sub-titulo-qualidade {
+        text-align: center;
+        color: #2d2d2d;
+        font-size: 18px;
+        font-weight: 300;
+        margin-top: 30px;
+    }
     .main-content {
         padding: 0 !important;
     }
@@ -750,6 +786,18 @@
     }
     .news-srction-item {
         grid-template-columns: repeat(2, 1fr);
+    }
+    .wpb_wrapper {
+        margin-top: 50px;
+    }
+
+    .wpb_wrapper > h2 {
+        font-size: 25px;
+        color: #2d2d2d;
+        text-align: center;
+        font-family: Titillium Web;
+        font-weight: 400;
+        font-style: normal;
     }
 
     .newslatter .newslatter-form {
@@ -765,7 +813,7 @@
     }
 
     .where-to-buy .where-to-buy-item {
-        padding: 0 10px 0 60px;
+        /* padding: 0 10px 0 60px; */
         margin-bottom: 20px;
     }
 
@@ -1091,7 +1139,7 @@
 }
 
 @media (max-width: 768px) {
-    .arrow-button{
+    .arrow-button {
         margin-left: -52px;
     }
     .newslatter .newslatter-form form input {
