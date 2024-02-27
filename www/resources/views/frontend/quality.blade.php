@@ -92,7 +92,7 @@
         <div style="" class="wpb_wrapper">
             <h2 class="vc_custom_heading vantagens-friendzomo vc_custom_1618408539188">-DIFFERENTIAL-
             </h2>
-            <div class="row p-5" style="margin:30px">
+            <div class="row p-lg-5 p-sm-1" style="margin:30px">
                 <div class="col-sm-6">
                     <h2 style="font-size: 24px;color: #ffffff;text-align: left;font-family:Lato;font-weight:700;font-style:normal;background-color:cadetblue;text-align:center"
                         class="vc_custom_heading titulo-conteudo-eliquid vc_custom_1618408399193">IN SEARCH FOR INNOVATIONS
