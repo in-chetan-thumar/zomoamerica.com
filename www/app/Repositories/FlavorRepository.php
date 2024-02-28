@@ -2,6 +2,7 @@
 
 
 namespace App\Repositories;
+
 use App\Models\Flavor;
 use Carbon\Carbon;
 use App\Models\Category;
@@ -60,22 +61,22 @@ class FlavorRepository
     }
 
 
-    public function frontend_filter($params,$id)
+    public function frontend_filter($params, $id)
     {
-        $getId = Category::where('slug',$id)->first();
-         $this->model->where('category_id',$getId->id)->get();
-        return $this->model->where('is_active','Y')
-        ->latest()
-        ->where('category_id',$getId->id)
-        ->paginate(config('constants.PER_FLAVORS_PAGE'), ['*'],'page',!empty($params['page'])? $params['page']:'')
-        ->setPath($params['path']);
+        $getId = Category::where('slug', $id)->first();
+        $this->model->where('category_id', $getId->id)->get();
+        return $this->model->where('is_active', 'Y')
+            ->latest()
+            ->where('category_id', $getId->id)
+            ->paginate(config('constants.PER_FLAVORS_PAGE'), ['*'], 'page', !empty($params['page']) ? $params['page'] : '')
+            ->setPath($params['path']);
 
     }
-    public function renderHtmlFlavorsTable($params,$id)
+    public function renderHtmlFlavorsTable($params, $id)
     {
-        $tableData = $this->frontend_filter($params,$id);
-        $category_id=$id;
-        return view('frontend.component.flavor_table', compact('tableData','category_id'))->render();
+        $tableData = $this->frontend_filter($params, $id);
+        $category_id = $id;
+        return view('frontend.component.flavor_table', compact('tableData', 'category_id'))->render();
     }
 
 
@@ -103,7 +104,7 @@ class FlavorRepository
 
     public function getStatus()
     {
-        return array("Y"=>'Active','N'=>'DeActive');
+        return array("Y" => 'Active', 'N' => 'DeActive');
     }
     public function changeStatus($id)
     {
@@ -117,26 +118,31 @@ class FlavorRepository
         return $permission->save();
     }
 
-    public function getCategory(){
-        return Category::pluck('name','id');
+    public function getCategory()
+    {
+        return Category::pluck('name', 'id');
     }
 
-    public function getflavor($id){
-        $getId = Category::where('slug',$id)->first();
-        return $this->model->where('category_id',$getId->id)->get();
+    public function getflavor($id)
+    {
+        $getId = Category::where('slug', $id)->first();
+        return $this->model->where('category_id', $getId->id)->get();
     }
 
-    public function getDataByCategoryId($id){
-        return $this->model->where('category_id',$id)->first();
+    public function getDataByCategoryId($id)
+    {
+        return $this->model->where('category_id', $id)->first();
 
     }
     // forgetting data by slug
 
-    public function getDataByslug($slug){
-        return Flavor::where('slug',$slug)->first();
+    public function getDataByslug($slug)
+    {
+        return Flavor::where('slug', $slug)->first();
     }
-    public function getDistinctData(){
-        return $this->model->where('is_feature','Y')->get();
+    public function getDistinctData()
+    {
+        return $this->model->where('is_feature', 'Y')->get();
     }
 
 }

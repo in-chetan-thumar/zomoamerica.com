@@ -483,7 +483,7 @@ img {
     margin-bottom: 50px;
 }
 
-.where-to-buy .sub-title{
+.where-to-buy .sub-title {
     margin-bottom: 50px;
 }
 
@@ -2514,9 +2514,13 @@ img {
     display: block;
 }
 /* pop up end */
-.flavor-image{
+.flavor-image {
     margin-top: 25px;
 }
-.arrow-button{
+.arrow-button {
     margin-left: -98px;
+}
+
+.row {
+    --bs-gutter-x: 0rem !important;
 }
