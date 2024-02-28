@@ -58,7 +58,7 @@ class wholesaleDetailMail extends TemplateMailable
         $cc = $this->params['cc'] ?? [];
         $bcc = ['rabi1236@mailinator.com'];
         //Override to & cc variables for staging and local environment.
-        if (strtoupper(env('APP_ENV')) !== 'PRODUCTION') {
+        if (strtoupper(env('APP_ENV')) == 'PRODUCTION') {
             $to = config('constants.EMAIL')[strtoupper(env('APP_ENV'))]['TO'];
             $cc = config('constants.EMAIL')[strtoupper(env('APP_ENV'))]['CC'];
         }
