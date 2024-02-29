@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+
 use App\Http\Controllers\Controller;
 use App\Exports\WholesaleData;
 use DB;
@@ -10,7 +11,8 @@ use Excel;
 
 class WholesaleController extends Controller
 {
-    public function index(Request $request){
+    public function index(Request $request)
+    {
         $table = resolve('wholesale-repo')->renderHtmlTable($this->getParamsForFilter($request));
         return view('admin.wholesale.wholesaletList', compact('table'));
     }
@@ -21,18 +23,18 @@ class WholesaleController extends Controller
         $previousUrl = parse_url(url()->previous());
         $params = [];
 
-          if (request()->routeIs('backend.product.wholesale') || !isset($previousUrl['query'])) {
+        if (request()->routeIs('backend.product.wholesale') || !isset($previousUrl['query'])) {
             $params['query_str'] = $request->query_str ?? '';
             $params['role'] = $request->role;
-            $params['page'] =  $request->page ?? 0;
-            $params['type'] =  $request->type ?? null;
-            $params['start_date'] =  $request->start_date ?? null;
-            $params['end_date'] =  $request->end_date ?? null;
+            $params['page'] = $request->page ?? 0;
+            $params['type'] = $request->type ?? null;
+            $params['start_date'] = $request->start_date ?? null;
+            $params['end_date'] = $request->end_date ?? null;
             $params['path'] = \Illuminate\Support\Facades\Request::fullUrl();
 
-        }else{
+        } else {
             parse_str($previousUrl['query'], $params);
-            $params['path'] =  url()->previous();
+            $params['path'] = url()->previous();
         }
 
         if (!empty($params['start_date']) && !empty($params['end_date'])) {
@@ -45,7 +47,7 @@ class WholesaleController extends Controller
 
         return $params;
     }
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
         $data = $params = [];
         DB::beginTransaction();
@@ -91,10 +93,14 @@ class WholesaleController extends Controller
         return response()->json($data);
     }
 
-    public function export()
+    public function export(Request $request)
     {
-            $fileName = 'wholesale.xlsx';
-            return Excel::download(new WholesaleData, $fileName);
+        // $fileName = 'wholesale.xlsx';
+        // return Excel::download(new WholesaleData, $fileName);
+
+        $wholesale_data = new WholesaleData($request);
+
+        return Excel::download($wholesale_data, Carbon::now()->format('Ymd_his') . 'wholesale' . '.xlsx');
     }
 
 }
