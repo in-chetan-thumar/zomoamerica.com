@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ContactDetail;
@@ -9,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 use App\Exports\ContactData;
 use Excel;
 use Cache;
+
 class ContactController extends Controller
 {
     public $model;
@@ -16,8 +18,9 @@ class ContactController extends Controller
     {
         $this->model = new ContactDetail();
     }
-    
-    public function index(Request $request){
+
+    public function index(Request $request)
+    {
         $table = resolve('contact-repo')->renderHtmlTable($this->getParamsForFilter($request));
         return view('admin.contact.contactList', compact('table'));
     }
@@ -28,18 +31,18 @@ class ContactController extends Controller
         $previousUrl = parse_url(url()->previous());
         $params = [];
 
-          if (request()->routeIs('backend.product.contact') || !isset($previousUrl['query'])) {
+        if (request()->routeIs('backend.product.contact') || !isset($previousUrl['query'])) {
             $params['query_str'] = $request->query_str ?? '';
             $params['role'] = $request->role;
-            $params['page'] =  $request->page ?? 0;
-            $params['type'] =  $request->type ?? null;
-            $params['start_date'] =  $request->start_date ?? null;
-            $params['end_date'] =  $request->end_date ?? null;
+            $params['page'] = $request->page ?? 0;
+            $params['type'] = $request->type ?? null;
+            $params['start_date'] = $request->start_date ?? null;
+            $params['end_date'] = $request->end_date ?? null;
             $params['path'] = \Illuminate\Support\Facades\Request::fullUrl();
 
-        }else{
+        } else {
             parse_str($previousUrl['query'], $params);
-            $params['path'] =  url()->previous();
+            $params['path'] = url()->previous();
         }
 
         if (!empty($params['start_date']) && !empty($params['end_date'])) {
@@ -98,11 +101,13 @@ class ContactController extends Controller
         return response()->json($data);
     }
 
-    public function export()
+    public function export(Request $request)
     {
-            $fileName = 'contact.xlsx';
-            return Excel::download(new ContactData, $fileName);
+        // $fileName = 'contact.xlsx';
+        // return Excel::download(new ContactData, $fileName);
+        $contact_data = new ContactData($request);
 
+        return Excel::download($contact_data, Carbon::now()->format('Ymd_his') . 'contact' . '.xlsx');
     }
 
 }
