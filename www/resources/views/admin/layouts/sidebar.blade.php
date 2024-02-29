@@ -72,7 +72,7 @@
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
                                 <a href="{{ route('backend.product.flavors.category') }}" class="nav-link"
-                                    data-key="t-email">Caregory</a>
+                                    data-key="t-email">Category</a>
                             </li>
                             <li class="nav-item">
                                 <a href="{{ route('backend.product.flavors') }}" class="nav-link"

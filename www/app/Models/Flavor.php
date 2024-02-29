@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Storage;
 class Flavor extends Model
 {
     use HasFactory;
-    protected  $table = "flavors";
+    protected $table = "flavors";
     protected $fillable = [
         'id',
         'flavor_title',
@@ -49,7 +49,7 @@ class Flavor extends Model
 
     public function flavorImage()
     {
-        return $this->hasOne(FlavorImage::class,'category_id','id');
+        return $this->hasOne(FlavorImage::class, 'category_id', 'id');
     }
 
     public function flavorImage1()
@@ -58,23 +58,21 @@ class Flavor extends Model
     }
 
 
-    public  function getFlavorImageAttribute($data)
+    public function getFlavorImageAttribute($data)
     {
-        $flavor_image = flavorImage::where('flavor_id',$data->id)->first();
-//
-        if (isset($flavor_image ))
-        {
-            return asset('storage/flavors'.DIRECTORY_SEPARATOR.$data->id . DIRECTORY_SEPARATOR . $flavor_image->image_name);
+        $flavor_image = flavorImage::where('flavor_id', $data->id)->first();
+        //
+        if (isset($flavor_image)) {
+            return asset('storage/flavors' . DIRECTORY_SEPARATOR . $data->id . DIRECTORY_SEPARATOR . $flavor_image->image_name);
         }
     }
 
 
     public function getFlavorImageArray($val)
     {
-        $flavor_image = flavorImage::where('flavor_id',$val->id)->first();
-        if (Storage::exists(config("constants.FLAVOR_URL") .DIRECTORY_SEPARATOR. $val->flavor_id . DIRECTORY_SEPARATOR . $val->image_name))
-        {
-            return asset('storage/flavors'.DIRECTORY_SEPARATOR.$val->flavor_id . DIRECTORY_SEPARATOR . $val->image_name);
+        $flavor_image = flavorImage::where('flavor_id', $val->id)->first();
+        if (Storage::exists(config("constants.FLAVOR_URL") . DIRECTORY_SEPARATOR . $val->flavor_id . DIRECTORY_SEPARATOR . $val->image_name)) {
+            return asset('storage/flavors' . DIRECTORY_SEPARATOR . $val->flavor_id . DIRECTORY_SEPARATOR . $val->image_name);
         }
     }
 }

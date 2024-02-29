@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Frontend;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Artesaos\SEOTools\Facades\SEOMeta;
@@ -15,36 +16,35 @@ class FlavorsController extends Controller
      */
     public function index(Request $request)
     {
-        if($request->id == "Classic-line")
-        {
-            $content = MetaTag::select('id', 'meta_title', 'meta_keyword', 'meta_description')->where('meta_route',(Route::currentRouteName()))->where('meta_keyword','Zomo Classic')->first();
+        if ($request->id == "Classic-line") {
+            $content = MetaTag::select('id', 'meta_title', 'meta_keyword', 'meta_description')->where('meta_route', (Route::currentRouteName()))->where('meta_keyword', 'Zomo Classic')->first();
             SEOTools::setTitle($content->meta_title);
             SEOTools::setDescription($content->meta_description);
             SEOMeta::addKeyword($content->meta_keyword);
-        }else if($request->id == "Strong-line"){
-            $content = MetaTag::select('id', 'meta_title', 'meta_keyword', 'meta_description')->where('meta_route',(Route::currentRouteName()))->where('meta_keyword','Zomo StrongLine')->first();
+        } else if ($request->id == "Strong-line") {
+            $content = MetaTag::select('id', 'meta_title', 'meta_keyword', 'meta_description')->where('meta_route', (Route::currentRouteName()))->where('meta_keyword', 'Zomo StrongLine')->first();
             SEOTools::setTitle($content->meta_title);
             SEOTools::setDescription($content->meta_description);
             SEOMeta::addKeyword($content->meta_keyword);
-        }else if($request->id == "Max-line"){
-            $content = MetaTag::select('id', 'meta_title', 'meta_keyword', 'meta_description')->where('meta_route',(Route::currentRouteName()))->where('meta_keyword','Zomo MaxLine')->first();
+        } else if ($request->id == "Max-line") {
+            $content = MetaTag::select('id', 'meta_title', 'meta_keyword', 'meta_description')->where('meta_route', (Route::currentRouteName()))->where('meta_keyword', 'Zomo MaxLine')->first();
             SEOTools::setTitle($content->meta_title);
             SEOTools::setDescription($content->meta_description);
             SEOMeta::addKeyword($content->meta_keyword);
-        }else if($request->id == "World-Line"){
+        } else if ($request->id == "World-Line") {
 
-            $content = MetaTag::select('id', 'meta_title', 'meta_keyword', 'meta_description')->where('meta_route',(Route::currentRouteName()))->where('meta_keyword','Zomo MaxLine')->first();
+            $content = MetaTag::select('id', 'meta_title', 'meta_keyword', 'meta_description')->where('meta_route', (Route::currentRouteName()))->where('meta_keyword', 'Zomo MaxLine')->first();
 
             SEOTools::setTitle($content->meta_title);
             SEOTools::setDescription($content->meta_description);
             SEOMeta::addKeyword($content->meta_keyword);
-            }
+        }
 
-        $category_id= $request->id;
+        $category_id = $request->id;
         $data = resolve('flavor-repo')->getflavor($category_id);
         // dd($data);
-        $table = resolve('flavor-repo')->renderHtmlFlavorsTable($this->getParamsForFilter($request),$category_id);
-        return view('frontend.flavors.classicLine', compact('table','content'));
+        $table = resolve('flavor-repo')->renderHtmlFlavorsTable($this->getParamsForFilter($request), $category_id);
+        return view('frontend.flavors.classicLine', compact('table', 'content'));
     }
 
     /**
@@ -94,18 +94,19 @@ class FlavorsController extends Controller
     {
         //
     }
-      public function getParamsForFilter(Request $request)
+    public function getParamsForFilter(Request $request)
     {
         $previousUrl = parse_url(url()->previous());
         $params = [];
 
         if (request()->routeIs('frontend.flavors') || !isset($previousUrl['query'])) {
             $params['query_str'] = $request->query_str ?? '';
-            $params['page'] =  $request->page ?? 0;
-            $params['path'] =  \Illuminate\Support\Facades\Request::fullUrl();
+            $params['is_active'] = 'Y';
+            $params['page'] = $request->page ?? 0;
+            $params['path'] = \Illuminate\Support\Facades\Request::fullUrl();
         } else {
             parse_str($previousUrl['query'], $params);
-            $params['path'] =  url()->previous();
+            $params['path'] = url()->previous();
         }
         return $params;
     }

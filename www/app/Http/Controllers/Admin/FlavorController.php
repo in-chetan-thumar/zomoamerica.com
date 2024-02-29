@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Requests\flavors;
 use App\Models\FlavorImage;
@@ -12,36 +14,40 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
+
 class FlavorController extends Controller
 {
-  //
+    //
     public $model;
     public function __construct()
     {
         $this->model = new Flavor();
     }
-    public function index(Request $request){
+    public function index(Request $request)
+    {
         $table = resolve('flavor-repo')->renderHtmlTable($this->getParamsForFilter($request));
-        return view('admin.flavor.flavor_list',compact('table'));
+        $category = resolve('flavor-repo')->getCategory();
+        $status = resolve('flavor-repo')->getStatus();
+        return view('admin.flavor.flavor_list', compact('table', 'category', 'status'));
     }
 
-    public function create(Request $request){
+    public function create(Request $request)
+    {
 
         try {
             $data = [];
-                $data['error'] = false;
-                $status  = resolve('flavor-repo')->getStatus();
-                $category = resolve('flavor-repo')->getCategory();
-                if(isset($request->id))
-                {
-                    $id = $request->id;
-                    $user = resolve('flavor-repo')->findByID($id);
-                    $flavor_image = resolve('flavorImage-repo')->findByID($user->id);
-                    $data['view'] = view('admin.flavor.offcanvas',compact('status','user','category','flavor_image'))->with('model',$this->model)->render();
-                }else{
-                    $data['view'] = view('admin.flavor.offcanvas',compact('status','category'))->render();
-                }
-                return response()->json($data);
+            $data['error'] = false;
+            $status = resolve('flavor-repo')->getStatus();
+            $category = resolve('flavor-repo')->getCategory();
+            if (isset($request->id)) {
+                $id = $request->id;
+                $user = resolve('flavor-repo')->findByID($id);
+                $flavor_image = resolve('flavorImage-repo')->findByID($user->id);
+                $data['view'] = view('admin.flavor.offcanvas', compact('status', 'user', 'category', 'flavor_image'))->with('model', $this->model)->render();
+            } else {
+                $data['view'] = view('admin.flavor.offcanvas', compact('status', 'category'))->render();
+            }
+            return response()->json($data);
         } catch (\Exception $e) {
             $data['error'] = true;
             $data['message'] = $e->getMessage();
@@ -55,41 +61,39 @@ class FlavorController extends Controller
         try {
             $data = $params = [];
             DB::beginTransaction();
-            if($request->has("flavors_image"))
-            {
-            // Create user
-            $params['flavor_title'] = $request->flavor_title;
-            $params['flavor_description'] = $request->flavor_description;
-            $params['category_id'] = $request->category_id;
-            $params['sweet'] = $request->sweet;
-            $params['citric'] = $request->citric;
-            $params['tobaco_intensity'] = $request->tobaco_intensity;
-            $params['menthol'] = $request->menthol;
-            $params['cloud_volume'] = $request->cloud_volume;
-            $params['flavors_available'] = $request->flavors_available;
-            $slug = $request->slug;
-            $convert = str_replace(' ', '-', $slug);
-            $params['slug'] = strtolower($convert);
-            $params['is_active'] = $request->is_active;
-            $params['is_feature'] = $request->is_feature;
+            if ($request->has("flavors_image")) {
+                // Create user
+                $params['flavor_title'] = $request->flavor_title;
+                $params['flavor_description'] = $request->flavor_description;
+                $params['category_id'] = $request->category_id;
+                $params['sweet'] = $request->sweet;
+                $params['citric'] = $request->citric;
+                $params['tobaco_intensity'] = $request->tobaco_intensity;
+                $params['menthol'] = $request->menthol;
+                $params['cloud_volume'] = $request->cloud_volume;
+                $params['flavors_available'] = $request->flavors_available;
+                $slug = $request->slug;
+                $convert = str_replace(' ', '-', $slug);
+                $params['slug'] = strtolower($convert);
+                $params['is_active'] = $request->is_active;
+                $params['is_feature'] = $request->is_feature;
 
                 $user = resolve('flavor-repo')->create($params);
                 $images = [];
-                if ($request->file("flavors_image")){
-                    foreach($request->file("flavors_image") as $key => $image)
-                    {
-                        $fileDir = config('constants.FLAVOR_URL') . DIRECTORY_SEPARATOR.$user->id;
+                if ($request->file("flavors_image")) {
+                    foreach ($request->file("flavors_image") as $key => $image) {
+                        $fileDir = config('constants.FLAVOR_URL') . DIRECTORY_SEPARATOR . $user->id;
                         if (!File::exists($fileDir)) {
                             Storage::makeDirectory($fileDir, 0777);
                             $storeName = basename($image->store($fileDir));
-                              $images[]['name'] = $storeName;
+                            $images[]['name'] = $storeName;
                         }
                     }
                 }
                 foreach ($images as $key => $image) {
                     $imag['image_name'] = $image['name'];
-                    $imag['category_id'] =$request->category_id;
-                    $imag['flavor_id'] =$user->id;
+                    $imag['category_id'] = $request->category_id;
+                    $imag['flavor_id'] = $user->id;
 
                     FlavorImage::create($imag);
                 }
@@ -133,33 +137,32 @@ class FlavorController extends Controller
             $params['slug'] = strtolower($convert);
             $params['is_active'] = $request->is_active;
             $params['is_feature'] = $request->is_feature;
-            $id=$request->id;
-            $user = resolve('flavor-repo')->update($params,$id);
+            $id = $request->id;
+            $user = resolve('flavor-repo')->update($params, $id);
             $images = [];
-            if ($request->file("flavors_image")){
-                foreach($request->file("flavors_image") as $key => $image)
-                {
-                    $fileDir = config('constants.FLAVOR_URL') . DIRECTORY_SEPARATOR.$id;
+            if ($request->file("flavors_image")) {
+                foreach ($request->file("flavors_image") as $key => $image) {
+                    $fileDir = config('constants.FLAVOR_URL') . DIRECTORY_SEPARATOR . $id;
                     if (!File::exists($fileDir)) {
                         Storage::makeDirectory($fileDir, 0777);
                         $storeName = basename($image->store($fileDir));
-                            $images[]['name'] = $storeName;
+                        $images[]['name'] = $storeName;
                     }
                 }
             }
             foreach ($images as $key => $image) {
                 $imag['image_name'] = $image['name'];
-                $imag['category_id'] =$request->category_id;
+                $imag['category_id'] = $request->category_id;
                 $imag['flavor_id'] = $id;
 
                 FlavorImage::create($imag);
             }
             if (!empty($user)) {
-                    $data['error'] = false;
-                    $data['message'] = 'Flavor Updated successfully.';
-                    $data['view'] = resolve('flavor-repo')->renderHtmlTable($this->getParamsForFilter($request));
-                    DB::commit();
-                    return response()->json($data);
+                $data['error'] = false;
+                $data['message'] = 'Flavor Updated successfully.';
+                $data['view'] = resolve('flavor-repo')->renderHtmlTable($this->getParamsForFilter($request));
+                DB::commit();
+                return response()->json($data);
             }
             $data['error'] = true;
             $data['message'] = 'Flavor not Updated successfully..!';
@@ -187,18 +190,20 @@ class FlavorController extends Controller
     {
         $previousUrl = parse_url(url()->previous());
         $params = [];
-          if (request()->routeIs('backend.product.flavors') || !isset($previousUrl['query'])) {
+        if (request()->routeIs('backend.product.flavors') || !isset($previousUrl['query'])) {
             $params['query_str'] = $request->query_str ?? '';
+            $params['is_active'] = $request->is_active ?? '';
+            $params['category_id'] = $request->category_id ?? '';
             $params['role'] = $request->role;
-            $params['page'] =  $request->page ?? 0;
-            $params['type'] =  $request->type ?? null;
-            $params['start_date'] =  $request->start_date ?? null;
-            $params['end_date'] =  $request->end_date ?? null;
+            $params['page'] = $request->page ?? 0;
+            $params['type'] = $request->type ?? null;
+            $params['start_date'] = $request->start_date ?? null;
+            $params['end_date'] = $request->end_date ?? null;
             $params['path'] = \Illuminate\Support\Facades\Request::fullUrl();
 
-        }else{
+        } else {
             parse_str($previousUrl['query'], $params);
-            $params['path'] =  url()->previous();
+            $params['path'] = url()->previous();
         }
 
         // if (!empty($params['start_date']) && !empty($params['end_date'])) {
@@ -215,16 +220,16 @@ class FlavorController extends Controller
     public function delete(Request $request)
     {
 
-         try {
+        try {
             $id = $request->id;
             $user = resolve('flavor-repo')->findById($id);
             if (!empty($user)) {
-                $folder = config('constants.FLAVOR_URL').DIRECTORY_SEPARATOR.$user->id;
-                if(File::exists(storage_path('app'.DIRECTORY_SEPARATOR.$folder))){
+                $folder = config('constants.FLAVOR_URL') . DIRECTORY_SEPARATOR . $user->id;
+                if (File::exists(storage_path('app' . DIRECTORY_SEPARATOR . $folder))) {
                     Storage::deleteDirectory($folder);
                 }
                 $user->delete();
-                FlavorImage::where("flavor_id",$id)->delete();
+                FlavorImage::where("flavor_id", $id)->delete();
                 toastr()->success($user->flavor_title . ' deleted successfully..!');
                 return redirect()->route('backend.product.flavors');
             } else {
@@ -237,29 +242,29 @@ class FlavorController extends Controller
     }
     public function flavorcategory(Request $request)
     {
-        $category_id= $request->id;
+        $category_id = $request->id;
         $data = resolve('flavor-repo')->getflavor($category_id);
-        return view('frontend.flavors.classicLine',compact('data','category_id'));
+        return view('frontend.flavors.classicLine', compact('data', 'category_id'));
     }
 
     public function productDetail(Request $request)
     {
         $slug = $request->data;
-        $data  = resolve('flavor-repo')->getDataByslug($slug);
+        $data = resolve('flavor-repo')->getDataByslug($slug);
         $getCategory_Data = resolve('category-repo')->getCategory($data);
-        return view('frontend.flavors.product',compact('data','getCategory_Data'));
+        return view('frontend.flavors.product', compact('data', 'getCategory_Data'));
     }
 
     public function removeImage(Request $request)
     {
         try {
 
-        $id =  $request->fid;
-        $data = resolve('flavorImage-repo')->removeImage($id);
-        $path = File::delete(storage_path(config('constants.FLAVOR_URL').$data->flavor_id.'/'.$data->image_name));
-        // unlink($path);
-        $data->delete();
-        $messages['message'] ="Image Has been removed";
+            $id = $request->fid;
+            $data = resolve('flavorImage-repo')->removeImage($id);
+            $path = File::delete(storage_path(config('constants.FLAVOR_URL') . $data->flavor_id . '/' . $data->image_name));
+            // unlink($path);
+            $data->delete();
+            $messages['message'] = "Image Has been removed";
         } catch (\Exception $e) {
             $messages['message'] = $e->getMessage();
         }
