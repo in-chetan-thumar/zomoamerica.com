@@ -30,25 +30,39 @@
                             'method' => 'get',
                         ]) !!}
 
-                        {{-- <div class="form-group">
-                            {{ Form::label('Start Date') }}
-                            {{ Form::date('start_date', date('Y-m-d'), ['class' => 'form-control']) }}
+                        <div class="form-group">
+                            {!! Form::text('query_str', request()->query('query_str'), [
+                                'class' => 'form-control',
+                                'placeholder' => 'Search by flavor title ',
+                            ]) !!}
                         </div>
                         <div class="form-group">
-                            {{ Form::label('End Date') }}
-                            {{ Form::date('end_date', date('Y-m-d'), ['class' => 'form-control']) }}
+                            {!! Form::select('category_id', $category, request()->query('category_id'), [
+                                'class' => 'form-control zone',
+                                'placeholder' => 'Select category',
+                            ]) !!}
+                        </div>
+                        <div class="form-group">
+                            {!! Form::select('is_active', $status, request()->query('is_active'), [
+                                'class' => 'form-control zone',
+                                'placeholder' => 'Select status',
+                            ]) !!}
                         </div>
                         <button type="submit" name="type" value="submit"
-                            class="btn btn-primary waves-effect waves-light" style="margin-top: 40px;">
+                            class="btn btn-primary waves-effect waves-light">
                             Submit
-                        </button> --}}
+                        </button>
+                        &nbsp;
+                        <a href="{{ route('backend.product.flavors') }}" class="btn btn-secondary waves-effect waves-light">
+                            Reset
+                        </a>
                         &nbsp;
                         {{-- <div class="form-group">
                             <a href="{{ route('backend.product.export') }}" class="btn btn-secondary waves-effect waves-light">
                                                                     Export
                                                                 </a>
                         </div> --}}
-                        
+
 
                         {!! Form::close() !!}
                     </div>

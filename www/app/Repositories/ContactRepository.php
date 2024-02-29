@@ -2,6 +2,7 @@
 
 
 namespace App\Repositories;
+
 use App\Models\ContactDetail;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -51,7 +52,7 @@ class ContactRepository
     // Update recoard
     public function update($params, $id)
     {
-        $user = $this->findByID($id)->update($params);    
+        $user = $this->findByID($id)->update($params);
         return $user;
     }
 
@@ -65,16 +66,16 @@ class ContactRepository
     {
         $params['return_type'] = $params['return_type'] ?? '';
 
-        // $this->model = $this->model->when(!empty($params['start_date'] && !empty($params['end_date'])), function ($q) use ($params) {
-        //     return $q->whereBetween('created_at', [$params['start_date'], $params['end_date']]);
-        // });
+        $this->model = $this->model->when(!empty($params['start_date'] && !empty($params['end_date'])), function ($q) use ($params) {
+            return $q->whereBetween('created_at', [$params['start_date'], $params['end_date']]);
+        });
 
         if ($params['return_type'] == 'drop_down') {
             return $this->model->pluck('name', 'id');
 
         } elseif ($params['return_type'] == 'object') {
             return $this->model->get();
-            
+
         } else {
             return $this->model
                 ->latest()
@@ -83,5 +84,5 @@ class ContactRepository
         }
     }
 
-   
+
 }

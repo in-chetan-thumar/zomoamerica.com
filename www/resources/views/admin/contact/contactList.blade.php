@@ -17,12 +17,16 @@
             <div class="card">
                 <div class="card-body">
                     <div class="float-end">
+                        <a href="{{ route('backend.product.export', request()->all()) }}"
+                            class="btn btn-secondary waves-effect waves-light">
+                            Export
+                        </a>
                     </div>
                     <div class="float-start">
                         {!! Form::open([
                             'url' => route('backend.product.contact'),
                             'id' => 'form-search',
-                            'class' => 'row row-cols-lg-auto g-3 align-items-center',
+                            'class' => 'row row-cols-lg-auto align-items-center',
                             'method' => 'get',
                         ]) !!}
                         <div class="form-group">
@@ -33,14 +37,15 @@
                             {{ Form::label('End Date') }}
                             {{ Form::date('end_date', date('Y-m-d'), ['class' => 'form-control']) }}
                         </div>
-                        <button type="submit" name="type" value="submit" class="btn btn-primary waves-effect waves-light"
-                            style="margin-top:40px;">
+                        <button type="submit" name="type" value="submit"
+                            class="btn btn-primary waves-effect waves-light" style="margin-top:25px;">
                             Submit
                         </button>
+
                         &nbsp;
-                        <a href="{{ route('backend.product.export') }}" class="btn btn-secondary waves-effect waves-light"
-                            style="margin-top:40px;">
-                            Export
+                        <a href="{{ route('backend.product.contact') }}" class="btn btn-secondary waves-effect waves-light"
+                            style="margin-top:25px;">
+                            Reset
                         </a>
                         {!! Form::close() !!}
                     </div>

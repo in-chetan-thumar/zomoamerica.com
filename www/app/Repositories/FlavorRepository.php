@@ -82,29 +82,40 @@ class FlavorRepository
 
     public function filter($params)
     {
-        $params['return_type'] = $params['return_type'] ?? '';
+        $this->model = $this->model->when(!empty($params['query_str']), function ($query) use ($params) {
+            $query->where('flavor_title', 'LIKE', '%' . $params['query_str'] . "%")
+                ->orWhere('flavor_description', 'LIKE', '%' . $params['query_str'] . "%");
+        });
 
-        // $this->model = $this->model->when(!empty($params['start_date'] && !empty($params['end_date'])), function ($q) use ($params) {
-        //     return $q->whereBetween('created_at', [$params['start_date'], $params['end_date']]);
-        // });
+        $this->model = $this->model->when(!empty($params['category_id']), function ($query) use ($params) {
+            $query->where('category_id', $params['category_id']);
+        });
 
-        if ($params['return_type'] == 'drop_down') {
-            return $this->model->pluck('name', 'id');
+        $this->model = $this->model->when(!empty($params['is_active']), function ($query) use ($params) {
+            $query->where('is_active', $params['is_active']);
+        });
 
-        } elseif ($params['return_type'] == 'object') {
-            return $this->model->get();
+        // app('common-helper')->printQuery($this->model, $params,'dump');
 
-        } else {
-            return $this->model
-                ->latest()
-                ->paginate(config('constants.PER_PAGE'), ['*'], 'page', !empty($params['page']) ? $params['page'] : '')
-                ->setPath($params['path']);
-        }
+        // return $this->model;
+        // dd($params);
+        // if ($params['return_type'] == 'drop_down') {
+        //     return $this->model->pluck('flavor_title', 'id');
+
+        // } elseif ($params['return_type'] == 'object') {
+        //     return $this->model->get();
+
+        // } else {
+        return $this->model
+            ->latest()
+            ->paginate(config('constants.PER_PAGE'), ['*'], 'page', !empty($params['page']) ? $params['page'] : '')
+            ->setPath($params['path']);
+        // }
     }
 
     public function getStatus()
     {
-        return array("Y" => 'Active', 'N' => 'DeActive');
+        return array("Y" => 'Active', 'N' => 'Inactive');
     }
     public function changeStatus($id)
     {
@@ -120,7 +131,7 @@ class FlavorRepository
 
     public function getCategory()
     {
-        return Category::pluck('name', 'id');
+        return Category::where('is_active', 'Y')->pluck('name', 'id');
     }
 
     public function getflavor($id)
