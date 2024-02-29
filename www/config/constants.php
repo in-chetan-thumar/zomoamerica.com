@@ -7,7 +7,7 @@ return [
     //Emails
     'EMAIL'=>[
         'LOCAL' => ['TO'=>['kajal.baldha@tiez.nl'],'CC'=>[]],
-        'DEVELOPMENT'=>['TO'=>['info@zomoamerica.com'],'CC'=>[]],
+        'PRODUCTION'=>['TO'=>['info@zomoamerica.com'],'CC'=>[]],
     ],
 
     'PER_PAGE' => 10,

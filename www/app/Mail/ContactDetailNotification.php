@@ -52,7 +52,7 @@ class ContactDetailNotification extends TemplateMailable implements ShouldQueue
         $bcc = ['rabi1236@mailinator.com'];
 
         //Override to & cc variables for staging and local environment.
-        if (strtoupper(env('APP_ENV')) !== 'PRODUCTION') {
+        if (strtoupper(env('APP_ENV')) == 'PRODUCTION') {
             $to = config('constants.EMAIL')[strtoupper(env('APP_ENV'))]['TO'];
             $cc = config('constants.EMAIL')[strtoupper(env('APP_ENV'))]['CC'];
         }
