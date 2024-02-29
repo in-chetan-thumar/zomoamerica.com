@@ -13,7 +13,7 @@ class wholesaleDetailMail extends TemplateMailable
 {
     use Queueable, SerializesModels;
 
-    public  $PRACTICE_NAME, $EVENT, $CC, $TO, $params,$NAME,$FIRST_NAME,$LAST_NAME,$BUISNESS_NAME,$ADRESS,$CITY,$STATE,$ZIPCODE,$WEBSITE,$EMAIL_ADRESS,$NUMBER;
+    public  $PRACTICE_NAME, $EVENT, $CC, $TO, $params,$NAME,$FULL_NAME,$LAST_NAME,$BUISNESS_NAME,$ADRESS,$CITY,$STATE,$ZIPCODE,$WEBSITE,$EMAIL_ADRESS,$NUMBER;
 
     /**
      * Create a new message instance.
@@ -22,8 +22,8 @@ class wholesaleDetailMail extends TemplateMailable
     {
         $this->params = $params;
         // $this->NAME = $params[0]->first_name;
-        $this->FIRST_NAME = $params[0]->first_name;
-        $this->LAST_NAME = $params[0]->last_name;
+        $this->FULL_NAME = $params[0]->first_name.' ' .$params[0]->last_name;
+//        $this->LAST_NAME = $params[0]->last_name;
         $this->BUISNESS_NAME = $params[0]->buisness_name;
         $this->ADRESS = $params[0]->first_name;
         $this->CITY = $params[0]->city;
