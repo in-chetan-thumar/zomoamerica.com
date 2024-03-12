@@ -340,10 +340,13 @@ class HomeController extends Controller
                 $enquire = ContactDetail::create($request->all());
                 if(!empty($enquire))
                 {
-                    $params['enquire_details'] = view('email.SendMail', compact('enquire'))->render();
+                   // $params['enquire_details'] = view('email.SendMail', compact('enquire'))->render();
                     $params['email']  = $enquire->email;
-                    $params[]  = $enquire;
+                    $params['subject']  = $enquire->subject;
+                    $params['message']  = $enquire->message;
+                   // $params[]  = $enquire;
                     // $params['email'] = $enquire->email;
+                   // dd($params);
                     Mail::send(new \App\Mail\ContactDetailNotification($params));
 
                      $params = [];

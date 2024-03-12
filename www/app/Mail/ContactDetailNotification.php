@@ -23,9 +23,9 @@ class ContactDetailNotification extends TemplateMailable implements ShouldQueue
     {
         $this->params = $params ;
         $this->PRACTICE_NAME = ('constants.APP_NAME');
-        $this->EMAIL = $params[0]->email;
-        $this->SUBJECT = $params[0]->subject;
-        $this->MESSAGE = $params[0]->message;
+        $this->EMAIL = $params['email'];
+        $this->SUBJECT = $params['subject'];
+        $this->MESSAGE = $params['message'];
     }
 
     public function getHtmlLayout(): string
