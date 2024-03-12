@@ -203,7 +203,7 @@
                         <div class="col-lg-3 col-sm-12  where-to-buy-item reveal">
                             <div class="where-to-buy-box">
                                 <div class="images-box">
-                                    <img src="{{ asset('assets/frontend/images/way-to-buy/5starhookah.jpeg') }}"
+                                    <img src="{{ asset('assets/frontend/images/way-to-buy/5starhookah.png') }}"
                                         alt="5 Star Hookah" class="responsive-image" height="100">
                                 </div>
                                 <p>5 Star Hookah</p>
