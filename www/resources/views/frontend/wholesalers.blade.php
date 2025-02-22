@@ -133,20 +133,21 @@
                     </h6>
                     <div class="content-infomation reveal" id="wholesale-form">
                         <div class="contact-form">
-                            {!! Form::open([
-                                'url' => route('frontend.home.authorizeStateDistributor'),
-                                'method' => 'POST',
-                                'id' => 'inquery-form',
-                                'class' => 'inquery-form',
-                            ]) !!}
+                            
+
+                            {{ html()->form('POST', route('frontend.home.authorizeStateDistributor'))
+                                ->id('inquery-form')
+                                ->class('inquery-form')
+                                ->open() 
+                            }}
 
                             <div class="cole-two reveal">
                                 <div class="input-field">
                                     <label for="fist">FIRST NAME <span class="text-danger">*</span></label>
-                                    {!! Form::text('fname', old('fname'), [
-                                        'class' => ' name',
-                                        'maxlength' => '20',
-                                    ]) !!}
+                                    {{ html()->input('text','fname', old('fname'))
+                                        ->class('name')
+                                        ->attribute('maxlength', '20') 
+                                    }}
                                     <span class="text-danger" style="font-size:15px">
                                         @error('fname')
                                             {{ $message }}
@@ -156,10 +157,11 @@
                                 </div>
                                 <div class="input-field">
                                     <label for="Last">LAST NAME <span class="text-danger">*</span></label>
-                                    {!! Form::text('lname', old('lname'), [
-                                        'class' => ' lname',
-                                        'maxlength' => '20',
-                                    ]) !!}
+                                    {{ html()->input('text','lname', old('lname'))
+                                        ->class('lname')
+                                        ->attribute('maxlength', '20') 
+                                    }}
+                                    
                                     <span class="text-danger" style="font-size:15px">
                                         @error('lname')
                                             {{ $message }}
@@ -172,10 +174,10 @@
                             <div class="cole-two reveal">
                                 <div class="input-field">
                                     <label for="city">CITY <span class="text-danger">*</span></label>
-                                    {!! Form::text('city', old('city'), [
-                                        'class' => ' city',
-                                        'maxlength' => '30',
-                                    ]) !!}
+                                    {{ html()->input('text','city', old('city'))
+                                        ->class('city')
+                                        ->attribute('maxlength', '30')
+                                    }}
                                     <span class="text-danger" style="font-size:15px">
                                         @error('city')
                                             {{ $message }}
@@ -185,7 +187,10 @@
                                 </div>
                                 <div class="input-field">
                                     <label for="state">State <span class="text-danger">*</span></label>
-                                    {{ Form::Select('state', $stateArray, '', ['class' => 'state', 'placeholder' => 'Select']) }}
+                                    {{ html()->select('state', $stateArray)
+                                        ->placeholder('Select')
+                                        ->class('state') 
+                                    }}
                                     <span class="text-danger" style="font-size:15px">
                                         @error('state')
                                             {{ $message }}
@@ -198,10 +203,11 @@
                             <div class="cole-two reveal">
                                 <div class="input-field">
                                     <label for="email">EMAIL ADDRESS <span class="text-danger">*</span></label>
-                                    {!! Form::text('email', old('email'), [
-                                        'class' => ' email',
-                                        'maxlength' => '100',
-                                    ]) !!}
+                                    {{ html()->input('text','email', old('email'))
+                                        ->class('email')
+                                        ->attribute('maxlength', '100')
+                                    }}
+                              
                                     <span class="text-danger" style="font-size:15px">
                                         @error('email')
                                             {{ $message }}
@@ -211,10 +217,10 @@
                                 </div>
                                 <div class="input-field">
                                     <label for="number">TELEPHONE NUMBER <span class="text-danger">*</span></label>
-                                    {!! Form::text('number', old('number'), [
-                                        'class' => ' number',
-                                        'maxlength' => '10',
-                                    ]) !!}
+                                    {{ html()->input('number','number', old('number'))
+                                        ->class('number')
+                                        ->attribute('maxlength', '10')
+                                    }}
                                     <span class="text-danger" style="font-size:15px">
                                         @error('number')
                                             {{ $message }}
@@ -232,7 +238,8 @@
                                 <input type="submit" class="btn-black mb-5" value="SEND">
                             </div>
 
-                            {{ Form::close() }}
+                            {{ html()->form()->close() }}
+                            
                         </div>
                     </div>
                 </div>

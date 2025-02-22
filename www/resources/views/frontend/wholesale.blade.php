@@ -18,20 +18,19 @@
         <div class="wholesale-form-section">
             <div class="wholesale-form-left">
                 <p>Please fill out the wholesale account form below to register your business.</p>
-                {!! Form::open([
-                    'url' => route('frontend.storeWholesale'),
-                    'method' => 'POST',
-                    'id' => 'inquery-form',
-                    'class' => 'inquery-form',
-                ]) !!}
+                {{ html()->form('POST', route('frontend.storeWholesale'))
+                    ->id('inquery-form')
+                    ->class('inquery-form')
+                    ->open() 
+                }}    
                 <div class="input-field">
                     <label for="name">BUSINESS NAME <span
                         class="text-danger">*</span>
                     </label>
-                    {!! Form::text('bname', old('bname'), [
-                        'class' => ' name',
-                        'maxlength' => '100',
-                    ]) !!}
+                    {{ html()->input('text','bname', old('fname'))
+                        ->class('name')
+                        ->attribute('maxlength', '100')
+                    }}      
                     <span class="text-danger" style="font-size:15px">
                         @error('bname')
                             {{ $message }}
@@ -43,39 +42,38 @@
                     <div class="input-field">
                         <label for="fist">FIRST NAME <span
                             class="text-danger">*</span></label>
-                        {!! Form::text('fname', old('fname'), [
-                            'class' => ' name',
-                            'maxlength' => '20',
-                        ]) !!}
-                        <span class="text-danger" style="font-size:15px">
-                            @error('fname')
-                                {{ $message }}
-                            @enderror
-                        </span>
-                        <br>
+                            {{ html()->input('text','fname', old('fname'))
+                                ->class('name')
+                                ->attribute('maxlength', '20')
+                            }}
+                            <span class="text-danger" style="font-size:15px">
+                                @error('fname')
+                                    {{ $message }}
+                                @enderror
+                            </span>
+                         <br>
                     </div>
                     <div class="input-field">
-                        <label for="Last">LAST NAME <span
-                            class="text-danger">*</span></label>
-                        {!! Form::text('lname', old('lname'), [
-                            'class' => ' name',
-                            'maxlength' => '20',
-                        ]) !!}
-                        <span class="text-danger" style="font-size:15px">
-                            @error('lname')
-                                {{ $message }}
-                            @enderror
-                        </span>
+                            <label class="form-label">Username</label>           
+                            {{ html()->input('text','lname', old('lname'))
+                                ->class('name')
+                                ->attribute('maxlength', '20')
+                            }}   
+                            <span class="text-danger" style="font-size:15px">
+                                @error('lname')
+                                    {{ $message }}
+                                @enderror
+                            </span>
                         <br>
                     </div>
                 </div>
                 <div class="input-field">
                     <label for="address">ADDRESS <span
                         class="text-danger">*</span></label>
-                    {!! Form::text('address', old('address'), [
-                        'class' => ' name',
-                        'maxlength' => '100',
-                    ]) !!}
+                    {{ html()->input('text','address', old('address'))
+                        ->class('name')
+                        ->attribute('maxlength', '100')
+                    }}  
                     <span class="text-danger" style="font-size:15px">
                         @error('address')
                             {{ $message }}
@@ -86,10 +84,10 @@
                 <div class="input-field">
                     <label for="city">CITY <span
                         class="text-danger">*</span></label>
-                    {!! Form::text('city', old('city'), [
-                        'class' => ' name',
-                        'maxlength' => '30',
-                    ]) !!}
+                    {{ html()->input('text','city', old('city'))
+                        ->class('name')
+                        ->attribute('maxlength', '30')
+                    }}              
                     <span class="text-danger" style="font-size:15px">
                         @error('city')
                             {{ $message }}
@@ -100,7 +98,10 @@
                 <div class="input-field">
                     <label for="state">State <span
                         class="text-danger">*</span></label>
-                    {{ Form::Select('state', $stateArray, '', ['class' => '', 'placeholder' => 'Select']) }}
+                        {{ html()->select('state', $stateArray)
+                            ->placeholder('Select')
+                            ->class('state') 
+                        }}
                     <span class="text-danger" style="font-size:15px">
                         @error('state')
                             {{ $message }}
@@ -111,10 +112,11 @@
                 <div class="input-field">
                     <label for="zip">zip code <span
                         class="text-danger">*</span></label>
-                    {!! Form::text('zipcode', old('zipcode'), [
-                        'class' => ' name',
-                        'maxlength' => 6,
-                    ]) !!}
+                        {{ html()->input('text','zipcode', old('zipcode'))
+                        ->class('name')
+                        ->attribute('maxlength', '6')
+                        }}  
+                   
                     <span class="text-danger" style="font-size:15px">
                         @error('zipcode')
                             {{ $message }}
@@ -124,10 +126,11 @@
                 </div>
                 <div class="input-field">
                     <label for="website">website</label>
-                    {!! Form::text('website', old('website'), [
-                        'class' => ' name',
-                        'maxlength' => '70',
-                    ]) !!}
+                    {{ html()->input('text','website', old('website'))
+                        ->class('name')
+                        ->attribute('maxlength', '70')
+                    }}  
+                    
                     <span class="text-danger" style="font-size:15px">
                         @error('website')
                             {{ $message }}
@@ -138,10 +141,10 @@
                 <div class="input-field">
                     <label for="email">EMAIL ADDRESS <span
                         class="text-danger">*</span></label>
-                    {!! Form::text('email', old('email'), [
-                        'class' => ' name',
-                        'maxlength' => '100',
-                    ]) !!}
+                    {{ html()->input('text','email', old('email'))
+                        ->class('name')
+                        ->attribute('maxlength', '100')
+                    }}
                     <span class="text-danger" style="font-size:15px">
                         @error('email')
                             {{ $message }}
@@ -152,24 +155,23 @@
                 <div class="input-field">
                     <label for="number">TELEPHONE NUMBER<span
                         class="text-danger">*</span></label>
-                    {!! Form::text('number', old('number'), [
-                        'class' => ' name',
-                        'maxlength' => '10',
-                    ]) !!}
-                    <span class="text-danger" style="font-size:15px">
-                        @error('number')
-                            {{ $message }}
-                        @enderror
-                    </span>
+                    {{ html()->input('number','number', old('number'))
+                        ->class('name')
+                        ->attribute('maxlength', '10')
+                    }}
+                   <span class="text-danger" style="font-size:15px">
+                    @error('number')
+                        {{ $message }}
+                    @enderror
+                </span>
                     <br>
                 </div>
-
                 <div class="wrap-btn">
                     <input type="submit" class="btn-black g-recaptcha "
-                           data-sitekey="{{ env('NOCAPTCHA_SITEKEY')}}"
+                           {{-- data-sitekey="{{ env('NOCAPTCHA_SITEKEY')}}" --}}
                            data-callback='onSubmit' value="SEND">
                 </div>
-                {{ Form::close() }}
+                {{ html()->form()->close() }}
             </div>
             <div class="wholesale-form-right">
                 <strong>Wholesale Info</strong>
@@ -205,6 +207,7 @@
     <script src="https://www.google.com/recaptcha/api.js"></script>
     <script>
         function onSubmit(token) {
+        
             $("#inquery-form").submit();
         }
     </script>

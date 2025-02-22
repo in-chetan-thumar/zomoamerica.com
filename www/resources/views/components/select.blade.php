@@ -1,5 +1,5 @@
 <label for="{{ $name }}">{!! $label !!}{!! $required == 'true' ? '<span style="color: red;">*</span>' : '' !!}</label>
-{!! Form::select(
+{{-- {!! Form::select(
     $name,
     $options,
     $value,
@@ -7,7 +7,9 @@
         ['class' => $errors->has($name) ? 'form-select is-invalid' : 'form-select', 'style' => 'width:100%'],
         $attributes,
     ),
-) !!}
+) !!} --}}
+{{ Html()->select($name, $options, $value)
+    ->attributes(array_merge(['class' => $errors->has($name) ? 'form-select is-invalid' : 'form-select', 'style' => 'width:100%'], $attributes)) }}
 @error($name)
     <span class="invalid-feedback" style="display: inline;font-size:15px">{{ $message }}</span>
 @enderror

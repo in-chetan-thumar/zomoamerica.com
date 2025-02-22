@@ -18,29 +18,33 @@
                 <div class="card-body">
                     <div class="float-end">
                         <a href="{{ route('backend.metaDetail.create') }}" onclick="showSaveModel(event)"
-                            class="btn btn-primary"><i class="mdi mdi-plus"></i>&nbsp;Add User</a>
+                            class="btn btn-primary"><i class="mdi mdi-plus"></i>&nbsp;Add meta details</a>
                     </div>
                     <div class="float-start">
-                        {!! Form::open([
-                            'url' => route('usermanagements.index'),
-                            'id' => 'form-search',
-                            'class' => 'row row-cols-lg-auto g-3 align-items-center',
-                            'method' => 'get',
-                        ]) !!}
+                        {{ html()->form('GET', route('backend.metaDetail'))
+                            ->id('form-search')
+                            ->class('row row-cols-lg-auto g-3 align-items-center')
+                            ->open() 
+                        }}
                         <div class="form-group">
-                            {{ Form::label('Start Date') }}
-                            {{ Form::date('start_date', date('Y-m-d'), ['class' => 'form-control']) }}
+                            {{ html()->label('Start Date') }}
+                            {{ html()->date('start_date', date('Y-m-d'))
+                                ->class('form-control') }}
                         </div>
                         <div class="form-group">
-                            {{ Form::label('End Date') }}
-                            {{ Form::date('end_date', date('Y-m-d'), ['class' => 'form-control']) }}
+                            {{html()->label('End Date') }}
+                            {{ html()->date('end_date', date('Y-m-d'))
+                             ->class('form-control') }}
                         </div>
-                        <button type="submit" name="type" value="submit"
-                            class="btn btn-primary waves-effect waves-light" style="margin-top:40px">
-                            Submit
-                        </button>
-
-                        {!! Form::close() !!}
+                        <div class="form-group d-flex align-items-end" style="gap: 10px; margin-top: 32px;">
+                            <button type="submit" name="type" value="submit" class="btn btn-primary waves-effect waves-light">
+                                Submit
+                            </button>
+                            <a href="{{ route('backend.metaDetail') }}" class="btn btn-secondary waves-effect waves-light">
+                                Reset
+                            </a>
+                        </div>
+                        {{ html()->form()->close() }}
                     </div>
                     <div class="clearfix"></div>
                     <div class="divtable">

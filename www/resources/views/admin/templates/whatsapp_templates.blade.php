@@ -44,13 +44,13 @@
                     <div class="card-body">
                         <div class="row">
                             {{-- @can('WhatsAppTemplates.create') --}}
-                            {!! Form::open([
-                                'url' => route('whatsapp.templates.store'),
-                                'method' => 'POST',
-                                'id' => 'whats-app-template-form',
-                                'class' => 'col-md-12',
-                                'enctype' => 'multipart/form-data',
-                            ]) !!}
+                            {{ html()->form('POST', route('whatsapp.templates.store'))
+                                ->id('whats-app-template-form')
+                                ->class('col-md-12')
+                                ->attribute('enctype', 'multipart/form-data')
+                                ->open() 
+                            }}
+                          
                             <input type="hidden" name="id"
                                 value="{{ !empty($WhatsAppTemplate) ? $WhatsAppTemplate->id : '' }}"
                                 id="whatsapp_template_id">
@@ -60,12 +60,12 @@
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="mb-3">
                                     <div class="form-group">
-                                        {{ Form::label('Template name') }}<span class="required">*</span>
-                                        {!! Form::text('template_name', !empty($WhatsAppTemplate) ? $WhatsAppTemplate->template_name : '', [
-                                            'class' => 'form-control',
-                                            'placeholder' => 'Template name',
-                                            'id' => 'template_name',
-                                        ]) !!}
+                                        {{html()->label('Template Name','template_name', )->class('form-label') }}
+                                            {{html()->text('template_name', $WhatsAppTemplate->template_name ?? '')
+                                                ->class('form-control')
+                                                ->placeholder('Template name')
+                                                ->id('template_name') 
+                                            }}
                                         @error('template_name')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -77,16 +77,13 @@
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="mb-3">
                                     <div class="form-group">
-                                        {{ Form::label('Content') }}<span class="required">*</span>
-                                        {!! Form::textarea(
-                                            'whatsapp_template_content',
-                                            !empty($WhatsAppTemplate) ? $WhatsAppTemplate->html_template : '',
-                                            [
-                                                'class' => 'form-control',
-                                                'placeholder' => 'Content',
-                                                'id' => 'whatsapp_template_content',
-                                            ],
-                                        ) !!}
+                                        {{ html()->label( 'Content','whatsapp_template_content',)->class('form-label') }}
+                                        {{ html()->textarea('whatsapp_template_content', $WhatsAppTemplate->html_template ?? '')
+                                            ->class('form-control')
+                                            ->placeholder('Content')
+                                            ->id('whatsapp_template_content') 
+                                        }}
+                                        
                                         @error('whatsapp_template_content')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -97,10 +94,12 @@
                             </div>
                             {{-- @can('WhatsAppTemplates.create') --}}
                             <div class="col-xs-12 col-sm-12 col-md-12 mt-2">
-                                {{ Form::button('Save', ['class' => 'btn btn-primary btnSubmit waves-effect waves-light']) }}
+                                {{html()->button('Save')
+                                 ->class('btn btn-primary btnSubmit waves-effect waves-light') }}
                             </div>
                             {{-- @endcan --}}
-                            {!! Form::close() !!}
+                            {{ html()->form()->close() }}
+
                         </div>
                     </div>
 

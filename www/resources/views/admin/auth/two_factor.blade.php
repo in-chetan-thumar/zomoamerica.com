@@ -69,7 +69,7 @@
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="mb-3">
-                                                    {{ Form::bsText('','two_factor_code',old('username'),'',['class'=>' only-number-allow','maxlength'=>"6",'placeholder' => "Enter 6 digits otp"],[],true) }}
+                                                    {{ html()->input('text', 'two_factor_code', old('two_factor_code'))->placeholder('Enter 6 digits otp')->attributes(['oninput' => 'this.value = this.value.replace(/[^0-9]/g, "")', 'maxlength' => '6'])->class('form-control ' . ($errors->has('two_factor_code') ? 'is-invalid' : '')) }}
                                                 </div>
                                             </div>
                                             <div class="input-field">

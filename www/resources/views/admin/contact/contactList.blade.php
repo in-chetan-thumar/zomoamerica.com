@@ -23,19 +23,24 @@
                         </a>
                     </div>
                     <div class="float-start">
-                        {!! Form::open([
-                            'url' => route('backend.product.contact'),
-                            'id' => 'form-search',
-                            'class' => 'row row-cols-lg-auto align-items-center',
-                            'method' => 'get',
-                        ]) !!}
+                        {{ html()->form('POST', route('backend.product.contact'))
+                            ->id('form-search')
+                            ->class('row row-cols-lg-auto align-items-center')
+                            ->open() 
+                        }}
+                      
                         <div class="form-group">
-                            {{ Form::label('Start Date') }}
-                            {{ Form::date('start_date', date('Y-m-d'), ['class' => 'form-control']) }}
+                            {{ html()->label('Start Date') }}<span style="color: red;">*</span>
+                            {{ html()->date('start_date', date('Y-m-d'))
+                                ->class('form-control')
+                            }}
                         </div>
                         <div class="form-group">
-                            {{ Form::label('End Date') }}
-                            {{ Form::date('end_date', date('Y-m-d'), ['class' => 'form-control']) }}
+                            {{ html()->label('End Date') }}<span style="color: red;">*</span>
+                            {{ html()->date('end_date', date('Y-m-d'))
+                                ->class('form-control')
+                            }}
+                           
                         </div>
                         <button type="submit" name="type" value="submit"
                             class="btn btn-primary waves-effect waves-light" style="margin-top:25px;">
@@ -47,7 +52,8 @@
                             style="margin-top:25px;">
                             Reset
                         </a>
-                        {!! Form::close() !!}
+                        {{ html()->form()->close() }}
+
                     </div>
                     <div class="clearfix"></div>
                     <div class="divtable">

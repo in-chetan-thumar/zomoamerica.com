@@ -63,19 +63,26 @@
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div class="tab-pane active" id="profileinfo" role="tabpanel">
-                            {!! Form::open([
-                                'url' => route('profiles.update', auth()->user()->id),
-                                'method' => 'PATCH',
-                                'id' => 'user-form',
-                                'enctype' => 'multipart/form-data',
-                            ]) !!}
+
+                            {{ html()->form('PATCH', route('profiles.update',auth()->user()->id))
+                                ->id('user-form')
+                                ->attribute('enctype', 'multipart/form-data')
+                                ->open() 
+                             }}
+                           
                             <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
 
                             <div class="row">
                                 <div class="col-xs-6 col-sm-6 col-md-6 mb-2">
                                     <div class="form-group">
-                                        {{ Form::label('Profile') }}
-                                        {!! Form::file('profile', ['class' => 'form-control']) !!}
+                                    <div class="form-group">
+                                        {{ html()->label('Profile') }}
+                                        <span class="required">*</span>
+                                        {{ html()->file('profile')
+                                            ->class('form-control')
+                                            ->id('profile') 
+                                        }}
+
                                         {{-- @error('profile')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -85,11 +92,14 @@
                                 </div>
                                 <div class="col-xs-6 col-sm-6 col-md-6 mb-2">
                                     <div class="form-group">
-                                        {{ Form::label('Name') }}<span class="required">*</span>
-                                        {!! Form::text('name', isset(auth()->user()->name) ? auth()->user()->name : old('name'), [
-                                            'class' => 'form-control',
-                                            'placeholder' => 'Name',
-                                        ]) !!}
+                                        {{ html()->label('Name') }}
+                                        <span class="required">*</span>
+                                        {{ html()->text('name', auth()->user()->name)
+                                            ->class('form-control')
+                                            ->id('name') 
+                                            ->placeholder('Name')
+                                        }}
+                                       
                                         {{-- @error('name')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -99,11 +109,15 @@
                                 </div>
                                 <div class="col-xs-6 col-sm-6 col-md-6 mb-2">
                                     <div class="form-group">
-                                        {{ Form::label('Email') }}<span class="required">*</span>
-                                        {!! Form::text('email', isset(auth()->user()->email) ? auth()->user()->email : old('email'), [
-                                            'class' => 'form-control',
-                                            'placeholder' => 'Email',
-                                        ]) !!}
+                                        {{ html()->label('Email') }}
+                                        <span class="required">*</span>
+                                        {{ html()->text('email', auth()->user()->email)
+                                            ->class('form-control')
+                                            ->id('email') 
+                                            ->placeholder('Email')
+                                        }}
+                                       
+                                      
                                         {{-- @error('email')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -113,11 +127,14 @@
                                 </div>
                                 <div class="col-xs-6 col-sm-6 col-md-6 mb-2">
                                     <div class="form-group">
-                                        {{ Form::label('Mobile') }}<span class="required">*</span>
-                                        {!! Form::text('mobile', isset(auth()->user()->mobile) ? auth()->user()->mobile : old('mobile'), [
-                                            'class' => 'form-control',
-                                            'placeholder' => 'Mobile',
-                                        ]) !!}
+                                        {{ html()->label('Mobile') }}
+                                        <span class="required">*</span>
+                                        {{ html()->text('mobile', auth()->user()->mobile)
+                                            ->class('form-control')
+                                            ->id('mobile') 
+                                            ->placeholder('Mobile')
+                                        }}
+                                       
                                         {{-- @error('mobile')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -126,21 +143,21 @@
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-12 mt-2">
-                                    {{ Form::submit('Update', ['class' => 'btn btn-primary waves-effect waves-light']) }}
+                                    {{ html()->button('Update', 'submit')->class('btn btn-primary waves-effect waves-light') }}
                                 </div>
                             </div>
-                            {!! Form::close() !!}
+                         {{ html()->form()->close() }}
+
                         </div>
                         <!-- end tab pane -->
 
                         <div class="tab-pane" id="changepassword" role="tabpanel">
-
-                            {!! Form::open([
-                                'url' => route('change.password'),
-                                'method' => 'POST',
-                                'id' => 'chagepassword-form',
-                                'enctype' => 'multipart/form-data',
-                            ]) !!}
+                            
+                            {{ html()->form('POST', route('change.password'))
+                                ->id('chagepassword-form')
+                                ->attribute('enctype', 'multipart/form-data')
+                                ->open() 
+                             }}
                             <div class="row">
                                 <div class="col-xl-4 col-lg-12 ">
                                     <div class="mb-3">
@@ -205,15 +222,12 @@
                                         </div>
                                     </div>
                                 </div>
-
-                                
-
-
                                 <div class="col-xs-12 col-sm-12 col-md-12 mt-3">
-                                    {{ Form::submit('Change Password', ['class' => 'btn btn-primary waves-effect waves-light']) }}
+                                {{ html()->button('Change Password', 'submit')->class('btn btn-primary waves-effect waves-light') }}
+           
                                 </div>
                             </div>
-                            {!! Form::close() !!}
+                            {{html()->form()->close()}}
                         </div>
                         <!-- end tab pane -->
                     </div>

@@ -11,9 +11,16 @@
                 <div class="col-12">
                     <div class="mb-3">
                         <div class="form-group">
-                            {!!  Form::label('Buisness Name', 'Buisness Name',['style' =>'justify-content: right']); !!}<span
-                                class="required">*</span>
-                            {!! Form::text('buisness_name',isset($user) ? $user->buisness_name:old('buisness_name'),['class' => 'form-control','id' =>'name'])!!}
+                           
+                            {{html()->label('Buisness Name', 'Buisness Name')
+                                ->attribute('style', 'justify-content: right') 
+                            }}<span style="color: red;">*</span>
+                         
+                            {{ html()->text('buisness_name', isset($user) ? $user->buisness_name : old('buisness_name'))
+                                ->class('form-control')
+                                ->id('name')
+                            }}
+                           
                             @error('buisness_name')
                             <span style="color:red">
                                         <strong>{{ $message }}</strong>
@@ -25,9 +32,13 @@
                 <div class="col-12">
                     <div class="mb-3">
                         <div class="form-group">
-                            {!!  Form::label('First Name', 'First Name',['style' =>'justify-content: right']); !!}<span
-                                class="required">*</span>
-                            {!! Form::text('first_name',isset($user) ? $user->first_name:old('first_name'),['class' => 'form-control','id' =>'email'])!!}
+                            {{html()->label('First Name', 'First Name')
+                                ->attribute('style', 'justify-content: right') 
+                            }}<span style="color: red;">*</span>
+                            {{ html()->text('first_name', isset($user) ? $user->first_name : old('first_name'))
+                                ->class('form-control')
+                                ->id('first_name')
+                            }}
                             @error('first_name')
                             <span style="color:red">
                                         <strong>{{ $message }}</strong>
@@ -39,9 +50,13 @@
                   <div class="col-12">
                     <div class="mb-3">
                         <div class="form-group">
-                            {!!  Form::label('Last Name', 'Last Name',['style' =>'justify-content: right']); !!}<span
-                                class="required">*</span>
-                            {!! Form::text('last_name',isset($user) ? $user->last_name:old('last_name'),['class' => 'form-control','id' =>'email'])!!}
+                            {{html()->label('Last Name', 'Last Name')
+                                ->attribute('style', 'justify-content: right') 
+                            }}<span style="color: red;">*</span>
+                            {{ html()->text('last_name', isset($user) ? $user->last_name : old('last_name'))
+                                ->class('form-control')
+                                ->id('last_name')
+                            }}
                             @error('last_name')
                             <span style="color:red">
                                         <strong>{{ $message }}</strong>
@@ -53,9 +68,13 @@
                  <div class="col-12">
                     <div class="mb-3">
                         <div class="form-group">
-                            {!!  Form::label('Address', 'Address',['style' =>'justify-content: right']); !!}<span
-                                class="required">*</span>
-                            {!! Form::text('adress',isset($user) ? $user->adress:old('adress'),['class' => 'form-control','id' =>'email'])!!}
+                            {{html()->label('Address', 'Address')
+                                ->attribute('style', 'justify-content: right') 
+                            }}<span style="color: red;">*</span>
+                            {{ html()->text('adress', isset($user) ? $user->adress : old('adress'))
+                                ->class('form-control')
+                                ->id('address')
+                            }}
                             @error('adress')
                             <span style="color:red">
                                         <strong>{{ $message }}</strong>
@@ -67,9 +86,13 @@
                   <div class="col-12">
                     <div class="mb-3">
                         <div class="form-group">
-                            {!!  Form::label('City', 'City',['style' =>'justify-content: right']); !!}<span
-                                class="required">*</span>
-                            {!! Form::text('city',isset($user) ? $user->city:old('city'),['class' => 'form-control','id' =>'email'])!!}
+                            {{html()->label('City', 'City')
+                                ->attribute('style', 'justify-content: right') 
+                            }}<span style="color: red;">*</span>
+                            {{ html()->text('city', isset($user) ? $user->city : old('city'))
+                                ->class('form-control')
+                                ->id('city')
+                            }}
                             @error('city')
                             <span style="color:red">
                                         <strong>{{ $message }}</strong>
@@ -81,9 +104,13 @@
                    <div class="col-12">
                     <div class="mb-3">
                         <div class="form-group">
-                            {!!  Form::label('State', 'State',['style' =>'justify-content: right']); !!}<span
-                                class="required">*</span>
-                            {!! Form::text('state',isset($user) ? $user->state:old('state'),['class' => 'form-control','id' =>'email'])!!}
+                            {{html()->label('State', 'State')
+                                ->attribute('style', 'justify-content: right') 
+                            }}<span style="color: red;">*</span>
+                            {{ html()->text('state', isset($user) ? $user->state : old('state'))
+                                ->class('form-control')
+                                ->id('state')
+                            }}
                             @error('state')
                             <span style="color:red">
                                         <strong>{{ $message }}</strong>
@@ -95,9 +122,13 @@
                   <div class="col-12">
                     <div class="mb-3">
                         <div class="form-group">
-                            {!!  Form::label('ZipCode', 'ZipCode',['style' =>'justify-content: right']); !!}<span
-                                class="required">*</span>
-                            {!! Form::text('zipcode',isset($user) ? $user->zipcode:old('zipcode'),['class' => 'form-control','id' =>'email'])!!}
+                            {{html()->label('ZipCode', 'ZipCode')
+                                ->attribute('style', 'justify-content: right') 
+                            }}<span style="color: red;">*</span>
+                            {{ html()->text('zipcode', isset($user) ? $user->zipcode : old('zipcode'))
+                                ->class('form-control')
+                                ->id('zipcode')
+                            }}
                             @error('zipcode')
                             <span style="color:red">
                                         <strong>{{ $message }}</strong>
@@ -109,9 +140,13 @@
                 <div class="col-12">
                     <div class="mb-3">
                         <div class="form-group">
-                            {!!  Form::label('Website', 'Website',['style' =>'justify-content: right']); !!}<span
-                                class="required">*</span>
-                            {!! Form::text('website',isset($user) ? $user->website:old('website'),['class' => 'form-control','id' =>'email'])!!}
+                            {{html()->label('Website', 'Website')
+                                ->attribute('style', 'justify-content: right') 
+                            }}<span style="color: red;">*</span>
+                            {{ html()->text('website', isset($user) ? $user->website : old('website'))
+                                ->class('form-control')
+                                ->id('website')
+                            }}
                             @error('website')
                             <span style="color:red">
                                         <strong>{{ $message }}</strong>
@@ -123,9 +158,13 @@
                   <div class="col-12">
                     <div class="mb-3">
                         <div class="form-group">
-                            {!!  Form::label('Email', 'Email',['style' =>'justify-content: right']); !!}<span
-                                class="required">*</span>
-                            {!! Form::text('email',isset($user) ? $user->email:old('email'),['class' => 'form-control','id' =>'email'])!!}
+                            {{html()->label('Email', 'Email')
+                                ->attribute('style', 'justify-content: right') 
+                            }}<span style="color: red;">*</span>
+                            {{ html()->text('email', isset($user) ? $user->email : old('email'))
+                                ->class('form-control')
+                                ->id('email')
+                            }}
                             @error('email')
                             <span style="color:red">
                                         <strong>{{ $message }}</strong>
@@ -137,9 +176,13 @@
                 <div class="col-12">
                     <div class="mb-3">
                         <div class="form-group">
-                            {!!  Form::label('Telephone', 'Telephone',['style' =>'justify-content: right']); !!}<span
-                                class="required">*</span>
-                            {!! Form::text('telephone',isset($user) ? $user->telephone:old('telephone'),['class' => 'form-control','id' =>'telephone'])!!}
+                            {{html()->label('Telephone', 'Telephone')
+                                ->attribute('style', 'justify-content: right') 
+                            }}<span style="color: red;">*</span>
+                            {{ html()->text('telephone', isset($user) ? $user->email : old('telephone'))
+                                ->class('form-control')
+                                ->id('telephone')
+                            }}
                             @error('telephone')
                             <span style="color:red">
                                         <strong>{{ $message }}</strong>

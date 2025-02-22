@@ -46,17 +46,13 @@ class MetatagRepository
     public function filter($params)
     {
         $params['return_type'] = $params['return_type'] ?? '';
-
         $this->model = $this->model->when(!empty($params['start_date'] && !empty($params['end_date'])), function ($q) use ($params) {
             return $q->whereBetween('created_at', [$params['start_date'], $params['end_date']]);
         });
-
-        if ($params['return_type'] == 'drop_down') {
+        if (!empty($params['return_type'] && $params['return_type'] == 'drop_down' )) {
             return $this->model->pluck('name', 'id');
-
-        } elseif ($params['return_type'] == 'object') {
+        } elseif (!empty($params['return_type'] && $params['return_type'] == 'object')) {
             return $this->model->get();
-
         } else {
             return $this->model
                 ->latest()

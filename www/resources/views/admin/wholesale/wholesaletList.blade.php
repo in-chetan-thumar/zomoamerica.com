@@ -23,19 +23,35 @@
                         </a>
                     </div>
                     <div class="float-start">
-                        {!! Form::open([
+                    {{ html()->form('get', route('backend.product.wholesale'))
+                        ->id('form-search')
+                        ->class('row row-cols-lg-auto align-items-center')
+                        ->open()
+                     }}
+
+                        {{-- {!! Form::open([
                             'url' => route('backend.product.wholesale'),
                             'id' => 'form-search',
                             'class' => 'row row-cols-lg-auto  align-items-center',
                             'method' => 'get',
-                        ]) !!}
+                        ]) !!} --}}
                         <div class="form-group">
-                            {{ Form::label('Start Date') }}
-                            {{ Form::date('start_date', date('Y-m-d'), ['class' => 'form-control']) }}
+                            {{html()->label('Start Date', 'Telephone')
+                                ->attribute('style', 'justify-content: right') }}
+                         <span style="color: red;">*</span>
+                            {{ html()->date('start_date', date('Y-m-d'))
+                                ->class('form-control')
+                            }}
                         </div>
                         <div class="form-group">
-                            {{ Form::label('End Date') }}
-                            {{ Form::date('end_date', date('Y-m-d'), ['class' => 'form-control']) }}
+                            {{ html()->label('End Date', 'Telephone')
+                                ->attribute('style', 'justify-content: right')
+                            }}
+                            <span style="color: red;">*</span>
+                            {{ html()->date('end_date', date('Y-m-d'))
+                                ->class('form-control')
+                            }}
+                        
                         </div>
                         <button type="submit" name="type" value="submit"
                             class="btn btn-primary waves-effect waves-light" style="margin-top:25px">
@@ -46,7 +62,7 @@
                             class="btn btn-secondary waves-effect waves-light" style="margin-top:25px">
                             Reset
                         </a>
-                        {!! Form::close() !!}
+                        {{ html()->form()->close() }}
                     </div>
                 </div>
             </div>

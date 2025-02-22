@@ -3,8 +3,13 @@
     @if(!empty($options))
         @foreach($options as $key => $option)
             <div class="form-check">
-                {!! Form::radio($name,$key,$key == $value ? true:false,array_merge_recursive(['id'=>$name.$key,'class'=>'form-check-input'],$attributes)); !!}
-                {{ Form::label($name.$key,$option,['class' => '']) }}
+                {{-- {!! Form::radio($name,$key,$key == $value ? true:false,array_merge_recursive(['id'=>$name.$key,'class'=>'form-check-input'],$attributes)); !!}
+                {{ Form::label($name.$key,$option,['class' => '']) }} --}}
+                {{ Html()->radio($name, $key, $key == $value)
+                    ->id($name.$key)
+                    ->class('form-check-input')
+                    ->attributes($attributes) }}
+                {{ Html()->label($name.$key, $option)->class('') }}
             </div>
         @endforeach
     @endif

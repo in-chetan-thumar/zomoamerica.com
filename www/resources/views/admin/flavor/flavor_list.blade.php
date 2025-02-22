@@ -23,30 +23,26 @@
                             class="btn btn-primary"><i class="mdi mdi-plus"></i>&nbsp;Add Flavor</a>
                     </div>
                     <div class="float-start">
-                        {!! Form::open([
-                            'url' => route('backend.product.flavors'),
-                            'id' => 'form-search',
-                            'class' => 'row row-cols-lg-auto g-3 align-items-center',
-                            'method' => 'get',
-                        ]) !!}
+                        {{ html()->form('GET', route('backend.product.flavors'))
+                        ->id('form-search')
+                        ->class('row row-cols-lg-auto g-3 align-items-center')
+                        ->open() }}
 
                         <div class="form-group">
-                            {!! Form::text('query_str', request()->query('query_str'), [
-                                'class' => 'form-control',
-                                'placeholder' => 'Search by flavor title ',
-                            ]) !!}
+                            {{ html()->text('query_str', request()->query('query_str'))
+                            ->class('form-control')
+                            ->attribute('placeholder', 'Search by flavor title') }}
                         </div>
                         <div class="form-group">
-                            {!! Form::select('category_id', $category, request()->query('category_id'), [
-                                'class' => 'form-control zone',
-                                'placeholder' => 'Select category',
-                            ]) !!}
+                            {{ html()->select('category_id', $category, request()->query('category_id'))
+                            ->class('form-control zone')
+                            ->attribute('placeholder', 'Select category') }}
                         </div>
                         <div class="form-group">
-                            {!! Form::select('is_active', $status, request()->query('is_active'), [
-                                'class' => 'form-control zone',
-                                'placeholder' => 'Select status',
-                            ]) !!}
+                            {{ html()->select('is_active', $status, request()->query('is_active'))
+                                ->class('form-control zone')
+                                ->attribute('placeholder', 'Select status')
+                             }}
                         </div>
                         <button type="submit" name="type" value="submit"
                             class="btn btn-primary waves-effect waves-light">
@@ -64,7 +60,7 @@
                         </div> --}}
 
 
-                        {!! Form::close() !!}
+                        {{ html()->form()->close() }}
                     </div>
                     <div class="clearfix"></div>
                     <div class="divtable">

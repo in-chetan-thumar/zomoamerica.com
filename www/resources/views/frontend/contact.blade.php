@@ -5,7 +5,6 @@
 
 
 @section('main')
-
     <div class="btcm">
         <div class="container">
             <div class="breadcrumbs d-flex align-items-center">
@@ -24,14 +23,18 @@
             <div class="content-infomation">
                 <div class="contact-form">
                     <p>LETS GET IN TOUCH!</p>
-                    {!! Form::open([
-                        'url' => route('frontend.storeContact'),
-                        'method' => 'POST',
-                        'id' => 'Enquery-top-form',
-                        'class' => 'form-contact-us',
-                    ]) !!}
+                    {{ html()->form('POST', route('frontend.storeContact'))
+                        ->class('form-contact-us')
+                        ->id('Enquery-top-form')->open()
+                    }}
+                    
                     <div class="input-field">
-                        {{ Form::text('email', old('email'), ['class' => '', 'maxlength' => '50', 'placeholder' => 'Email']) }}
+                        {{ html()->input('text','email', old('email'))
+                            ->class('')
+                            ->attribute('maxlength', '50')
+                            ->placeholder('Email')  
+                        }}
+                    
                         @error('email')
                             <span class="text-danger" style="font-size:15px">
                                 {{ $message }}
@@ -41,8 +44,11 @@
                     </div>
 
                     <div class="input-field">
-
-                        {{ Form::text('subject', old('subject'), ['class' => '', 'maxlength' => '50', 'placeholder' => 'Subject']) }}
+                        {{ html()->input('text','subject', old('subject'))
+                            ->class('')
+                            ->attribute('maxlength', '50')
+                            ->placeholder('Subject')  
+                        }}
                         @error('subject')
                             <span class="text-danger" style="font-size:15px">
                                 {{ $message }}
@@ -52,14 +58,22 @@
 
 
                     <div class="input-field">
-
-                        {{ Form::bsTextArea('', 'message', '', '', ['placeholder' => 'Message', 'maxlength' => '150', 'class' => '', 'rows' => 10, 'cols' => '30'], [], false) }}
-
+                        {!! html()->textarea('message', '')
+                        ->placeholder('Message')
+                        ->attribute('maxlength', '150')
+                        ->rows(10)
+                        ->cols(30)
+                        ->class('') !!}
+                        @error('message')
+                            <span class="text-danger" style="font-size:15px">
+                                {{ $message }}
+                        </span>
                     </div>
 
                     <button type="submit" class="btn-black g-recaptcha "
                             data-sitekey="{{ env('NOCAPTCHA_SITEKEY')}}" data-callback='onSubmit'>Send Message</button>
-                    {{ Form::close() }}
+                            {{ html()->form()->close() }}
+                           
                 </div>
                 <div class="map-infomation">
                     <div class="image-location">

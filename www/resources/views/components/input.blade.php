@@ -7,7 +7,8 @@
     }
 @endphp
 
-{{ Form::text($name, $value, array_merge_recursive(['class' => $errors->has($name) ? 'form-control is-invalid' : 'form-control'], $attributes)) }}
+{{-- {{ Form::text($name, $value, array_merge_recursive(['class' => $errors->has($name) ? 'form-control is-invalid' : 'form-control'], $attributes)) }} --}}
+{{ Html()::text($name, $value)->attributes(array_merge(['class' => $errors->has($name) ? 'form-control is-invalid' : 'form-control'], $attributes)) }}
 @error($name)
     <span class="invalid-feedback" style="display: inline;font-size:15px">{{ $message }}</span>
 @enderror

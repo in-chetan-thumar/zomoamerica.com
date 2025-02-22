@@ -164,6 +164,7 @@ return [
         Spatie\Permission\PermissionServiceProvider::class,
         \App\Providers\RepositoryServiceProvider::class,
         Yoeunes\Toastr\ToastrServiceProvider::class,
+        spatie\Html\HtmlServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -178,7 +179,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         \App\Providers\HelperServiceProvider::class,
-        \App\Providers\FormServiceProvider::class,
+        // \App\Providers\FormServiceProvider::class,
         Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
         Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,

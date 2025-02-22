@@ -6,19 +6,30 @@
     </div>
     <div class="offcanvas-body">
 
-        @if(isset($user))
-            {!! Form::open(array('url' => route('usermanagements.update',$user->id),'method'=>'PATCH','id'=>'user-form','files'=>true)) !!}
-        @else
-            {!! Form::open(array('url' => route('usermanagements.store'),'method'=>'POST','id'=>'user-form','files'=>true)) !!}
-        @endif
-
+            @if(isset($user))
+            {{ html()->form('PATCH', route('usermanagements.update',$user->id))
+                ->id('user-form')
+                ->class('row row-cols-lg-auto g-3 align-items-center')
+                ->open() 
+            }}
+            @else
+            {{ html()->form('post', route('usermanagements.store'))
+                ->id('user-form')
+                ->class('row row-cols-lg-auto g-3 align-items-center')
+                ->open() 
+            }}
+            @endif
             <div class="row">
                 <div class="col-12">
                     <div class="mb-3">
                         <div class="form-group">
-                            {!!  Form::label('name', 'Name',['style' =>'justify-content: right']); !!}<span
-                                class="required">*</span>
-                            {!! Form::text('name',isset($user) ? $user->name:old('name'),['class' => 'form-control','id' =>'name'])!!}
+                            {{ html()->label('Name', 'name')
+                                ->attribute('style', 'justify-content: right') }}
+                            <span class="required">*</span>
+                            {{ html()->text('name', isset($user) ? $user->user : old('name'))
+                                ->class('form-control')
+                                ->id('name') 
+                             }}
                             @error('name')
                             <span style="color:red">
                                         <strong>{{ $message }}</strong>
@@ -30,9 +41,13 @@
                 <div class="col-12">
                     <div class="mb-3">
                         <div class="form-group">
-                            {!!  Form::label('email', 'email',['style' =>'justify-content: right']); !!}<span
-                                class="required">*</span>
-                            {!! Form::text('email',isset($user) ? $user->email:old('email'),['class' => 'form-control','id' =>'email'])!!}
+                            {{ html()->label('Email', 'email')
+                                ->attribute('style', 'justify-content: right') }}
+                            <span class="required">*</span>
+                            {{ html()->text('email', isset($user) ? $user->user : old('email'))
+                                ->class('form-control')
+                                ->id('email') 
+                            }}
                             @error('email')
                             <span style="color:red">
                                         <strong>{{ $message }}</strong>
@@ -41,14 +56,20 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
+          
                 <div class="col-12">
                     <div class="mb-3">
                         <div class="form-group">
-                            {!!  Form::label('role', 'Role',['style' =>'justify-content: right']); !!}<span
-                                class="required">*</span>
-                            {!! Form::select('role',$roles,(isset($user) AND !empty($user->roles()->first())) ? $user->roles()->first()->id:old('role'),['class'=>'form-control','id'=>'role','style'=>'width: 100%','placeholder'=>'Select role']) !!}
+                            {{ html()->label('Role', 'role')
+                                ->attribute('style', 'justify-content: right') }}
+                            <span class="required">*</span>
+                            {{ html()->select('role', $roles, isset($user) ? $user->roles()->first()->id : old('role'))
+                                ->class('form-select')
+                                ->id('role')
+                                ->placeholder('Select role')
+                                
+                            }}
+                            
                             @error('role')
                             <span style="color:red">
                                         <strong>{{ $message }}</strong>
@@ -60,7 +81,7 @@
             </div>
         <div class="row">
             <div class="col-md-12">
-                {!! Form::submit('Submit',['class'=>'btn btn-primary']) !!}
+                {{ html()->button('Submit', 'submit')->class('btn btn-primary') }}
             </div>
         </div>
         </form>

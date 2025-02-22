@@ -17,7 +17,7 @@ class FlavorsImage
      */
     public function __construct(FlavorImage $model)
     {
-        return $this->model = $model;
+        $this->model = $model;
     }
 
     // Get data by id

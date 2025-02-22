@@ -8,22 +8,30 @@
     <div class="offcanvas-body">
 
         @if (isset($newsdata))
-            {!! Form::open([
-                'url' => route('news-list.update', $newsdata->news_id),
-                'method' => 'PATCH',
-                'id' => 'news-form',
-                'files' => true,
-            ]) !!}
+         {{ html()->form('PATCH', route('news-list.update',$newsdata->news_id))
+            ->id('news-form')
+            ->attribute('enctype', 'multipart/form-data')
+            ->open() }}
+           
         @else
-            {!! Form::open(['url' => route('news-list.store'), 'method' => 'POST', 'id' => 'news-form', 'files' => true]) !!}
+            {{ html()->form('POST', route('news-list.store'))
+            ->id('news-form')
+            ->attribute('enctype', 'multipart/form-data')
+            ->open() }}
         @endif
 
         <div class="row">
             <div class="col-12">
                 <div class="mb-3">
                     <div class="form-group">
-                        {!! Form::label('title', 'Title', ['style' => 'justify-content: right']) !!}<span class="required">*</span>
-                        {!! Form::text('title', isset($newsdata) ? $newsdata->title : old('title'), ['class' => 'form-control']) !!}
+                        {{ html()->label('Title', 'title')
+                            ->attribute('style', 'justify-content: right') }}
+                            <span class="required">*</span>
+                            
+                         {{ html()->text('title', isset($newsdata) ?$newsdata->title : old('title'))
+                            ->class('form-control')
+                            ->id('title')
+                        }}
                         @error('title')
                             <span style="color:red">
                                 <strong>{{ $message }}</strong>
@@ -36,8 +44,13 @@
             <div class="col-12">
                 <div class="mb-3">
                     <div class="form-group">
-                        {!! Form::label('slug', 'Slug', ['style' => 'justify-content: right']) !!}<span class="required">*</span>
-                        {!! Form::text('slug', isset($newsdata) ? $newsdata->slug : old('slug'), ['class' => 'form-control']) !!}
+                        {{ html()->label('Slug', 'slug')
+                            ->attribute('style', 'justify-content: right') }}
+                            <span class="required">*</span>
+                        {{ html()->text('slug', isset($newsdata) ? $newsdata->slug : old('slug'))
+                            ->class('form-control')
+                            ->id('slug')
+                        }}
                         @error('slug')
                             <span style="color:red">
                                 <strong>{{ $message }}</strong>
@@ -50,9 +63,18 @@
             <div class="col-12">
                 <div class="mb-3">
                     <div class="form-group">
-                        {!! Form::label('link', 'Link', ['style' => 'justify-content: right']) !!}
-                        {!! Form::text('link', isset($newsdata) ? $newsdata->link : old('link'), ['class' => 'form-control']) !!}
-                        
+                        {{ html()->label('Link', 'link')
+                        ->attribute('style', 'justify-content: right') }}
+                        <span class="required">*</span>
+                        {{ html()->text('link', isset($newsdata) ? $newsdata->link : old('link'))
+                            ->class('form-control')
+                            ->id('link')
+                        }}
+                        @error('link')
+                            <span style="color:red">
+                                <strong>{{ $message }}</strong>
+                            </span> 
+                        @enderror
                     </div>
                 </div>
             </div>
@@ -60,10 +82,18 @@
             <div class="col-12">
                 <div class="mb-3">
                     <div class="form-group">
-                        {!! Form::label('description', 'Description', ['style' => 'justify-content: right']) !!}
-                        {!! Form::textarea('description', isset($newsdata) ? $newsdata->description : old('description'), [
-                            'class' => 'form-control',
-                        ]) !!}
+                        {{ html()->label('Description', 'description')
+                            ->attribute('style', 'justify-content: right') }}
+                            <span class="required">*</span>
+                        {{ html()->text('description', isset($newsdata) ? $newsdata->description : old('description'))
+                            ->class('form-control')
+                            ->id('description')
+                        }}
+                        @error('description')
+                            <span style="color:red">
+                                <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
                 </div>
             </div>
@@ -72,10 +102,13 @@
             <div class="col-12">
                 <div class="mb-3">
                     <div class="form-group">
-                        {!! Form::label('image', 'Select Image', ['style' => 'justify-content: right']) !!}
-                        <span class="required">*</span>
-                        {{-- <span class="required">@if (!isset($newsdata))*@endif</span> --}}
-                        {!! Form::file('image', ['class' => 'form-control', 'id' => 'image']) !!}
+                        {{ html()->label('Select Image', 'image')
+                            ->attribute('style', 'justify-content: right') }}
+                            <span class="required">*</span>
+                        {{ html()->file('image')
+                            ->class('form-control')
+                            ->id('description')
+                        }}
                         <div class="preview">
                             @if (isset($newsdata->image))
                                 <img style="width:30%;height:20%"
@@ -114,10 +147,12 @@
 
         <div class="row">
             <div class="col-md-12">
-                {!! Form::submit('Submit', ['class' => 'btn btn-primary']) !!}
+                {{ html()->button('Submit', 'submit')->class('btn btn-primary') }}
+
+               
             </div>
         </div>
-        {{ Form::close() }}
+        {{ html()->form()->close() }}
     </div>
 </div>
 {!! JsValidator::formRequest('App\Http\Requests\NewsRequest', '#news-form') !!}

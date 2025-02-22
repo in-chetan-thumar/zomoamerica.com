@@ -56,10 +56,16 @@
                                     @if (\Illuminate\Support\Facades\Session::has('username'))
                                         @dd(\Illuminate\Support\Facades\Session::get('username'))
                                     @endif
+                                    {{ html()->form('POST', route('login'))
+                                        
+                                    }}
                                     <form action="{{ route('login') }}" method="POST">
                                         @csrf
                                         <div class="mb-3">
-                                            {{ Form::bsText($label,'username',old('username'),'',['class'=>'','placeholder' => "Enter ".strtolower($label)],[],true) }}
+                                            <label class="form-label">Username</label>
+                                            {{ html()->label($label) }}<span style="color: red;">*</span>   
+                                            {{ html()->input('text', 'username', old('username'))->placeholder('Enter ' . strtolower($label))->attributes([])->class('form-control ' . ($errors->has('username') ? 'is-invalid' : '')) }}
+                                            {{-- {{ Form::bsText($label,'username',old('username'),'',['class'=>'','placeholder' => "Enter ".strtolower($label)],[],true) }} --}}
                                         </div>
 
                                         @if(config('constants.USER_PASSWORD_LOGIN'))

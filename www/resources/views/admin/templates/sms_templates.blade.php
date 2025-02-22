@@ -42,13 +42,13 @@
                     <div class="card-body">
                         <div class="row">
                             {{-- @can('SMStemplates.create') --}}
-                            {!! Form::open([
-                                'url' => route('sms.templates.store'),
-                                'method' => 'POST',
-                                'id' => 'sms-template-form',
-                                'class' => 'col-md-12',
-                                'enctype' => 'multipart/form-data',
-                            ]) !!}
+                            {{ html()->form('POST', route('sms.templates.store'))
+                                ->id('sms-template-form')
+                                ->class('col-md-12')
+                                ->attribute('enctype', 'multipart/form-data')
+                                ->open() 
+                            }}
+                       
                             <input type="hidden" name="id" value="{{ !empty($SMStemplate) ? $SMStemplate->id : '' }}"
                                 id="sms_template_id">
                             <input type="hidden" name="template_type"
@@ -57,12 +57,12 @@
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="mb-3">
                                     <div class="form-group">
-                                        {{ Form::label('Template name') }}<span class="required">*</span>
-                                        {!! Form::text('template_name', !empty($SMStemplate) ? $SMStemplate->template_name : '', [
-                                            'class' => 'form-control',
-                                            'placeholder' => 'Template name',
-                                            'id' => 'template_name',
-                                        ]) !!}
+                                        {{html()->label('Template name', 'Template Name')->class('form-label') }}
+                                        {{ html()->text('template_name', !empty($SMStemplate) ? $SMStemplate->template_name : '')
+                                            ->class('form-control')
+                                            ->placeholder('Template name')
+                                            ->id('template_name') }}
+                                        
                                         @error('template_name')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -74,12 +74,12 @@
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="mb-3">
                                     <div class="form-group">
-                                        {{ Form::label('Content') }}<span class="required">*</span>
-                                        {!! Form::textarea('sms_template_content', !empty($SMStemplate) ? $SMStemplate->html_template : '', [
-                                            'class' => 'form-control',
-                                            'placeholder' => 'Content',
-                                            'id' => 'sms_template_content',
-                                        ]) !!}
+                                        {{html()->label('Content', 'sms_template_content')->class('form-label') }}
+
+                                        {{ html()->textarea('sms_template_content', !empty($SMStemplate) ? $SMStemplate->html_template : '')
+                                            ->class('form-control')
+                                            ->placeholder('Content')
+                                            ->id('sms_template_content') }}
                                         @error('sms_template_content')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -90,10 +90,10 @@
                             </div>
                             {{-- @can('SMStemplates.create') --}}
                             <div class="col-xs-12 col-sm-12 col-md-12 mt-2">
-                                {{ Form::button('Save', ['class' => 'btn btn-primary btnSubmit waves-effect waves-light']) }}
+                                {{ html()->button('Save')->class('btn btn-primary btnSubmit waves-effect waves-light') }}
                             </div>
                             {{-- @endcan --}}
-                            {!! Form::close() !!}
+                            {{ html()->form()->close() }}
                         </div>
                     </div>
 
@@ -119,7 +119,6 @@
                 $(".btnSubmit").prop('disabled', true);
             }
         });
-
         $(".btn-create").on('click', function(e) {
             $('#sms_template_content, #template_name, #sms_template_id').val('')
 

@@ -11,9 +11,13 @@
                 <div class="col-12">
                     <div class="mb-3">
                         <div class="form-group">
-                            {!!  Form::label('Email', 'Email',['style' =>'justify-content: right']); !!}<span
-                                class="required">*</span>
-                            {!! Form::text('email',isset($user) ? $user->email:old('email'),['class' => 'form-control','id' =>'name'])!!}
+                            {{ html()->label('Email', 'Email')
+                                ->attribute('style', 'justify-content: right') }}
+                            <span class="required">*</span>
+                            {{ html()->text('email', isset($user) ? $user->email : old('email'))
+                                    ->class('form-control')
+                                    ->id('email')
+                            }}      
                             @error('email')
                             <span style="color:red">
                                         <strong>{{ $message }}</strong>
@@ -25,9 +29,12 @@
                 <div class="col-12">
                     <div class="mb-3">
                         <div class="form-group">
-                            {!!  Form::label('Subject', 'Subject',['style' =>'justify-content: right']); !!}<span
-                                class="required">*</span>
-                            {!! Form::text('subject',isset($user) ? $user->subject:old('subject'),['class' => 'form-control','id' =>'email'])!!}
+                            {{ html()->label('Subject', 'Subject')
+                                ->attribute('style', 'justify-content: right') }}
+                             {{ html()->text('subject', isset($user) ? $user->subject : old('subject'))
+                                ->class('form-control')
+                                ->id('subject')
+                            }}
                             @error('subject')
                             <span style="color:red">
                                     <strong>{{ $message }}</strong>
@@ -41,9 +48,15 @@
                 <div class="col-12">
                     <div class="mb-3">
                         <div class="form-group">
-                            {!!  Form::label('Message', 'Message',['style' =>'justify-content: right']); !!}<span
-                                class="required">*</span>
-                            {{ Form::bsTextArea('', 'message',isset($user) ? $user->message:old('message'), '', ['placeholder' => 'Message', 'maxlength' => '150','class' => '', 'rows' => 10, 'cols' => '30'], [], false) }}
+                            {{ html()->label('Message', 'Message')
+                                ->attribute('style', 'justify-content: right') }}
+                             {{ html()->bsTextArea('', 'message', isset($user) ? $user->message : old('message'))
+                                        ->placeholder('Message')
+                                        ->attribute('maxlength', 150)
+                                        ->class('')
+                                        ->rows(10)
+                                        ->cols(30)
+                            }}
 
                             @error('message')
                             <span style="color:red">

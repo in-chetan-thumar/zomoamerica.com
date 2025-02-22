@@ -112,12 +112,12 @@
         <div class="container">
             <div class="newslatter-form">
                 <p class="title-news">EMAIL NEWLETTER</p>
-                {!! Form::open([
-                    'url' => route('frontend.EmailNews.store'),
-                    'method' => 'POST',
-                    'id' => 'EmailNewsLetter-form',
-                    'class' => 'EmailNewsLetter-form',
-                ]) !!}
+                {{ html()->form('POST', route('frontend.EmailNews.store'))
+                    ->class('EmailNewsLetter-form')
+                    ->id('EmailNewsLetter-form')->open()
+                 }}
+                
+              
 
                 <label for="Subscribe">Subscribe to our newsletter and get notification about ZOMO updates.</label>
 
@@ -134,7 +134,7 @@
                 {{--                <input type="text" name="email" id="Subscribe"> --}}
                 {{--                <input type="submit" class="input-bottom" value=">" --}}
                 {{--                    style="color:#482583;background:#73648d;font-size:50px;"> --}}
-                {{ Form::close() }}
+                {{ html()->form()->close() }}
                 </form>
             </div>
         </div>
@@ -320,20 +320,20 @@
                     </h6>
                     <div class="content-infomation reveal" id="wholesale-form11">
                         <div class="contact-form">
-                            {!! Form::open([
-                                'url' => route('frontend.home.authorizeStateDistributor'),
-                                'method' => 'POST',
-                                'id' => 'wholesale-form',
-                                'class' => 'wholesale-form',
-                            ]) !!}
+            {{ html()->form('POST', route('frontend.home.authorizeStateDistributor'))
+                                ->class('wholesale-form')
+                                ->id('wholesale-form')->open()
+                            }}
+                        
 
                             <div class="cole-two reveal">
                                 <div class="input-field">
                                     <label for="fist">FIRST NAME <span class="text-danger">*</span></label>
-                                    {!! Form::text('fname', old('fname'), [
-                                        'class' => 'fname',
-                                        'maxlength' => '20',
-                                    ]) !!}
+                                    
+                                    {{ html()->input('text','fname', old('fname'))
+                                        ->class('fname')
+                                        ->attribute('maxlength', '20')
+                                     }}
                                     <span class="text-danger" style="font-size:15px">
                                         @error('fname')
                                             {{ $message }}
@@ -343,10 +343,11 @@
                                 </div>
                                 <div class="input-field">
                                     <label for="Last">LAST NAME <span class="text-danger">*</span></label>
-                                    {!! Form::text('lname', old('lname'), [
-                                        'class' => 'lname',
-                                        'maxlength' => '20',
-                                    ]) !!}
+                                    {{ html()->input('text','lname', old('lname'))
+                                        ->class('lname')
+                                        ->attribute('maxlength', '20')
+                                    }}
+                                  
                                     <span class="text-danger" style="font-size:15px">
                                         @error('lname')
                                             {{ $message }}
@@ -359,10 +360,11 @@
                             <div class="cole-two reveal">
                                 <div class="input-field">
                                     <label for="city">CITY <span class="text-danger">*</span></label>
-                                    {!! Form::text('city', old('city'), [
-                                        'class' => 'city',
-                                        'maxlength' => '30',
-                                    ]) !!}
+                                    {{ html()->input('text','city', old('city'))
+                                        ->class('city')
+                                        ->attribute('maxlength', '30')
+                                    }}
+                                   
                                     <span class="text-danger" style="font-size:15px">
                                         @error('city')
                                             {{ $message }}
@@ -372,7 +374,12 @@
                                 </div>
                                 <div class="input-field">
                                     <label for="state">State <span class="text-danger">*</span></label>
-                                    {{ Form::Select('state', $stateArray, '', ['class' => 'state', 'placeholder' => 'Select']) }}
+
+
+                                 {{ html()->select('state', $stateArray)
+                                    ->placeholder('Select')
+                                    ->class('state') 
+                                }}
                                     <span class="text-danger" style="font-size:15px">
                                         @error('state')
                                             {{ $message }}
@@ -385,10 +392,11 @@
                             <div class="cole-two reveal">
                                 <div class="input-field">
                                     <label for="email">EMAIL ADDRESS <span class="text-danger">*</span></label>
-                                    {!! Form::text('email', old('email'), [
-                                        'class' => 'email',
-                                        'maxlength' => '100',
-                                    ]) !!}
+                                    {{ html()->input('text','email', old('email'))
+                                        ->class('email')
+                                        ->attribute('maxlength', '100')
+                                    }}
+                                  
                                     <span class="text-danger" style="font-size:15px">
                                         @error('email')
                                             {{ $message }}
@@ -398,10 +406,11 @@
                                 </div>
                                 <div class="input-field">
                                     <label for="number">TELEPHONE NUMBER <span class="text-danger">*</span></label>
-                                    {!! Form::text('number', old('number'), [
-                                        'class' => 'number',
-                                        'maxlength' => '10',
-                                    ]) !!}
+                                    {{ html()->input('number','number', old('number'))
+                                        ->class('number')
+                                        ->attribute('maxlength', '10')
+                                    }}
+                                 
                                     <span class="text-danger" style="font-size:15px">
                                         @error('number')
                                             {{ $message }}
@@ -418,8 +427,8 @@
                             <div class="wrap-btn reveal">
                                 <input type="submit" class="btn-black mb-5" value="SEND">
                             </div>
-
-                            {{ Form::close() }}
+                            {{ html()->form()->close() }}
+                          
                         </div>
                     </div>
                 </div>
@@ -451,12 +460,11 @@
         <div class="Popup" style="display: none">
             <div class="pop-inner">
                 <div class="pop-news-letter">
-
-                    {!! Form::open([
-                        'method' => 'POST',
-                        'id' => 'newsletterPopupForm',
-                        'class' => 'form-newletter',
-                    ]) !!}
+                    
+                    {{ html()->form('POST', url()->current())
+                    ->id('newsletterPopupForm')
+                    ->class('form-newletter')
+                    ->open() }}
 
                     <h2>JOIN OUR<br>
                         NEWSLETTER</h2>
@@ -479,7 +487,8 @@
                         <small>By signing up you agree you are 21 &amp; older and accept<br>
                             receiving electronic information by Zomo &amp; it’s partners</small>.
                     </div>
-                    {{ Form::close() }}
+                    {{ html()->form()->close() }}
+                 
                 </div>
             </div>
         </div>

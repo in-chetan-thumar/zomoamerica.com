@@ -21,19 +21,18 @@ class MessageTemplateController extends Controller
      */
     public function emailIndex(Request $request)
     {
-        try {
-            if (isset($request->id)) {
-                $emailtemplate = MailTemplate::find($request->id);
-            } else {
-                $emailtemplate = MailTemplate::where('template_type', 'EMAIL')->first();
-            }
-            $emailtemplates = MailTemplate::where('template_type', 'EMAIL')->get();
-            
-            $params = [];
+         try {
+         if (isset($request->id)) {
+            $emailtemplate = MailTemplate::find($request->id);
+         } else {
+                
+         $emailtemplate = MailTemplate::where('template_type', 'EMAIL')->first();
+         }
+        $emailtemplates = MailTemplate::where('template_type', 'EMAIL')->get();     
+        $params = [];
             $params['email']= 'rabi@mailinator.com';
-            // $params['cc']= ['rabi@mailinator.com','rajesh@mailinator.com','mohit@gmail.com'];
+            $params['cc']= ['rabi@mailinator.com','rajesh@mailinator.com','mohit@gmail.com'];
             Mail::send(new TempleteCreateNotification($params));
-
             return view('admin.templates.email_templates', compact('emailtemplates', 'emailtemplate'));
         } catch (\Exception $e) {
             toastr()->error(app('common-helper')->generateErrorMessage($e));

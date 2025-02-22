@@ -42,13 +42,13 @@
                     <div class="card-body">
                         <div class="row">
                             {{-- @can('emailtemplates.create') --}}
-                            {!! Form::open([
-                                'url' => route('email.templates.store'),
-                                'method' => 'POST',
-                                'id' => 'email-template-form',
-                                'class' => 'col-md-12',
-                                'enctype' => 'multipart/form-data',
-                            ]) !!}
+                            {{ html()->form('POST', route('email.templates.store'))
+                                ->id('email-template-form')
+                                ->class('col-md-12')
+                                ->attribute('enctype', 'multipart/form-data')
+                                ->open() 
+                            }}
+                      
                             <input type="hidden" name="id"
                                 value="{{ !empty($emailtemplates) ? $emailtemplate->id : '' }}" id="email_template_id">
                             <input type="hidden" name="template_type"
@@ -57,12 +57,13 @@
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="mb-3">
                                     <div class="form-group">
-                                        {{ Form::label('Template name') }}<span class="required">*</span>
-                                        {!! Form::text('template_name', $emailtemplate->template_name, [
-                                            'class' => 'form-control',
-                                            'id' => 'template_name',
-                                            'placeholder' => 'Template name',
-                                        ]) !!}
+                                        {{html()->label('Template name', 'Template Name')->class('form-label') }}
+                                        {{html()->text('template_name', $emailtemplate->template_name ?? '')
+                                                ->class('form-control')
+                                                ->placeholder('Template name')
+                                                ->id('template_name') 
+                                            }}
+                                       
                                         @error('template_name')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -74,12 +75,13 @@
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="mb-3">
                                     <div class="form-group">
-                                        {{ Form::label('Template code') }}<span class="required">*</span>
-                                        {!! Form::text('template_code', $emailtemplate->template_code, [
-                                            'class' => 'form-control',
-                                            'id' => 'template_code',
-                                            'placeholder' => 'Template code',
-                                        ]) !!}
+                                        {{html()->label('Template code', 'Template Name')->class('form-label') }}
+                                        {{html()->text('template_code', $emailtemplate->template_code ?? '')
+                                                ->class('form-control')
+                                                ->placeholder('Template code')
+                                                ->id('template_code') 
+                                        }}
+                                     
                                         @error('template_code')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -91,12 +93,14 @@
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="mb-3">
                                     <div class="form-group">
-                                        {{ Form::label('Mailable class') }}<span class="required">*</span>
-                                        {!! Form::text('mailable', $emailtemplate->mailable, [
-                                            'class' => 'form-control',
-                                            'id' => 'mailable',
-                                            'placeholder' => 'Mailable class',
-                                        ]) !!}
+                                        {{html()->label('Mailable class', 'Mailable class')->class('form-label
+                                        ') }}
+                                        {{html()->text('mailable', $emailtemplate->mailable ?? '')
+                                                ->class('form-control')
+                                                ->placeholder('Mailable class')
+                                                ->id('mailable') 
+                                            }}
+                                       
                                         @error('mailable')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -108,12 +112,13 @@
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="mb-3">
                                     <div class="form-group">
-                                        {{ Form::label('Subject') }}<span class="required">*</span>
-                                        {!! Form::text('subject', $emailtemplate->subject, [
-                                            'class' => 'form-control',
-                                            'id' => 'subject',
-                                            'placeholder' => 'Subject',
-                                        ]) !!}
+                                        {{html()->label('Subject', 'subject')->class('form-label
+                                       ') }}
+                                        {{html()->text('subject', $emailtemplate->subject ?? '')
+                                                ->class('form-control')
+                                                ->placeholder('Subject')
+                                                ->id('subject') 
+                                        }}
                                         @error('subject')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -125,12 +130,13 @@
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="mb-3">
                                     <div class="form-group">
-                                        {{ Form::label('Content') }}<span class="required">*</span>
-                                        {!! Form::textarea('email_template_content', $emailtemplate->html_template, [
-                                            'class' => 'form-control',
-                                            'id' => 'email_template_content',
-                                            'placeholder' => 'Content',
-                                        ]) !!}
+                                        {{html()->label('Content', 'content')->class('form-label
+                                        ') }}
+                                        {{html()->textarea('email_template_content', $emailtemplate->html_template ?? '')
+                                                ->class('form-control')
+                                                ->placeholder('Content')
+                                                ->id('email_template_content') 
+                                            }}
                                         @error('email_template_content')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -141,10 +147,13 @@
                             </div>
                             {{-- @can('emailtemplates.create') --}}
                             <div class="col-xs-12 col-sm-12 col-md-12 mt-2">
-                                {{ Form::button('Save', ['class' => 'btn btn-primary btnSubmit waves-effect waves-light']) }}
+                                {{html()->button('Save')
+                                ->type('submit')
+                                ->class('btn btn-primary btnSubmit waves-effect waves-light') 
+                            }}
                             </div>
                             {{-- @endcan --}}
-                            {!! Form::close() !!}
+                            {{ html()->form()->close() }}
                         </div>
                     </div>
 

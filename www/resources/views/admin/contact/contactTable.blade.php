@@ -9,7 +9,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach ($tableData as $key => $row)
+         @foreach ($tableData as $key => $row)
             <tr>
                 <td>{{ $row->email }}</td>
                 <td>{{ $row->subject }}</td>
@@ -26,7 +26,7 @@
                                 href="{{ route('backend.product.edit', $row->id) }}">View</a>
 
 
-                            @can('usermanagements.destroy')
+                            {{-- @can('usermanagements.destroy') --}}
                                 <a class="dropdown-item"
                                     onclick="if(confirm('Are you sure you want to delete.')) document.getElementById('delete-{{ $row->id }}').submit()">
                                     Delete</a>
@@ -35,12 +35,12 @@
                                     @method('DELETE')
                                     @csrf
                                 </form>
-                            @endcan
+                            {{-- @endcan --}}
                         </div>
                     </div>
                 </td>
             </tr>
-        @endforeach
+        @endforeach 
     </tbody>
 </table>
 {{ $tableData->links() }}

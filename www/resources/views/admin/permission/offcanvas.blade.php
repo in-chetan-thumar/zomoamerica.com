@@ -7,18 +7,30 @@
     <div class="offcanvas-body">
 
         @if(isset($permission))
-            {!! Form::open(array('url' => route('permission.update',$permission->id),'method'=>'PATCH','id'=>'permission-form','files'=>true)) !!}
+        {{ html()->form('PATCH', route('permission.update', $permission->id))
+            ->id('permission-form')
+            ->attribute('enctype', 'multipart/form-data')
+            ->open() 
+        }}
         @else
-            {!! Form::open(array('url' => route('permission.store'),'method'=>'POST','id'=>'permission-form','files'=>true)) !!}
+        {{ html()->form('POST', route('permission.store'))
+            ->id('permission-form')
+            ->attribute('enctype', 'multipart/form-data')
+            ->open() 
+        }}
         @endif
 
             <div class="row">
                 <div class="col-12">
                     <div class="mb-3">
                         <div class="form-group">
-                            {!!  Form::label('title', 'Title',['style' =>'justify-content: right']); !!}<span
-                                class="required">*</span>
-                            {!! Form::text('title',isset($permission) ? $permission->title:old('title'),['class' => 'form-control','id' =>'title'])!!}
+                            {{ html()->label('Title', 'title')
+                                ->attribute('style', 'justify-content: right') }}
+                            <span class="required">*</span>
+                            {{ html()->text('title', isset($permission) ? $permission->title : old('title'))
+                                ->class('form-control')
+                                ->id('title') 
+                            }}
                             @error('title')
                             <span style="color:red">
                                         <strong>{{ $message }}</strong>
@@ -30,9 +42,12 @@
                 <div class="col-12">
                     <div class="mb-3">
                         <div class="form-group">
-                            {!!  Form::label('name', 'Name',['style' =>'justify-content: right']); !!}<span
-                                class="required">*</span>
-                            {!! Form::text('name',isset($permission) ? $permission->name:old('name'),['class' => 'form-control','id' =>'name'])!!}
+                            {{ html()->label('Name', 'name')
+                                ->attribute('style', 'justify-content: right') }}
+                            <span class="required">*</span>
+                            {{ html()->text('name', isset($permission) ? $permission->name : old('name'))
+                                ->class('form-control')
+                                ->id('name') }}
                             @error('name')
                             <span style="color:red">
                                         <strong>{{ $message }}</strong>
@@ -44,9 +59,12 @@
                 <div class="col-12">
                     <div class="mb-3">
                         <div class="form-group">
-                            {!!  Form::label('permission_label', 'Permission label',['style' =>'justify-content: right']); !!}<span
-                                class="required">*</span>
-                            {!! Form::text('permission_label',isset($permission) ? $permission->permission_label:old('permission_label'),['class' => 'form-control','id' =>'permission_label'])!!}
+                            {{ html()->label('Permission label', 'permission_label')
+                                ->attribute('style', 'justify-content: right') }}
+                            <span class="required">*</span>
+                            {{html()->text('permission_label', isset($permission) ? $permission->permission_label : old('permission_label'))
+                                ->class('form-control')
+                                ->id('permission_label') }}
                             @error('permission_label')
                             <span style="color:red">
                                         <strong>{{ $message }}</strong>
@@ -59,7 +77,7 @@
 
         <div class="row">
             <div class="col-md-12">
-                {!! Form::submit('Submit',['class'=>'btn btn-primary']) !!}
+                {{ html()->button('Submit', 'submit')->class('btn btn-primary') }}
             </div>
         </div>
         </form>

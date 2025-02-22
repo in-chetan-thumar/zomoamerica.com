@@ -18,9 +18,14 @@
                         <a href="{{ route('state.distributor.export') }}"  class="btn btn-primary">Export</a>
                     </div>
                     <div class="float-start">
-                        {!! Form::open(['url' =>route('state-distributor.index'),'id' =>'form-search','class'=>'row row-cols-lg-auto g-3 align-items-center','id'=>'newsletter-form','method' => 'get']) !!}
-                        <div class="form-group">
-                            {!! Form::text('query_str',request()->query('query_str'),['class'=>'form-control data-filter','placeholder'=>'Search ']) !!}
+                        {{ html()->form('GET', route('state-distributor.index'))
+                            ->id('newsletter-form')
+                            ->class('row row-cols-lg-auto g-3 align-items-center')
+                            ->open()
+                         }}
+                        <div class="form-group">{{ html()->text('query_str', request()->query('query_str'))
+                            ->class('form-control data-filter')
+                            ->attribute('placeholder', 'Search') }}
                         </div>
                         <div class="form-group">
                             <button type="submit" name="type" value="submit" class="btn btn-primary waves-effect waves-light button-size">
@@ -33,7 +38,8 @@
                             </a>
                         </div>
 
-                        {!! Form::close() !!}
+                        {{ html()->form()->close() }}
+
                     </div>
                     <div class="clearfix"></div>
                     <div class="divtable">

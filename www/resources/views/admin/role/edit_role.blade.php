@@ -20,13 +20,18 @@
                             Back to list</a>
                     </div>
                     <div class="clearfix"></div>
-                    {!! Form::open(array('url' => route('roles.update',$role->id),'method'=>'PATCH','id'=>'role-form')) !!}
+                    {{ html()->form('PATCH', route('roles.update', $role->id))
+                        ->id('role-form')
+                        ->open() }}
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="mb-3">
                                 <div class="form-group">
                                     <label for="name">{{ __('Role') }}</label>
-                                    {!! Form::text('name',$role->name,['class'=>'form-control','placeholder'=>'Role name']) !!}
+                                    {{ html()->text('name', $role->name)
+                                        ->class('form-control')
+                                        ->attribute('placeholder', 'Role name') 
+                                    }}
                                     @error('name')
                                     <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -80,11 +85,11 @@
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12">
-                            {{Form::button('Update role',['class'=>'btn btn-primary waves-effect btnSubmit waves-light'])}}
+                            {{ html()->button('Update role')->type('button')->class('btn btn-primary waves-effect btnSubmit waves-light') }}
                         </div>
                     </div>
 
-                    {!! Form::close() !!}
+                    {!! html()->form()->close() !!}
                 </div>
             </div>
         </div>

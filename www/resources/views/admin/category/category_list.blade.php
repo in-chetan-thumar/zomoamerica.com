@@ -20,12 +20,17 @@
                             class="btn btn-primary"><i class="mdi mdi-plus"></i>&nbsp;Add Category</a>
                     </div>
                     <div class="float-start">
-                        {!! Form::open([
+                        {{ html()->form('get', route('backend.product.flavors.category'))->id('form-search')
+                            ->class('row row-cols-lg-auto g-3 align-items-center')
+                            ->open() 
+                        }}
+                        
+                        {{-- {!! Form::open([
                             'url' => route('backend.product.flavors.category'),
                             'id' => 'form-search',
                             'class' => 'row row-cols-lg-auto g-3 align-items-center',
                             'method' => 'get',
-                        ]) !!}
+                        ]) !!} --}}
                         {{-- <div class="form-group">
                             {{ Form::label('Start Date') }}
                             {{ Form::date('start_date', date('Y-m-d'), ['class' => 'form-control']) }}
@@ -44,10 +49,7 @@
                                 Export
                             </a>
                         </div> --}}
-
-                        
-
-                        {!! Form::close() !!}
+                        {{ html()->form()->close() }}
                     </div>
                     <div class="clearfix"></div>
                     <div class="divtable">

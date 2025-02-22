@@ -20,9 +20,16 @@
                                 class="mdi mdi-plus"></i>&nbsp;Add User</a>
                     </div>
                     <div class="float-start">
-                        {!! Form::open(['url' =>route('usermanagements.index'),'id' =>'form-search','class'=>'row row-cols-lg-auto g-3 align-items-center','method' => 'get']) !!}
+                        {{ html()->form('GET', route('usermanagements.index'))
+                                ->id('form-search')
+                                ->class('row row-cols-lg-auto g-3 align-items-center')
+                                ->open() }}
                         <div class="form-group">
-                            {!! Form::text('query_str',request()->query('query_str'),['class'=>'form-control','placeholder'=>'Search by name / email','style="width: 330px;"']) !!}
+                            {{html()->text('query_str', request()->query('query_str'))
+                                ->class('form-control')
+                                ->attribute('placeholder', 'Search by name / email')
+                                ->attribute('style', 'width: 330px;') 
+                            }}
                         </div>
 
                         <button type="submit" name="type" value="submit" class="btn btn-primary waves-effect waves-light">
@@ -32,7 +39,7 @@
                         <a href="" class="btn btn-secondary waves-effect waves-light">
                             Reset
                         </a>
-                        {!! Form::close() !!}
+                        {{ html()->form()->close() }}
                     </div>
                     <div class="clearfix"></div>
                     <div class="divtable">

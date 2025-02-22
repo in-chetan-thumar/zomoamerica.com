@@ -4,8 +4,9 @@ ma<label for="{{$name}}" class="form-label">{!!$label!!}{!! $required ? '<span s
     @if(!empty($options))
         @foreach($options as $key => $option)
             <div class="form-check {{isset($attributes['rows'])?$attributes['rows']:''}}">
-                {!! Form::checkbox($name.'[]',$key,in_array($key,$value),array_merge_recursive(['class'=>'form-check-input'],$attributes)); !!}
-
+                {{ Html()->checkbox($name.'[]', $key, in_array($key, $value))
+                    ->class('form-check-input')
+                    ->attributes($attributes) }}
                 <label for="{{$name.'-label'}}" class="form-check-label">{!!$option!!}</label>
             </div>
         @endforeach

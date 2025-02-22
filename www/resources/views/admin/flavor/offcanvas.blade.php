@@ -9,27 +9,30 @@
     <div class="offcanvas-body">
 
         @if (isset($user))
-            {!! Form::open([
-                'url' => route('backend.product.flavors.update'),
-                'method' => 'post',
-                'id' => 'flavor-form',
-                'files' => true,
-            ]) !!}
+        {{ html()->form('POST', route('backend.product.flavors.update'))
+            ->id('flavor-form')
+            ->attribute('enctype', 'multipart/form-data')
+            ->open() }}
         @else
-            {!! Form::open(['url' => route('backend.product.flavors.store'), 'method' => 'POST', 'id' => 'flavor-form', 'files' => true]) !!}
+        {{ html()->form('POST', route('backend.product.flavors.store'))
+            ->id('flavor-form')
+            ->attribute('enctype', 'multipart/form-data')
+            ->open() }}
         @endif
 
         <div class="row">
             <div class="col-12">
                 <div class="mb-3">
                     <div class="form-group">
-                        {!! Form::label('Title', 'Title', ['style' => 'justify-content: right']) !!}<span class="required">*</span>
+                        {{ html()->label('Title', 'Title')
+                                ->attribute('style', 'justify-content: right') }}
+                            <span class="required">*</span>
 
-                        <input type="hidden" name="id" value="{{ isset($user->id) ? $user->id : '' }}">
-                        {!! Form::text('flavor_title', isset($user) ? $user->flavor_title : old('flavor_title'), [
-                            'class' => 'form-control',
-                            'id' => 'name',
-                        ]) !!}
+                        {{ html()->hidden('id', isset($user->id) ? $user->id : '') }}
+                        {{ html()->text('flavor_title', isset($user) ? $user->flavor_title : old('flavor_title'))
+                            ->class('form-control')
+                            ->id('name')
+                         }}
                         @error('flavor_title')
                             <span style="color:red">
                                 <strong>{{ $message }}</strong>
@@ -41,12 +44,13 @@
             <div class="col-12">
                 <div class="mb-3">
                     <div class="form-group">
-                        {!! Form::label('Flavor Description', 'Flavor Description', ['style' => 'justify-content: right']) !!}<span class="required">*</span>
+                        {{ html()->label('Flavor Description', 'Flavor Description')
+                            ->attribute('style', 'justify-content: right') }}
+                        <span class="required">*</span>
 
-                        {!! Form::text('flavor_description', isset($user) ? $user->flavor_description : old('flavor_description'), [
-                            'class' => 'form-control',
-                            'id' => 'flavor_description',
-                        ]) !!}
+                        {{ html()->text('flavor_description', isset($user) ? $user->flavor_description : old('flavor_description'))
+                            ->class('form-control')
+                            ->id('flavor_description') }}
                         @error('flavor_description')
                             <span style="color:red">
                                 <strong>{{ $message }}</strong>
@@ -58,12 +62,13 @@
             <div class="col-12">
                 <div class="mb-3">
                     <div class="form-group">
-                        {!! Form::label('slug', 'Slug', ['style' => 'justify-content: right']) !!}<span class="required">*</span>
+                        {{ html()->label('Slug', 'slug')
+                            ->attribute('style', 'justify-content: right') }}
+                        <span class="required">*</span>
 
-                        {!! Form::text('slug', isset($user) ? $user->slug : old('slug'), [
-                            'class' => 'form-control',
-                            'id' => 'slug',
-                        ]) !!}
+                        {{ html()->text('slug', isset($user) ? $user->slug : old('slug'))
+                        ->class('form-control')
+                        ->id('slug') }}
                         @error('slug')
                             <span style="color:red">
                                 <strong>{{ $message }}</strong>
@@ -76,14 +81,17 @@
             <div class="col-12">
                 <div class="mb-3">
                     <div class="form-group">
-                        {{ Form::label('category_id', 'Category') }}<span class="required">*</span>
-                        {!! Form::select(
+                        {{ html()->label('Category', 'category_id') }}
+                        <span class="required">*</span>
+                        {{html()->select(
                             'category_id',
                             $category,
-                            (isset($user) and !empty($user->category_id)) ? $user->category_id : old('category_id'),
-                            ['class' => 'form-control', 'id' => 'category_id', 'style' => 'width: 100%', 'placeholder' => 'Select Category'],
-                        ) !!}
-
+                            (isset($user) && !empty($user->category_id)) ? $user->category_id : old('category_id')
+                        )
+                        ->class('form-control')
+                        ->id('category_id')
+                        ->attribute('style', 'width: 100%')
+                        ->attribute('placeholder', 'Select Category') }}
                         @error('category_id')
                             <span style="color:red">
                                 <strong>{{ $message }}</strong>
@@ -95,11 +103,11 @@
             <div class="col-12">
                 <div class="mb-3">
                     <div class="form-group">
-                        {{ Form::label('sweet', 'Sweet') }}<span class="required">*</span>
-                        {!! Form::text('sweet', isset($user) ? $user->sweet : old('sweet'), [
-                            'class' => 'form-control',
-                            'id' => 'sweet',
-                        ]) !!}
+                        {{ html()->label('Sweet', 'sweet') }}
+                        <span class="required">*</span>
+                        {{ html()->text('sweet', isset($user) ? $user->sweet : old('sweet'))
+                        ->class('form-control')
+                        ->id('sweet') }}
                         @error('sweet')
                             <span style="color:red">
                                 <strong>{{ $message }}</strong>
@@ -111,11 +119,11 @@
             <div class="col-12">
                 <div class="mb-3">
                     <div class="form-group">
-                        {{ Form::label('citric', 'Citric') }}<span class="required">*</span>
-                        {!! Form::text('citric', isset($user) ? $user->citric : old('citric'), [
-                            'class' => 'form-control',
-                            'id' => 'citric',
-                        ]) !!}
+                        {{ html()->label('Citric', 'citric') }}
+                        <span class="required">*</span>
+                        {{ html()->text('citric', isset($user) ? $user->citric : old('citric'))
+                        ->class('form-control')
+                        ->id('citric') }}
                         @error('citric')
                             <span style="color:red">
                                 <strong>{{ $message }}</strong>
@@ -127,11 +135,12 @@
             <div class="col-12">
                 <div class="mb-3">
                     <div class="form-group">
-                        {{ Form::label('tobaco_intensity', 'Tobaco Intensity') }}<span class="required">*</span>
-                        {!! Form::text('tobaco_intensity', isset($user) ? $user->tobaco_intensity : old('tobaco_intensity'), [
-                            'class' => 'form-control',
-                            'id' => 'tobaco_intensity',
-                        ]) !!}
+                        {{ html()->label('Tobaco Intensity', 'tobaco_intensity') }}
+                        <span class="required">*</span>
+                        {{ html()->text('tobaco_intensity', isset($user) ? $user->tobaco_intensity : old('tobaco_intensity'))
+                            ->class('form-control')
+                            ->id('tobaco_intensity') 
+                        }}
                         @error('tobaco_intensity')
                             <span style="color:red">
                                 <strong>{{ $message }}</strong>
@@ -143,11 +152,12 @@
             <div class="col-12">
                 <div class="mb-3">
                     <div class="form-group">
-                        {{ Form::label('menthol', 'Menthol') }}<span class="required">*</span>
-                        {!! Form::text('menthol', isset($user) ? $user->menthol : old('menthol'), [
-                            'class' => 'form-control',
-                            'id' => 'menthol',
-                        ]) !!}
+                        {{ html()->label('Menthol', 'menthol') }}
+                        <span class="required">*</span>
+                        {{ html()->text('menthol', isset($user) ? $user->menthol : old('menthol'))
+                            ->class('form-control')
+                            ->id('menthol')
+                         }}
                         @error('menthol')
                             <span style="color:red">
                                 <strong>{{ $message }}</strong>
@@ -159,11 +169,12 @@
             <div class="col-12">
                 <div class="mb-3">
                     <div class="form-group">
-                        {{ Form::label('cloud_volume', 'Cloud Volume') }}<span class="required">*</span>
-                        {!! Form::text('cloud_volume', isset($user) ? $user->cloud_volume : old('cloud_volume'), [
-                            'class' => 'form-control',
-                            'id' => 'cloud_volume',
-                        ]) !!}
+                        {{ html()->label('Cloud Volume', 'cloud_volume') }}
+                        <span class="required">*</span>
+                        {{ html()->text('cloud_volume', isset($user) ? $user->cloud_volume : old('cloud_volume'))
+                            ->class('form-control')
+                            ->id('cloud_volume')
+                         }}
                         @error('cloud_volume')
                             <span style="color:red">
                                 <strong>{{ $message }}</strong>
@@ -175,11 +186,11 @@
             <div class="col-12">
                 <div class="mb-3">
                     <div class="form-group">
-                        {{ Form::label('flavors_available', 'Flavors Available') }}<span class="required">*</span>
-                        {!! Form::text('flavors_available', isset($user) ? $user->flavors_available : old('flavors_available'), [
-                            'class' => 'form-control',
-                            'id' => 'flavors_available',
-                        ]) !!}
+                        {{ html()->label('Flavors Available', 'flavors_available') }}
+                        <span class="required">*</span>
+                        {{ html()->text('flavors_available', isset($user) ? $user->flavors_available : old('flavors_available'))
+                            ->class('form-control')
+                            ->id('flavors_available') }}
                         @error('flavors_available')
                             <span style="color:red">
                                 <strong>{{ $message }}</strong>
@@ -190,8 +201,13 @@
 
                 <div class="mb-3">
                     <div class="form-group">
-                        {{ Form::label('flavors_image', 'Flavors Image') }}<span class="required">*</span>
-                        {!! Form::file('flavors_image[]', ['class' => 'form-control', 'id' => 'flavors_image', 'multiple']) !!}
+                        {!! html()->label('Flavors Image', 'flavors_image') !!}
+                        <span class="required">*</span>
+                        {{ html()->file('flavors_image[]')
+                            ->class('form-control')
+                            ->id('flavors_image')
+                            ->attribute('multiple', true)
+                         }}
                         @error('flavors_image')
                             <span style="color:red">
                                 <strong>{{ $message }}</strong>
@@ -257,10 +273,10 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    {!! Form::submit('Submit', ['class' => 'btn btn-primary']) !!}
+                    {{ html()->button('Submit', 'submit')->class('btn btn-primary') }}
                 </div>
             </div>
-        {{ Form::close() }}
+            {{ html()->form()->close() }}
     </div>
 </div>
 {!! JsValidator::formRequest('App\Http\Requests\flavors', '#flavor-form') !!}

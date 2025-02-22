@@ -19,7 +19,7 @@ class UserRepository
      */
     public function __construct(User $model)
     {
-        return $this->model = $model;
+         $this->model = $model;
     }
 
     // Get data by id
@@ -90,21 +90,19 @@ class UserRepository
                 $query->where('name', '<>', config('constants.SUPER_ADMIN'));
             })->where('name', 'LIKE', '%' . $params['query_str'] . "%")->orWhere('email', 'LIKE', '%' . $params['query_str'] . "%");
         });
-
-
         $this->model = $this->model->when(!empty($params['role']), function ($query) use ($params) {
             $query->whereHas('roles', function ($query) use ($params) {
                 $query->where('id', $params['role']);
             });
         });
 
-        $this->model = $this->model->whereHas('roles', function ($query) {
-            $query->where('name', '<>', config('constants.SUPER_ADMIN'));
-        });
+        // $this->model = $this->model->whereHas('roles', function ($query) {
+        //     $query->where('name', '<>', config('constants.SUPER_ADMIN'));
+        // });
 
-        $this->model = $this->model->when(!empty($params['start_date'] && !empty($params['end_date'])), function ($q) use ($params) {
-            return $q->whereBetween('created_at', [$params['start_date'], $params['end_date']]);
-        });
+        // $this->model = $this->model->when(!empty($params['start_date'] && !empty($params['end_date'])), function ($q) use ($params) {
+        //     return $q->whereBetween('created_at', [$params['start_date'], $params['end_date']]);
+        // });
 
         if ($params['return_type'] == 'drop_down') {
             return $this->model->pluck('name', 'id');

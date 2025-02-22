@@ -10,7 +10,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach ($tableData as $key => $row)
+        @foreach ($tableData as $key => $row) 
             <tr>
                 <td>{{ $row->name }}</td>
                 <td>{{ $row->slug }}</td>

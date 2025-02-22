@@ -20,13 +20,20 @@
                             Back to list</a>
                     </div>
                     <div class="clearfix"></div>
-                    {!! Form::open(array('route' => 'roles.store','method'=>'POST','id'=>'role-form')) !!}
+                    {{ html()->form('POST', route('roles.store'))
+                        ->id('role-form')
+                        ->open() 
+                    }}
                    <div class="row">
                        <div class="col-xs-12 col-sm-12 col-md-12">
                            <div class="mb-3">
                                <div class="form-group">
-                                   {{ Form::label('Role')}}<span class="required">*</span>
-                                   {!! Form::text('name',old('name'),['class'=>'form-control','placeholder'=>'Role name']) !!}
+                                {{ html()->label('Role', 'name') }}
+                                <span class="required">*</span>
+
+                                {{ html()->text('name', old('name'))
+                                    ->class('form-control')
+                                    ->attribute('placeholder', 'Role name') }}
                                    @error('name')
                                    <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -77,10 +84,12 @@
                                <div class="mb-3">
                                </div>
                                <div class="col-xs-12 col-sm-12 col-md-12">
-                                   {{Form::button('Add role',['class'=>'btn btn-primary waves-effect btnSubmit waves-light'])}}
+                                  
+                                {{ html()->button('Add role')
+                                 ->class('btn btn-primary waves-effect btnSubmit waves-light') }}
                                </div>
 
-                               {!! Form::close() !!}
+                            {{html()->form()->close()}}
                            </div>
                        </div>
                    </div>
