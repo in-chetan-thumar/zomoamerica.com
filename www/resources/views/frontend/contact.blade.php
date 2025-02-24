@@ -67,11 +67,13 @@
                         @error('message')
                             <span class="text-danger" style="font-size:15px">
                                 {{ $message }}
+                        @enderror
                         </span>
                     </div>
 
                     <button type="submit" class="btn-black g-recaptcha "
-                            data-sitekey="{{ env('NOCAPTCHA_SITEKEY')}}" data-callback='onSubmit'>Send Message</button>
+                            {{-- data-sitekey="{{ env('NOCAPTCHA_SITEKEY')}}" --}}
+                             data-callback='onSubmit'>Send Message</button>
                             {{ html()->form()->close() }}
                            
                 </div>
@@ -108,11 +110,10 @@
             </div>
         </div>
     </div>
-
+    @endsection
 @section('js')
 {{--    {!! NoCaptcha::renderJs() !!}--}}
 {!! JsValidator::formRequest('App\Http\Requests\Contact', '#Enquery-top-form') !!}
-
     <script src="https://www.google.com/recaptcha/api.js"></script>
     <script>
         function onSubmit(token) {
@@ -121,4 +122,3 @@
     </script>
 @endsection
 
-@endsection

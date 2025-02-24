@@ -36,7 +36,7 @@ class HomeRequest extends FormRequest
                 'email' => 'required|email|max:100',
                 'number' => 'required|max:10',
                 'state' => 'required|max:50',
-                'g-recaptcha-response' => 'required'
+                // 'g-recaptcha-response' => 'required'
             ];
         }
 

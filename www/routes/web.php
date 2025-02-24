@@ -114,6 +114,7 @@ Route::get('zomo-product', [ProductController::class,'index'])->name('backend.pr
 Route::get('/create', [ProductController::class,'create'])->name('backend.product.create');
 Route::get('/thank-you', [HomeController::class, 'thankYou'])->name('thank.you');
 Route::get('/zomo-contact', [ContactController::class,'index'])->name('backend.product.contact');
+Route::delete('/zomo-contact/{id}', [ContactController::class, 'destroy'])->name('backend.product.contact.destroy');
 Route::get('/update-contact-edit/{id}', [ContactController::class,'edit'])->name('backend.product.edit');
 Route::get('/zomo-wholesale', [WholesaleController::class,'index'])->name('backend.product.wholesale');
 Route::get('/update-wholesale-edit/{id}', [WholesaleController::class,'edit'])->name('backend.product.wholesale.edit');

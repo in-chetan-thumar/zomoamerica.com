@@ -169,7 +169,7 @@
 
 @section('script')
     {{-- CKEditor CDN --}}
-    <script src="https://cdn.ckeditor.com/4.16.0/standard-all/ckeditor.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/38.1.0/classic/ckeditor.js"></script>
     <script>
         //CK Editor
         CKEDITOR.replace('email_template_content', {
@@ -178,19 +178,15 @@
     </script>
     <script type="text/javascript" src="{{ asset('assets/vendor/jsvalidation/js/jsvalidation.js') }}"></script>
     {!! JsValidator::formRequest('App\Http\Requests\EmailTemplateRequest', '#email-template-form') !!}
-    <script type="text/javascript">
-        $(".btnSubmit").on('click', function(e) {
-            $("#email-template-form").submit();
-            if ($("#email-template-form").valid()) {
-                $('#status').show();
-                $('#preloader').show();
-                $(".btnSubmit").prop('disabled', true);
-            }
-        });
-
-        $(".btn-create").on('click', function(e) {
-            $('#email_template_id, #subject, #mailable, #template_code, #template_name').val('')
-            CKEDITOR.instances.email_template_content.setData('');
-        });
+    <script>
+        // Initialize CKEditor 5 Classic Editor
+        ClassicEditor
+            .create(document.querySelector('#email_template_content'))
+            // .then(editor => {
+            //     console.log('CKEditor 5 is ready to use!', editor);
+            // })
+            // .catch(error => {
+            //     console.error('There was a problem initializing the editor.', error);
+            // });
     </script>
 @endsection

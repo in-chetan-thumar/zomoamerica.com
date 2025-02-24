@@ -167,7 +167,7 @@
                     <br>
                 </div>
                 <div class="wrap-btn">
-                    <input type="submit" class="btn-black g-recaptcha "
+                    <input type="submit" class="btn-black"
                            {{-- data-sitekey="{{ env('NOCAPTCHA_SITEKEY')}}" --}}
                            data-callback='onSubmit' value="SEND">
                 </div>

@@ -32,13 +32,13 @@ class Wholesale extends FormRequest
             'number' => 'required|max:10',
             'state' => 'required',
             'website' => 'max:70',
-            'g-recaptcha-response' => 'required|captcha'
+            // 'g-recaptcha-response' => 'required|captcha'
         ];
     }
     public function messages()
     {
         return [
-            'g-recaptcha-response' => 'Google captcha is required',
+            // 'g-recaptcha-response' => 'Google captcha is required',
         ];
     }
 

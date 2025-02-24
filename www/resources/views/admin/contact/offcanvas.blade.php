@@ -1,7 +1,7 @@
 <div class="offcanvas offcanvas-end" style="width: 30% !important;" tabindex="-1" id="offcanvasCreate"
      aria-labelledby="offcanvasCreate">
     <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasCreate">{{isset($user)?'View':'Create new'}} user</h5>
+        <h5 class="offcanvas-title" id="offcanvasCreate">{{isset($user)?'View':'Create new'}} contact</h5>
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
@@ -50,13 +50,16 @@
                         <div class="form-group">
                             {{ html()->label('Message', 'Message')
                                 ->attribute('style', 'justify-content: right') }}
-                             {{ html()->bsTextArea('', 'message', isset($user) ? $user->message : old('message'))
+                                {{ html()->textarea('message', isset($user) ? $user->message : old('message') ?? '')
+                                ->placeholder('Message')
+                                ->class('form-control ' . ($errors->has('message') ? 'is-invalid' : '')) }}
+                             {{-- {{ html()->textarea('', '', isset($user) ? $user->message : old('message'))
                                         ->placeholder('Message')
                                         ->attribute('maxlength', 150)
                                         ->class('')
                                         ->rows(10)
                                         ->cols(30)
-                            }}
+                            }} --}}
 
                             @error('message')
                             <span style="color:red">

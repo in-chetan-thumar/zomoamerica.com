@@ -228,18 +228,18 @@ class HomeController extends Controller
     public function authorizeStateDistributor(Request $request){
 
         try{
-            $this->validate($request, [
-                'g-recaptcha-response' => ['required',   function (string $attribute, mixed $value, Closure $fail) {
-                    $g_response = Http::asForm()->post("https://www.google.com/recaptcha/api/siteverify",[
-                        'secret'=> env('NOCAPTCHA_SECRET'),
-                        'response'=> $value,
-                        'remoteip'=>\request()->ip(),
-                    ]);
-                    if (!$g_response->json('success')) {
-                        $fail("The {$attribute} is invalid.");
-                    }
-                },],
-            ]);
+            // $this->validate($request, [
+            //     'g-recaptcha-response' => ['required',   function (string $attribute, mixed $value, Closure $fail) {
+            //         $g_response = Http::asForm()->post("https://www.google.com/recaptcha/api/siteverify",[
+            //             'secret'=> env('NOCAPTCHA_SECRET'),
+            //             'response'=> $value,
+            //             'remoteip'=>\request()->ip(),
+            //         ]);
+            //         if (!$g_response->json('success')) {
+            //             $fail("The {$attribute} is invalid.");
+            //         }
+            //     },],
+            // ]);
 
             $data = [];
                  // Send Mail
@@ -272,19 +272,19 @@ class HomeController extends Controller
     {
 
         try{
-            $this->validate($request, [
-                'g-recaptcha-response' => ['required',   function (string $attribute, mixed $value, Closure $fail) {
-                    $g_response = Http::asForm()->post("https://www.google.com/recaptcha/api/siteverify",[
-                        'secret'=> env('NOCAPTCHA_SECRET'),
-                        'response'=> $value,
-                        'remoteip'=>\request()->ip(),
-                    ]);
+            // $this->validate($request, [
+            //     'g-recaptcha-response' => ['required',   function (string $attribute, mixed $value, Closure $fail) {
+            //         $g_response = Http::asForm()->post("https://www.google.com/recaptcha/api/siteverify",[
+            //             'secret'=> env('NOCAPTCHA_SECRET'),
+            //             'response'=> $value,
+            //             'remoteip'=>\request()->ip(),
+            //         ]);
 
-                    if (!$g_response->json('success')) {
-                        $fail("The {$attribute} is invalid.");
-                    }
-                },],
-            ]);
+            //         if (!$g_response->json('success')) {
+            //             $fail("The {$attribute} is invalid.");
+            //         }
+            //     },],
+            // ]);
 
                 $request['buisness_name'] = $request->bname;
                 $request['first_name'] = $request->fname;
@@ -323,19 +323,19 @@ class HomeController extends Controller
     public function storeContact(Request $request)
     {
         try{
-            $this->validate($request, [
-                'g-recaptcha-response' => ['required',   function (string $attribute, mixed $value, Closure $fail) {
-                    $g_response = Http::asForm()->post("https://www.google.com/recaptcha/api/siteverify",[
-                        'secret'=> env('NOCAPTCHA_SECRET'),
-                        'response'=> $value,
-                        'remoteip'=>\request()->ip(),
-                    ]);
+            // $this->validate($request, [
+            //     'g-recaptcha-response' => ['required',   function (string $attribute, mixed $value, Closure $fail) {
+            //         $g_response = Http::asForm()->post("https://www.google.com/recaptcha/api/siteverify",[
+            //             'secret'=> env('NOCAPTCHA_SECRET'),
+            //             'response'=> $value,
+            //             'remoteip'=>\request()->ip(),
+            //         ]);
 
-                    if (!$g_response->json('success')) {
-                        $fail("The {$attribute} is invalid.");
-                    }
-                },],
-            ]);
+            //         if (!$g_response->json('success')) {
+            //             $fail("The {$attribute} is invalid.");
+            //         }
+            //     },],
+            // ]);
 
                 $enquire = ContactDetail::create($request->all());
                 if(!empty($enquire))
@@ -347,6 +347,10 @@ class HomeController extends Controller
                    // $params[]  = $enquire;
                     // $params['email'] = $enquire->email;
                    // dd($params);
+                    // $params['CC'] =  '';
+                    // $params['BCC'] =  '';
+                    // $params['TO'] =  '';
+
                     Mail::send(new \App\Mail\ContactDetailNotification($params));
 
                      $params = [];

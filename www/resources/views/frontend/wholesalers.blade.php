@@ -230,9 +230,9 @@
                                 </div>
                             </div>
 
-                            <div class="input-field">
+                            {{-- <div class="input-field">
                                 <input type="hidden" name="g-recaptcha-response" id="response">
-                            </div>
+                            </div> --}}
 
                             <div class="wrap-btn reveal">
                                 <input type="submit" class="btn-black mb-5" value="SEND">
@@ -331,7 +331,7 @@
 @section('js')
     {!! JsValidator::formRequest('App\Http\Requests\HomeRequest', '#inquery-form') !!}
     <script src="https://www.google.com/recaptcha/api.js?render=6LdNflwoAAAAAA5C79bAV5nRZqbVT6ntszmWqqV-"></script>
-    <script>
+    {{-- <script>
         grecaptcha.ready(function() {
             grecaptcha.execute('6LdNflwoAAAAAA5C79bAV5nRZqbVT6ntszmWqqV-', {
                 action: 'submit'
@@ -342,5 +342,5 @@
                 }
             })
         });
-    </script>
+    </script> --}}
 @endsection

@@ -24,14 +24,12 @@
                         <div class="dropdown-menu">
                             <a class="dropdown-item" onclick="showEditModel(event)"
                                 href="{{ route('backend.product.edit', $row->id) }}">View</a>
-
-
                             {{-- @can('usermanagements.destroy') --}}
                                 <a class="dropdown-item"
                                     onclick="if(confirm('Are you sure you want to delete.')) document.getElementById('delete-{{ $row->id }}').submit()">
                                     Delete</a>
                                 <form id="delete-{{ $row->id }}"
-                                    action="{{ route('usermanagements.destroy', $row->id) }}" method="POST">
+                                    action="{{ route('backend.product.contact.destroy', $row->id) }}" method="POST">
                                     @method('DELETE')
                                     @csrf
                                 </form>

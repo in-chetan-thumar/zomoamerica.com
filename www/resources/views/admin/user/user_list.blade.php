@@ -16,10 +16,10 @@
             <div class="card">
                 <div class="card-body">
                     <div class="float-end">
-                        @can('usermanagements.create')
+                        {{-- @can('usermanagements.create') --}}
                         <a href="{{route('usermanagements.create')}}" onclick="showSaveModel(event)" class="btn btn-primary"><i
                                 class="mdi mdi-plus"></i>&nbsp;Add User</a>
-                        @endcan
+                        {{-- @endcan --}}
                     </div>
                     <div class="float-start">
                         {{ html()->form('get', route('usermanagements.index'))

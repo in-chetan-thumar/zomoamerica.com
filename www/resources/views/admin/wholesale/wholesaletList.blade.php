@@ -64,14 +64,14 @@
                         </a>
                         {{ html()->form()->close() }}
                     </div>
-                </div>
-            </div>
+              
+           
             <div class="clearfix"></div>
             <div class="divtable">
                 {!! $table !!}
             </div>
         </div>
-    </div>
+        </div>
     </div>
     <div class="divOffcanvas">
 

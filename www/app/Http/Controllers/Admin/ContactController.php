@@ -44,7 +44,6 @@ class ContactController extends Controller
             parse_str($previousUrl['query'], $params);
             $params['path'] = url()->previous();
         }
-
         if (!empty($params['start_date']) && !empty($params['end_date'])) {
             $params['start_date'] = Carbon::parse($params['start_date'])->format('Y-m-d 00:00:00');
             $params['end_date'] = Carbon::parse($params['end_date'])->format('Y-m-d 23:59:00');
@@ -86,6 +85,7 @@ class ContactController extends Controller
     }
     public function edit(Request $request)
     {
+     
         $data = [];
         try {
             $id = $request->id;
@@ -100,7 +100,23 @@ class ContactController extends Controller
         }
         return response()->json($data);
     }
+    public function destroy($id)
+    {
+        try {
+            $contact = resolve('contact-repo')->findById($id);
+            if (!empty($contact)) {
 
+                $contact->delete();
+                toastr()->success( ' Contact deleted successfully..!');
+                return redirect()->route('backend.product.contact');
+            } else {
+                toastr()->error('Contact not found.!');
+            }
+        } catch (\Exception $e) {
+            toastr()->error($e->getMessage());
+            return redirect()->back();
+        }
+    }
     public function export(Request $request)
     {
         // $fileName = 'contact.xlsx';

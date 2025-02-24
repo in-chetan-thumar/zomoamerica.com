@@ -25,14 +25,14 @@ class Contact extends FormRequest
             'email' => 'required|email|max:150|min:6',
             'subject' => 'required|max:50',
             'message' => 'required|max:150',
-            'g-recaptcha-response' => 'required|captcha'
+            // 'g-recaptcha-response' => 'required|captcha'
 
         ];
     }
     public function messages()
     {
         return [
-            'g-recaptcha-response' => 'Google captcha is required',
+            // 'g-recaptcha-response' => 'Google captcha is required',
         ];
     }
 

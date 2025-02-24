@@ -62,33 +62,29 @@ class UserController extends Controller
         $data = $params = [];
         DB::beginTransaction();
         try {
-            // Create user
+            $getRole = resolve('role-repo')->findByID($request->role) ?? null;
+            $role = $getRole->name;
+          // Create user
             $password = app('common-helper')->randomPasswordGenerator();
-            $params['role'] = $request->role;
+            $params['role'] = $role;
             $params['name'] = $request->name;
             $params['email'] = $request->email;
-            $params['password'] = Hash::make($password);
-
+            $params['password'] = Hash::make($password);  
             $user = resolve('user-repo')->create($params);
-
             if (!empty($user)) {
-
                 // Send Mail Username and Password
                 $params = [];
                 $params['user'] = $user->name;
                 $params['email'] = $request->email;
                 $params['password'] = $password;
                 $params['role_name'] = $user->getRoleNames()->first();
-
-//                Mail::send(new UserCreateNotification($params));
+//              Mail::send(new UserCreateNotification($params));
 
                 $data['error'] = false;
                 $data['message'] = 'User create successfully.';
                 $data['view'] = resolve('user-repo')->renderHtmlTable($this->getParamsForFilter($request));
-
                 DB::commit();
                 return response()->json($data);
-
             }
 
             $data['error'] = true;
